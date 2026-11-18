@@ -26,14 +26,14 @@
     </script>
     <style>
         .page-section { display: none; min-height: calc(100vh - 180px); }
-        .page-section.active { display: flex; flex-direction: column; justify-content: center; animation: fadeInPage 0.4s ease-in-out; }
+        .page-section.active { display: flex; flex-direction: column; justify-content: center; animation: fadeInPage 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
         @keyframes fadeInPage {
-            from { opacity: 0; transform: translateY(8px); }
+            from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
         }
         @keyframes floatAnim {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
+            50% { transform: translateY(-8px); }
         }
         .animate-float { animation: floatAnim 4s ease-in-out infinite; }
         .transparent-logo { mix-blend-mode: multiply; }
@@ -62,8 +62,8 @@
         </div>
     </div>
 
-    <!-- Navigation Bar (Professional Academy Style) -->
-    <header class="sticky top-0 z-50 bg-pa-dark text-white border-b border-neutral-800 shadow-md shrink-0">
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-pa-dark text-white border-b border-neutral-800 shadow-lg shrink-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3 cursor-pointer" onclick="switchPage('home')">
                 <div class="w-12 h-12 flex items-center justify-center bg-white rounded-xl p-1">
@@ -76,14 +76,14 @@
             </div>
             
             <nav class="hidden xl:flex items-center gap-1 text-xs font-semibold text-neutral-300">
-                <button onclick="switchPage('home')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all bg-neutral-800 text-white" data-target="home">Home</button>
-                <button onclick="switchPage('about')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="about">About</button>
-                <button onclick="switchPage('hr-pro')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="hr-pro">HR & PRO</button>
-                <button onclick="switchPage('gcc-typing')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="gcc-typing">GCC Typing</button>
-                <button onclick="switchPage('translation')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="translation">Translation</button>
-                <button onclick="switchPage('civil-service')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all text-pa-gold font-bold flex items-center gap-1" data-target="civil-service"><i class="fa-solid fa-star text-pa-gold"></i> Civil Service</button>
-                <button onclick="switchPage('gallery')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="gallery">Gallery</button>
-                <button onclick="switchPage('contact')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="contact">Contact</button>
+                <button onclick="switchPage('home')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all bg-neutral-800 text-white" data-target="home">1. Home</button>
+                <button onclick="switchPage('about')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="about">2. About</button>
+                <button onclick="switchPage('hr-pro')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="hr-pro">3. HR & PRO</button>
+                <button onclick="switchPage('gcc-typing')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="gcc-typing">4. GCC Typing</button>
+                <button onclick="switchPage('translation')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="translation">5. Translation</button>
+                <button onclick="switchPage('civil-service')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all text-pa-gold font-bold flex items-center gap-1" data-target="civil-service"><i class="fa-solid fa-star text-pa-gold"></i> 6. Civil Service</button>
+                <button onclick="switchPage('gallery')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="gallery">7. Gallery</button>
+                <button onclick="switchPage('contact')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="contact">8. Contact</button>
             </nav>
 
             <div>
@@ -94,11 +94,11 @@
         </div>
     </header>
 
-    <!-- Main Content Container -->
+    <!-- Main Content Container (8 Distinct Pages) -->
     <main class="w-full flex-grow">
 
         <!-- ==================== PAGE 1: HOME ==================== -->
-        <section id="page-home" class="page-active page-section active py-16 lg:py-24">
+        <section id="page-home" class="page-section active py-16 lg:py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
@@ -128,12 +128,12 @@
             </div>
         </section>
 
-        <!-- ==================== PAGE 2: ABOUT ==================== -->
+        <!-- ==================== PAGE 2: ABOUT US ==================== -->
         <section id="page-about" class="page-section py-16 lg:py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
                     <div>
-                        <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">About Serve Ease Academy</span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">Page 2: About Us</span>
                         <h2 class="text-3xl sm:text-4xl font-black text-pa-dark mt-2 mb-4">Bridging Academia and Real-World Employability</h2>
                         <p class="text-neutral-700 text-base mb-6 leading-relaxed">
                             At Serve Ease Academy, we believe education should be practical, focused, and useful in real life. Operating from Doha, Qatar, we empower students, job seekers, and professionals with essential corporate administration, documentation, and linguistic skills.
@@ -157,11 +157,11 @@
             </div>
         </section>
 
-        <!-- ==================== PAGE 3: HR & PRO ==================== -->
+        <!-- ==================== PAGE 3: HR & PRO SERVICES ==================== -->
         <section id="page-hr-pro" class="page-section py-16 lg:py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="max-w-3xl mx-auto text-center mb-16">
-                    <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">3-Month Professional Diploma</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">Page 3: 3-Month Professional Diploma</span>
                     <h2 class="text-3xl sm:text-5xl font-black text-pa-dark mt-2 mb-4">HR & PRO Services</h2>
                     <p class="text-neutral-700">Master government liaison work, corporate residency, visa processing, labor card applications, and establishment card management.</p>
                 </div>
@@ -185,11 +185,11 @@
             </div>
         </section>
 
-        <!-- ==================== PAGE 4: GCC TYPING ==================== -->
+        <!-- ==================== PAGE 4: GCC TYPING & DOCUMENT PROCESSING ==================== -->
         <section id="page-gcc-typing" class="page-section py-16 lg:py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="max-w-3xl mx-auto text-center mb-16">
-                    <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">3-Month Professional Diploma</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">Page 4: 3-Month Professional Diploma</span>
                     <h2 class="text-3xl sm:text-5xl font-black text-pa-dark mt-2 mb-4">GCC Document Processing</h2>
                     <p class="text-neutral-700">Regional document attestation, embassy clearing, official ministerial paperwork, and commercial agreement typing.</p>
                 </div>
@@ -217,11 +217,11 @@
             </div>
         </section>
 
-        <!-- ==================== PAGE 5: TRANSLATION ==================== -->
+        <!-- ==================== PAGE 5: TYPING & TRANSLATION ==================== -->
         <section id="page-translation" class="page-section py-16 lg:py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="max-w-3xl mx-auto text-center mb-16">
-                    <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">3-Month Professional Diploma</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">Page 5: 3-Month Professional Diploma</span>
                     <h2 class="text-3xl sm:text-5xl font-black text-pa-dark mt-2 mb-4">Typing & Translation</h2>
                     <p class="text-neutral-700">Professional English-to-Arabic and Arabic-to-English legal, commercial translation, alongside high-speed document typing.</p>
                 </div>
@@ -243,14 +243,14 @@
             </div>
         </section>
 
-        <!-- ==================== PAGE 6: CIVIL SERVICE ==================== -->
+        <!-- ==================== PAGE 6: CIVIL SERVICE COACHING ==================== -->
         <section id="page-civil-service" class="page-section py-16 lg:py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="bg-pa-dark text-white rounded-3xl p-8 md:p-16 shadow-2xl relative overflow-hidden border border-neutral-800">
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center relative z-10">
                         <div class="lg:col-span-2">
                             <span class="bg-pa-gold text-neutral-950 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
-                                Flagship Program (1 Year Duration)
+                                Page 6: Flagship Program (1 Year Duration)
                             </span>
                             <h2 class="text-3xl sm:text-5xl font-black mt-4 mb-4 text-white">
                                 Civil Service Coaching Program
@@ -281,11 +281,11 @@
             </div>
         </section>
 
-        <!-- ==================== PAGE 7: GALLERY ==================== -->
+        <!-- ==================== PAGE 7: GALLERY & FACILITIES ==================== -->
         <section id="page-gallery" class="page-section py-16 lg:py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="text-center max-w-2xl mx-auto mb-16">
-                    <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">Campus Life</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">Page 7: Campus Life</span>
                     <h2 class="text-3xl sm:text-4xl font-black text-pa-dark mt-2 mb-4">Academy Facilities & Gallery</h2>
                     <p class="text-neutral-700">A glimpse into our modern classrooms, resource library, and interactive training workshops.</p>
                 </div>
@@ -306,11 +306,11 @@
             </div>
         </section>
 
-        <!-- ==================== PAGE 8: CONTACT ==================== -->
+        <!-- ==================== PAGE 8: CONTACT & APPLY ==================== -->
         <section id="page-contact" class="page-section py-16 lg:py-24">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="text-center mb-12">
-                    <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">Get in Touch</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">Page 8: Get in Touch</span>
                     <h2 class="text-3xl sm:text-4xl font-black text-pa-dark mt-2 mb-2">Apply / Register Now</h2>
                     <p class="text-neutral-700">Fill out your details below and our admissions team will contact you promptly.</p>
                 </div>
