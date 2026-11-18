@@ -6,75 +6,70 @@
     <title>Serve Ease Academy | Professional Education & Civil Service Coaching</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Animation Library for smooth moving & scrolling text animations -->
+    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            black: '#000000',
-                            card: '#111111',
-                            border: '#262626',
-                            accent: '#E5E7EB',
-                            gold: '#D4AF37'
-                        }
-                    }
-                }
-            }
+    <style>
+        @keyframes floatAnimation {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
         }
-    </script>
+        .animate-float {
+            animation: floatAnimation 4s ease-in-out infinite;
+        }
+        .animate-float-delayed {
+            animation: floatAnimation 5s ease-in-out infinite 2s;
+        }
+    </style>
 </head>
-<body class="bg-black text-slate-100 font-sans antialiased selection:bg-white selection:text-black overflow-x-hidden">
+<body class="bg-white text-neutral-950 font-sans antialiased selection:bg-neutral-950 selection:text-white overflow-x-hidden">
 
     <!-- Top Contact Bar -->
-    <div class="bg-neutral-950 border-b border-neutral-900 text-xs py-2 px-4 text-neutral-400">
+    <div class="bg-neutral-100 border-b border-neutral-200 text-xs py-2 px-4 text-neutral-600">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center gap-4 flex-wrap">
-                <a href="tel:+97470120012" class="flex items-center gap-1.5 hover:text-white transition-colors">
-                    <i class="fa-solid fa-phone text-neutral-300"></i> Qatar: +974 70120012
+                <a href="tel:+97470120012" class="flex items-center gap-1.5 hover:text-black transition-colors">
+                    <i class="fa-solid fa-phone text-neutral-500"></i> Qatar: +974 70120012
                 </a>
-                <a href="tel:+919745568481" class="flex items-center gap-1.5 hover:text-white transition-colors">
-                    <i class="fa-solid fa-phone text-neutral-300"></i> India: +91 9745568481
+                <a href="tel:+919745568481" class="flex items-center gap-1.5 hover:text-black transition-colors">
+                    <i class="fa-solid fa-phone text-neutral-500"></i> India: +91 9745568481
                 </a>
-                <a href="mailto:serveeaseacademy@gmail.com" class="flex items-center gap-1.5 hover:text-white transition-colors">
-                    <i class="fa-solid fa-envelope text-neutral-300"></i> serveeaseacademy@gmail.com
+                <a href="mailto:serveeaseacademy@gmail.com" class="flex items-center gap-1.5 hover:text-black transition-colors">
+                    <i class="fa-solid fa-envelope text-neutral-500"></i> serveeaseacademy@gmail.com
                 </a>
             </div>
             <div class="flex items-center gap-3">
                 <span>Doha, Qatar</span>
-                <span class="text-white font-semibold">| Admissions Open</span>
+                <span class="text-neutral-900 font-semibold">| Admissions Open</span>
             </div>
         </div>
     </div>
 
-    <!-- Navigation Bar (8 Page Sections Link) -->
-    <header class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-neutral-900">
+    <!-- Navigation Bar (Logo left, Company & Academy Name right side, Navigation items) -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-11 h-11 rounded-xl bg-white text-black flex items-center justify-center shadow-lg overflow-hidden border border-neutral-800">
+                <div class="w-11 h-11 rounded-xl bg-neutral-950 text-white flex items-center justify-center shadow-md overflow-hidden border border-neutral-300">
                     <img src="logo.png" alt="Logo" class="w-full h-full object-cover">
                 </div>
-                <div>
-                    <a href="#home" class="text-xl font-bold tracking-tight text-white">Serve Ease <span class="text-neutral-400">Academy</span></a>
-                    <span class="block text-[10px] tracking-widest text-neutral-500 uppercase">Excellence in Professional Education</span>
+                <div class="flex flex-col">
+                    <a href="#home" class="text-lg font-extrabold tracking-tight text-neutral-950 leading-tight">Serve Ease <span class="text-neutral-500">Academy</span></a>
+                    <span class="text-[9px] tracking-widest text-neutral-500 uppercase font-semibold">Excellence in Professional Education</span>
                 </div>
             </div>
-            <nav class="hidden lg:flex items-center gap-5 text-xs font-medium text-neutral-300">
-                <a href="#home" class="hover:text-white transition-colors">Home</a>
-                <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="#hr-pro" class="hover:text-white transition-colors">HR & PRO</a>
-                <a href="#gcc-typing" class="hover:text-white transition-colors">GCC Typing</a>
-                <a href="#translation" class="hover:text-white transition-colors">Translation</a>
-                <a href="#civil-service" class="text-amber-400 font-semibold flex items-center gap-1 hover:opacity-80 transition-opacity">
+            <nav class="hidden lg:flex items-center gap-5 text-xs font-medium text-neutral-700">
+                <a href="#home" class="hover:text-black transition-colors">Home</a>
+                <a href="#about" class="hover:text-black transition-colors">About</a>
+                <a href="#hr-pro" class="hover:text-black transition-colors">HR & PRO</a>
+                <a href="#gcc-typing" class="hover:text-black transition-colors">GCC Typing</a>
+                <a href="#translation" class="hover:text-black transition-colors">Translation</a>
+                <a href="#civil-service" class="text-amber-600 font-semibold flex items-center gap-1 hover:opacity-80 transition-opacity">
                     <i class="fa-solid fa-star text-xs"></i> Civil Service
                 </a>
-                <a href="#gallery" class="hover:text-white transition-colors">Gallery</a>
-                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                <a href="#gallery" class="hover:text-black transition-colors">Gallery</a>
+                <a href="#contact" class="hover:text-black transition-colors">Contact</a>
             </nav>
             <div>
-                <a href="#apply" class="bg-white hover:bg-neutral-200 text-black font-semibold px-4 py-2 rounded-xl shadow-lg transition-all text-xs">
+                <a href="#apply" class="bg-neutral-950 hover:bg-neutral-800 text-white font-semibold px-4 py-2 rounded-xl shadow-md transition-all text-xs">
                     Apply Now
                 </a>
             </div>
@@ -82,143 +77,144 @@
     </header>
 
     <!-- Page 1: Home Section -->
-    <section id="home" class="relative overflow-hidden py-32 lg:py-40 bg-black border-b border-neutral-900">
-        <div class="absolute inset-0 z-0 opacity-20">
+    <section id="home" class="relative overflow-hidden py-32 lg:py-40 bg-white border-b border-neutral-200">
+        <div class="absolute inset-0 z-0 opacity-10">
             <img src="hero-bg.jpg" alt="Hero Background" class="w-full h-full object-cover grayscale">
-            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" data-aos="fade-up" data-aos-duration="1000">
             <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 bg-neutral-900 border border-neutral-800 rounded-full px-4 py-1.5 text-xs text-neutral-300 font-medium mb-6">
-                    <i class="fa-solid fa-award text-amber-400"></i> Professional Certifications & Coaching in Qatar
+                <div class="inline-flex items-center gap-2 bg-neutral-100 border border-neutral-200 rounded-full px-4 py-1.5 text-xs text-neutral-700 font-medium mb-6">
+                    <i class="fa-solid fa-award text-amber-600"></i> Professional Certifications & Coaching in Qatar
                 </div>
-                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
-                    Shape Your Future With <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-400 to-neutral-600">Expert Guidance</span>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-neutral-950 leading-tight mb-6">
+                    Shape Your Future With <span class="text-transparent bg-clip-text bg-gradient-to-r from-neutral-900 via-neutral-600 to-neutral-400">Expert Guidance</span>
                 </h1>
-                <p class="text-lg text-neutral-400 mb-8 leading-relaxed">
+                <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
                     Advance your career with industry-tailored 3-month professional diplomas and our prestigious 1-Year Civil Service Coaching directed and instructed by Shabeeb.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#hr-pro" class="bg-white hover:bg-neutral-200 text-black font-semibold px-8 py-4 rounded-xl shadow-xl transition-all flex items-center gap-2">
+                    <a href="#hr-pro" class="bg-neutral-950 hover:bg-neutral-800 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition-all flex items-center gap-2">
                         Explore Programs <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
-                    <a href="#civil-service" class="bg-neutral-900 hover:bg-neutral-800 text-white border border-neutral-800 font-semibold px-8 py-4 rounded-xl transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-star text-amber-400"></i> Civil Service (1 Year)
+                    <a href="#civil-service" class="bg-neutral-100 hover:bg-neutral-200 text-neutral-950 border border-neutral-300 font-semibold px-8 py-4 rounded-xl transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-star text-amber-600"></i> Civil Service (1 Year)
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Page 2: About Us Section -->
-    <section id="about" class="py-32 bg-neutral-950 border-b border-neutral-900">
+    <!-- Page 2: About Us Section (With Right-Side Animated Floating Images) -->
+    <section id="about" class="py-32 bg-neutral-50 border-b border-neutral-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right" data-aos-duration="1000">
-                    <span class="text-xs font-bold uppercase tracking-widest text-neutral-400">About Serve Ease Academy</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-6">Bridging Academia and Real-World Employability</h2>
-                    <p class="text-neutral-400 text-base mb-6 leading-relaxed">
+                    <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">About Serve Ease Academy</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-neutral-950 mt-2 mb-6">Bridging Academia and Real-World Employability</h2>
+                    <p class="text-neutral-600 text-base mb-6 leading-relaxed">
                         At Serve Ease Academy, we believe education should be practical, focused, and useful in real life. Operating from Doha, Qatar, we empower students, job seekers, and professionals with essential corporate administration, documentation, and linguistic skills.
                     </p>
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-black border border-neutral-800 p-4 rounded-2xl">
-                            <h4 class="text-white font-bold text-xl mb-1">100%</h4>
-                            <p class="text-xs text-neutral-400">Practical Training Support</p>
+                        <div class="bg-white border border-neutral-200 p-4 rounded-2xl shadow-sm">
+                            <h4 class="text-neutral-950 font-bold text-xl mb-1">100%</h4>
+                            <p class="text-xs text-neutral-500">Practical Training Support</p>
                         </div>
-                        <div class="bg-black border border-neutral-800 p-4 rounded-2xl">
-                            <h4 class="text-white font-bold text-xl mb-1">Expert</h4>
-                            <p class="text-xs text-neutral-400">Instructors & Mentors</p>
+                        <div class="bg-white border border-neutral-200 p-4 rounded-2xl shadow-sm">
+                            <h4 class="text-neutral-950 font-bold text-xl mb-1">Expert</h4>
+                            <p class="text-xs text-neutral-500">Instructors & Mentors</p>
                         </div>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-4" data-aos="fade-left" data-aos-duration="1000">
-                    <img src="photo%201.jpg" alt="Team Collaboration" class="rounded-2xl object-cover h-64 w-full border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
-                    <img src="photo%202.jpg" alt="Seminar" class="rounded-2xl object-cover h-64 w-full border border-neutral-800 shadow-lg mt-8 grayscale hover:grayscale-0 transition-all duration-500">
+                <!-- Right side animated floating images -->
+                <div class="grid grid-cols-2 gap-4 relative" data-aos="fade-left" data-aos-duration="1000">
+                    <img src="photo%201.jpg" alt="Team Collaboration" class="rounded-2xl object-cover h-64 w-full border border-neutral-200 shadow-md animate-float grayscale hover:grayscale-0 transition-all duration-500">
+                    <img src="photo%202.jpg" alt="Seminar" class="rounded-2xl object-cover h-64 w-full border border-neutral-200 shadow-md mt-8 animate-float-delayed grayscale hover:grayscale-0 transition-all duration-500">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Page 3: HR & PRO Services Section -->
-    <section id="hr-pro" class="py-32 bg-black border-b border-neutral-900">
+    <section id="hr-pro" class="py-32 bg-white border-b border-neutral-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
-                <span class="text-xs font-bold uppercase tracking-widest text-neutral-400">3-Month Professional Diploma</span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-4">HR & PRO Services</h2>
-                <p class="text-neutral-400">Master government liaison work, corporate residency, visa processing, labor card applications, and establishment card management.</p>
+                <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">3-Month Professional Diploma</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-neutral-950 mt-2 mb-4">HR & PRO Services</h2>
+                <p class="text-neutral-600">Master government liaison work, corporate residency, visa processing, labor card applications, and establishment card management.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-neutral-900/50 border border-neutral-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 rounded-xl bg-black text-white flex items-center justify-center text-xl mb-6 border border-neutral-800"><i class="fa-solid fa-id-card"></i></div>
-                    <h3 class="text-xl font-bold text-white mb-3">Visa & Residency</h3>
-                    <p class="text-neutral-400 text-sm">Comprehensive training on work visas, family residencies, medical checks, and QID renewals.</p>
+                <div class="bg-neutral-50 border border-neutral-200 rounded-3xl p-8 shadow-sm hover:border-neutral-400 transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-xl bg-neutral-950 text-white flex items-center justify-center text-xl mb-6 shadow-md"><i class="fa-solid fa-id-card"></i></div>
+                    <h3 class="text-xl font-bold text-neutral-950 mb-3">Visa & Residency</h3>
+                    <p class="text-neutral-600 text-sm">Comprehensive training on work visas, family residencies, medical checks, and QID renewals.</p>
                 </div>
-                <div class="bg-neutral-900/50 border border-neutral-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 rounded-xl bg-black text-white flex items-center justify-center text-xl mb-6 border border-neutral-800"><i class="fa-solid fa-building-shield"></i></div>
-                    <h3 class="text-xl font-bold text-white mb-3">Ministry Liaisons</h3>
-                    <p class="text-neutral-400 text-sm">Direct understanding of MoCI, Ministry of Labor, and government portal workflows.</p>
+                <div class="bg-neutral-50 border border-neutral-200 rounded-3xl p-8 shadow-sm hover:border-neutral-400 transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-xl bg-neutral-950 text-white flex items-center justify-center text-xl mb-6 shadow-md"><i class="fa-solid fa-building-shield"></i></div>
+                    <h3 class="text-xl font-bold text-neutral-950 mb-3">Ministry Liaisons</h3>
+                    <p class="text-neutral-600 text-sm">Direct understanding of MoCI, Ministry of Labor, and government portal workflows.</p>
                 </div>
-                <div class="bg-neutral-900/50 border border-neutral-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-12 h-12 rounded-xl bg-black text-white flex items-center justify-center text-xl mb-6 border border-neutral-800"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-                    <h3 class="text-xl font-bold text-white mb-3">WPS & Payroll Compliance</h3>
-                    <p class="text-neutral-400 text-sm">Handling Wage Protection System requirements and corporate labor compliance efficiently.</p>
+                <div class="bg-neutral-50 border border-neutral-200 rounded-3xl p-8 shadow-sm hover:border-neutral-400 transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 rounded-xl bg-neutral-950 text-white flex items-center justify-center text-xl mb-6 shadow-md"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <h3 class="text-xl font-bold text-neutral-950 mb-3">WPS & Payroll Compliance</h3>
+                    <p class="text-neutral-600 text-sm">Handling Wage Protection System requirements and corporate labor compliance efficiently.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Page 4: GCC Document Processing Section -->
-    <section id="gcc-typing" class="py-32 bg-neutral-950 border-b border-neutral-900">
+    <!-- Page 4: GCC Document Processing Section (With Right-Side Animated Image) -->
+    <section id="gcc-typing" class="py-32 bg-neutral-50 border-b border-neutral-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
-                <span class="text-xs font-bold uppercase tracking-widest text-neutral-400">3-Month Professional Diploma</span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-4">GCC Document Processing</h2>
-                <p class="text-neutral-400">Regional document attestation, embassy clearing, official ministerial paperwork, and commercial agreement typing.</p>
+                <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">3-Month Professional Diploma</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-neutral-950 mt-2 mb-4">GCC Document Processing</h2>
+                <p class="text-neutral-600">Regional document attestation, embassy clearing, official ministerial paperwork, and commercial agreement typing.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6" data-aos="fade-right">
                     <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-lg bg-black text-white flex items-center justify-center shrink-0 border border-neutral-800"><i class="fa-solid fa-check"></i></div>
+                        <div class="w-10 h-10 rounded-lg bg-neutral-950 text-white flex items-center justify-center shrink-0 shadow-sm"><i class="fa-solid fa-check"></i></div>
                         <div>
-                            <h4 class="text-white font-bold text-lg">Attestation & Verification</h4>
-                            <p class="text-neutral-400 text-sm">Educational, commercial, and personal certificate attestation workflows across GCC embassies.</p>
+                            <h4 class="text-neutral-950 font-bold text-lg">Attestation & Verification</h4>
+                            <p class="text-neutral-600 text-sm">Educational, commercial, and personal certificate attestation workflows across GCC embassies.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-lg bg-black text-white flex items-center justify-center shrink-0 border border-neutral-800"><i class="fa-solid fa-check"></i></div>
+                        <div class="w-10 h-10 rounded-lg bg-neutral-950 text-white flex items-center justify-center shrink-0 shadow-sm"><i class="fa-solid fa-check"></i></div>
                         <div>
-                            <h4 class="text-white font-bold text-lg">Commercial Documentation</h4>
-                            <p class="text-neutral-400 text-sm">Trade license amendments, memorandum of association drafts, and chamber of commerce paperwork.</p>
+                            <h4 class="text-neutral-950 font-bold text-lg">Commercial Documentation</h4>
+                            <p class="text-neutral-600 text-sm">Trade license amendments, memorandum of association drafts, and chamber of commerce paperwork.</p>
                         </div>
                     </div>
                 </div>
                 <div data-aos="fade-left">
-                    <img src="photo%203.jpg" alt="Library" class="rounded-3xl object-cover h-80 w-full border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
+                    <img src="photo%203.jpg" alt="Library" class="rounded-3xl object-cover h-80 w-full border border-neutral-200 shadow-md animate-float grayscale hover:grayscale-0 transition-all duration-500">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Page 5: Typing & Translation Section -->
-    <section id="translation" class="py-32 bg-black border-b border-neutral-900">
+    <!-- Page 5: Typing & Translation Section (With Right-Side Animated Image) -->
+    <section id="translation" class="py-32 bg-white border-b border-neutral-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
-                <span class="text-xs font-bold uppercase tracking-widest text-neutral-400">3-Month Professional Diploma</span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-4">Typing & Translation</h2>
-                <p class="text-neutral-400">Professional English-to-Arabic and Arabic-to-English legal, commercial translation, alongside high-speed document typing.</p>
+                <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">3-Month Professional Diploma</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-neutral-950 mt-2 mb-4">Typing & Translation</h2>
+                <p class="text-neutral-600">Professional English-to-Arabic and Arabic-to-English legal, commercial translation, alongside high-speed document typing.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
-                    <img src="photo%204.jpg" alt="Classroom" class="rounded-3xl object-cover h-80 w-full border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
+                    <img src="photo%204.jpg" alt="Classroom" class="rounded-3xl object-cover h-80 w-full border border-neutral-200 shadow-md animate-float grayscale hover:grayscale-0 transition-all duration-500">
                 </div>
                 <div class="space-y-6" data-aos="fade-left">
-                    <div class="bg-neutral-900/50 border border-neutral-800 p-6 rounded-2xl">
-                        <h4 class="text-white font-bold text-lg mb-2">Legal & Commercial Translation</h4>
-                        <p class="text-neutral-400 text-sm">Certified translation techniques for court documents, contracts, and ministerial submissions.</p>
+                    <div class="bg-neutral-50 border border-neutral-200 p-6 rounded-2xl shadow-sm">
+                        <h4 class="text-neutral-950 font-bold text-lg mb-2">Legal & Commercial Translation</h4>
+                        <p class="text-neutral-600 text-sm">Certified translation techniques for court documents, contracts, and ministerial submissions.</p>
                     </div>
-                    <div class="bg-neutral-900/50 border border-neutral-800 p-6 rounded-2xl">
-                        <h4 class="text-white font-bold text-lg mb-2">High-Speed Official Typing</h4>
-                        <p class="text-neutral-400 text-sm">Bilingual typing mastery optimized for government portals and administrative forms.</p>
+                    <div class="bg-neutral-50 border border-neutral-200 p-6 rounded-2xl shadow-sm">
+                        <h4 class="text-neutral-950 font-bold text-lg mb-2">High-Speed Official Typing</h4>
+                        <p class="text-neutral-600 text-sm">Bilingual typing mastery optimized for government portals and administrative forms.</p>
                     </div>
                 </div>
             </div>
@@ -226,38 +222,38 @@
     </section>
 
     <!-- Page 6: Civil Service Coaching Section -->
-    <section id="civil-service" class="py-32 bg-neutral-950 border-b border-neutral-900">
+    <section id="civil-service" class="py-32 bg-neutral-50 border-b border-neutral-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-black border border-neutral-800 rounded-3xl p-8 md:p-16 shadow-2xl relative overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
-                <div class="absolute -right-10 -bottom-10 w-80 h-80 bg-neutral-800/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="bg-white border border-neutral-200 rounded-3xl p-8 md:p-16 shadow-lg relative overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="absolute -right-10 -bottom-10 w-80 h-80 bg-neutral-200/50 rounded-full blur-3xl pointer-events-none"></div>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center relative z-10">
                     <div class="lg:col-span-2">
-                        <span class="bg-neutral-900 text-amber-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-neutral-800">
+                        <span class="bg-neutral-100 text-amber-700 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-neutral-300">
                             Flagship Program (1 Year Duration)
                         </span>
-                        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-neutral-950 mt-4 mb-4">
                             Civil Service Coaching Program
                         </h2>
-                        <p class="text-neutral-400 text-base mb-6 leading-relaxed">
+                        <p class="text-neutral-600 text-base mb-6 leading-relaxed">
                             Rigorous, structured preparation for elite administrative examinations. Gain deep conceptual clarity, strategic mentorship, and answer-writing mastery over a comprehensive 1-year journey.
                         </p>
-                        <div class="bg-neutral-900/60 border border-neutral-800 rounded-2xl p-6 mb-8 flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center text-2xl shadow-md shrink-0 font-bold">
+                        <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 mb-8 flex items-center gap-4 shadow-sm">
+                            <div class="w-14 h-14 rounded-full bg-neutral-950 text-white flex items-center justify-center text-2xl shadow-md shrink-0 font-bold">
                                 <i class="fa-solid fa-chalkboard-user"></i>
                             </div>
                             <div>
-                                <span class="text-xs text-neutral-400 font-semibold uppercase tracking-wider">Direct Mentorship & Leadership</span>
-                                <h4 class="text-lg font-bold text-white">Directed and Instructed by Shabeeb</h4>
-                                <p class="text-sm text-neutral-400">Personalized strategic roadmap, analytical training, and regular evaluation.</p>
+                                <span class="text-xs text-neutral-500 font-semibold uppercase tracking-wider">Direct Mentorship & Leadership</span>
+                                <h4 class="text-lg font-bold text-neutral-950">Directed and Instructed by Shabeeb</h4>
+                                <p class="text-sm text-neutral-600">Personalized strategic roadmap, analytical training, and regular evaluation.</p>
                             </div>
                         </div>
-                        <a href="#apply" class="bg-white hover:bg-neutral-200 text-black font-semibold px-8 py-4 rounded-xl transition-all inline-flex items-center gap-2 shadow-lg">
+                        <a href="#apply" class="bg-neutral-950 hover:bg-neutral-800 text-white font-semibold px-8 py-4 rounded-xl transition-all inline-flex items-center gap-2 shadow-lg">
                             Register for Civil Service Batch <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
                     </div>
                     <div class="grid grid-cols-2 lg:grid-cols-1 gap-4">
-                        <img src="photo%205.jpg" alt="Coaching 1" class="rounded-xl object-cover h-40 lg:h-36 w-full border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
-                        <img src="photo%206.jpg" alt="Coaching 2" class="rounded-xl object-cover h-40 lg:h-36 w-full border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
+                        <img src="photo%205.jpg" alt="Coaching 1" class="rounded-xl object-cover h-40 lg:h-36 w-full border border-neutral-200 shadow-md animate-float grayscale hover:grayscale-0 transition-all duration-500">
+                        <img src="photo%206.jpg" alt="Coaching 2" class="rounded-xl object-cover h-40 lg:h-36 w-full border border-neutral-200 shadow-md animate-float-delayed grayscale hover:grayscale-0 transition-all duration-500">
                     </div>
                 </div>
             </div>
@@ -265,71 +261,71 @@
     </section>
 
     <!-- Page 7: Gallery & Facilities Section -->
-    <section id="gallery" class="py-32 bg-black border-b border-neutral-900">
+    <section id="gallery" class="py-32 bg-white border-b border-neutral-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <span class="text-xs font-bold uppercase tracking-widest text-neutral-400">Campus Life</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">Academy Facilities & Gallery</h2>
-                <p class="text-neutral-400">A glimpse into our modern classrooms, resource library, and interactive training workshops.</p>
+                <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">Campus Life</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-neutral-950 mt-2 mb-4">Academy Facilities & Gallery</h2>
+                <p class="text-neutral-600">A glimpse into our modern classrooms, resource library, and interactive training workshops.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-neutral-900/50 border border-neutral-800 rounded-2xl overflow-hidden shadow-xl group" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-neutral-50 border border-neutral-200 rounded-2xl overflow-hidden shadow-sm group" data-aos="fade-up" data-aos-delay="100">
                     <div class="h-60 overflow-hidden"><img src="photo%203.jpg" alt="Library" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"></div>
-                    <div class="p-6"><h3 class="text-lg font-bold text-white mb-2">Resource Library</h3><p class="text-neutral-400 text-sm">Extensive collection of reference materials and legal documentation templates.</p></div>
+                    <div class="p-6"><h3 class="text-lg font-bold text-neutral-950 mb-2">Resource Library</h3><p class="text-neutral-600 text-sm">Extensive collection of reference materials and legal documentation templates.</p></div>
                 </div>
-                <div class="bg-neutral-900/50 border border-neutral-800 rounded-2xl overflow-hidden shadow-xl group" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-neutral-50 border border-neutral-200 rounded-2xl overflow-hidden shadow-sm group" data-aos="fade-up" data-aos-delay="200">
                     <div class="h-60 overflow-hidden"><img src="photo%204.jpg" alt="Classroom" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"></div>
-                    <div class="p-6"><h3 class="text-lg font-bold text-white mb-2">Smart Classrooms</h3><p class="text-neutral-400 text-sm">Equipped with multimedia tools for immersive interactive learning.</p></div>
+                    <div class="p-6"><h3 class="text-lg font-bold text-neutral-950 mb-2">Smart Classrooms</h3><p class="text-neutral-600 text-sm">Equipped with multimedia tools for immersive interactive learning.</p></div>
                 </div>
-                <div class="bg-neutral-900/50 border border-neutral-800 rounded-2xl overflow-hidden shadow-xl group" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-neutral-50 border border-neutral-200 rounded-2xl overflow-hidden shadow-sm group" data-aos="fade-up" data-aos-delay="300">
                     <div class="h-60 overflow-hidden"><img src="photo%207.jpg" alt="Workshop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"></div>
-                    <div class="p-6"><h3 class="text-lg font-bold text-white mb-2">Workshops</h3><p class="text-neutral-400 text-sm">Practical sessions focusing on live document processing and communication.</p></div>
+                    <div class="p-6"><h3 class="text-lg font-bold text-neutral-950 mb-2">Workshops</h3><p class="text-neutral-600 text-sm">Practical sessions focusing on live document processing and communication.</p></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Page 8: Contact & Application Section -->
-    <section id="contact" class="py-32 bg-neutral-950">
+    <section id="contact" class="py-32 bg-neutral-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div id="apply" class="text-center mb-12" data-aos="fade-up">
-                <span class="text-xs font-bold uppercase tracking-widest text-neutral-400">Get in Touch</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-2">Apply / Register Now</h2>
-                <p class="text-neutral-400">Fill out your details below and our admissions team will contact you promptly.</p>
+                <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">Get in Touch</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-neutral-950 mt-2 mb-2">Apply / Register Now</h2>
+                <p class="text-neutral-600">Fill out your details below and our admissions team will contact you promptly.</p>
             </div>
 
-            <div class="bg-black border border-neutral-800 rounded-3xl p-8 md:p-12 shadow-2xl" data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-white border border-neutral-200 rounded-3xl p-8 md:p-12 shadow-lg" data-aos="fade-up" data-aos-delay="200">
                 <form id="applicationForm" class="space-y-6" onsubmit="event.preventDefault(); alert('Application submitted successfully! We will contact you soon.');">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-2">Full Name</label>
-                            <input type="text" required class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="Enter your full name">
+                            <label class="block text-sm font-medium text-neutral-700 mb-2">Full Name</label>
+                            <input type="text" required class="w-full bg-neutral-50 border border-neutral-300 rounded-xl px-4 py-3 text-neutral-950 focus:outline-none focus:border-neutral-950 transition-colors" placeholder="Enter your full name">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-2">Phone Number</label>
-                            <input type="tel" required class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="+974 / +91 XXXXXXXX">
+                            <label class="block text-sm font-medium text-neutral-700 mb-2">Phone Number</label>
+                            <input type="tel" required class="w-full bg-neutral-50 border border-neutral-300 rounded-xl px-4 py-3 text-neutral-950 focus:outline-none focus:border-neutral-950 transition-colors" placeholder="+974 / +91 XXXXXXXX">
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-2">Email Address</label>
-                            <input type="email" required class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="your@email.com">
+                            <label class="block text-sm font-medium text-neutral-700 mb-2">Email Address</label>
+                            <input type="email" required class="w-full bg-neutral-50 border border-neutral-300 rounded-xl px-4 py-3 text-neutral-950 focus:outline-none focus:border-neutral-950 transition-colors" placeholder="your@email.com">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-2">Select Course / Program</label>
-                            <select class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors">
-                                <option class="bg-neutral-900">HR & PRO Services Diploma (3 Months)</option>
-                                <option class="bg-neutral-900">GCC Document Processing (3 Months)</option>
-                                <option class="bg-neutral-900">Typing & Translation Diploma (3 Months)</option>
-                                <option class="bg-neutral-900">1-Year Civil Service Coaching (Directed & Instructed by Shabeeb)</option>
+                            <label class="block text-sm font-medium text-neutral-700 mb-2">Select Course / Program</label>
+                            <select class="w-full bg-neutral-50 border border-neutral-300 rounded-xl px-4 py-3 text-neutral-950 focus:outline-none focus:border-neutral-950 transition-colors">
+                                <option class="bg-white">HR & PRO Services Diploma (3 Months)</option>
+                                <option class="bg-white">GCC Document Processing (3 Months)</option>
+                                <option class="bg-white">Typing & Translation Diploma (3 Months)</option>
+                                <option class="bg-white">1-Year Civil Service Coaching (Directed & Instructed by Shabeeb)</option>
                             </select>
                         </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-neutral-300 mb-2">Message or Inquiry (Optional)</label>
-                        <textarea rows="4" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="Any specific questions?"></textarea>
+                        <label class="block text-sm font-medium text-neutral-700 mb-2">Message or Inquiry (Optional)</label>
+                        <textarea rows="4" class="w-full bg-neutral-50 border border-neutral-300 rounded-xl px-4 py-3 text-neutral-950 focus:outline-none focus:border-neutral-950 transition-colors" placeholder="Any specific questions?"></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-white hover:bg-neutral-200 text-black font-semibold py-4 rounded-xl shadow-xl transition-all">
+                    <button type="submit" class="w-full bg-neutral-950 hover:bg-neutral-800 text-white font-semibold py-4 rounded-xl shadow-md transition-all">
                         Submit Application
                     </button>
                 </form>
@@ -339,25 +335,25 @@
 
     <!-- Floating WhatsApp & Call Buttons -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-        <a href="tel:+97470120012" class="w-12 h-12 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full flex items-center justify-center shadow-xl border border-neutral-700 transition-transform hover:scale-110" title="Call Us">
+        <a href="tel:+97470120012" class="w-12 h-12 bg-neutral-200 hover:bg-neutral-300 text-neutral-900 rounded-full flex items-center justify-center shadow-lg border border-neutral-300 transition-transform hover:scale-110" title="Call Us">
             <i class="fa-solid fa-phone text-lg"></i>
         </a>
-        <a href="https://wa.me/97470120012" target="_blank" class="w-12 h-12 bg-neutral-100 hover:bg-white text-black rounded-full flex items-center justify-center shadow-xl transition-transform hover:scale-110" title="Chat on WhatsApp">
+        <a href="https://wa.me/97470120012" target="_blank" class="w-12 h-12 bg-neutral-950 hover:bg-neutral-800 text-white rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110" title="Chat on WhatsApp">
             <i class="fa-brands fa-whatsapp text-2xl"></i>
         </a>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-neutral-900 py-12 text-neutral-400 text-sm">
+    <footer class="bg-white border-t border-neutral-200 py-12 text-neutral-600 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
-                <span class="text-white font-bold text-base">Serve Ease Academy</span>
+                <span class="text-neutral-950 font-bold text-base">Serve Ease Academy</span>
                 <p class="text-xs text-neutral-500 mt-1">Empowering careers through professional training and expert mentorship.</p>
             </div>
             <div class="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
-                <a href="tel:+97470120012" class="hover:text-white transition-colors">Qatar: +974 70120012</a>
-                <a href="tel:+919745568481" class="hover:text-white transition-colors">India: +91 9745568481</a>
-                <a href="mailto:serveeaseacademy@gmail.com" class="hover:text-white transition-colors">serveeaseacademy@gmail.com</a>
+                <a href="tel:+97470120012" class="hover:text-black transition-colors">Qatar: +974 70120012</a>
+                <a href="tel:+919745568481" class="hover:text-black transition-colors">India: +91 9745568481</a>
+                <a href="mailto:serveeaseacademy@gmail.com" class="hover:text-black transition-colors">serveeaseacademy@gmail.com</a>
             </div>
         </div>
     </footer>
