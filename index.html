@@ -1,23 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth h-full">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serve Ease Academy | Professional Education & Civil Service Coaching</title>
+    <title>Serve Ease Academy | Professional Qualifications & Civil Service Coaching</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
                     colors: {
-                        pa: {
-                            bg: '#FAF6EE',       /* Professional Academy Cream Background */
-                            card: '#F4EFE6',     /* Light Card Cream */
-                            dark: '#111827',     /* Deep Navy/Black */
-                            blue: '#1E3A8A',     /* Corporate Blue */
-                            gold: '#C5A059'      /* Luxury Gold Accent */
+                        cream: {
+                            light: '#FBF9F5',
+                            DEFAULT: '#F5EFE6',
+                            dark: '#EBE1D1',
+                        },
+                        luxury: {
+                            blue: '#0B2E48',      /* Deep Luxury Oxford/Navy Blue */
+                            mid: '#15476B',
+                            accent: '#1D4ED8',    /* Royal Blue Highlight */
+                            gold: '#C5A059',
+                            dark: '#061B2B'
                         }
                     }
                 }
@@ -25,393 +34,671 @@
         }
     </script>
     <style>
-        .page-section { display: none; }
-        .page-section.active { display: block; animation: fadeInPage 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        @keyframes fadeInPage {
-            from { opacity: 0; transform: translateY(10px); }
+        .transparent-logo { mix-blend-mode: multiply; }
+        .faq-answer { display: none; }
+        .faq-item.open .faq-answer { display: block; animation: fadeIn 0.3s ease-in-out; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-4px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes floatAnim {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-        .animate-float { animation: floatAnim 4s ease-in-out infinite; }
-        .transparent-logo { mix-blend-mode: multiply; }
     </style>
 </head>
-<body class="bg-pa-bg text-pa-dark font-sans antialiased selection:bg-pa-blue selection:text-white flex flex-col min-h-screen justify-between">
+<body class="bg-cream-light text-slate-800 font-sans antialiased selection:bg-luxury-blue selection:text-white">
 
-    <!-- Top Contact Bar -->
-    <div class="bg-pa-dark text-neutral-300 text-xs py-2 px-4 shrink-0 border-b border-neutral-800">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div class="flex items-center gap-4 flex-wrap">
-                <a href="tel:+97470120012" class="flex items-center gap-1.5 hover:text-white transition-colors">
-                    <i class="fa-solid fa-phone text-pa-gold"></i> Qatar: +974 70120012
-                </a>
-                <a href="tel:+919745568481" class="flex items-center gap-1.5 hover:text-white transition-colors">
-                    <i class="fa-solid fa-phone text-pa-gold"></i> India: +91 9745568481
-                </a>
-                <a href="mailto:serveeaseacademy@gmail.com" class="flex items-center gap-1.5 hover:text-white transition-colors">
-                    <i class="fa-solid fa-envelope text-pa-gold"></i> serveeaseacademy@gmail.com
-                </a>
-            </div>
-            <div class="flex items-center gap-3">
-                <span>Doha, Qatar</span>
-                <span class="text-pa-gold font-semibold">| Admissions Open</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-pa-dark text-white border-b border-neutral-800 shadow-lg shrink-0">
+    <!-- White Navigation Bar with Luxury Blue Text -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3 cursor-pointer" onclick="switchPage('home')">
-                <div class="w-12 h-12 flex items-center justify-center bg-white rounded-xl p-1">
-                    <img src="logo.png" alt="Logo" class="w-full h-full object-contain transparent-logo">
+            <!-- Logo + Academy Name -->
+            <a href="#home" class="flex items-center gap-3">
+                <div class="w-11 h-11 flex items-center justify-center">
+                    <img src="logo.png" alt="Serve Ease Academy" class="w-full h-full object-contain transparent-logo">
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-lg font-black tracking-tight text-white leading-tight">Serve Ease <span class="text-pa-gold">Academy</span></span>
-                    <span class="text-[8px] tracking-widest text-neutral-400 uppercase font-bold">Professional Training & Coaching</span>
+                    <span class="text-lg font-extrabold tracking-tight text-luxury-blue leading-none">Serve Ease Academy</span>
+                    <span class="text-[9px] tracking-widest text-luxury-mid uppercase font-bold mt-1">Doha, Qatar</span>
                 </div>
-            </div>
-            
-            <nav class="hidden xl:flex items-center gap-1 text-xs font-semibold text-neutral-300">
-                <button onclick="switchPage('home')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all bg-neutral-800 text-white" data-target="home">1. Home</button>
-                <button onclick="switchPage('about')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="about">2. About</button>
-                <button onclick="switchPage('hr-pro')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="hr-pro">3. HR & PRO</button>
-                <button onclick="switchPage('gcc-typing')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="gcc-typing">4. GCC Typing</button>
-                <button onclick="switchPage('translation')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="translation">5. Translation</button>
-                <button onclick="switchPage('civil-service')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all text-pa-gold font-bold flex items-center gap-1" data-target="civil-service"><i class="fa-solid fa-star text-pa-gold"></i> 6. Civil Service</button>
-                <button onclick="switchPage('gallery')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="gallery">7. Gallery</button>
-                <button onclick="switchPage('contact')" class="nav-link px-3 py-2 rounded-lg hover:bg-neutral-800 hover:text-white transition-all" data-target="contact">8. Contact</button>
+            </a>
+
+            <!-- Center Links (Luxury Blue Text) -->
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-luxury-blue">
+                <a href="#about" class="hover:text-luxury-accent transition-colors">About</a>
+                <a href="#why-us" class="hover:text-luxury-accent transition-colors">Why Us</a>
+                <a href="#pathway" class="hover:text-luxury-accent transition-colors">Pathway</a>
+                <a href="#courses" class="hover:text-luxury-accent transition-colors">Courses</a>
+                <a href="#gallery" class="hover:text-luxury-accent transition-colors">Campus</a>
+                <a href="#faq" class="hover:text-luxury-accent transition-colors">FAQ</a>
+                <a href="#contact" class="hover:text-luxury-accent transition-colors">Contact</a>
             </nav>
 
-            <div>
-                <button onclick="switchPage('contact')" class="bg-pa-gold hover:bg-amber-600 text-neutral-950 font-bold px-4 py-2.5 rounded-xl shadow-md transition-all text-xs">
-                    Apply Now
-                </button>
+            <!-- Right CTA Button -->
+            <div class="flex items-center gap-3">
+                <a href="#contact" class="bg-luxury-blue hover:bg-luxury-mid text-white font-semibold px-5 py-2.5 rounded-full shadow-md transition-all text-xs sm:text-sm flex items-center gap-2">
+                    Enrol Now <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Main Content Container (8 Detailed Pages) -->
-    <main class="w-full flex-grow py-12 lg:py-16">
+    <!-- Thin Luxury Blue Accent Bar -->
+    <div class="bg-luxury-blue text-white text-[11px] py-1.5 px-4">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <a href="tel:+97470120012" class="hover:text-amber-300 transition-colors"><i class="fa-solid fa-phone mr-1 text-luxury-gold"></i> Qatar: +974 70120012</a>
+                <a href="tel:+919745568481" class="hover:text-amber-300 transition-colors"><i class="fa-solid fa-phone mr-1 text-luxury-gold"></i> India: +91 9745568481</a>
+            </div>
+            <span class="text-amber-200 font-medium">Admissions Open for New Batches • Doha & Online</span>
+        </div>
+    </div>
 
-        <!-- ==================== PAGE 1: HOME ==================== -->
-        <section id="page-home" class="page-section active max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-                <div>
-                    <div class="inline-flex items-center gap-2 bg-pa-card border border-neutral-300 rounded-full px-4 py-1.5 text-xs text-pa-blue font-semibold mb-6">
-                        <i class="fa-solid fa-award text-pa-gold"></i> Premier Professional Training in Qatar
+    <!-- SECTION 1: ABOUT THE ACADEMY (Hero Split Pattern) -->
+    <section id="about" class="py-16 lg:py-24 bg-cream-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Image Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white relative">
+                        <img src="hero-bg.jpg" alt="Serve Ease Academy Campus" class="w-full h-[380px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-luxury-blue/70 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-5 left-5 bg-luxury-blue text-white px-5 py-3 rounded-2xl shadow-lg border border-white/15">
+                            <span class="block text-2xl font-extrabold leading-none">100%</span>
+                            <span class="text-[11px] text-blue-200 uppercase tracking-wider font-semibold">Practical GCC Training</span>
+                        </div>
                     </div>
-                    <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-pa-dark leading-tight mb-6">
-                        Professional Qualifications & <span class="text-pa-blue">Workplace Training</span>
+                </div>
+
+                <!-- Right Content -->
+                <div class="lg:col-span-7">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="w-6 h-0.5 bg-luxury-blue"></span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-luxury-blue">About The Academy</span>
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold text-luxury-blue leading-tight mb-5">
+                        The first source for <span class="font-serif italic text-luxury-accent font-bold">professional career mastery</span>
                     </h1>
-                    <p class="text-lg text-neutral-700 mb-8 leading-relaxed">
-                        Advance your career with industry-tailored 3-month professional diplomas and our prestigious 1-Year Civil Service Coaching directed and instructed by Shabeeb.
+                    <p class="text-slate-600 text-base leading-relaxed mb-6">
+                        Serve Ease Academy is a premier corporate training and coaching institution in Doha, Qatar — committed to practical, job-ready methodologies in HR & PRO operations, GCC document processing, bilingual translation, and elite Civil Service preparation.
                     </p>
+
+                    <ul class="space-y-3 mb-8 text-sm font-medium text-slate-700">
+                        <li class="flex items-center gap-3">
+                            <span class="w-5 h-5 rounded-full bg-luxury-blue text-white flex items-center justify-center text-[10px]"><i class="fa-solid fa-check"></i></span>
+                            Industry-experienced HR, PRO & Legal practitioners
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-5 h-5 rounded-full bg-luxury-blue text-white flex items-center justify-center text-[10px]"><i class="fa-solid fa-check"></i></span>
+                            1-Year Civil Service Coaching directed & instructed by Shabeeb
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-5 h-5 rounded-full bg-luxury-blue text-white flex items-center justify-center text-[10px]"><i class="fa-solid fa-check"></i></span>
+                            Flexible learning — on campus in Doha or live interactive online
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-5 h-5 rounded-full bg-luxury-blue text-white flex items-center justify-center text-[10px]"><i class="fa-solid fa-check"></i></span>
+                            A clear pathway from foundational training to corporate placement
+                        </li>
+                    </ul>
+
                     <div class="flex flex-wrap gap-4">
-                        <button onclick="switchPage('hr-pro')" class="bg-pa-dark hover:bg-neutral-800 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all flex items-center gap-2">
-                            Explore Programs <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </button>
-                        <button onclick="switchPage('civil-service')" class="bg-pa-card hover:bg-neutral-200 text-pa-dark border border-neutral-300 font-bold px-8 py-4 rounded-xl shadow-md transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-star text-pa-gold"></i> Civil Service (1 Year)
-                        </button>
+                        <a href="#courses" class="bg-luxury-blue hover:bg-luxury-mid text-white font-semibold px-7 py-3.5 rounded-xl shadow-md transition-all text-sm">
+                            Explore Courses
+                        </a>
+                        <a href="#contact" class="bg-white hover:bg-slate-50 text-luxury-blue border border-slate-300 font-semibold px-7 py-3.5 rounded-xl transition-all text-sm flex items-center gap-2">
+                            <i class="fa-regular fa-building"></i> Book Free Consultation
+                        </a>
                     </div>
                 </div>
-                <div class="relative">
-                    <div class="absolute inset-0 bg-pa-gold rounded-3xl opacity-10 blur-2xl"></div>
-                    <img src="hero-bg.jpg" alt="Hero" class="relative rounded-3xl shadow-2xl border-4 border-white w-full h-[400px] object-cover animate-float">
-                </div>
             </div>
-            <!-- Quick feature breakdown -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-pa-card border border-neutral-300 p-6 rounded-2xl">
-                    <h3 class="font-bold text-pa-dark text-lg mb-2">Corporate Standards</h3>
-                    <p class="text-xs text-neutral-600">Built to meet the highest administrative requirements across Qatar and the GCC region.</p>
-                </div>
-                <div class="bg-pa-card border border-neutral-300 p-6 rounded-2xl">
-                    <h3 class="font-bold text-pa-dark text-lg mb-2">Expert Instruction</h3>
-                    <p class="text-xs text-neutral-600">Learn directly from seasoned practitioners with extensive government liaison experience.</p>
-                </div>
-                <div class="bg-pa-card border border-neutral-300 p-6 rounded-2xl">
-                    <h3 class="font-bold text-pa-dark text-lg mb-2">Guaranteed Support</h3>
-                    <p class="text-xs text-neutral-600">100% placement counseling and continuous career guidance throughout your journey.</p>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ==================== PAGE 2: ABOUT US ==================== -->
-        <section id="page-about" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-                <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">Page 2: About Us</span>
-                    <h2 class="text-3xl sm:text-4xl font-black text-pa-dark mt-2 mb-4">Bridging Academia and Real-World Employability</h2>
-                    <p class="text-neutral-700 text-base mb-6 leading-relaxed">
-                        At Serve Ease Academy, we believe education should be practical, focused, and useful in real life. Operating from Doha, Qatar, we empower students, job seekers, and professionals with essential corporate administration, documentation, and linguistic skills.
+    <!-- SECTION 2: WHY SERVE EASE ACADEMY (3x2 White Feature Cards on Cream) -->
+    <section id="why-us" class="py-20 bg-cream border-t border-cream-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <div class="inline-flex items-center gap-2 mb-2">
+                    <span class="w-5 h-0.5 bg-luxury-blue"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-luxury-blue">Why Serve Ease Academy</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-luxury-blue mb-3">
+                    A prestigious name. <span class="font-serif italic text-luxury-accent">A proven method.</span>
+                </h2>
+                <p class="text-slate-600 text-sm">
+                    We blend corporate standards with modern, hands-on training — building real capabilities for professionals across Qatar and the GCC.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-200/70 hover:shadow-md transition-all">
+                    <div class="w-11 h-11 rounded-xl bg-luxury-blue text-white flex items-center justify-center text-lg mb-5">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-luxury-blue mb-2">Expert Practitioners</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Learn directly from active PROs, HR leaders, and legal translators who handle live corporate files every day.
                     </p>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-pa-card border border-neutral-300 p-4 rounded-2xl shadow-sm">
-                            <h4 class="text-pa-blue font-black text-2xl mb-1">100%</h4>
-                            <p class="text-xs text-neutral-600">Practical Training Support</p>
-                        </div>
-                        <div class="bg-pa-card border border-neutral-300 p-4 rounded-2xl shadow-sm">
-                            <h4 class="text-pa-blue font-black text-2xl mb-1">Expert</h4>
-                            <p class="text-xs text-neutral-600">Instructors & Mentors</p>
-                        </div>
-                    </div>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <img src="photo 1.jpg" alt="Team" class="rounded-2xl object-cover h-64 w-full shadow-lg animate-float border-2 border-white">
-                    <img src="photo 2.jpg" alt="Seminar" class="rounded-2xl object-cover h-64 w-full shadow-lg mt-8 animate-float border-2 border-white">
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-200/70 hover:shadow-md transition-all">
+                    <div class="w-11 h-11 rounded-xl bg-luxury-blue text-white flex items-center justify-center text-lg mb-5">
+                        <i class="fa-solid fa-laptop-file"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-luxury-blue mb-2">On-Campus & Online</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Study the way that fits your schedule — in our Doha classrooms or via live interactive online batches.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-200/70 hover:shadow-md transition-all">
+                    <div class="w-11 h-11 rounded-xl bg-luxury-blue text-white flex items-center justify-center text-lg mb-5">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-luxury-blue mb-2">Structured Curriculum</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Carefully sequenced modules covering MoCI, Hukoomi, Ministry of Labor, WPS payroll, and attestation workflows.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-200/70 hover:shadow-md transition-all">
+                    <div class="w-11 h-11 rounded-xl bg-luxury-blue text-white flex items-center justify-center text-lg mb-5">
+                        <i class="fa-solid fa-landmark"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-luxury-blue mb-2">Civil Service Mastery</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Dedicated 1-year intensive coaching program directed and instructed by Shabeeb for administrative exam aspirants.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-200/70 hover:shadow-md transition-all">
+                    <div class="w-11 h-11 rounded-xl bg-luxury-blue text-white flex items-center justify-center text-lg mb-5">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-luxury-blue mb-2">Bilingual Excellence</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Specialized English-Arabic legal & commercial translation training alongside high-speed official typing.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-200/70 hover:shadow-md transition-all">
+                    <div class="w-11 h-11 rounded-xl bg-luxury-blue text-white flex items-center justify-center text-lg mb-5">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-luxury-blue mb-2">Career & Placement Support</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        CV optimization, mock interviews, and corporate referrals across leading companies in Qatar.
+                    </p>
                 </div>
             </div>
-            <div class="bg-pa-card border border-neutral-300 rounded-3xl p-8 shadow-md">
-                <h3 class="text-xl font-bold text-pa-dark mb-4">Our Core Philosophy</h3>
-                <p class="text-neutral-700 text-sm leading-relaxed mb-4">
-                    We focus on skill-based education that translates directly to job readiness. Whether handling complex government portals or civil service preparation, our curriculum is updated regularly to match regional legal and corporate standards.
+        </div>
+    </section>
+
+    <!-- SECTION 3: LEARNING PATHWAY (Deep Luxury Blue Full-Width Section) -->
+    <section id="pathway" class="py-20 bg-luxury-blue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-12">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-0.5 bg-luxury-gold"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-blue-200">Training Roadmap</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-3">
+                    4 core tracks, <span class="font-serif italic text-amber-300">one clear journey</span>
+                </h2>
+                <p class="text-blue-100 text-sm">
+                    Every program combines foundational theory, live portal simulations, and real document drafting — taking you from beginner to job-ready specialist.
                 </p>
             </div>
-        </section>
 
-        <!-- ==================== PAGE 3: HR & PRO SERVICES ==================== -->
-        <section id="page-hr-pro" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">Page 3: 3-Month Professional Diploma</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-pa-dark mt-2 mb-4">HR & PRO Services</h2>
-                <p class="text-neutral-700">Master government liaison work, corporate residency, visa processing, labor card applications, and establishment card management.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div class="bg-luxury-mid/60 border border-white/15 rounded-xl p-5 flex items-center gap-4">
+                    <span class="w-8 h-8 rounded-lg bg-white text-luxury-blue font-extrabold flex items-center justify-center text-sm shrink-0">1</span>
+                    <div>
+                        <span class="text-[10px] uppercase tracking-wider text-amber-300 font-bold block">Track 01 • 3 Months</span>
+                        <span class="font-bold text-sm">HR & PRO Operations</span>
+                    </div>
+                </div>
+                <div class="bg-luxury-mid/60 border border-white/15 rounded-xl p-5 flex items-center gap-4">
+                    <span class="w-8 h-8 rounded-lg bg-white text-luxury-blue font-extrabold flex items-center justify-center text-sm shrink-0">2</span>
+                    <div>
+                        <span class="text-[10px] uppercase tracking-wider text-amber-300 font-bold block">Track 02 • 3 Months</span>
+                        <span class="font-bold text-sm">GCC Document Clearing</span>
+                    </div>
+                </div>
+                <div class="bg-luxury-mid/60 border border-white/15 rounded-xl p-5 flex items-center gap-4">
+                    <span class="w-8 h-8 rounded-lg bg-white text-luxury-blue font-extrabold flex items-center justify-center text-sm shrink-0">3</span>
+                    <div>
+                        <span class="text-[10px] uppercase tracking-wider text-amber-300 font-bold block">Track 03 • 3 Months</span>
+                        <span class="font-bold text-sm">Typing & Translation</span>
+                    </div>
+                </div>
+                <div class="bg-luxury-mid/60 border border-white/15 rounded-xl p-5 flex items-center gap-4">
+                    <span class="w-8 h-8 rounded-lg bg-amber-400 text-luxury-dark font-extrabold flex items-center justify-center text-sm shrink-0">4</span>
+                    <div>
+                        <span class="text-[10px] uppercase tracking-wider text-amber-300 font-bold block">Flagship • 1 Year</span>
+                        <span class="font-bold text-sm">Civil Service Coaching</span>
+                    </div>
+                </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-pa-card border border-neutral-300 rounded-3xl p-8 shadow-md">
-                    <div class="w-12 h-12 rounded-xl bg-pa-dark text-white flex items-center justify-center text-xl mb-6 shadow-md"><i class="fa-solid fa-id-card text-pa-gold"></i></div>
-                    <h3 class="text-xl font-bold text-pa-dark mb-3">Visa & Residency</h3>
-                    <p class="text-neutral-700 text-sm">Comprehensive training on work visas, family residencies, medical checks, and QID renewals.</p>
+
+            <!-- Banner Box -->
+            <div class="bg-luxury-dark/70 border border-white/15 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-1">Directed & Instructed by Shabeeb — 1-Year Civil Service Batch</h4>
+                    <p class="text-blue-200 text-xs">Structured conceptual classes, answer-writing workshops, and personalized evaluation for serious aspirants.</p>
                 </div>
-                <div class="bg-pa-card border border-neutral-300 rounded-3xl p-8 shadow-md">
-                    <div class="w-12 h-12 rounded-xl bg-pa-dark text-white flex items-center justify-center text-xl mb-6 shadow-md"><i class="fa-solid fa-building-shield text-pa-gold"></i></div>
-                    <h3 class="text-xl font-bold text-pa-dark mb-3">Ministry Liaisons</h3>
-                    <p class="text-neutral-700 text-sm">Direct understanding of MoCI, Ministry of Labor, and government portal workflows.</p>
-                </div>
-                <div class="bg-pa-card border border-neutral-300 rounded-3xl p-8 shadow-md">
-                    <div class="w-12 h-12 rounded-xl bg-pa-dark text-white flex items-center justify-center text-xl mb-6 shadow-md"><i class="fa-solid fa-file-invoice-dollar text-pa-gold"></i></div>
-                    <h3 class="text-xl font-bold text-pa-dark mb-3">WPS & Payroll Compliance</h3>
-                    <p class="text-neutral-700 text-sm">Handling Wage Protection System requirements and corporate labor compliance efficiently.</p>
-                </div>
+                <a href="#contact" class="bg-white hover:bg-blue-50 text-luxury-blue font-bold px-6 py-3 rounded-full text-xs shrink-0 transition-all">
+                    Reserve Your Seat <i class="fa-solid fa-arrow-right ml-1"></i>
+                </a>
             </div>
-            <div class="bg-pa-card border border-neutral-300 rounded-3xl p-8 shadow-sm">
-                <h4 class="font-bold text-pa-dark text-lg mb-3">Program Structure & Outcomes</h4>
-                <p class="text-neutral-700 text-sm leading-relaxed">
-                    Over 3 months, students receive hands-on training in corporate documentation, labor law compliance, and real-world liaison tasks required by businesses across Doha.
+        </div>
+    </section>
+
+    <!-- SECTION 4: OUR PROGRAMMES (Course Cards Grid matching Screenshot 2) -->
+    <section id="courses" class="py-20 bg-cream-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <div class="inline-flex items-center gap-2 mb-2">
+                    <span class="w-5 h-0.5 bg-luxury-blue"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-luxury-blue">Our Programmes</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-luxury-blue mb-3">
+                    Find your <span class="font-serif italic text-luxury-accent">perfect course</span>
+                </h2>
+                <p class="text-slate-600 text-sm">
+                    Carefully designed for every career goal — from fast-track 3-month corporate diplomas to comprehensive civil service mentorship.
                 </p>
             </div>
-        </section>
 
-        <!-- ==================== PAGE 4: GCC TYPING ==================== -->
-        <section id="page-gcc-typing" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">Page 4: 3-Month Professional Diploma</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-pa-dark mt-2 mb-4">GCC Document Processing</h2>
-                <p class="text-neutral-700">Regional document attestation, embassy clearing, official ministerial paperwork, and commercial agreement typing.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4 bg-pa-card p-6 rounded-2xl border border-neutral-300 shadow-sm">
-                        <div class="w-10 h-10 rounded-lg bg-pa-dark text-white flex items-center justify-center shrink-0"><i class="fa-solid fa-check text-pa-gold"></i></div>
-                        <div>
-                            <h4 class="text-pa-dark font-bold text-lg">Attestation & Verification</h4>
-                            <p class="text-neutral-700 text-sm">Educational, commercial, and personal certificate attestation workflows across GCC embassies.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+                <!-- Course 1: HR & PRO -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex flex-col justify-between group hover:shadow-xl transition-all">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <span class="absolute top-3 left-3 z-10 bg-luxury-blue text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full">Most Popular</span>
+                            <img src="photo 1.jpg" alt="HR & PRO Services" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[11px] font-bold text-luxury-accent uppercase tracking-wider">3 Months • Diploma</span>
+                            <h3 class="text-xl font-bold text-luxury-blue mt-1 mb-2">HR & PRO Services</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                Complete practical training in Qatar visa processing, QID renewals, labor contracts, WPS payroll, and ministry portal operations.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="text-[10px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-semibold">On Campus</span>
+                                <span class="text-[10px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-semibold">Live Online</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex items-start gap-4 bg-pa-card p-6 rounded-2xl border border-neutral-300 shadow-sm">
-                        <div class="w-10 h-10 rounded-lg bg-pa-dark text-white flex items-center justify-center shrink-0"><i class="fa-solid fa-check text-pa-gold"></i></div>
-                        <div>
-                            <h4 class="text-pa-dark font-bold text-lg">Commercial Documentation</h4>
-                            <p class="text-neutral-700 text-sm">Trade license amendments, memorandum of association drafts, and chamber of commerce paperwork.</p>
+                    <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-bold text-luxury-blue">Certificate Included</span>
+                        <a href="#contact" class="bg-luxury-blue hover:bg-luxury-mid text-white text-xs font-bold px-4 py-2 rounded-full transition-colors">
+                            Enrol <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Course 2: GCC Document Processing -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex flex-col justify-between group hover:shadow-xl transition-all">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="photo 3.jpg" alt="GCC Document Processing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[11px] font-bold text-luxury-accent uppercase tracking-wider">3 Months • Diploma</span>
+                            <h3 class="text-xl font-bold text-luxury-blue mt-1 mb-2">GCC Document Processing</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                Master regional certificate attestation, embassy clearances, MoCI trade license updates, and corporate secretarial workflows.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="text-[10px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-semibold">Practical Labs</span>
+                                <span class="text-[10px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-semibold">GCC Standards</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-bold text-luxury-blue">Certificate Included</span>
+                        <a href="#contact" class="bg-luxury-blue hover:bg-luxury-mid text-white text-xs font-bold px-4 py-2 rounded-full transition-colors">
+                            Enrol <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Course 3: Typing & Translation -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex flex-col justify-between group hover:shadow-xl transition-all">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="photo 7.jpg" alt="Typing & Translation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[11px] font-bold text-luxury-accent uppercase tracking-wider">3 Months • Diploma</span>
+                            <h3 class="text-xl font-bold text-luxury-blue mt-1 mb-2">Typing & Translation</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                Professional English-to-Arabic and Arabic-to-English legal & commercial translation paired with high-speed official typing.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="text-[10px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-semibold">English & Arabic</span>
+                                <span class="text-[10px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-semibold">Legal Drafting</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-bold text-luxury-blue">Certificate Included</span>
+                        <a href="#contact" class="bg-luxury-blue hover:bg-luxury-mid text-white text-xs font-bold px-4 py-2 rounded-full transition-colors">
+                            Enrol <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Course 4: Civil Service Coaching -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex flex-col justify-between group hover:shadow-xl transition-all md:col-span-2">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 h-full">
+                        <div class="h-56 sm:h-full overflow-hidden relative">
+                            <span class="absolute top-3 left-3 z-10 bg-amber-400 text-luxury-dark text-[10px] font-extrabold uppercase px-3 py-1 rounded-full">Flagship Program</span>
+                            <img src="photo 5.jpg" alt="Civil Service Coaching" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col justify-between">
+                            <div>
+                                <span class="text-[11px] font-bold text-luxury-accent uppercase tracking-wider">1 Year Intensive • Mentorship</span>
+                                <h3 class="text-xl font-bold text-luxury-blue mt-1 mb-2">Civil Service Coaching</h3>
+                                <p class="text-slate-600 text-xs leading-relaxed mb-3">
+                                    <strong>Directed and Instructed by Shabeeb.</strong> A comprehensive 1-year strategic preparation program covering General Studies, analytical reasoning, answer-writing mastery, and mock interview panels.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                                <span class="text-xs font-bold text-luxury-blue">Limited Batch Size</span>
+                                <a href="#contact" class="bg-luxury-blue hover:bg-luxury-mid text-white text-xs font-bold px-4 py-2 rounded-full transition-colors">
+                                    Apply Now <i class="fa-solid fa-arrow-right ml-1"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <img src="photo 3.jpg" alt="Library" class="rounded-3xl object-cover h-80 w-full shadow-lg animate-float border-4 border-white">
-                </div>
-            </div>
-        </section>
 
-        <!-- ==================== PAGE 5: TRANSLATION ==================== -->
-        <section id="page-translation" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">Page 5: 3-Month Professional Diploma</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-pa-dark mt-2 mb-4">Typing & Translation</h2>
-                <p class="text-neutral-700">Professional English-to-Arabic and Arabic-to-English legal, commercial translation, alongside high-speed document typing.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="photo 4.jpg" alt="Classroom" class="rounded-3xl object-cover h-80 w-full shadow-lg animate-float border-4 border-white">
-                </div>
-                <div class="space-y-6">
-                    <div class="bg-pa-card border border-neutral-300 p-6 rounded-2xl shadow-sm">
-                        <h4 class="text-pa-dark font-bold text-lg mb-2">Legal & Commercial Translation</h4>
-                        <p class="text-neutral-700 text-sm">Certified translation techniques for court documents, contracts, and ministerial submissions.</p>
+                <!-- Card 5: Dark Navy CTA Card (Exact Screenshot 2 Style) -->
+                <div class="bg-luxury-blue text-white rounded-2xl p-8 shadow-lg flex flex-col items-center justify-center text-center">
+                    <div class="w-12 h-12 rounded-2xl bg-white/10 text-amber-300 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-comments"></i>
                     </div>
-                    <div class="bg-pa-card border border-neutral-300 p-6 rounded-2xl shadow-sm">
-                        <h4 class="text-pa-dark font-bold text-lg mb-2">High-Speed Official Typing</h4>
-                        <p class="text-neutral-700 text-sm">Bilingual typing mastery optimized for government portals and administrative forms.</p>
-                    </div>
+                    <h3 class="text-xl font-extrabold mb-2">Ready to start?</h3>
+                    <p class="text-blue-200 text-xs leading-relaxed mb-6">
+                        Speak with our academic advisors to choose the right diploma or civil service batch for your career goals.
+                    </p>
+                    <a href="#contact" class="bg-white hover:bg-blue-50 text-luxury-blue font-bold px-6 py-3 rounded-full text-xs transition-all">
+                        Register Online <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ==================== PAGE 6: CIVIL SERVICE ==================== -->
-        <section id="page-civil-service" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="bg-pa-dark text-white rounded-3xl p-8 md:p-16 shadow-2xl relative overflow-hidden border border-neutral-800 mb-12">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center relative z-10">
-                    <div class="lg:col-span-2">
-                        <span class="bg-pa-gold text-neutral-950 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
-                            Page 6: Flagship Program (1 Year Duration)
-                        </span>
-                        <h2 class="text-3xl sm:text-5xl font-black mt-4 mb-4 text-white">
-                            Civil Service Coaching Program
-                        </h2>
-                        <p class="text-neutral-300 text-base mb-6 leading-relaxed">
-                            Rigorous, structured preparation for elite administrative examinations. Gain deep conceptual clarity, strategic mentorship, and answer-writing mastery over a comprehensive 1-year journey.
-                        </p>
-                        <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 mb-8 flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-full bg-pa-gold text-neutral-950 flex items-center justify-center text-2xl font-bold shrink-0 shadow-md">
-                                <i class="fa-solid fa-chalkboard-user"></i>
+    <!-- SECTION 5: 4 EASY STEPS & CAMPUS GALLERY (Matching Screenshot 2 Bottom) -->
+    <section id="gallery" class="py-20 bg-cream border-t border-cream-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 4 Easy Steps -->
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-luxury-blue">Simple Process</span>
+                <h2 class="text-3xl font-extrabold text-luxury-blue mt-1">
+                    Start in <span class="font-serif italic text-luxury-accent">four easy steps</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
+                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm">
+                    <span class="text-2xl font-black text-blue-200 block mb-2">01</span>
+                    <h4 class="font-bold text-luxury-blue text-sm mb-1">Choose a course</h4>
+                    <p class="text-slate-500 text-xs">Pick the 3-month diploma or 1-year coaching that fits your goal.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm">
+                    <span class="text-2xl font-black text-blue-200 block mb-2">02</span>
+                    <h4 class="font-bold text-luxury-blue text-sm mb-1">Free career counselling</h4>
+                    <p class="text-slate-500 text-xs">Discuss batch timings, syllabus, and career scope with our team.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm">
+                    <span class="text-2xl font-black text-blue-200 block mb-2">03</span>
+                    <h4 class="font-bold text-luxury-blue text-sm mb-1">Register securely</h4>
+                    <p class="text-slate-500 text-xs">Complete enrolment online via WhatsApp or at our Doha office.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm">
+                    <span class="text-2xl font-black text-blue-200 block mb-2">04</span>
+                    <h4 class="font-bold text-luxury-blue text-sm mb-1">Start learning</h4>
+                    <p class="text-slate-500 text-xs">Join your first session in Doha or online and begin your journey.</p>
+                </div>
+            </div>
+
+            <!-- Inside Serve Ease Academy Photo Grid -->
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-luxury-blue">Life at the Academy</span>
+                <h2 class="text-3xl font-extrabold text-luxury-blue mt-1 mb-2">
+                    Inside <span class="font-serif italic text-luxury-accent">Serve Ease Academy</span>
+                </h2>
+                <p class="text-slate-600 text-xs">Modern smart classrooms, study library resources, and interactive corporate workshops.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden shadow-md h-80 md:h-auto">
+                    <img src="photo 4.jpg" alt="Smart Classroom" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md h-48">
+                    <img src="photo 2.jpg" alt="Seminar" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md h-48">
+                    <img src="photo 6.jpg" alt="Coaching" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md h-48">
+                    <img src="photo 3.jpg" alt="Library" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md h-48">
+                    <img src="photo 7.jpg" alt="Interactive Workshop" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: FAQ ACCORDION (Matching Screenshot 3) -->
+    <section id="faq" class="py-20 bg-cream-light border-t border-cream-dark">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-luxury-blue">Good to Know</span>
+                <h2 class="text-3xl font-extrabold text-luxury-blue mt-1 mb-2">
+                    Frequently asked <span class="font-serif italic text-luxury-accent">questions</span>
+                </h2>
+                <p class="text-slate-600 text-xs">Everything you need before you enrol. Still have a question? Message us on WhatsApp.</p>
+            </div>
+
+            <div class="space-y-3">
+                <div class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                    <button onclick="this.parentElement.classList.toggle('open')" class="w-full px-6 py-4 text-left flex items-center justify-between font-bold text-sm text-luxury-blue">
+                        <span>How long are the HR & PRO, GCC Typing, and Translation courses?</span>
+                        <span class="faq-icon w-6 h-6 rounded-full bg-blue-50 text-luxury-blue flex items-center justify-center text-xs transition-transform"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 text-xs text-slate-600 leading-relaxed">
+                        All three professional diploma programs run for a focused 3-month duration, including hands-on portal training, document drafting, and practical assessments.
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                    <button onclick="this.parentElement.classList.toggle('open')" class="w-full px-6 py-4 text-left flex items-center justify-between font-bold text-sm text-luxury-blue">
+                        <span>Who leads the 1-Year Civil Service Coaching Program?</span>
+                        <span class="faq-icon w-6 h-6 rounded-full bg-blue-50 text-luxury-blue flex items-center justify-center text-xs transition-transform"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 text-xs text-slate-600 leading-relaxed">
+                        The 1-Year Civil Service Coaching Program is personally directed and instructed by Shabeeb, offering structured syllabus coverage, answer-writing sessions, and continuous mentorship.
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                    <button onclick="this.parentElement.classList.toggle('open')" class="w-full px-6 py-4 text-left flex items-center justify-between font-bold text-sm text-luxury-blue">
+                        <span>Do you offer both on-campus classes in Doha and online batches?</span>
+                        <span class="faq-icon w-6 h-6 rounded-full bg-blue-50 text-luxury-blue flex items-center justify-center text-xs transition-transform"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 text-xs text-slate-600 leading-relaxed">
+                        Yes! You can attend classes in person at our Doha campus or join our live interactive online sessions from anywhere in Qatar or India.
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                    <button onclick="this.parentElement.classList.toggle('open')" class="w-full px-6 py-4 text-left flex items-center justify-between font-bold text-sm text-luxury-blue">
+                        <span>Is placement assistance provided after course completion?</span>
+                        <span class="faq-icon w-6 h-6 rounded-full bg-blue-50 text-luxury-blue flex items-center justify-center text-xs transition-transform"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 text-xs text-slate-600 leading-relaxed">
+                        Yes, we provide 100% career guidance, resume building, and corporate placement support across Qatar and GCC businesses.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: VISIT US OR CONNECT ONLINE (Exact Screenshot 4 Split Contact + WhatsApp Form) -->
+    <section id="contact" class="py-20 bg-cream border-t border-cream-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="w-5 h-0.5 bg-luxury-blue"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-luxury-blue">Get In Touch</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-luxury-blue">
+                    Visit us or <span class="font-serif italic text-luxury-accent">connect online</span>
+                </h2>
+                <p class="text-slate-600 text-xs mt-1">Our team is ready to help you choose the right programme and answer any question.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Left Dark Luxury Blue Contact Info Card -->
+                <div class="lg:col-span-5 bg-luxury-blue text-white rounded-3xl p-8 shadow-xl">
+                    <h3 class="text-lg font-bold mb-6 border-b border-white/15 pb-4">Serve Ease Academy — Doha</h3>
+                    <div class="space-y-5 text-xs">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-location-dot text-amber-300"></i></div>
+                            <div>
+                                <span class="text-blue-200 uppercase text-[10px] font-bold block">Location</span>
+                                <span>Doha, State of Qatar</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-phone text-amber-300"></i></div>
+                            <div>
+                                <span class="text-blue-200 uppercase text-[10px] font-bold block">Qatar Direct</span>
+                                <a href="tel:+97470120012" class="hover:underline">+974 70120012</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-phone text-amber-300"></i></div>
+                            <div>
+                                <span class="text-blue-200 uppercase text-[10px] font-bold block">India Desk</span>
+                                <a href="tel:+919745568481" class="hover:underline">+91 9745568481</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-envelope text-amber-300"></i></div>
+                            <div>
+                                <span class="text-blue-200 uppercase text-[10px] font-bold block">Email</span>
+                                <a href="mailto:serveeaseacademy@gmail.com" class="hover:underline">serveeaseacademy@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right White Consultation Form Card (Sends directly via WhatsApp) -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-8 border border-slate-200 shadow-lg">
+                    <h3 class="text-lg font-bold text-luxury-blue mb-1">Book a free consultation</h3>
+                    <p class="text-slate-500 text-xs mb-6">Leave your details and we will continue with you on WhatsApp — no obligation.</p>
+
+                    <form onsubmit="sendWhatsApp(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Your Name</label>
+                                <input type="text" id="waName" required placeholder="Enter full name" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-luxury-blue">
                             </div>
                             <div>
-                                <span class="text-xs text-pa-gold font-semibold uppercase tracking-wider">Direct Mentorship & Leadership</span>
-                                <h4 class="text-lg font-bold text-white">Directed and Instructed by Shabeeb</h4>
-                                <p class="text-sm text-neutral-400">Personalized strategic roadmap, analytical training, and regular evaluation.</p>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Programme</label>
+                                <select id="waCourse" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-luxury-blue">
+                                    <option>HR & PRO Services (3 Months)</option>
+                                    <option>GCC Document Processing (3 Months)</option>
+                                    <option>Typing & Translation (3 Months)</option>
+                                    <option>Civil Service Coaching (1 Year - by Shabeeb)</option>
+                                </select>
                             </div>
                         </div>
-                        <button onclick="switchPage('contact')" class="bg-pa-gold hover:bg-amber-600 text-neutral-950 font-bold px-8 py-4 rounded-xl transition-all inline-flex items-center gap-2 shadow-lg">
-                            Register for Civil Service Batch <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </button>
-                    </div>
-                    <div class="grid grid-cols-2 lg:grid-cols-1 gap-4">
-                        <img src="photo 5.jpg" alt="Coaching 1" class="rounded-xl object-cover h-40 lg:h-36 w-full shadow-lg animate-float border-2 border-neutral-700">
-                        <img src="photo 6.jpg" alt="Coaching 2" class="rounded-xl object-cover h-40 lg:h-36 w-full shadow-lg animate-float border-2 border-neutral-700">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== PAGE 7: GALLERY ==================== -->
-        <section id="page-gallery" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">Page 7: Campus Life</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-pa-dark mt-2 mb-4">Academy Facilities & Gallery</h2>
-                <p class="text-neutral-700">A glimpse into our modern classrooms, resource library, and interactive training workshops.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-pa-card border border-neutral-300 rounded-2xl overflow-hidden shadow-sm">
-                    <div class="h-60 overflow-hidden"><img src="photo 3.jpg" alt="Library" class="w-full h-full object-cover"></div>
-                    <div class="p-6"><h3 class="text-lg font-bold text-pa-dark mb-2">Resource Library</h3><p class="text-neutral-700 text-sm">Extensive collection of reference materials and legal documentation templates.</p></div>
-                </div>
-                <div class="bg-pa-card border border-neutral-300 rounded-2xl overflow-hidden shadow-sm">
-                    <div class="h-60 overflow-hidden"><img src="photo 4.jpg" alt="Classroom" class="w-full h-full object-cover"></div>
-                    <div class="p-6"><h3 class="text-lg font-bold text-pa-dark mb-2">Smart Classrooms</h3><p class="text-neutral-700 text-sm">Equipped with multimedia tools for immersive interactive learning.</p></div>
-                </div>
-                <div class="bg-pa-card border border-neutral-300 rounded-2xl overflow-hidden shadow-sm">
-                    <div class="h-60 overflow-hidden"><img src="photo 7.jpg" alt="Workshop" class="w-full h-full object-cover"></div>
-                    <div class="p-6"><h3 class="text-lg font-bold text-pa-dark mb-2">Workshops</h3><p class="text-neutral-700 text-sm">Practical sessions focusing on live document processing and communication.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== PAGE 8: CONTACT ==================== -->
-        <section id="page-contact" class="page-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="text-center mb-12">
-                <span class="text-xs font-bold uppercase tracking-widest text-pa-blue">Page 8: Get in Touch</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-pa-dark mt-2 mb-2">Apply / Register Now</h2>
-                <p class="text-neutral-700">Fill out your details below and our admissions team will contact you promptly.</p>
-            </div>
-
-            <div class="bg-pa-card border border-neutral-300 rounded-3xl p-8 md:p-12 shadow-xl">
-                <form id="applicationForm" class="space-y-6" onsubmit="event.preventDefault(); alert('Application submitted successfully! We will contact you soon.');">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-neutral-800 mb-2">Full Name</label>
-                            <input type="text" required class="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-neutral-900 focus:outline-none focus:border-pa-blue" placeholder="Enter your full name">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-800 mb-2">Phone Number</label>
-                            <input type="tel" required class="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-neutral-900 focus:outline-none focus:border-pa-blue" placeholder="+974 / +91 XXXXXXXX">
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-800 mb-2">Email Address</label>
-                            <input type="email" required class="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-neutral-900 focus:outline-none focus:border-pa-blue" placeholder="your@email.com">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-800 mb-2">Select Course / Program</label>
-                            <select class="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-neutral-900 focus:outline-none focus:border-pa-blue">
-                                <option>HR & PRO Services Diploma (3 Months)</option>
-                                <option>GCC Document Processing (3 Months)</option>
-                                <option>Typing & Translation Diploma (3 Months)</option>
-                                <option>1-Year Civil Service Coaching (Directed & Instructed by Shabeeb)</option>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Study Mode</label>
+                            <select id="waMode" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-luxury-blue">
+                                <option>On Campus in Doha, Qatar</option>
+                                <option>Live Interactive Online Batch</option>
                             </select>
                         </div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-neutral-800 mb-2">Message or Inquiry (Optional)</label>
-                        <textarea rows="4" class="w-full bg-white border border-neutral-300 rounded-xl px-4 py-3 text-neutral-900 focus:outline-none focus:border-pa-blue" placeholder="Any specific questions?"></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-pa-dark hover:bg-neutral-800 text-white font-bold py-4 rounded-xl shadow-lg transition-all">
-                        Submit Application
-                    </button>
-                </form>
+                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Send via WhatsApp
+                        </button>
+                    </form>
+                </div>
             </div>
-        </section>
-
-    </main>
+        </div>
+    </section>
 
     <!-- Floating WhatsApp & Call Buttons -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-        <a href="tel:+97470120012" class="w-12 h-12 bg-white hover:bg-neutral-100 text-pa-dark rounded-full flex items-center justify-center shadow-xl border border-neutral-300 transition-transform hover:scale-110" title="Call Us">
+        <a href="tel:+97470120012" class="w-12 h-12 bg-white hover:bg-slate-100 text-luxury-blue rounded-full flex items-center justify-center shadow-xl border border-slate-200 transition-transform hover:scale-110" title="Call Qatar Desk">
             <i class="fa-solid fa-phone text-lg"></i>
         </a>
-        <a href="https://wa.me/97470120012" target="_blank" class="w-12 h-12 bg-pa-dark hover:bg-neutral-800 text-white rounded-full flex items-center justify-center shadow-xl transition-transform hover:scale-110" title="Chat on WhatsApp">
-            <i class="fa-brands fa-whatsapp text-2xl text-pa-gold"></i>
+        <a href="https://wa.me/97470120012" target="_blank" class="w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-xl transition-transform hover:scale-110" title="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
         </a>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-pa-dark text-white py-8 text-sm border-t border-neutral-800 shrink-0">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div>
-                <span class="text-white font-bold text-base">Serve Ease Academy</span>
-                <p class="text-xs text-neutral-400 mt-1">Empowering careers through professional training and expert mentorship.</p>
+    <!-- Luxury Dark Footer -->
+    <footer class="bg-luxury-dark text-white pt-14 pb-8 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-white rounded-lg p-1 flex items-center justify-center">
+                            <img src="logo.png" alt="Logo" class="w-full h-full object-contain transparent-logo">
+                        </div>
+                        <span class="text-base font-extrabold text-white">Serve Ease Academy</span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm leading-relaxed">
+                        A premier professional training institute in Doha, Qatar — empowering careers through HR & PRO diplomas, GCC document processing, bilingual translation, and 1-year Civil Service coaching directed by Shabeeb.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase tracking-wider text-amber-300 mb-4">Programmes</h4>
+                    <ul class="space-y-2.5 text-slate-300">
+                        <li><a href="#courses" class="hover:text-white">HR & PRO Services</a></li>
+                        <li><a href="#courses" class="hover:text-white">GCC Document Processing</a></li>
+                        <li><a href="#courses" class="hover:text-white">Typing & Translation</a></li>
+                        <li><a href="#courses" class="hover:text-white">Civil Service Coaching</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase tracking-wider text-amber-300 mb-4">Contact</h4>
+                    <ul class="space-y-2.5 text-slate-300">
+                        <li><a href="tel:+97470120012" class="hover:text-white">Qatar: +974 70120012</a></li>
+                        <li><a href="tel:+919745568481" class="hover:text-white">India: +91 9745568481</a></li>
+                        <li><a href="mailto:serveeaseacademy@gmail.com" class="hover:text-white">serveeaseacademy@gmail.com</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left text-neutral-300 text-xs">
-                <a href="tel:+97470120012" class="hover:text-pa-gold transition-colors">Qatar: +974 70120012</a>
-                <a href="tel:+919745568481" class="hover:text-pa-gold transition-colors">India: +91 9745568481</a>
-                <a href="mailto:serveeaseacademy@gmail.com" class="hover:text-pa-gold transition-colors">serveeaseacademy@gmail.com</a>
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-slate-500 gap-2">
+                <span>© 2026 Serve Ease Academy. All rights reserved.</span>
+                <span>Doha, Qatar</span>
             </div>
         </div>
     </footer>
 
-    <!-- JS for Multi-Page Switching & Animations -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
-
-        function switchPage(pageId) {
-            document.querySelectorAll('.page-section').forEach(sec => {
-                sec.classList.remove('active');
-            });
-            const target = document.getElementById('page-' + pageId);
-            if (target) {
-                target.classList.add('active');
-            }
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('bg-neutral-800', 'text-white');
-                if(link.getAttribute('data-target') === pageId) {
-                    link.classList.add('bg-neutral-800', 'text-white');
-                }
-            });
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        function sendWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('waName').value;
+            const course = document.getElementById('waCourse').value;
+            const mode = document.getElementById('waMode').value;
+            const msg = `Hello Serve Ease Academy!%0A*Name:* ${encodeURIComponent(name)}%0A*Course:* ${encodeURIComponent(course)}%0A*Study Mode:* ${encodeURIComponent(mode)}%0AI would like to book a free consultation.`;
+            window.open(`https://wa.me/97470120012?text=${msg}`, '_blank');
         }
     </script>
 </body>
