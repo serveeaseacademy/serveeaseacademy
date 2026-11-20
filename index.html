@@ -3,38 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Serve Ease Academy — UPSC, Qatar & GCC Government Services, HR, Typing & Translation</title>
+  <title>Serve Ease Academy — Global Academy for UPSC, GCC Services, Typing & Translation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      /* Luxury Blue & Crisp White Palette */
-      --navy-deep: #071936;
-      --royal-blue: #0d3b82;
-      --azure-accent: #1d63dc;
-      --sky-tint: #eef4ff;
-      --ice-border: #dce6f7;
+      --navy-deep: #061630;
+      --royal-blue: #0c387a;
+      --azure-accent: #1a62d8;
+      --sky-tint: #eff5ff;
+      --ice-border: #dbe6f8;
       --pure-white: #ffffff;
       --off-white: #f8faff;
-      --text-dark: #0a192f;
+      --text-dark: #09172d;
       --text-muted: #4b5d78;
       --radius-lg: 16px;
       --radius-md: 10px;
-      --shadow-luxury: 0 18px 40px -12px rgba(7, 25, 54, 0.12);
-      --shadow-card: 0 6px 20px -4px rgba(13, 59, 130, 0.08);
+      --shadow-luxury: 0 18px 40px -12px rgba(6, 22, 48, 0.14);
+      --shadow-card: 0 6px 20px -4px rgba(12, 56, 122, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text-dark);
@@ -43,26 +34,28 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; cursor: pointer; }
 
     .container {
       width: 100%;
-      max-width: 1220px;
+      max-width: 1240px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
+    /* ================= VIEW SWITCHING ================= */
+    .page-view { display: none; }
+    .page-view.active { display: block; animation: fadeIn 0.28s ease; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     /* ================= NAVBAR ================= */
     .navbar {
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(255, 255, 255, 0.97);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--ice-border);
       position: sticky;
@@ -74,164 +67,130 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 78px;
+      height: 76px;
+      gap: 1rem;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.7rem;
       font-weight: 800;
-      font-size: 1.25rem;
+      font-size: 1.18rem;
       color: var(--navy-deep);
-      letter-spacing: -0.02em;
+      cursor: pointer;
     }
 
-    .brand img {
-      height: 44px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .brand span {
-      color: var(--azure-accent);
-    }
+    .brand img { height: 42px; width: auto; object-fit: contain; }
+    .brand span { color: var(--azure-accent); }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 2rem;
-      font-size: 0.94rem;
+      gap: 1.5rem;
+      font-size: 0.92rem;
       font-weight: 600;
       color: var(--text-muted);
     }
 
-    .nav-links a:hover {
-      color: var(--royal-blue);
-    }
+    .nav-links a:hover, .nav-links a.active-link { color: var(--royal-blue); }
 
     .nav-cta {
       background: linear-gradient(135deg, var(--royal-blue), var(--azure-accent));
       color: var(--pure-white) !important;
-      padding: 0.65rem 1.35rem;
+      padding: 0.6rem 1.25rem;
       border-radius: 8px;
       font-weight: 600;
-      box-shadow: 0 4px 14px rgba(29, 99, 220, 0.25);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 14px rgba(26, 98, 216, 0.25);
     }
 
-    .nav-cta:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(29, 99, 220, 0.35);
-    }
-
-    /* ================= HERO SECTION ================= */
+    /* ================= HERO ================= */
     .hero {
-      position: relative;
       background:
-        linear-gradient(115deg, rgba(7, 25, 54, 0.92) 0%, rgba(13, 59, 130, 0.84) 60%, rgba(7, 25, 54, 0.9) 100%),
+        linear-gradient(115deg, rgba(6, 22, 48, 0.94) 0%, rgba(12, 56, 122, 0.86) 60%, rgba(6, 22, 48, 0.93) 100%),
         url('hero-bg.jpg') center/cover no-repeat;
       color: var(--pure-white);
-      padding: 6.5rem 0 5.5rem;
-      overflow: hidden;
+      padding: 5.8rem 0 5rem;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.25fr 0.75fr;
-      gap: 3.25rem;
+      gap: 3rem;
       align-items: center;
     }
 
     .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
+      display: inline-block;
       background: rgba(255, 255, 255, 0.12);
       border: 1px solid rgba(255, 255, 255, 0.28);
       color: #dbeafe;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      padding: 0.4rem 0.95rem;
+      padding: 0.36rem 0.9rem;
       border-radius: 999px;
-      margin-bottom: 1.35rem;
+      margin-bottom: 1.15rem;
     }
 
     .hero h1 {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2.15rem, 4.2vw, 3.25rem);
+      font-size: clamp(2.05rem, 4vw, 3.1rem);
       font-weight: 700;
       line-height: 1.18;
-      margin-bottom: 1.3rem;
-      color: var(--pure-white);
+      margin-bottom: 1.2rem;
     }
 
     .hero p {
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       color: #e2e8f0;
-      margin-bottom: 2.15rem;
-      max-width: 640px;
+      margin-bottom: 1.9rem;
+      max-width: 650px;
     }
 
-    .hero strong {
-      color: var(--pure-white);
-      font-weight: 600;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.9rem 1.8rem;
+      padding: 0.85rem 1.65rem;
       border-radius: 8px;
       font-weight: 600;
-      font-size: 0.96rem;
+      font-size: 0.94rem;
+      border: none;
       transition: all 0.2s ease;
-      cursor: pointer;
     }
 
     .btn-white {
       background: var(--pure-white);
       color: var(--navy-deep);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
 
-    .btn-white:hover {
-      background: var(--sky-tint);
-      transform: translateY(-2px);
-    }
+    .btn-white:hover { background: var(--sky-tint); transform: translateY(-2px); }
 
     .btn-glass {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.12);
       color: var(--pure-white);
       border: 1px solid rgba(255, 255, 255, 0.35);
     }
 
-    .btn-glass:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
+    .btn-glass:hover { background: rgba(255, 255, 255, 0.22); }
 
     .hero-panel {
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.22);
       border-radius: var(--radius-lg);
-      padding: 2rem;
+      padding: 1.8rem;
       backdrop-filter: blur(12px);
     }
 
     .hero-panel h3 {
-      font-size: 1.12rem;
-      color: var(--pure-white);
-      margin-bottom: 1.1rem;
-      padding-bottom: 0.75rem;
+      font-size: 1.08rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.65rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.16);
     }
 
@@ -239,28 +198,51 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.95rem;
-      font-size: 0.94rem;
+      gap: 0.85rem;
+      font-size: 0.92rem;
       color: #eff6ff;
     }
 
-    .hero-panel li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.65rem;
+    .hero-panel li::before { content: "✓ "; color: #93c5fd; font-weight: 800; }
+
+    /* ================= STATS STRIP (COUNT TO ZERO) ================= */
+    .stats-strip {
+      background: var(--pure-white);
+      border-bottom: 1px solid var(--ice-border);
+      padding: 2.3rem 0;
     }
 
-    .hero-panel li::before {
-      content: "✓";
-      color: #93c5fd;
-      font-weight: 800;
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.4rem;
+      text-align: center;
     }
 
-    /* ================= SECTION COMMON ================= */
-    .section {
-      padding: 5rem 0;
+    .stat-card {
+      padding: 1.2rem 1rem;
+      border-radius: var(--radius-md);
+      background: var(--off-white);
+      border: 1px solid var(--ice-border);
     }
 
+    .stat-number {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.9rem, 3vw, 2.55rem);
+      font-weight: 700;
+      color: var(--royal-blue);
+      line-height: 1.15;
+    }
+
+    .stat-label {
+      margin-top: 0.35rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* ================= SECTION & TYPOGRAPHY ================= */
+    .section { padding: 4.4rem 0; }
     .section-alt {
       background: var(--off-white);
       border-top: 1px solid var(--ice-border);
@@ -269,422 +251,322 @@
 
     .section-header {
       text-align: center;
-      max-width: 740px;
-      margin: 0 auto 3.25rem;
+      max-width: 760px;
+      margin: 0 auto 2.8rem;
     }
 
     .eyebrow {
       display: inline-block;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--azure-accent);
       background: var(--sky-tint);
-      padding: 0.32rem 0.85rem;
+      padding: 0.3rem 0.85rem;
       border-radius: 999px;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.65rem;
     }
 
     .section-header h2 {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+      font-size: clamp(1.65rem, 3vw, 2.25rem);
       color: var(--navy-deep);
       font-weight: 700;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.65rem;
     }
 
-    .section-header p {
-      color: var(--text-muted);
-      font-size: 1.02rem;
+    .section-header p { color: var(--text-muted); font-size: 0.98rem; }
+
+    /* ================= GRIDS & CARDS ================= */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.35rem; }
+
+    .card {
+      background: var(--pure-white);
+      border: 1px solid var(--ice-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    /* ================= ABOUT & PILLARS ================= */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5rem;
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-luxury); }
+
+    .card-img { height: 210px; overflow: hidden; background: var(--navy-deep); position: relative; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .card:hover .card-img img { transform: scale(1.04); }
+
+    .card-badge {
+      position: absolute;
+      top: 0.85rem;
+      left: 0.85rem;
+      background: rgba(6, 22, 48, 0.88);
+      color: var(--pure-white);
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+    }
+
+    .card-body { padding: 1.6rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .card-body h3 { font-size: 1.2rem; color: var(--navy-deep); margin-bottom: 0.55rem; }
+    .card-body p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1rem; }
+
+    .card-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.4rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--ice-border);
+    }
+
+    .card-list li { font-size: 0.89rem; color: var(--text-dark); }
+    .card-list li::before { content: "◆ "; color: var(--azure-accent); font-size: 0.72rem; }
+
+    .card-btn {
+      display: inline-flex;
       align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0.78rem 1.15rem;
+      background: var(--royal-blue);
+      color: var(--pure-white);
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+      transition: background 0.2s ease;
     }
 
-    .about-images {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
+    .card-btn:hover { background: var(--navy-deep); }
+
+    .info-box {
+      background: var(--pure-white);
+      border: 1px solid var(--ice-border);
+      border-left: 4px solid var(--azure-accent);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
     }
 
+    .info-box h4 { color: var(--navy-deep); font-size: 1rem; margin-bottom: 0.4rem; }
+    .info-box p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+
+    /* ================= ABOUT & MENTOR ================= */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .about-images { display: grid; grid-template-columns: 1fr 1fr; gap: 1.15rem; }
     .about-images img {
       width: 100%;
-      height: 310px;
+      height: 290px;
       object-fit: cover;
       border-radius: var(--radius-lg);
       border: 3px solid var(--pure-white);
       box-shadow: var(--shadow-luxury);
     }
+    .about-images img:nth-child(2) { margin-top: 1.8rem; }
 
-    .about-images img:nth-child(2) {
-      margin-top: 2rem;
-    }
-
-    .about-content h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.75rem, 3vw, 2.3rem);
-      color: var(--navy-deep);
-      margin-bottom: 1rem;
-      line-height: 1.25;
-    }
-
-    .about-content p {
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-    }
-
-    .pillar-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .pillar-box {
-      background: var(--off-white);
-      border: 1px solid var(--ice-border);
-      border-left: 4px solid var(--azure-accent);
-      padding: 1rem 1.25rem;
-      border-radius: var(--radius-md);
-    }
-
-    .pillar-box h4 {
-      color: var(--navy-deep);
-      font-size: 1rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .pillar-box p {
-      margin: 0;
-      font-size: 0.91rem;
-    }
-
-    /* ================= COURSE CARDS ================= */
-    .courses-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.25rem;
-    }
-
-    .course-card {
-      background: var(--pure-white);
-      border: 1px solid var(--ice-border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: var(--shadow-card);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .course-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-luxury);
-    }
-
-    .course-thumb {
-      position: relative;
-      height: 225px;
-      overflow: hidden;
-      background: var(--navy-deep);
-    }
-
-    .course-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .course-card:hover .course-thumb img {
-      transform: scale(1.04);
-    }
-
-    .course-badge {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      background: rgba(7, 25, 54, 0.88);
-      backdrop-filter: blur(6px);
-      color: var(--pure-white);
-      font-size: 0.76rem;
-      font-weight: 700;
-      padding: 0.35rem 0.8rem;
-      border-radius: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .course-body {
-      padding: 1.85rem;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .course-body h3 {
-      font-size: 1.28rem;
-      color: var(--navy-deep);
-      margin-bottom: 0.65rem;
-      line-height: 1.35;
-    }
-
-    .course-desc {
-      color: var(--text-muted);
-      font-size: 0.94rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .course-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      padding-top: 1rem;
-      margin-bottom: 1.65rem;
-      border-top: 1px solid var(--ice-border);
-    }
-
-    .course-list li {
-      font-size: 0.91rem;
-      color: var(--text-dark);
-      display: flex;
-      align-items: flex-start;
-      gap: 0.55rem;
-    }
-
-    .course-list li::before {
-      content: "◆";
-      color: var(--azure-accent);
-      font-size: 0.72rem;
-      margin-top: 0.32rem;
-    }
-
-    .course-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding: 0.85rem 1.25rem;
-      background: var(--royal-blue);
-      color: var(--pure-white);
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.94rem;
-      transition: background 0.2s ease;
-    }
-
-    .course-cta:hover {
-      background: var(--navy-deep);
-    }
-
-    /* ================= MENTOR SPOTLIGHT ================= */
     .mentor-card {
       background: linear-gradient(135deg, var(--navy-deep) 0%, var(--royal-blue) 100%);
       color: var(--pure-white);
       border-radius: var(--radius-lg);
-      padding: 2.75rem;
+      padding: 2.4rem;
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 2.75rem;
+      grid-template-columns: 260px 1fr;
+      gap: 2.4rem;
       align-items: center;
       box-shadow: var(--shadow-luxury);
     }
 
     .mentor-card img {
       width: 100%;
-      height: 310px;
+      height: 290px;
       object-fit: cover;
       border-radius: var(--radius-md);
       border: 3px solid rgba(255, 255, 255, 0.28);
     }
 
-    .mentor-card h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.85rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .mentor-card p {
-      color: #dbeafe;
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .mentor-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-    }
-
+    .mentor-card h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.75rem; margin-bottom: 0.65rem; }
+    .mentor-card p { color: #dbeafe; margin-bottom: 1.25rem; font-size: 0.96rem; }
+    .mentor-tags { display: flex; flex-wrap: wrap; gap: 0.55rem; }
     .mentor-tags span {
       background: rgba(255, 255, 255, 0.14);
       border: 1px solid rgba(255, 255, 255, 0.24);
-      padding: 0.4rem 0.85rem;
+      padding: 0.35rem 0.8rem;
       border-radius: 999px;
-      font-size: 0.84rem;
-      font-weight: 500;
+      font-size: 0.82rem;
     }
 
-    /* ================= GALLERY SHOWCASE ================= */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.15rem;
-    }
-
+    /* ================= GALLERY ================= */
     .gallery-item {
       border-radius: var(--radius-md);
       overflow: hidden;
       border: 1px solid var(--ice-border);
       background: var(--pure-white);
-      box-shadow: var(--shadow-card);
       aspect-ratio: 4 / 3;
     }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease; }
+    .gallery-item:hover img { transform: scale(1.06); }
 
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.35s ease;
+    /* ================= SUB-PAGE BANNER & 8 UPSC SUB-PAGES ================= */
+    .subpage-header {
+      background: linear-gradient(115deg, var(--navy-deep) 0%, var(--royal-blue) 100%);
+      color: var(--pure-white);
+      padding: 3.5rem 0 3rem;
     }
 
-    .gallery-item:hover img {
-      transform: scale(1.06);
-    }
-
-    /* ================= FAQ SECTION ================= */
-    .faq-list {
-      max-width: 860px;
-      margin: 0 auto;
+    .breadcrumb {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.86rem;
+      color: #bfdbfe;
+      margin-bottom: 1rem;
     }
 
-    details.faq-item {
+    .breadcrumb button {
+      background: none;
+      border: none;
+      color: var(--pure-white);
+      text-decoration: underline;
+      font-size: 0.86rem;
+    }
+
+    .subpage-header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.85rem, 3.5vw, 2.7rem);
+      margin-bottom: 0.65rem;
+    }
+
+    .subpage-header p { color: #e2e8f0; max-width: 780px; }
+
+    .subpage-tabs {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--ice-border);
+      padding: 0.85rem 0;
+      position: sticky;
+      top: 76px;
+      z-index: 900;
+    }
+
+    .tabs-scroll {
+      display: flex;
+      gap: 0.55rem;
+      overflow-x: auto;
+      padding-bottom: 0.25rem;
+    }
+
+    .tab-pill {
+      white-space: nowrap;
+      padding: 0.5rem 0.95rem;
+      border-radius: 999px;
+      border: 1px solid var(--ice-border);
+      background: var(--pure-white);
+      color: var(--text-dark);
+      font-size: 0.84rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .tab-pill:hover, .tab-pill.active {
+      background: var(--royal-blue);
+      color: var(--pure-white);
+      border-color: var(--royal-blue);
+    }
+
+    .upsc-sub-panel { display: none; padding: 3.5rem 0; }
+    .upsc-sub-panel.active { display: block; animation: fadeIn 0.25s ease; }
+
+    .qa-box {
+      background: var(--pure-white);
       border: 1px solid var(--ice-border);
       border-radius: var(--radius-md);
-      background: var(--pure-white);
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(7, 25, 54, 0.04);
+      padding: 1.3rem 1.5rem;
+      margin-bottom: 1rem;
     }
 
-    details.faq-item[open] {
-      border-color: var(--azure-accent);
-    }
+    .qa-box h4 { color: var(--navy-deep); font-size: 1rem; margin-bottom: 0.4rem; }
+    .qa-box p { color: var(--text-muted); font-size: 0.92rem; margin: 0; }
 
+    /* ================= FAQ ================= */
+    .faq-list { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.85rem; }
+    details.faq-item { border: 1px solid var(--ice-border); border-radius: var(--radius-md); background: var(--pure-white); }
     details.faq-item summary {
       list-style: none;
-      padding: 1.25rem 1.5rem;
+      padding: 1.1rem 1.35rem;
       font-weight: 600;
-      font-size: 1.02rem;
       color: var(--navy-deep);
       cursor: pointer;
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary::after { content: "+"; color: var(--azure-accent); font-size: 1.3rem; }
+    details.faq-item[open] summary::after { content: "−"; }
+    .faq-answer { padding: 0 1.35rem 1.2rem; color: var(--text-muted); font-size: 0.93rem; }
+
+    /* ================= MINIMAL GLOBAL FOOTER ================= */
+    .footer-minimal {
+      background: var(--navy-deep);
+      color: #cbd5e1;
+      padding: 1.5rem 0;
+      font-size: 0.86rem;
+    }
+
+    .footer-min-inner {
+      display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
     }
 
-    details.faq-item summary::-webkit-details-marker {
-      display: none;
-    }
+    .footer-min-brand { display: flex; align-items: center; gap: 0.6rem; color: var(--pure-white); font-weight: 700; }
+    .footer-min-brand img { height: 26px; background: var(--pure-white); padding: 2px; border-radius: 4px; }
+    .footer-min-links { display: flex; flex-wrap: wrap; gap: 1.2rem; color: #94a3b8; }
+    .footer-min-links a:hover { color: var(--pure-white); }
 
-    details.faq-item summary::after {
-      content: "+";
-      font-size: 1.4rem;
-      font-weight: 500;
-      color: var(--azure-accent);
-      flex-shrink: 0;
-    }
-
-    details.faq-item[open] summary::after {
-      content: "−";
-    }
-
-    .faq-answer {
-      padding: 0 1.5rem 1.35rem;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    /* ================= FOOTER ================= */
-    .footer {
-      background: var(--navy-deep);
-      color: #cbd5e1;
-      padding: 3.5rem 0 2.5rem;
-    }
-
-    .footer-inner {
+    /* ================= FLOATING WIDGET ================= */
+    .floating-stack {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1200;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.5rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      flex-direction: column;
+      gap: 0.6rem;
+      align-items: flex-end;
     }
 
-    .footer-brand {
-      display: flex;
+    .float-btn {
+      display: inline-flex;
       align-items: center;
-      gap: 0.85rem;
+      gap: 0.45rem;
+      padding: 0.7rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 600;
       color: var(--pure-white);
-      font-weight: 700;
-      font-size: 1.2rem;
+      box-shadow: 0 10px 24px rgba(6, 22, 48, 0.25);
     }
 
-    .footer-brand img {
-      height: 42px;
-      background: var(--pure-white);
-      padding: 4px;
-      border-radius: 6px;
-    }
+    .float-whatsapp { background: #128c7e; }
+    .float-top { background: var(--royal-blue); padding: 0.6rem 0.9rem; }
 
-    .footer-bottom {
-      padding-top: 1.5rem;
-      text-align: center;
-      font-size: 0.88rem;
-      color: #94a3b8;
-    }
-
-    /* ================= RESPONSIVE ================= */
     @media (max-width: 980px) {
-      .hero-grid,
-      .about-grid,
-      .courses-grid,
-      .mentor-card {
-        grid-template-columns: 1fr;
-      }
-
-      .mentor-card img {
-        max-width: 320px;
-      }
-
-      .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .hero-grid, .about-grid, .grid-2, .grid-3, .mentor-card { grid-template-columns: 1fr; }
+      .stats-grid, .grid-4 { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 640px) {
-      .nav-links a:not(.nav-cta) {
-        display: none;
-      }
-
-      .about-images img {
-        height: 220px;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .about-images img { height: 210px; }
     }
   </style>
 </head>
@@ -693,314 +575,666 @@
   <!-- Navigation -->
   <header class="navbar">
     <div class="container nav-inner">
-      <a href="#" class="brand">
+      <div class="brand" onclick="openMainHome()">
         <img src="logo.png" alt="Serve Ease Academy Logo" />
         <div>Serve Ease <span>Academy</span></div>
-      </a>
+      </div>
       <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#courses">Courses</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#faq">FAQ</a>
+        <a href="javascript:void(0)" onclick="openMainHome()" id="navHomeLink" class="active-link">Home (15 Layers)</a>
+        <a href="javascript:void(0)" onclick="openUpscHub('upsc-prelims')" id="navUpscLink">Civil Services (8 Sub-Pages)</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('global-tracks')">GCC, Typing &amp; Translation</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('faq')">FAQ</a>
         <a href="https://wa.me/97470442825" target="_blank" rel="noopener" class="nav-cta">Enquire Now</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="hero-tag">Online &amp; Offline Practical Mentorship</span>
-        <h1>Practical Career Skills &amp; Structured Exam Mentorship—Built for Real-World Results.</h1>
-        <p>
-          From <strong>UPSC Civil Services</strong> preparation (Prelims, Mains &amp; Interview) to hands-on training in
-          <strong>Qatar &amp; GCC Government Services, HR Operations, Official Typing, and Arabic–English Translation</strong>,
-          Serve Ease Academy bridges academic rigor with day-to-day operational expertise.
-        </p>
-        <div class="hero-actions">
-          <a href="#courses" class="btn btn-white">Explore Live Courses</a>
-          <a href="https://wa.me/97470442825" target="_blank" rel="noopener" class="btn btn-glass">Book a Free Consultation</a>
-        </div>
-      </div>
+  <!-- ===================================================================== -->
+  <!-- VIEW 1: MAIN GLOBAL ACADEMY HOMEPAGE (15 STRUCTURED LAYERS / SECTIONS) -->
+  <!-- ===================================================================== -->
+  <main id="mainHomeView" class="page-view active">
 
-      <aside class="hero-panel">
-        <h3>How Learning Works</h3>
-        <ul>
-          <li><strong>Live Interactive Sessions:</strong> Real-time classes with direct mentor feedback, screen-shared portal walkthroughs, and structured Q&amp;A.</li>
-          <li><strong>Practical File &amp; Mock Practice:</strong> Hands-on document drafting, form typing, translation assignments, and timed UPSC mock test simulations.</li>
-          <li><strong>End-to-End Guidance:</strong> Clear roadmaps, downloadable checklists, and step-by-step review from foundational concepts to workplace readiness.</li>
-        </ul>
-      </aside>
-    </div>
-  </section>
-
-  <!-- About & Value Pillars -->
-  <section class="section" id="about">
-    <div class="container about-grid">
-      <div class="about-images">
-        <img src="about-1.jpg" alt="Serve Ease Academy Practical Classroom Session" />
-        <img src="about-2.jpg" alt="Serve Ease Academy Documentation and Mentorship" />
-      </div>
-
-      <div class="about-content">
-        <span class="eyebrow">Why Serve Ease Academy</span>
-        <h2>Where Civil Services Discipline Meets GCC Operational Mastery</h2>
-        <p>
-          Whether you are preparing systematically for the UPSC Civil Services Examination or building job-ready administrative expertise for Qatar and the wider GCC, our programs focus on clarity, real files, and measurable progress.
-        </p>
-
-        <div class="pillar-list">
-          <div class="pillar-box">
-            <h4>1. Practitioner-Led Training</h4>
-            <p>Learn Qatar &amp; GCC documentation, HR coordination, official typing, and bilingual translation directly from real administrative workflows.</p>
-          </div>
-          <div class="pillar-box">
-            <h4>2. Structured UPSC Mentorship</h4>
-            <p>Integrated Prelims, Mains, and Personality Test guidance with evaluated answer writing and realistic mock simulations.</p>
-          </div>
-          <div class="pillar-box">
-            <h4>3. Flexible Online &amp; Offline Delivery</h4>
-            <p>Attend live online sessions from anywhere or join offline practical workshops built around working professionals and students.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Courses Section -->
-  <section class="section section-alt" id="courses">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Academic &amp; Professional Tracks</span>
-        <h2>Live &amp; Practical Courses</h2>
-        <p>Explore specialized programs combining structured exam preparation with hands-on GCC corporate and government workflows.</p>
-      </div>
-
-      <div class="courses-grid">
-        <!-- Course 1: UPSC -->
-        <article class="course-card">
-          <div>
-            <div class="course-thumb">
-              <img src="course-upsc.jpg" alt="UPSC Civil Services Prelims Mains Interview Course" />
-              <span class="course-badge">Live Online &amp; Offline | Comprehensive</span>
-            </div>
-            <div class="course-body">
-              <div>
-                <h3>UPSC CSE Foundation, Mock Suite &amp; Personality Test</h3>
-                <p class="course-desc">
-                  Complete Prelims (GS Paper I &amp; CSAT), Mains descriptive answer writing, and DAF-based Personality Test preparation with regular mock drills.
-                </p>
-                <ul class="course-list">
-                  <li>Integrated static syllabus + daily current affairs linkage</li>
-                  <li>Sectional &amp; full-length Prelims mock tests with negative-marking analysis</li>
-                  <li>Timed Mains answer-writing drills with individualized mentor evaluation</li>
-                  <li>One-on-one DAF breakdown &amp; panel mock interviews (275-mark readiness)</li>
-                </ul>
-              </div>
-              <a href="https://wa.me/97470442825?text=Hello%20Serve%20Ease%20Academy%2C%20I%20would%20like%20details%20on%20the%20UPSC%20CSE%20course." target="_blank" rel="noopener" class="course-cta">Enquire UPSC Track</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Course 2: Qatar & GCC Govt Services -->
-        <article class="course-card">
-          <div>
-            <div class="course-thumb">
-              <img src="course-gcc.jpg" alt="Qatar and GCC Government Services and PRO Mastery" />
-              <span class="course-badge">Online &amp; Offline | PRO &amp; Gov Services</span>
-            </div>
-            <div class="course-body">
-              <div>
-                <h3>Qatar &amp; GCC Government Documentation &amp; PRO Mastery</h3>
-                <p class="course-desc">
-                  Master end-to-end corporate and individual government service workflows across Qatar and the GCC, covering both online portals and offline submissions.
-                </p>
-                <ul class="course-list">
-                  <li>Commercial Registration (CR), establishment cards, and licensing renewals</li>
-                  <li>Visa, residency, labor, and attestation procedures across GCC frameworks</li>
-                  <li>Online portal filing, status tracking, and offline document verification checklists</li>
-                  <li>Real-world case files, error prevention, and client coordination workflows</li>
-                </ul>
-              </div>
-              <a href="https://wa.me/97470442825?text=Hello%20Serve%20Ease%20Academy%2C%20I%20am%20interested%20in%20Qatar%20%26%20GCC%20Government%20Documentation%20%26%20PRO%20training." target="_blank" rel="noopener" class="course-cta">Enquire GCC PRO Track</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Course 3: Typing & Arabic-English Translation -->
-        <article class="course-card">
-          <div>
-            <div class="course-thumb">
-              <img src="course-translation.jpg" alt="Arabic-English Translation and Official Typing" />
-              <span class="course-badge">Online &amp; Offline | Bilingual Track</span>
-            </div>
-            <div class="course-body">
-              <div>
-                <h3>Professional Arabic–English Translation &amp; Official Typing</h3>
-                <p class="course-desc">
-                  Build accuracy, speed, and formatting precision in bilingual administrative typing and Arabic–English document translation for offices and PRO desks.
-                </p>
-                <ul class="course-list">
-                  <li>Arabic &amp; English keyboard speed, layout formatting, and official letter drafting</li>
-                  <li>Legal, commercial, and government form translation with accurate terminology</li>
-                  <li>Online digital document workflows and offline print/attestation-ready formatting</li>
-                  <li>Practical templates for contracts, NOCs, applications, and official notices</li>
-                </ul>
-              </div>
-              <a href="https://wa.me/97470442825?text=Hello%20Serve%20Ease%20Academy%2C%20I%20would%20like%20details%20on%20Arabic-English%20Translation%20%26%20Official%20Typing." target="_blank" rel="noopener" class="course-cta">Enquire Typing &amp; Translation</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Course 4: HR & Corporate Administration -->
-        <article class="course-card">
-          <div>
-            <div class="course-thumb">
-              <img src="course-hr.jpg" alt="HR Administration and Office Operations" />
-              <span class="course-badge">Online &amp; Offline | Corporate Admin</span>
-            </div>
-            <div class="course-body">
-              <div>
-                <h3>GCC HR Administration &amp; Office Documentation</h3>
-                <p class="course-desc">
-                  Gain hands-on proficiency in employee onboarding, payroll tracking, labor compliance, and structured office reporting for companies in Qatar and the GCC.
-                </p>
-                <ul class="course-list">
-                  <li>Employee file management, offer letters, contracts, and leave/WPS tracking</li>
-                  <li>Excel &amp; Google Sheets HR dashboards for automated staff monitoring</li>
-                  <li>Coordination between HR records, Ministry portals, and PRO submissions</li>
-                  <li>Practical templates for memos, warnings, NOCs, and settlement sheets</li>
-                </ul>
-              </div>
-              <a href="https://wa.me/97470442825?text=Hello%20Serve%20Ease%20Academy%2C%20I%20would%20like%20details%20on%20GCC%20HR%20Administration%20training." target="_blank" rel="noopener" class="course-cta">Enquire HR Admin Track</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mentor Spotlight -->
-  <section class="section">
-    <div class="container">
-      <div class="mentor-card">
-        <img src="mentor-1.jpg" alt="Serve Ease Academy Lead Mentor" />
+    <!-- Layer 1: Global Hero -->
+    <section class="hero" id="layer-1-hero">
+      <div class="container hero-grid">
         <div>
-          <span class="hero-tag" style="margin-bottom: 0.85rem;">Practical Mentorship</span>
-          <h3>Guided by Real-World Experience</h3>
+          <span class="hero-tag">Starting in India • Worldwide Global Academy</span>
+          <h1>Global Career Skills &amp; Civil Services Mentorship—Starting in India, Serving the World.</h1>
           <p>
-            Our sessions combine structured academic methodology with practical experience in Qatar government documentation, HR operations, and bilingual corporate administration—ensuring every learner leaves with actionable skills, real templates, and exam readiness.
+            A wide, world-class academy ecosystem combining <strong>UPSC Civil Services</strong> (Prelims, Mains, Mock Tests &amp; Interview with 8 dedicated sub-pages), <strong>Qatar &amp; GCC Government Services</strong>, <strong>Official Typing</strong>, and <strong>Arabic–English Translation</strong> across online and offline workflows.
           </p>
-          <div class="mentor-tags">
-            <span>UPSC Polity &amp; Governance</span>
-            <span>Qatar &amp; GCC PRO Workflows</span>
-            <span>Arabic–English Typing &amp; Translation</span>
-            <span>HR &amp; Office Automation</span>
+          <div class="hero-actions">
+            <button class="btn btn-white" onclick="openUpscHub('upsc-prelims')">Open Civil Services (8 Sub-Pages)</button>
+            <a href="#layer-5-tracks" class="btn btn-glass">Explore All Tracks</a>
           </div>
         </div>
+
+        <aside class="hero-panel">
+          <h3>Global Academy Highlights</h3>
+          <ul>
+            <li><strong>India Center + Worldwide Access:</strong> Offline center support and live global sessions.</li>
+            <li><strong>Simple Team Work:</strong> Easy coordination, clear checklists, and smooth task flow.</li>
+            <li><strong>Online &amp; Offline Files:</strong> Digital portal workflows + physical/print file training.</li>
+          </ul>
+        </aside>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Campus, Sessions & Gallery -->
-  <section class="section section-alt" id="gallery">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Academy Moments</span>
-        <h2>Sessions, Workshops &amp; Practical Training</h2>
-        <p>A glimpse into our live classes, practical documentation sessions, and learner community.</p>
+    <!-- Layer 2: Count-to-Zero Metrics Strip -->
+    <section class="stats-strip" id="layer-2-stats">
+      <div class="container stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" data-start="1000" data-suffix="+">1000+</div>
+          <div class="stat-label">Global Milestones &amp; Learners</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-start="500" data-suffix="+">500+</div>
+          <div class="stat-label">Happy Students &amp; Clients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-start="8" data-suffix=" Pages">8 Pages</div>
+          <div class="stat-label">Dedicated Civil Services Sub-Pages</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-start="15" data-suffix=" Layers">15 Layers</div>
+          <div class="stat-label">Wide Global Homepage Architecture</div>
+        </div>
       </div>
+    </section>
 
-      <div class="gallery-grid">
-        <div class="gallery-item"><img src="gallery-1.jpg" alt="Serve Ease Academy Gallery 1" loading="lazy" /></div>
-        <div class="gallery-item"><img src="gallery-2.jpg" alt="Serve Ease Academy Gallery 2" loading="lazy" /></div>
-        <div class="gallery-item"><img src="gallery-3.jpg" alt="Serve Ease Academy Gallery 3" loading="lazy" /></div>
-        <div class="gallery-item"><img src="gallery-4.jpg" alt="Serve Ease Academy Gallery 4" loading="lazy" /></div>
-        <div class="gallery-item"><img src="gallery-5.jpg" alt="Serve Ease Academy Gallery 5" loading="lazy" /></div>
-        <div class="gallery-item"><img src="photo%201.jpg" alt="Serve Ease Academy Session 1" loading="lazy" /></div>
-        <div class="gallery-item"><img src="photo%202.jpg" alt="Serve Ease Academy Session 2" loading="lazy" /></div>
-        <div class="gallery-item"><img src="photo%203.jpg" alt="Serve Ease Academy Session 3" loading="lazy" /></div>
-        <div class="gallery-item"><img src="photo%204.jpg" alt="Serve Ease Academy Session 4" loading="lazy" /></div>
-        <div class="gallery-item"><img src="photo%205.jpg" alt="Serve Ease Academy Session 5" loading="lazy" /></div>
-        <div class="gallery-item"><img src="photo%206.jpg" alt="Serve Ease Academy Session 6" loading="lazy" /></div>
-        <div class="gallery-item"><img src="photo%207.jpg" alt="Serve Ease Academy Session 7" loading="lazy" /></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="section" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Answers &amp; Details</span>
-        <h2>Frequently Asked Questions</h2>
-        <p>Everything you need to know about batch modes, mock assessments, and practical training.</p>
-      </div>
-
-      <div class="faq-list">
-        <details class="faq-item" open>
-          <summary>1. Who are Serve Ease Academy courses designed for?</summary>
-          <div class="faq-answer">
-            Our programs serve aspirants preparing systematically for the <strong>UPSC Civil Services Examination</strong>, as well as students, job seekers, and working administrators building practical career skills in <strong>Qatar &amp; GCC government services, HR operations, official typing, and Arabic–English translation</strong>.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>2. Are classes available both online and offline?</summary>
-          <div class="faq-answer">
-            Yes. All core tracks support <strong>live online sessions</strong> for remote learners as well as <strong>offline practical training</strong> for hands-on file handling, physical form preparation, and in-person mentorship.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>3. How does your UPSC course cover Prelims, Mains, and Interview together?</summary>
-          <div class="faq-answer">
-            Rather than treating each stage separately, our curriculum links foundational concepts with Mains analytical writing and Prelims objective practice from day one. Once candidates progress toward the Personality Test, training shifts to Detailed Application Form (DAF) analysis, current-affairs synthesis, and simulated panel interviews.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>4. What kind of mock tests are included in the UPSC track?</summary>
-          <div class="faq-answer">
-            You get timed <strong>Prelims mock tests</strong> (GS Paper I and qualifying CSAT with negative-marking review), <strong>Mains descriptive answer-writing tests</strong> with structured mentor feedback, and <strong>25–30 minute mock interview sessions</strong> designed to test clarity, balance of judgment, and composure.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>5. Do I need prior office or PRO experience to join the Qatar &amp; GCC Government Services course?</summary>
-          <div class="faq-answer">
-            No prior experience is required. We start from foundational document checklists and terminology before moving into live portal workflows, form preparation, and real-world case scenarios used in Qatar and GCC administrative desks.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>6. What will I learn in the Typing and Arabic–English Translation track?</summary>
-          <div class="faq-answer">
-            You will learn accurate bilingual typing, formatting for official applications and letters, and practical Arabic–English translation for commercial, HR, and government documents—prepared for both digital submission (online) and stamped/attested hard-copy filing (offline).
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <img src="logo.png" alt="Serve Ease Academy Logo" />
-          <span>Serve Ease Academy</span>
+    <!-- Layer 3: India Center & Worldwide Vision -->
+    <section class="section" id="layer-3-global-vision">
+      <div class="container about-grid">
+        <div class="about-images">
+          <img src="about-1.jpg" alt="Serve Ease Academy Global Training" />
+          <img src="about-2.jpg" alt="Serve Ease Academy Team Operations" />
         </div>
         <div>
-          <p><strong>Contact:</strong> +974 70442825 | serveeaseqtr@gmail.com</p>
+          <span class="eyebrow">Layer 03 • India Hub to Worldwide</span>
+          <h2>Built in India With a True Worldwide Standard</h2>
+          <p style="color: var(--text-muted); margin-bottom: 1.2rem;">
+            Starting from India as our operational foundation, Serve Ease Academy serves students and working professionals across India, Qatar, GCC, and international markets with structured mentorship and practical career skills.
+          </p>
+          <div class="grid-2" style="gap: 1rem;">
+            <div class="info-box">
+              <h4>India Center Foundation</h4>
+              <p>Structured classroom mentorship, study discipline, and practical skill building.</p>
+            </div>
+            <div class="info-box">
+              <h4>Worldwide Online Reach</h4>
+              <p>Live sessions, digital file practice, and global mentorship from anywhere.</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2026 Serve Ease Academy. UPSC Mentorship | Qatar &amp; GCC Government Services | HR, Official Typing &amp; Translation.</p>
+    </section>
+
+    <!-- Layer 4: Simple Team Work & Operations -->
+    <section class="section section-alt" id="layer-4-teamwork">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Layer 04 • Simple Team Work</span>
+          <h2>Easy, Transparent &amp; Stress-Free Team Work</h2>
+          <p>Our team workflow is intentionally simple—clear roles, ready templates, and direct updates so work moves smoothly every day.</p>
+        </div>
+        <div class="grid-4">
+          <div class="info-box">
+            <h4>1. Clear Task Ownership</h4>
+            <p>Simple daily assignments with zero confusion or heavy bureaucracy.</p>
+          </div>
+          <div class="info-box">
+            <h4>2. Standard Templates</h4>
+            <p>Ready checklists for UPSC schedules, GCC files, typing, and translation.</p>
+          </div>
+          <div class="info-box">
+            <h4>3. Quick Review Loop</h4>
+            <p>Fast online/offline verification so every file or test is accurate.</p>
+          </div>
+          <div class="info-box">
+            <h4>4. Student-First Support</h4>
+            <p>Direct mentor and coordinator follow-up for every enrolled learner.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layer 5: Core Academy Tracks Overview -->
+    <section class="section" id="layer-5-tracks">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Layer 05 • Core Academy Tracks</span>
+          <h2>Four Flagship Tracks Across Exams, GCC &amp; Bilingual Skills</h2>
+          <p>Click Civil Services to open its 8 full sub-pages, or explore GCC Government Services, Typing, Translation, and HR.</p>
+        </div>
+
+        <div class="grid-2">
+          <!-- Track 1: Civil Services (Opens 8 Sub-Pages) -->
+          <article class="card">
+            <div>
+              <div class="card-img">
+                <img src="course-upsc.jpg" alt="UPSC Civil Services" />
+                <span class="card-badge">8 Dedicated Sub-Pages Inside</span>
+              </div>
+              <div class="card-body">
+                <div>
+                  <h3>Civil Services (UPSC CSE) — Full Hub</h3>
+                  <p>Complete Prelims, Mains, Interview Questions, Mock Tests, CSAT, Answer Writing, DAF &amp; Current Affairs, and Study Roadmap.</p>
+                  <ul class="card-list">
+                    <li>Prelims &amp; Mains integrated preparation</li>
+                    <li>Interview expected questions &amp; mock panels</li>
+                    <li>Sectional &amp; full-length mock test suite</li>
+                  </ul>
+                </div>
+                <button class="card-btn" onclick="openUpscHub('upsc-prelims')">Open Civil Services (8 Sub-Pages) →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Track 2: Qatar & GCC Government Services -->
+          <article class="card" id="global-tracks">
+            <div>
+              <div class="card-img">
+                <img src="course-gcc.jpg" alt="Qatar and GCC Government Services" />
+                <span class="card-badge">Online &amp; Offline Files</span>
+              </div>
+              <div class="card-body">
+                <div>
+                  <h3>Qatar &amp; GCC Government Services</h3>
+                  <p>Practical online portal workflows and offline file preparation covering CR, establishment cards, visas, labor, and attestations.</p>
+                  <ul class="card-list">
+                    <li>Online tracking, checklists &amp; portal steps</li>
+                    <li>Offline file verification &amp; physical document prep</li>
+                    <li>Real GCC case scenarios &amp; error prevention</li>
+                  </ul>
+                </div>
+                <a href="https://wa.me/97470442825?text=Hello%20Serve%20Ease%20Academy%2C%20I%20want%20details%20on%20Qatar%20%26%20GCC%20Government%20Services." target="_blank" rel="noopener" class="card-btn">Enquire GCC Services</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Track 3: Typing & Arabic-English Translation -->
+          <article class="card">
+            <div>
+              <div class="card-img">
+                <img src="course-translation.jpg" alt="Typing and Arabic-English Translation" />
+                <span class="card-badge">Bilingual Online &amp; Offline</span>
+              </div>
+              <div class="card-body">
+                <div>
+                  <h3>Official Typing &amp; Arabic–English Translation</h3>
+                  <p>Bilingual typing speed, official formatting, and accurate Arabic–English translation for corporate, legal, and government files.</p>
+                  <ul class="card-list">
+                    <li>Arabic &amp; English typing &amp; layout precision</li>
+                    <li>Online digital drafts &amp; offline print-ready files</li>
+                    <li>Contracts, NOCs, letters &amp; official forms</li>
+                  </ul>
+                </div>
+                <a href="https://wa.me/97470442825?text=Hello%20Serve%20Ease%20Academy%2C%20I%20want%20details%20on%20Typing%20and%20Arabic-English%20Translation." target="_blank" rel="noopener" class="card-btn">Enquire Typing &amp; Translation</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Track 4: HR & Corporate Admin -->
+          <article class="card">
+            <div>
+              <div class="card-img">
+                <img src="course-hr.jpg" alt="HR Administration" />
+                <span class="card-badge">Corporate &amp; Office Files</span>
+              </div>
+              <div class="card-body">
+                <div>
+                  <h3>HR Administration &amp; Office Operations</h3>
+                  <p>Practical training in employee onboarding, leave/payroll trackers, office documentation, and smooth HR-PRO coordination.</p>
+                  <ul class="card-list">
+                    <li>Staff records, trackers &amp; clean spreadsheets</li>
+                    <li>Offer letters, memos, NOCs &amp; HR checklists</li>
+                    <li>Online &amp; offline administrative file handling</li>
+                  </ul>
+                </div>
+                <a href="https://wa.me/97470442825?text=Hello%20Serve%20Ease%20Academy%2C%20I%20want%20details%20on%20HR%20Administration." target="_blank" rel="noopener" class="card-btn">Enquire HR Track</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layer 6: Civil Services 8 Sub-Pages Quick Launcher -->
+    <section class="section section-alt" id="layer-6-upsc-preview">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Layer 06 • Civil Services (8 Sub-Pages)</span>
+          <h2>Inside Civil Services: 8 Specialized Sub-Pages</h2>
+          <p>Click any of the 8 Civil Services sub-pages below to open its complete page view immediately.</p>
+        </div>
+        <div class="grid-4">
+          <div class="info-box"><h4>1. Prelims Course</h4><p>GS Paper I &amp; strategy.</p><button class="card-btn" style="margin-top:0.8rem;" onclick="openUpscHub('upsc-prelims')">Open Page 1</button></div>
+          <div class="info-box"><h4>2. Mains Course</h4><p>GS I–IV, Essay &amp; Optional.</p><button class="card-btn" style="margin-top:0.8rem;" onclick="openUpscHub('upsc-mains')">Open Page 2</button></div>
+          <div class="info-box"><h4>3. Interview Prep</h4><p>275-mark personality test.</p><button class="card-btn" style="margin-top:0.8rem;" onclick="openUpscHub('upsc-interview')">Open Page 3</button></div>
+          <div class="info-box"><h4>4. Interview Questions</h4><p>Expected board questions.</p><button class="card-btn" style="margin-top:0.8rem;" onclick="openUpscHub('upsc-questions')">Open Page 4</button></div>
+          <div class="info-box"><h4>5. Mock Tests</h4><p>Prelims, Mains &amp; panel mocks.</p><button class="card-btn" style="margin-top:0.8rem;" onclick="openUpscHub('upsc-mocks')">Open Page 5</button></div>
+          <div class="info-box"><h4>6. CSAT &amp; Writing</h4><p>33% CSAT &amp; answer drills.</p><button class="card-btn" style="margin-top:0.8rem;" onclick="openUpscHub('upsc-csat')">Open Page 6</button></div>
+          <div class="info-box"><h4>7. DAF &amp; Current Affairs</h4><p>Profile &amp; daily linkage.</p><button class="card-btn" style="margin-top:0.8rem;" onclick="openUpscHub('upsc-daf')">Open Page 7</button></div>
+          <div class="info-box"><h4>8. Study Roadmap</h4><p>Timetable &amp; revision cycle.</p><button class="card-btn" style="margin-top:0.8rem;" onclick="openUpscHub('upsc-roadmap')">Open Page 8</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layer 7: Qatar & GCC Government Services Deep Dive -->
+    <section class="section" id="layer-7-gcc-deep">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Layer 07 • Qatar &amp; GCC Government Services</span>
+          <h2>End-to-End GCC Government Documentation</h2>
+          <p>Designed around real corporate and individual procedures in Qatar and the wider GCC.</p>
+        </div>
+        <div class="grid-3">
+          <div class="info-box"><h4>Company &amp; Licensing</h4><p>Commercial Registration (CR), computer/establishment cards, trade licenses, and renewals.</p></div>
+          <div class="info-box"><h4>Visa, Residency &amp; Labor</h4><p>Work visas, residency/ID renewals, contracts, and government portal status tracking.</p></div>
+          <div class="info-box"><h4>Attestation &amp; Compliance</h4><p>Document checklists, ministry/embassy attestation flow, and offline submission readiness.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layer 8: Typing & Arabic-English Translation Deep Dive -->
+    <section class="section section-alt" id="layer-8-typing-translation">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Layer 08 • Typing &amp; Arabic–English Translation</span>
+          <h2>Precision Bilingual Typing &amp; Document Translation</h2>
+          <p>Practical accuracy for official correspondence, contracts, government forms, and business files.</p>
+        </div>
+        <div class="grid-3">
+          <div class="info-box"><h4>Bilingual Typing Mastery</h4><p>Clean Arabic and English keyboard speed, alignment, and official letter formatting.</p></div>
+          <div class="info-box"><h4>Arabic–English Translation</h4><p>Accurate translation of legal, commercial, HR, and government terminology.</p></div>
+          <div class="info-box"><h4>Dual File Delivery</h4><p>Editable digital files online plus print/stamp-ready offline layouts.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layer 9: Online vs Offline File Execution -->
+    <section class="section" id="layer-9-online-offline">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Layer 09 • Online &amp; Offline Files</span>
+          <h2>How We Handle Both Online &amp; Offline Files</h2>
+          <p>Every practical skill combines digital speed with offline file accuracy.</p>
+        </div>
+        <div class="grid-2">
+          <div class="info-box">
+            <h4>Online File Workflow</h4>
+            <p>Digital document scans, online portal form preparation, remote translation drafts, cloud trackers, and live online reviews.</p>
+          </div>
+          <div class="info-box">
+            <h4>Offline File Workflow</h4>
+            <p>Physical document verification, printed form alignment, attestation/hard-copy readiness, and desk/center hands-on practice.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layer 10: Mentor Spotlight -->
+    <section class="section section-alt" id="layer-10-mentor">
+      <div class="container">
+        <div class="mentor-card">
+          <img src="mentor-1.jpg" alt="Serve Ease Academy Mentorship" />
+          <div>
+            <span class="hero-tag" style="margin-bottom:0.75rem;">Layer 10 • Mentorship</span>
+            <h3>Structured Guidance From India to Global Learners</h3>
+            <p>Combining UPSC analytical clarity with practical GCC government documentation, HR files, typing, and Arabic–English translation workflows.</p>
+            <div class="mentor-tags">
+              <span>India Hub</span>
+              <span>Global Online Access</span>
+              <span>UPSC 8-Page Module</span>
+              <span>GCC PRO &amp; Bilingual</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layer 11: Global Learning Experience -->
+    <section class="section" id="layer-11-global-experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Layer 11 • Worldwide Experience</span>
+          <h2>Designed for Students, Job Seekers &amp; Working Teams</h2>
+          <p>Flexible schedules and clear study/work modules across time zones.</p>
+        </div>
+        <div class="grid-3">
+          <div class="info-box"><h4>UPSC Aspirants</h4><p>Step-by-step Prelims, Mains, mock tests, and interview guidance.</p></div>
+          <div class="info-box"><h4>GCC Career Seekers</h4><p>Practical PRO, HR, typing, and translation skills for Gulf/corporate roles.</p></div>
+          <div class="info-box"><h4>Growing Teams</h4><p>Simple collaborative workflows and standardized operational templates.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layer 12: Gallery Showcase -->
+    <section class="section section-alt" id="layer-12-gallery">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Layer 12 • Academy Gallery</span>
+          <h2>Sessions, Workshops &amp; Practical Moments</h2>
+          <p>Real photos from our training sessions, documentation files, and academy community.</p>
+        </div>
+        <div class="grid-4">
+          <div class="gallery-item"><img src="gallery-1.jpg" alt="Gallery 1" loading="lazy" /></div>
+          <div class="gallery-item"><img src="gallery-2.jpg" alt="Gallery 2" loading="lazy" /></div>
+          <div class="gallery-item"><img src="gallery-3.jpg" alt="Gallery 3" loading="lazy" /></div>
+          <div class="gallery-item"><img src="gallery-4.jpg" alt="Gallery 4" loading="lazy" /></div>
+          <div class="gallery-item"><img src="gallery-5.jpg" alt="Gallery 5" loading="lazy" /></div>
+          <div class="gallery-item"><img src="photo%201.jpg" alt="Session 1" loading="lazy" /></div>
+          <div class="gallery-item"><img src="photo%202.jpg" alt="Session 2" loading="lazy" /></div>
+          <div class="gallery-item"><img src="photo%203.jpg" alt="Session 3" loading="lazy" /></div>
+          <div class="gallery-item"><img src="photo%204.jpg" alt="Session 4" loading="lazy" /></div>
+          <div class="gallery-item"><img src="photo%205.jpg" alt="Session 5" loading="lazy" /></div>
+          <div class="gallery-item"><img src="photo%206.jpg" alt="Session 6" loading="lazy" /></div>
+          <div class="gallery-item"><img src="photo%207.jpg" alt="Session 7" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layer 13: Simple Enrollment & Onboarding Flow -->
+    <section class="section" id="layer-13-onboarding">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Layer 13 • Simple Onboarding</span>
+          <h2>Get Started in 3 Simple Steps</h2>
+        </div>
+        <div class="grid-3">
+          <div class="info-box"><h4>Step 1: Choose Track</h4><p>Select Civil Services (8 sub-pages), GCC Services, Typing, or Translation.</p></div>
+          <div class="info-box"><h4>Step 2: Online or Offline</h4><p>Join live online classes or attend offline center/file sessions.</p></div>
+          <div class="info-box"><h4>Step 3: Practice &amp; Grow</h4><p>Complete mocks, typing/translation tasks, and real file checklists.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layer 14: FAQ -->
+    <section class="section section-alt" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Layer 14 • FAQ</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>How do I view the 8 Civil Services sub-pages?</summary>
+            <div class="faq-answer">Click <strong>Civil Services (8 Sub-Pages)</strong> in the top menu or hero button to switch directly across all 8 UPSC pages.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Where is the center starting, and is it global?</summary>
+            <div class="faq-answer">The center starts in <strong>India</strong> and operates with a <strong>worldwide</strong> approach across online and offline learning modes.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Do you cover both online and offline files for GCC services, typing, and translation?</summary>
+            <div class="faq-answer">Yes. Learners practice both online digital workflows and offline document/print/verification procedures.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layer 15: Minimal Global Footer -->
+    <footer class="footer-minimal" id="layer-15-footer">
+      <div class="container footer-min-inner">
+        <div class="footer-min-brand">
+          <img src="logo.png" alt="Serve Ease Academy" />
+          <span>Serve Ease Academy • India &amp; Worldwide</span>
+        </div>
+        <div class="footer-min-links">
+          <a href="tel:+97470442825">+974 70442825</a>
+          <a href="mailto:serveeaseqtr@gmail.com">serveeaseqtr@gmail.com</a>
+          <span>© 2026 Serve Ease Academy</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 2: CIVIL SERVICES HUB WITH 8 COMPLETE SUB-PAGES                  -->
+  <!-- ===================================================================== -->
+  <section id="upscHubView" class="page-view">
+    <div class="subpage-header">
+      <div class="container">
+        <div class="breadcrumb">
+          <button onclick="openMainHome()">← Back to Global Homepage</button>
+          <span>/</span>
+          <span>Civil Services (UPSC CSE)</span>
+          <span>/</span>
+          <span id="currentUpscBreadcrumb">1. Prelims Course</span>
+        </div>
+        <h1>Civil Services (UPSC CSE) — 8 Sub-Pages Hub</h1>
+        <p>Switch seamlessly across all 8 Civil Services pages: Prelims, Mains, Interview, Expected Interview Questions, Mock Tests, CSAT &amp; Answer Writing, DAF &amp; Current Affairs, and Study Roadmap.</p>
       </div>
     </div>
-  </footer>
+
+    <!-- 8 Sub-Page Navigation Pills -->
+    <div class="subpage-tabs">
+      <div class="container tabs-scroll">
+        <button class="tab-pill active" data-target="upsc-prelims" onclick="switchUpscSubPage('upsc-prelims', '1. Prelims Course', this)">1. Prelims Course</button>
+        <button class="tab-pill" data-target="upsc-mains" onclick="switchUpscSubPage('upsc-mains', '2. Mains Course', this)">2. Mains Course</button>
+        <button class="tab-pill" data-target="upsc-interview" onclick="switchUpscSubPage('upsc-interview', '3. Interview Prep', this)">3. Interview Prep</button>
+        <button class="tab-pill" data-target="upsc-questions" onclick="switchUpscSubPage('upsc-questions', '4. Interview Questions', this)">4. Interview Questions</button>
+        <button class="tab-pill" data-target="upsc-mocks" onclick="switchUpscSubPage('upsc-mocks', '5. Mock Tests', this)">5. Mock Tests</button>
+        <button class="tab-pill" data-target="upsc-csat" onclick="switchUpscSubPage('upsc-csat', '6. CSAT & Answer Writing', this)">6. CSAT &amp; Answer Writing</button>
+        <button class="tab-pill" data-target="upsc-daf" onclick="switchUpscSubPage('upsc-daf', '7. DAF & Current Affairs', this)">7. DAF &amp; Current Affairs</button>
+        <button class="tab-pill" data-target="upsc-roadmap" onclick="switchUpscSubPage('upsc-roadmap', '8. Study Roadmap', this)">8. Study Roadmap</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Sub-Page 1: Prelims Course -->
+      <div id="upsc-prelims" class="upsc-sub-panel active">
+        <span class="eyebrow">Sub-Page 1 of 8 • Prelims</span>
+        <h2 style="font-family:'Playfair Display',serif;color:var(--navy-deep);margin-bottom:0.8rem;">UPSC Prelims Course (GS Paper I)</h2>
+        <p style="color:var(--text-muted);margin-bottom:1.5rem;">Concept clarity, elimination logic, and high-frequency revision for Polity, Economy, History, Geography, Environment, and Science &amp; Tech.</p>
+        <div class="grid-3">
+          <div class="info-box"><h4>Core Static Subjects</h4><p>Indian Polity &amp; Constitution, Modern/Ancient/Art &amp; Culture, Geography, Economy, and Environment.</p></div>
+          <div class="info-box"><h4>Accuracy &amp; Negative Marking</h4><p>Structured practice to manage 1/3rd negative marking and avoid careless elimination errors.</p></div>
+          <div class="info-box"><h4>PYQ &amp; Revision Cycles</h4><p>Previous year question pattern mapping and multi-pass revision sheets.</p></div>
+        </div>
+      </div>
+
+      <!-- Sub-Page 2: Mains Course -->
+      <div id="upsc-mains" class="upsc-sub-panel">
+        <span class="eyebrow">Sub-Page 2 of 8 • Mains</span>
+        <h2 style="font-family:'Playfair Display',serif;color:var(--navy-deep);margin-bottom:0.8rem;">UPSC Mains Course (GS I–IV, Essay &amp; Optional)</h2>
+        <p style="color:var(--text-muted);margin-bottom:1.5rem;">Analytical depth, multi-dimensional structuring, governance linkage, and balanced administrative conclusions.</p>
+        <div class="grid-3">
+          <div class="info-box"><h4>GS Papers I, II &amp; III</h4><p>Society, Governance, Constitution, International Relations, Economic Development, Security &amp; Environment.</p></div>
+          <div class="info-box"><h4>GS Paper IV (Ethics)</h4><p>Ethical frameworks, integrity, public service values, and real-world administrative case studies.</p></div>
+          <div class="info-box"><h4>Essay &amp; Optional Guidance</h4><p>Philosophical and socio-economic essay structure plus optional subject alignment.</p></div>
+        </div>
+      </div>
+
+      <!-- Sub-Page 3: Interview Preparation -->
+      <div id="upsc-interview" class="upsc-sub-panel">
+        <span class="eyebrow">Sub-Page 3 of 8 • Personality Test (275 Marks)</span>
+        <h2 style="font-family:'Playfair Display',serif;color:var(--navy-deep);margin-bottom:0.8rem;">UPSC Personality Test (Interview) Preparation</h2>
+        <p style="color:var(--text-muted);margin-bottom:1.5rem;">Focused on mental alertness, balanced judgment, honesty, clarity of thought, and administrative suitability.</p>
+        <div class="grid-3">
+          <div class="info-box"><h4>Board Readiness</h4><p>Calm demeanor, concise answers, and honest admission when a fact is unknown.</p></div>
+          <div class="info-box"><h4>Balanced Standpoints</h4><p>Presenting fair, constitutional, and citizen-centric perspectives without extreme bias.</p></div>
+          <div class="info-box"><h4>One-on-One Feedback</h4><p>Individual review of tone, structure, body language, and follow-up handling.</p></div>
+        </div>
+      </div>
+
+      <!-- Sub-Page 4: Expected Interview Questions -->
+      <div id="upsc-questions" class="upsc-sub-panel">
+        <span class="eyebrow">Sub-Page 4 of 8 • Interview Question Bank</span>
+        <h2 style="font-family:'Playfair Display',serif;color:var(--navy-deep);margin-bottom:0.8rem;">What Questions Come in the UPSC Interview?</h2>
+        <div class="qa-box">
+          <h4>1. Background, Education &amp; Work Experience Questions</h4>
+          <p>"Why do you want to join Civil Services after your degree/work experience?" "How does your past work help you as a public administrator?"</p>
+        </div>
+        <div class="qa-box">
+          <h4>2. Home State, District &amp; Local Issues</h4>
+          <p>"What are the top two developmental or administrative challenges in your home district/state, and how would you approach them?"</p>
+        </div>
+        <div class="qa-box">
+          <h4>3. Governance, Ethics &amp; Situational Dilemmas</h4>
+          <p>"If local pressure conflicts with rule compliance or public interest, how do you handle it?" "How do you ensure transparency and empathy?"</p>
+        </div>
+        <div class="qa-box">
+          <h4>4. Polity, Economy, Current Affairs &amp; Follow-Ups</h4>
+          <p>Questions probing constitutional principles, welfare delivery, global developments, and follow-up questions based on your own answers.</p>
+        </div>
+      </div>
+
+      <!-- Sub-Page 5: Mock Tests Suite -->
+      <div id="upsc-mocks" class="upsc-sub-panel">
+        <span class="eyebrow">Sub-Page 5 of 8 • Mock Tests</span>
+        <h2 style="font-family:'Playfair Display',serif;color:var(--navy-deep);margin-bottom:0.8rem;">UPSC Prelims, Mains &amp; Interview Mock Tests We Conduct</h2>
+        <div class="grid-3">
+          <div class="info-box">
+            <h4>Prelims Mock Tests</h4>
+            <p>Timed sectional &amp; full-length GS I and CSAT tests followed by error-log analysis (concept gap vs guess error).</p>
+          </div>
+          <div class="info-box">
+            <h4>Mains Mock Tests</h4>
+            <p>Timed descriptive tests with structured evaluation on intro, sub-headings, examples, and way forward.</p>
+          </div>
+          <div class="info-box">
+            <h4>Interview Mock Panels</h4>
+            <p>25–30 minute DAF-based mock board sessions with post-mock improvement notes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-Page 6: CSAT & Answer Writing -->
+      <div id="upsc-csat" class="upsc-sub-panel">
+        <span class="eyebrow">Sub-Page 6 of 8 • CSAT &amp; Answer Writing</span>
+        <h2 style="font-family:'Playfair Display',serif;color:var(--navy-deep);margin-bottom:0.8rem;">CSAT (33% Qualifying) &amp; Mains Answer Writing Drills</h2>
+        <div class="grid-2">
+          <div class="info-box"><h4>CSAT Practice</h4><p>Reading comprehension accuracy, basic numeracy, and logical reasoning under strict time limits.</p></div>
+          <div class="info-box"><h4>Daily Answer Writing</h4><p>Word-limit discipline (150/250 words), crisp introductions, diagrams/points, and balanced conclusions.</p></div>
+        </div>
+      </div>
+
+      <!-- Sub-Page 7: DAF & Current Affairs -->
+      <div id="upsc-daf" class="upsc-sub-panel">
+        <span class="eyebrow">Sub-Page 7 of 8 • DAF &amp; Current Affairs</span>
+        <h2 style="font-family:'Playfair Display',serif;color:var(--navy-deep);margin-bottom:0.8rem;">DAF Mapping &amp; Current Affairs Linkage</h2>
+        <div class="grid-2">
+          <div class="info-box"><h4>DAF Deep Dive</h4><p>Mapping every hobby, optional subject, job role, and hometown detail to potential board questions.</p></div>
+          <div class="info-box"><h4>Current Affairs Integration</h4><p>Connecting news events to constitutional provisions, policies, economy, and governance themes.</p></div>
+        </div>
+      </div>
+
+      <!-- Sub-Page 8: Study Roadmap -->
+      <div id="upsc-roadmap" class="upsc-sub-panel">
+        <span class="eyebrow">Sub-Page 8 of 8 • Study Roadmap</span>
+        <h2 style="font-family:'Playfair Display',serif;color:var(--navy-deep);margin-bottom:0.8rem;">Integrated UPSC Preparation &amp; Revision Roadmap</h2>
+        <div class="grid-3">
+          <div class="info-box"><h4>Phase 1: Foundation</h4><p>Core static subjects, NCERT/standard concepts, and note-making habits.</p></div>
+          <div class="info-box"><h4>Phase 2: Mocks &amp; Writing</h4><p>Regular Prelims mocks, CSAT drills, and Mains answer writing.</p></div>
+          <div class="info-box"><h4>Phase 3: Interview &amp; Final Polish</h4><p>DAF preparation, mock boards, and high-yield revision.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer-minimal" style="margin-top:3rem;">
+      <div class="container footer-min-inner">
+        <div class="footer-min-brand">
+          <img src="logo.png" alt="Serve Ease Academy" />
+          <span>Serve Ease Academy • Civil Services Hub (8 Sub-Pages)</span>
+        </div>
+        <div class="footer-min-links">
+          <a href="javascript:void(0)" onclick="openMainHome()">Main Homepage</a>
+          <a href="tel:+97470442825">+974 70120012</a>
+          <span>© 2026 Serve Ease Academy</span>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <!-- Floating Buttons -->
+  <div class="floating-stack">
+    <a href="https://wa.me/97470120012?text=Hello%20Serve%20Ease%20Academy%2C%20I%20would%20like%20to%20enquire." target="_blank" rel="noopener" class="float-btn float-whatsapp">
+      <span>WhatsApp Enquiry</span>
+    </a>
+    <a href="#" class="float-btn float-top" aria-label="Back to Top">↑ Top</a>
+  </div>
+
+  <!-- Scripts: Multi-Page Switcher + Count-to-Zero Animation -->
+  <script>
+    function openMainHome() {
+      document.getElementById('upscHubView').classList.remove('active');
+      document.getElementById('mainHomeView').classList.add('active');
+      document.getElementById('navHomeLink').classList.add('active-link');
+      document.getElementById('navUpscLink').classList.remove('active-link');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openUpscHub(subPageId) {
+      document.getElementById('mainHomeView').classList.remove('active');
+      document.getElementById('upscHubView').classList.add('active');
+      document.getElementById('navHomeLink').classList.remove('active-link');
+      document.getElementById('navUpscLink').classList.add('active-link');
+
+      const targetBtn = document.querySelector('.tab-pill[data-target="' + subPageId + '"]');
+      const labelText = targetBtn ? targetBtn.textContent : '1. Prelims Course';
+      switchUpscSubPage(subPageId || 'upsc-prelims', labelText, targetBtn);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function switchUpscSubPage(panelId, breadcrumbLabel, btnElement) {
+      document.querySelectorAll('.upsc-sub-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-pill').forEach(b => b.classList.remove('active'));
+
+      const activePanel = document.getElementById(panelId);
+      if (activePanel) activePanel.classList.add('active');
+      if (btnElement) btnElement.classList.add('active');
+      document.getElementById('currentUpscBreadcrumb').textContent = breadcrumbLabel;
+    }
+
+    function scrollToSection(sectionId) {
+      openMainHome();
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 80);
+    }
+
+    // Count-down to 0 animation
+    (function () {
+      const counters = document.querySelectorAll('.stat-number');
+      let animated = false;
+
+      function runZeroCount(el) {
+        const start = parseInt(el.getAttribute('data-start'), 10) || 0;
+        const suffix = el.getAttribute('data-suffix') || '';
+        const duration = 1700;
+        const startTime = performance.now();
+
+        function tick(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const val = Math.max(0, Math.round(start * (1 - eased)));
+          el.textContent = val + suffix;
+          if (progress < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            el.textContent = '0' + suffix;
+          }
+        }
+        requestAnimationFrame(tick);
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            counters.forEach(runZeroCount);
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.2 });
+
+      const statsEl = document.getElementById('layer-2-stats');
+      if (statsEl) observer.observe(statsEl);
+    })();
+  </script>
 
 </body>
 </html>
