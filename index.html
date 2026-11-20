@@ -41,8 +41,8 @@
         .course-inside-page { display: none; }
         .course-inside-page.active { display: block; animation: fadeIn 0.28s ease-in-out; }
 
-        .cs-detail-page { display: none; }
-        .cs-detail-page.active { display: block; animation: fadeIn 0.25s ease-in-out; }
+        .course-tab-panel { display: none; }
+        .course-tab-panel.active { display: block; animation: fadeIn 0.25s ease-in-out; }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(6px); }
@@ -69,6 +69,24 @@
 
         .zoomable-photo { cursor: zoom-in; transition: transform 0.3s ease; }
         .zoomable-photo:hover { transform: scale(1.02); }
+
+        .hero-bg-wrap {
+            position: relative;
+            background-image: url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-bg-wrap::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(125deg, rgba(10, 37, 64, 0.84) 0%, rgba(15, 61, 110, 0.78) 55%, rgba(10, 37, 64, 0.88) 100%);
+            z-index: 0;
+        }
+        .hero-bg-wrap > .hero-inner {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body class="bg-lux-white text-lux-ink font-sans antialiased selection:bg-lux-royal selection:text-white overflow-x-hidden w-full">
@@ -101,9 +119,9 @@
 
     <main class="w-full">
 
-        <!-- 1. DARK LUXURY BLUE HERO + CURVED FLOATING COUNTDOWN BOXES -->
-        <section id="top-hero" class="w-full bg-lux-navy text-white py-12 lg:py-16">
-            <div class="w-[92%] sm:w-[80%] mx-auto space-y-10">
+        <!-- 1. DARK LUXURY BLUE HERO WITH VISIBLE BACKGROUND PHOTO + CURVED FLOATING COUNTDOWN BOXES -->
+        <section id="top-hero" class="hero-bg-wrap w-full text-white py-12 lg:py-16">
+            <div class="hero-inner w-[92%] sm:w-[80%] mx-auto space-y-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-7 space-y-5">
                         <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-sky-300">
@@ -120,18 +138,18 @@
                             <a href="#courses-sec" class="bg-lux-royal hover:bg-lux-sky text-white font-bold px-6 py-3 rounded-xl text-xs sm:text-sm shadow-lg transition-all flex items-center gap-2">
                                 Explore Courses <i class="fa-solid fa-arrow-right text-xs"></i>
                             </a>
-                            <a href="#courses-sec" onclick="openCourseInsidePage('civil')" class="bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold px-6 py-3 rounded-xl text-xs sm:text-sm transition-all flex items-center gap-2">
+                            <a href="#courses-sec" onclick="openCourseInsidePage('civil')" class="bg-white/15 hover:bg-white/25 border border-white/25 text-white font-semibold px-6 py-3 rounded-xl text-xs sm:text-sm transition-all flex items-center gap-2">
                                 <i class="fa-solid fa-landmark text-lux-gold"></i> Civil Service
                             </a>
                         </div>
-                        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-1.5 text-[11px] text-sky-200">
+                        <div class="inline-flex items-center gap-2 bg-white/15 border border-white/20 rounded-full px-4 py-1.5 text-[11px] text-sky-200">
                             <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                             Offline batch classes opening soon in Thrissur, Kerala and online
                         </div>
                     </div>
 
                     <div class="lg:col-span-5">
-                        <div class="float-box-1 rounded-[2.25rem] overflow-hidden shadow-2xl border-2 border-white/20 bg-lux-blue">
+                        <div class="float-box-1 rounded-[2.25rem] overflow-hidden shadow-2xl border-2 border-white/25 bg-lux-blue">
                             <img src="hero-bg.jpg" alt="" onclick="openZoomModal(this.src)" class="zoomable-photo w-full h-[330px] object-cover">
                         </div>
                     </div>
@@ -317,7 +335,7 @@
                         Find your <span class="font-serif italic text-lux-royal">perfect course</span>
                     </h2>
                     <p class="text-slate-600 text-xs sm:text-sm mt-1">
-                        Click Course Details on any card to open its inside page with details, duration, exam time, and registration.
+                        Click Course Details on any card to open its dedicated inside page with details, duration, exam time, and registration.
                     </p>
                 </div>
 
@@ -438,7 +456,7 @@
                     </div>
                 </div>
 
-                <!-- ==================== DEDICATED INSIDE COURSE PAGE ==================== -->
+                <!-- ==================== DEDICATED INSIDE COURSE PAGES ==================== -->
                 <div id="inside-course-container" class="hidden pt-2">
                     <div class="bg-white rounded-[2.25rem] p-6 sm:p-10 border-2 border-blue-200 shadow-2xl space-y-8">
                         <div class="flex items-center justify-between border-b border-blue-100 pb-4">
@@ -453,7 +471,7 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
                                 <div class="bg-lux-ice p-5 rounded-3xl border border-blue-100 space-y-2">
                                     <span class="text-[10px] font-bold uppercase tracking-wider text-lux-royal block">Details</span>
-                                    <strong class="text-lux-navy text-sm block">HR and PRO Operations</strong>
+                                    <strong class="text-lux-navy text-sm block">HR and PRO Services</strong>
                                     <p class="text-slate-600 leading-relaxed">Corporate HR administration, visa and residency processing, labor compliance, and payroll workflows.</p>
                                 </div>
                                 <div class="bg-lux-ice p-5 rounded-3xl border border-blue-100 space-y-2">
@@ -511,7 +529,7 @@
                             </div>
                         </div>
 
-                        <!-- INSIDE PAGE 4: CIVIL SERVICE COACHING -->
+                        <!-- INSIDE PAGE 4: CIVIL SERVICE COACHING (DETAILS, DURATION, EXAM TIME, PRELIMS, MAINS, MOCKTEST WITH VIRTUAL INTERVIEW, UPSC EVENTS & BLOGS) -->
                         <div id="inside-page-civil" class="course-inside-page space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
                                 <div class="bg-lux-ice p-5 rounded-3xl border border-blue-100 space-y-2">
@@ -531,28 +549,28 @@
                                 </div>
                             </div>
 
-                            <!-- Stage Switcher: Prelims | Mains | Mocktest with Virtual Interview | UPSC Events | Blogs -->
+                            <!-- Inside Tabs for Civil Service -->
                             <div class="flex flex-wrap gap-2">
-                                <button type="button" onclick="switchCSDetail('prelims')" id="cs-btn-prelims" class="cs-detail-btn px-4 py-2 rounded-full text-xs font-bold bg-lux-blue text-white">Prelims</button>
-                                <button type="button" onclick="switchCSDetail('mains')" id="cs-btn-mains" class="cs-detail-btn px-4 py-2 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100">Mains</button>
-                                <button type="button" onclick="switchCSDetail('mock-virtual')" id="cs-btn-mock-virtual" class="cs-detail-btn px-4 py-2 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100">Mocktest with Virtual Interview</button>
-                                <button type="button" onclick="switchCSDetail('upsc-events')" id="cs-btn-upsc-events" class="cs-detail-btn px-4 py-2 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100">UPSC Events</button>
-                                <button type="button" onclick="switchCSDetail('blogs')" id="cs-btn-blogs" class="cs-detail-btn px-4 py-2 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100">Blogs</button>
+                                <button type="button" onclick="switchCivilInsideTab('prelims')" id="civ-btn-prelims" class="civ-inside-btn px-4 py-2 rounded-full text-xs font-bold bg-lux-blue text-white">Prelims</button>
+                                <button type="button" onclick="switchCivilInsideTab('mains')" id="civ-btn-mains" class="civ-inside-btn px-4 py-2 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100">Mains</button>
+                                <button type="button" onclick="switchCivilInsideTab('mock-virtual')" id="civ-btn-mock-virtual" class="civ-inside-btn px-4 py-2 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100">Mocktest with Virtual Interview</button>
+                                <button type="button" onclick="switchCivilInsideTab('upsc-events')" id="civ-btn-upsc-events" class="civ-inside-btn px-4 py-2 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100">UPSC Events</button>
+                                <button type="button" onclick="switchCivilInsideTab('blogs')" id="civ-btn-blogs" class="civ-inside-btn px-4 py-2 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100">Blogs</button>
                             </div>
 
-                            <div id="cs-detail-prelims" class="cs-detail-page active bg-lux-ice rounded-3xl p-5 border border-blue-100 text-xs space-y-1.5">
+                            <div id="civ-panel-prelims" class="course-tab-panel active bg-lux-ice rounded-3xl p-5 border border-blue-100 text-xs space-y-1.5">
                                 <h4 class="text-base font-bold text-lux-navy">Prelims</h4>
                                 <p class="text-slate-600 leading-relaxed">General Studies, Polity, History, Geography, Economy, Current Affairs, and CSAT practice. Exam Time: 09:30 AM to 11:30 AM • Duration: 1 Year.</p>
                             </div>
-                            <div id="cs-detail-mains" class="cs-detail-page bg-lux-ice rounded-3xl p-5 border border-blue-100 text-xs space-y-1.5">
+                            <div id="civ-panel-mains" class="course-tab-panel bg-lux-ice rounded-3xl p-5 border border-blue-100 text-xs space-y-1.5">
                                 <h4 class="text-base font-bold text-lux-navy">Mains</h4>
                                 <p class="text-slate-600 leading-relaxed">Structured answer writing, essay practice, and analytical evaluation. Exam Time: 09:00 AM to 12:00 PM and 02:00 PM to 05:00 PM • Duration: 1 Year.</p>
                             </div>
-                            <div id="cs-detail-mock-virtual" class="cs-detail-page bg-lux-ice rounded-3xl p-5 border border-blue-100 text-xs space-y-1.5">
+                            <div id="civ-panel-mock-virtual" class="course-tab-panel bg-lux-ice rounded-3xl p-5 border border-blue-100 text-xs space-y-1.5">
                                 <h4 class="text-base font-bold text-lux-navy">Mocktest with Virtual Interview</h4>
                                 <p class="text-slate-600 leading-relaxed">Mock tests paired with virtual interview sessions directed by Shabeeb for board readiness.</p>
                             </div>
-                            <div id="cs-detail-upsc-events" class="cs-detail-page bg-lux-ice rounded-3xl p-5 border border-blue-100 text-xs space-y-3">
+                            <div id="civ-panel-upsc-events" class="course-tab-panel bg-lux-ice rounded-3xl p-5 border border-blue-100 text-xs space-y-3">
                                 <h4 class="text-base font-bold text-lux-navy">UPSC Events</h4>
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                                     <div class="bg-white p-4 rounded-2xl border border-blue-100 space-y-1">
@@ -569,7 +587,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="cs-detail-blogs" class="cs-detail-page bg-lux-ice rounded-3xl p-5 border border-blue-100 text-xs space-y-3">
+                            <div id="civ-panel-blogs" class="course-tab-panel bg-lux-ice rounded-3xl p-5 border border-blue-100 text-xs space-y-3">
                                 <h4 class="text-base font-bold text-lux-navy">Blogs</h4>
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                                     <div class="bg-white p-4 rounded-2xl border border-blue-100 space-y-1">
@@ -675,7 +693,7 @@
                     </div>
                 </div>
 
-                <!-- Inside Serve Ease Academy Photo Grid (Click Any Photo to Zoom) -->
+                <!-- Inside Serve Ease Academy Photo Grid -->
                 <div class="space-y-6">
                     <div class="text-center max-w-2xl mx-auto">
                         <span class="text-xs font-bold uppercase tracking-widest text-lux-blue block mb-1">Life at the Academy</span>
@@ -1009,7 +1027,7 @@
     </footer>
 
     <script>
-        // Countdown Animation (Guaranteed to run on load and scroll)
+        // Countdown Animation
         (function () {
             let started = false;
 
@@ -1132,19 +1150,19 @@
             });
         }
 
-        function switchCSDetail(detailKey) {
-            document.querySelectorAll('.cs-detail-page').forEach((panel) => {
+        function switchCivilInsideTab(tabKey) {
+            document.querySelectorAll('.course-tab-panel').forEach((panel) => {
                 panel.classList.remove('active');
             });
-            const target = document.getElementById(`cs-detail-${detailKey}`);
+            const target = document.getElementById(`civ-panel-${tabKey}`);
             if (target) target.classList.add('active');
 
-            document.querySelectorAll('.cs-detail-btn').forEach((btn) => {
+            document.querySelectorAll('.civ-inside-btn').forEach((btn) => {
                 btn.classList.remove('bg-lux-blue', 'text-white');
                 btn.classList.add('bg-lux-ice', 'text-lux-blue', 'border', 'border-blue-100');
             });
 
-            const activeBtn = document.getElementById(`cs-btn-${detailKey}`);
+            const activeBtn = document.getElementById(`civ-btn-${tabKey}`);
             if (activeBtn) {
                 activeBtn.classList.remove('bg-lux-ice', 'text-lux-blue', 'border', 'border-blue-100');
                 activeBtn.classList.add('bg-lux-blue', 'text-white');
