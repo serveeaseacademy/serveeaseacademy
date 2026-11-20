@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Serve Ease Academy — Global Academy for UPSC, GCC Services, Typing & Translation</title>
+  <title>Serve Ease Academy — Qatar Head Office & Online Global Academy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
@@ -413,6 +413,29 @@
     .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease; }
     .gallery-item:hover img { transform: scale(1.06); }
 
+    /* ================= ENQUIRY FORM ================= */
+    .enquiry-box {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--pure-white);
+      border: 1px solid var(--ice-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-card);
+    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .form-control {
+      width: 100%;
+      padding: 0.78rem 0.95rem;
+      border: 1px solid var(--ice-border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      background: var(--off-white);
+    }
+    .form-status { margin-top: 0.85rem; font-size: 0.9rem; font-weight: 600; color: var(--royal-blue); }
+
     /* ================= SUB-PAGE BANNER & 8 UPSC SUB-PAGES ================= */
     .subpage-header {
       background: linear-gradient(115deg, var(--navy-deep) 0%, var(--royal-blue) 100%);
@@ -560,7 +583,7 @@
     .float-top { background: var(--royal-blue); padding: 0.6rem 0.9rem; }
 
     @media (max-width: 980px) {
-      .hero-grid, .about-grid, .grid-2, .grid-3, .mentor-card { grid-template-columns: 1fr; }
+      .hero-grid, .about-grid, .grid-2, .grid-3, .mentor-card, .form-grid { grid-template-columns: 1fr; }
       .stats-grid, .grid-4 { grid-template-columns: repeat(2, 1fr); }
     }
 
@@ -582,9 +605,9 @@
       <nav class="nav-links">
         <a href="javascript:void(0)" onclick="openMainHome()" id="navHomeLink" class="active-link">Home (15 Layers)</a>
         <a href="javascript:void(0)" onclick="openUpscHub('upsc-prelims')" id="navUpscLink">Civil Services (8 Sub-Pages)</a>
-        <a href="javascript:void(0)" onclick="scrollToSection('global-tracks')">GCC, Typing &amp; Translation</a>
-        <a href="javascript:void(0)" onclick="scrollToSection('faq')">FAQ</a>
-        <a href="https://wa.me/97470442825" target="_blank" rel="noopener" class="nav-cta">Enquire Now</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('global-tracks')">Qatar &amp; Online</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('layer-13-onboarding')">Enquiry</a>
+        <a id="navWhatsappBtn" href="#" target="_blank" rel="noopener" class="nav-cta">WhatsApp Now</a>
       </nav>
     </div>
   </header>
@@ -598,10 +621,10 @@
     <section class="hero" id="layer-1-hero">
       <div class="container hero-grid">
         <div>
-          <span class="hero-tag">Starting in India • Worldwide Global Academy</span>
-          <h1>Global Career Skills &amp; Civil Services Mentorship—Starting in India, Serving the World.</h1>
+          <span class="hero-tag">Head Office: Qatar • Live Online &amp; Global</span>
+          <h1>Global Career Skills &amp; Civil Services Mentorship—Head Office in Qatar, Serving Worldwide.</h1>
           <p>
-            A wide, world-class academy ecosystem combining <strong>UPSC Civil Services</strong> (Prelims, Mains, Mock Tests &amp; Interview with 8 dedicated sub-pages), <strong>Qatar &amp; GCC Government Services</strong>, <strong>Official Typing</strong>, and <strong>Arabic–English Translation</strong> across online and offline workflows.
+            Headquartered in <strong>Qatar</strong> with seamless <strong>Online</strong> access worldwide—covering <strong>Civil Services (UPSC CSE)</strong> with 8 dedicated sub-pages, <strong>Qatar &amp; GCC Government Services</strong>, <strong>Official Typing</strong>, and <strong>Arabic–English Translation</strong> across online and offline files.
           </p>
           <div class="hero-actions">
             <button class="btn btn-white" onclick="openUpscHub('upsc-prelims')">Open Civil Services (8 Sub-Pages)</button>
@@ -610,11 +633,11 @@
         </div>
 
         <aside class="hero-panel">
-          <h3>Global Academy Highlights</h3>
+          <h3>Qatar HQ + Online Academy</h3>
           <ul>
-            <li><strong>India Center + Worldwide Access:</strong> Offline center support and live global sessions.</li>
-            <li><strong>Simple Team Work:</strong> Easy coordination, clear checklists, and smooth task flow.</li>
-            <li><strong>Online &amp; Offline Files:</strong> Digital portal workflows + physical/print file training.</li>
+            <li><strong>Head Office in Qatar:</strong> Desk guidance, practical file standards &amp; GCC expertise.</li>
+            <li><strong>Online Worldwide:</strong> Live interactive classes &amp; digital file practice from anywhere.</li>
+            <li><strong>Simple Team Work:</strong> Clear roles, ready templates &amp; smooth coordination.</li>
           </ul>
         </aside>
       </div>
@@ -642,27 +665,27 @@
       </div>
     </section>
 
-    <!-- Layer 3: India Center & Worldwide Vision -->
+    <!-- Layer 3: Qatar Head Office & Online Vision -->
     <section class="section" id="layer-3-global-vision">
       <div class="container about-grid">
         <div class="about-images">
-          <img src="about-1.jpg" alt="Serve Ease Academy Global Training" />
+          <img src="about-1.jpg" alt="Serve Ease Academy Qatar & Online Training" />
           <img src="about-2.jpg" alt="Serve Ease Academy Team Operations" />
         </div>
         <div>
-          <span class="eyebrow">Layer 03 • India Hub to Worldwide</span>
-          <h2>Built in India With a True Worldwide Standard</h2>
+          <span class="eyebrow">Layer 03 • Qatar Head Office &amp; Online</span>
+          <h2>Headquartered in Qatar With Worldwide Online Reach</h2>
           <p style="color: var(--text-muted); margin-bottom: 1.2rem;">
-            Starting from India as our operational foundation, Serve Ease Academy serves students and working professionals across India, Qatar, GCC, and international markets with structured mentorship and practical career skills.
+            With our head office in Qatar and live online delivery across regions, Serve Ease Academy unites real-world administrative accuracy, bilingual typing/translation, and structured UPSC preparation under one roof.
           </p>
           <div class="grid-2" style="gap: 1rem;">
             <div class="info-box">
-              <h4>India Center Foundation</h4>
-              <p>Structured classroom mentorship, study discipline, and practical skill building.</p>
+              <h4>Qatar Head Office</h4>
+              <p>Practical GCC documentation standards, file checklists &amp; operational guidance.</p>
             </div>
             <div class="info-box">
-              <h4>Worldwide Online Reach</h4>
-              <p>Live sessions, digital file practice, and global mentorship from anywhere.</p>
+              <h4>Online Worldwide</h4>
+              <p>Live sessions, digital templates, mock reviews &amp; remote mentorship globally.</p>
             </div>
           </div>
         </div>
@@ -747,7 +770,7 @@
                     <li>Real GCC case scenarios &amp; error prevention</li>
                   </ul>
                 </div>
-                <a href="https://wa.me/97470442825?text=Hello%20Serve%20Ease%20Academy%2C%20I%20want%20details%20on%20Qatar%20%26%20GCC%20Government%20Services." target="_blank" rel="noopener" class="card-btn">Enquire GCC Services</a>
+                <a href="#layer-13-onboarding" class="card-btn">Enquire GCC Services</a>
               </div>
             </div>
           </article>
@@ -769,7 +792,7 @@
                     <li>Contracts, NOCs, letters &amp; official forms</li>
                   </ul>
                 </div>
-                <a href="https://wa.me/97470442825?text=Hello%20Serve%20Ease%20Academy%2C%20I%20want%20details%20on%20Typing%20and%20Arabic-English%20Translation." target="_blank" rel="noopener" class="card-btn">Enquire Typing &amp; Translation</a>
+                <a href="#layer-13-onboarding" class="card-btn">Enquire Typing &amp; Translation</a>
               </div>
             </div>
           </article>
@@ -791,7 +814,7 @@
                     <li>Online &amp; offline administrative file handling</li>
                   </ul>
                 </div>
-                <a href="https://wa.me/97470442825?text=Hello%20Serve%20Ease%20Academy%2C%20I%20want%20details%20on%20HR%20Administration." target="_blank" rel="noopener" class="card-btn">Enquire HR Track</a>
+                <a href="#layer-13-onboarding" class="card-btn">Enquire HR Track</a>
               </div>
             </div>
           </article>
@@ -880,10 +903,10 @@
           <img src="mentor-1.jpg" alt="Serve Ease Academy Mentorship" />
           <div>
             <span class="hero-tag" style="margin-bottom:0.75rem;">Layer 10 • Mentorship</span>
-            <h3>Structured Guidance From India to Global Learners</h3>
+            <h3>Structured Guidance From Qatar HQ to Global Learners</h3>
             <p>Combining UPSC analytical clarity with practical GCC government documentation, HR files, typing, and Arabic–English translation workflows.</p>
             <div class="mentor-tags">
-              <span>India Hub</span>
+              <span>Qatar Head Office</span>
               <span>Global Online Access</span>
               <span>UPSC 8-Page Module</span>
               <span>GCC PRO &amp; Bilingual</span>
@@ -899,7 +922,7 @@
         <div class="section-header">
           <span class="eyebrow">Layer 11 • Worldwide Experience</span>
           <h2>Designed for Students, Job Seekers &amp; Working Teams</h2>
-          <p>Flexible schedules and clear study/work modules across time zones.</p>
+          <p>Flexible online and Qatar-anchored schedules across time zones.</p>
         </div>
         <div class="grid-3">
           <div class="info-box"><h4>UPSC Aspirants</h4><p>Step-by-step Prelims, Mains, mock tests, and interview guidance.</p></div>
@@ -934,18 +957,34 @@
       </div>
     </section>
 
-    <!-- Layer 13: Simple Enrollment & Onboarding Flow -->
+    <!-- Layer 13: Enquiry & Database Capture -->
     <section class="section" id="layer-13-onboarding">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Layer 13 • Simple Onboarding</span>
-          <h2>Get Started in 3 Simple Steps</h2>
+          <span class="eyebrow">Layer 13 • Admissions &amp; Database Enquiry</span>
+          <h2>Register Your Interest (Online or Qatar HQ)</h2>
+          <p>Submissions save directly to browser storage and can sync with your database (Supabase / webhook).</p>
         </div>
-        <div class="grid-3">
-          <div class="info-box"><h4>Step 1: Choose Track</h4><p>Select Civil Services (8 sub-pages), GCC Services, Typing, or Translation.</p></div>
-          <div class="info-box"><h4>Step 2: Online or Offline</h4><p>Join live online classes or attend offline center/file sessions.</p></div>
-          <div class="info-box"><h4>Step 3: Practice &amp; Grow</h4><p>Complete mocks, typing/translation tasks, and real file checklists.</p></div>
-        </div>
+        <form class="enquiry-box" id="academyEnquiryForm">
+          <div class="form-grid">
+            <input type="text" id="enqName" class="form-control" placeholder="Full Name" required />
+            <input type="text" id="enqPhone" class="form-control" placeholder="Phone / WhatsApp Number" required />
+          </div>
+          <div class="form-grid">
+            <select id="enqTrack" class="form-control">
+              <option value="Civil Services (UPSC CSE)">Civil Services (UPSC CSE)</option>
+              <option value="Qatar & GCC Government Services">Qatar &amp; GCC Government Services</option>
+              <option value="Official Typing & Arabic-English Translation">Official Typing &amp; Arabic–English Translation</option>
+              <option value="HR Administration">HR Administration</option>
+            </select>
+            <select id="enqMode" class="form-control">
+              <option value="Online (Worldwide)">Online (Worldwide)</option>
+              <option value="Qatar Head Office / Offline">Qatar Head Office / Offline</option>
+            </select>
+          </div>
+          <button type="submit" class="card-btn">Submit Enquiry</button>
+          <div class="form-status" id="enqStatus"></div>
+        </form>
       </div>
     </section>
 
@@ -958,12 +997,12 @@
         </div>
         <div class="faq-list">
           <details class="faq-item" open>
-            <summary>How do I view the 8 Civil Services sub-pages?</summary>
-            <div class="faq-answer">Click <strong>Civil Services (8 Sub-Pages)</strong> in the top menu or hero button to switch directly across all 8 UPSC pages.</div>
+            <summary>Where is the head office located, and are online classes available?</summary>
+            <div class="faq-answer">Our head office is in <strong>Qatar</strong>, and learners can also join <strong>online</strong> from anywhere in the world.</div>
           </details>
           <details class="faq-item">
-            <summary>Where is the center starting, and is it global?</summary>
-            <div class="faq-answer">The center starts in <strong>India</strong> and operates with a <strong>worldwide</strong> approach across online and offline learning modes.</div>
+            <summary>How do I view the 8 Civil Services sub-pages?</summary>
+            <div class="faq-answer">Click <strong>Civil Services (8 Sub-Pages)</strong> in the top menu or hero button to switch directly across all 8 UPSC pages.</div>
           </details>
           <details class="faq-item">
             <summary>Do you cover both online and offline files for GCC services, typing, and translation?</summary>
@@ -978,11 +1017,11 @@
       <div class="container footer-min-inner">
         <div class="footer-min-brand">
           <img src="logo.png" alt="Serve Ease Academy" />
-          <span>Serve Ease Academy • India &amp; Worldwide</span>
+          <span>Serve Ease Academy • Qatar HQ &amp; Online</span>
         </div>
         <div class="footer-min-links">
-          <a href="tel:+97470442825">+974 70442825</a>
-          <a href="mailto:serveeaseqtr@gmail.com">serveeaseqtr@gmail.com</a>
+          <a id="footerPhoneLink" href="tel:+97470120012">70120012</a>
+          <a id="footerEmailLink" href="mailto:serveeaseacademy@gmail.com">serveeaseacademy@gmail.com</a>
           <span>© 2026 Serve Ease Academy</span>
         </div>
       </div>
@@ -1141,7 +1180,7 @@
         </div>
         <div class="footer-min-links">
           <a href="javascript:void(0)" onclick="openMainHome()">Main Homepage</a>
-          <a href="tel:+97470442825">+974 70120012</a>
+          <a id="upscFooterPhoneLink" href="tel:+97470120012">70120012</a>
           <span>© 2026 Serve Ease Academy</span>
         </div>
       </div>
@@ -1150,14 +1189,44 @@
 
   <!-- Floating Buttons -->
   <div class="floating-stack">
-    <a href="https://wa.me/97470120012?text=Hello%20Serve%20Ease%20Academy%2C%20I%20would%20like%20to%20enquire." target="_blank" rel="noopener" class="float-btn float-whatsapp">
+    <a id="floatWhatsappBtn" href="#" target="_blank" rel="noopener" class="float-btn float-whatsapp">
       <span>WhatsApp Enquiry</span>
     </a>
     <a href="#" class="float-btn float-top" aria-label="Back to Top">↑ Top</a>
   </div>
 
-  <!-- Scripts: Multi-Page Switcher + Count-to-Zero Animation -->
+  <!-- ===================================================================== -->
+  <!-- CONFIG + MULTI-PAGE + DATABASE LOGIC                                  -->
+  <!-- ===================================================================== -->
   <script>
+    const ACADEMY_CONFIG = {
+      whatsappDigits: "97470120012",
+      displayPhone: "70120012",
+      email: "serveeaseacademy@gmail.com",
+      supabaseUrl: "",
+      supabaseAnonKey: ""
+    };
+
+    (function applyConfig() {
+      const waUrl = `https://wa.me/${ACADEMY_CONFIG.whatsappDigits}?text=Hello%20Serve%20Ease%20Academy%2C%20I%20would%20like%20to%20enquire.`;
+      ["navWhatsappBtn", "floatWhatsappBtn"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.href = waUrl;
+      });
+      ["footerPhoneLink", "upscFooterPhoneLink"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.textContent = ACADEMY_CONFIG.displayPhone;
+          el.href = `tel:+${ACADEMY_CONFIG.whatsappDigits}`;
+        }
+      });
+      const emailEl = document.getElementById("footerEmailLink");
+      if (emailEl) {
+        emailEl.textContent = ACADEMY_CONFIG.email;
+        emailEl.href = `mailto:${ACADEMY_CONFIG.email}`;
+      }
+    })();
+
     function openMainHome() {
       document.getElementById('upscHubView').classList.remove('active');
       document.getElementById('mainHomeView').classList.add('active');
@@ -1196,7 +1265,6 @@
       }, 80);
     }
 
-    // Count-down to 0 animation
     (function () {
       const counters = document.querySelectorAll('.stat-number');
       let animated = false;
@@ -1234,6 +1302,47 @@
       const statsEl = document.getElementById('layer-2-stats');
       if (statsEl) observer.observe(statsEl);
     })();
+
+    document.getElementById("academyEnquiryForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const record = {
+        full_name: document.getElementById("enqName").value.trim(),
+        phone: document.getElementById("enqPhone").value.trim(),
+        track: document.getElementById("enqTrack").value,
+        mode: document.getElementById("enqMode").value,
+        head_office: "Qatar",
+        created_at: new Date().toISOString()
+      };
+
+      const existing = JSON.parse(localStorage.getItem("serveease_enquiries") || "[]");
+      existing.push(record);
+      localStorage.setItem("serveease_enquiries", JSON.stringify(existing));
+
+      const statusEl = document.getElementById("enqStatus");
+
+      if (ACADEMY_CONFIG.supabaseUrl && ACADEMY_CONFIG.supabaseAnonKey) {
+        try {
+          const res = await fetch(`${ACADEMY_CONFIG.supabaseUrl}/rest/v1/academy_enquiries`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "apikey": ACADEMY_CONFIG.supabaseAnonKey,
+              "Authorization": `Bearer ${ACADEMY_CONFIG.supabaseAnonKey}`
+            },
+            body: JSON.stringify(record)
+          });
+          statusEl.textContent = res.ok
+            ? "Saved to database successfully!"
+            : "Saved locally (check Supabase keys/table).";
+        } catch (err) {
+          statusEl.textContent = "Saved locally on this device.";
+        }
+      } else {
+        statusEl.textContent = "Saved locally! Connect Supabase URL & Key in config to store in cloud DB.";
+      }
+
+      this.reset();
+    });
   </script>
 
 </body>
