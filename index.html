@@ -135,7 +135,7 @@
                             Serve Ease Academy provides career focused diplomas in HR and PRO services, GCC document processing, typing and translation, and one year Civil Service coaching directed and instructed by Shabeeb, with offline batch classes opening soon in Thrissur, Kerala.
                         </p>
                         <div class="flex flex-wrap items-center gap-3 pt-1">
-                            <a href="#courses-sec" class="bg-lux-royal hover:bg-lux-sky text-white font-bold px-6 py-3 rounded-xl text-xs sm:text-sm shadow-lg transition-all flex items-center gap-2">
+                            <a href="#courses-sec" onclick="closeInsideCoursePage()" class="bg-lux-royal hover:bg-lux-sky text-white font-bold px-6 py-3 rounded-xl text-xs sm:text-sm shadow-lg transition-all flex items-center gap-2">
                                 Explore Courses <i class="fa-solid fa-arrow-right text-xs"></i>
                             </a>
                             <a href="#courses-sec" onclick="openCourseInsidePage('civil')" class="bg-white/15 hover:bg-white/25 border border-white/25 text-white font-semibold px-6 py-3 rounded-xl text-xs sm:text-sm transition-all flex items-center gap-2">
@@ -221,7 +221,7 @@
                             </li>
                         </ul>
                         <div class="flex flex-wrap gap-3 pt-2">
-                            <a href="#courses-sec" class="bg-lux-blue hover:bg-lux-royal text-white font-semibold px-6 py-3 rounded-xl text-xs shadow">
+                            <a href="#courses-sec" onclick="closeInsideCoursePage()" class="bg-lux-blue hover:bg-lux-royal text-white font-semibold px-6 py-3 rounded-xl text-xs shadow">
                                 Explore Courses
                             </a>
                             <a href="#contact-sec" class="bg-white hover:bg-lux-frost text-lux-blue border border-blue-200 font-semibold px-6 py-3 rounded-xl text-xs">
@@ -293,22 +293,22 @@
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                    <a href="#courses-sec" onclick="openCourseInsidePage('hr')" class="float-box-1 bg-white/10 hover:bg-white/15 border border-white/15 rounded-[2rem] p-5 transition-all block shadow-lg">
+                    <button type="button" onclick="openCourseInsidePage('hr')" class="float-box-1 text-left bg-white/10 hover:bg-white/15 border border-white/15 rounded-[2rem] p-5 transition-all block shadow-lg">
                         <span class="text-[10px] uppercase tracking-wider text-sky-300 font-bold block">3 Months</span>
                         <strong class="text-sm block mt-0.5">HR and PRO Services</strong>
-                    </a>
-                    <a href="#courses-sec" onclick="openCourseInsidePage('gcc')" class="float-box-2 bg-white/10 hover:bg-white/15 border border-white/15 rounded-[2rem] p-5 transition-all block shadow-lg">
+                    </button>
+                    <button type="button" onclick="openCourseInsidePage('gcc')" class="float-box-2 text-left bg-white/10 hover:bg-white/15 border border-white/15 rounded-[2rem] p-5 transition-all block shadow-lg">
                         <span class="text-[10px] uppercase tracking-wider text-sky-300 font-bold block">3 Months</span>
                         <strong class="text-sm block mt-0.5">GCC Document Processing</strong>
-                    </a>
-                    <a href="#courses-sec" onclick="openCourseInsidePage('translation')" class="float-box-3 bg-white/10 hover:bg-white/15 border border-white/15 rounded-[2rem] p-5 transition-all block shadow-lg">
+                    </button>
+                    <button type="button" onclick="openCourseInsidePage('translation')" class="float-box-3 text-left bg-white/10 hover:bg-white/15 border border-white/15 rounded-[2rem] p-5 transition-all block shadow-lg">
                         <span class="text-[10px] uppercase tracking-wider text-sky-300 font-bold block">3 Months</span>
                         <strong class="text-sm block mt-0.5">Typing and Translation</strong>
-                    </a>
-                    <a href="#courses-sec" onclick="openCourseInsidePage('civil')" class="float-box-1 bg-white/10 hover:bg-white/15 border border-white/15 rounded-[2rem] p-5 transition-all block shadow-lg">
+                    </button>
+                    <button type="button" onclick="openCourseInsidePage('civil')" class="float-box-1 text-left bg-white/10 hover:bg-white/15 border border-white/15 rounded-[2rem] p-5 transition-all block shadow-lg">
                         <span class="text-[10px] uppercase tracking-wider text-sky-300 font-bold block">1 Year</span>
                         <strong class="text-sm block mt-0.5">Civil Service Coaching</strong>
-                    </a>
+                    </button>
                 </div>
 
                 <div class="float-box-2 bg-lux-blue/60 border border-white/15 rounded-[2rem] p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl">
@@ -319,150 +319,156 @@
                             <p class="text-xs text-blue-100">Prelims, Mains, Mocktest with Virtual Interview, UPSC Events, and Blogs.</p>
                         </div>
                     </div>
-                    <a href="#courses-sec" onclick="openCourseInsidePage('civil')" class="bg-white hover:bg-blue-50 text-lux-navy font-bold px-5 py-2.5 rounded-full text-xs shrink-0">
+                    <button type="button" onclick="openCourseInsidePage('civil')" class="bg-white hover:bg-blue-50 text-lux-navy font-bold px-5 py-2.5 rounded-full text-xs shrink-0">
                         Open Course Details →
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>
 
-        <!-- 4. FIND YOUR PERFECT COURSE + DEDICATED INSIDE COURSE PAGES -->
+        <!-- 4. COURSES OVERVIEW + DEDICATED INSIDE PAGE VIEW (ENTERS INSIDE PAGE WHEN COURSE DETAILS IS CLICKED) -->
         <section id="courses-sec" class="w-full bg-lux-ice py-14 border-b border-blue-100">
             <div class="w-[92%] sm:w-[80%] mx-auto space-y-10">
-                <div class="text-center max-w-2xl mx-auto">
-                    <span class="text-xs font-bold uppercase tracking-widest text-lux-blue block mb-1">Our Programmes</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-lux-navy">
-                        Find your <span class="font-serif italic text-lux-royal">perfect course</span>
-                    </h2>
-                    <p class="text-slate-600 text-xs sm:text-sm mt-1">
-                        Click Course Details on any card to open its dedicated inside page with details, duration, exam time, and registration.
-                    </p>
-                </div>
 
-                <!-- 6 Curved Floating Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Card 1: HR and PRO Services -->
-                    <div class="float-box-1 bg-white rounded-[2rem] overflow-hidden border border-blue-100 shadow-md flex flex-col justify-between">
-                        <div>
-                            <div class="h-44 overflow-hidden bg-lux-frost">
-                                <img src="course-hr.jpg" alt="" onclick="openZoomModal(this.src)" class="zoomable-photo w-full h-full object-cover">
-                            </div>
-                            <div class="p-5 space-y-2">
-                                <span class="text-[10px] font-bold uppercase tracking-wider text-lux-royal">3 Months</span>
-                                <h3 class="text-lg font-bold text-lux-navy">HR and PRO Services</h3>
-                                <p class="text-xs text-slate-600 leading-relaxed">Corporate HR workflows, visa and residency processing, labor compliance, and payroll administration.</p>
-                            </div>
-                        </div>
-                        <div class="px-5 py-4 bg-lux-ice/60 border-t border-blue-100 flex items-center justify-between">
-                            <span class="text-xs font-bold text-lux-blue">3 Months</span>
-                            <button type="button" onclick="openCourseInsidePage('hr')" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-4 py-2 rounded-full text-xs">
-                                Course Details →
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Card 2: GCC Document Processing -->
-                    <div class="float-box-2 bg-white rounded-[2rem] overflow-hidden border border-blue-100 shadow-md flex flex-col justify-between">
-                        <div>
-                            <div class="h-44 overflow-hidden bg-lux-frost">
-                                <img src="course-gcc.jpg" alt="" onclick="openZoomModal(this.src)" class="zoomable-photo w-full h-full object-cover">
-                            </div>
-                            <div class="p-5 space-y-2">
-                                <span class="text-[10px] font-bold uppercase tracking-wider text-lux-royal">3 Months</span>
-                                <h3 class="text-lg font-bold text-lux-navy">GCC Document Processing</h3>
-                                <p class="text-xs text-slate-600 leading-relaxed">Certificate attestation, embassy verification steps, commercial trade licensing, and file clearances.</p>
-                            </div>
-                        </div>
-                        <div class="px-5 py-4 bg-lux-ice/60 border-t border-blue-100 flex items-center justify-between">
-                            <span class="text-xs font-bold text-lux-blue">3 Months</span>
-                            <button type="button" onclick="openCourseInsidePage('gcc')" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-4 py-2 rounded-full text-xs">
-                                Course Details →
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Card 3: Typing and Translation -->
-                    <div class="float-box-3 bg-white rounded-[2rem] overflow-hidden border border-blue-100 shadow-md flex flex-col justify-between">
-                        <div>
-                            <div class="h-44 overflow-hidden bg-lux-frost">
-                                <img src="course-translation.jpg" alt="" onclick="openZoomModal(this.src)" class="zoomable-photo w-full h-full object-cover">
-                            </div>
-                            <div class="p-5 space-y-2">
-                                <span class="text-[10px] font-bold uppercase tracking-wider text-lux-royal">3 Months</span>
-                                <h3 class="text-lg font-bold text-lux-navy">Typing and Translation</h3>
-                                <p class="text-xs text-slate-600 leading-relaxed">English and Arabic legal or commercial translation alongside high speed official document typing.</p>
-                            </div>
-                        </div>
-                        <div class="px-5 py-4 bg-lux-ice/60 border-t border-blue-100 flex items-center justify-between">
-                            <span class="text-xs font-bold text-lux-blue">3 Months</span>
-                            <button type="button" onclick="openCourseInsidePage('translation')" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-4 py-2 rounded-full text-xs">
-                                Course Details →
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Card 4: Civil Service Coaching -->
-                    <div class="float-box-2 bg-white rounded-[2rem] overflow-hidden border border-blue-100 shadow-md flex flex-col justify-between">
-                        <div>
-                            <div class="h-44 overflow-hidden bg-lux-frost">
-                                <img src="course-upsc.jpg" alt="" onclick="openZoomModal(this.src)" class="zoomable-photo w-full h-full object-cover">
-                            </div>
-                            <div class="p-5 space-y-2">
-                                <span class="text-[10px] font-bold uppercase tracking-wider text-lux-royal">1 Year</span>
-                                <h3 class="text-lg font-bold text-lux-navy">Civil Service Coaching</h3>
-                                <p class="text-xs text-slate-600 leading-relaxed">Directed by Shabeeb with Prelims, Mains, Mocktest with Virtual Interview, UPSC Events, and Blogs.</p>
-                            </div>
-                        </div>
-                        <div class="px-5 py-4 bg-lux-ice/60 border-t border-blue-100 flex items-center justify-between">
-                            <span class="text-xs font-bold text-lux-blue">1 Year</span>
-                            <button type="button" onclick="openCourseInsidePage('civil')" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-4 py-2 rounded-full text-xs">
-                                Course Details →
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Card 5: Thrissur Offline Batch -->
-                    <div class="float-box-3 bg-white rounded-[2rem] overflow-hidden border border-blue-100 shadow-md flex flex-col justify-between">
-                        <div>
-                            <div class="h-44 overflow-hidden bg-lux-frost">
-                                <img src="gallery-1.jpg" alt="" onclick="openZoomModal(this.src)" class="zoomable-photo w-full h-full object-cover">
-                            </div>
-                            <div class="p-5 space-y-2">
-                                <span class="text-[10px] font-bold uppercase tracking-wider text-lux-royal">Opening Soon</span>
-                                <h3 class="text-lg font-bold text-lux-navy">Thrissur Offline Batch</h3>
-                                <p class="text-xs text-slate-600 leading-relaxed">Classroom batches opening soon in Thrissur, Kerala with guided mentorship and practical sessions.</p>
-                            </div>
-                        </div>
-                        <div class="px-5 py-4 bg-lux-ice/60 border-t border-blue-100 flex items-center justify-between">
-                            <span class="text-xs font-bold text-lux-blue">Thrissur, Kerala</span>
-                            <a href="#contact-sec" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-4 py-2 rounded-full text-xs">
-                                Enquire →
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Card 6: Dark Blue Ready to Start Card -->
-                    <div class="float-box-1 bg-lux-navy text-white rounded-[2rem] p-7 border border-blue-800 shadow-xl flex flex-col items-center justify-center text-center space-y-4">
-                        <div class="w-12 h-12 rounded-2xl bg-white/10 text-sky-300 flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                        </div>
-                        <h3 class="text-xl font-extrabold">Ready to start?</h3>
-                        <p class="text-xs text-blue-100 leading-relaxed">
-                            Select a course above to view full details, duration, exam time, and register.
+                <!-- COURSES CARDS LIST (SHOWN WHEN NOT INSIDE A COURSE PAGE) -->
+                <div id="courses-list-view" class="space-y-10">
+                    <div class="text-center max-w-2xl mx-auto">
+                        <span class="text-xs font-bold uppercase tracking-widest text-lux-blue block mb-1">Our Programmes</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-lux-navy">
+                            Find your <span class="font-serif italic text-lux-royal">perfect course</span>
+                        </h2>
+                        <p class="text-slate-600 text-xs sm:text-sm mt-1">
+                            Click Course Details on any card to enter its dedicated inside page.
                         </p>
-                        <a href="#contact-sec" class="bg-lux-royal hover:bg-lux-sky text-white font-bold px-6 py-2.5 rounded-full text-xs">
-                            Register Now →
-                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Card 1: HR and PRO Services -->
+                        <div class="float-box-1 bg-white rounded-[2rem] overflow-hidden border border-blue-100 shadow-md flex flex-col justify-between">
+                            <div>
+                                <div class="h-44 overflow-hidden bg-lux-frost">
+                                    <img src="course-hr.jpg" alt="" onclick="openZoomModal(this.src)" class="zoomable-photo w-full h-full object-cover">
+                                </div>
+                                <div class="p-5 space-y-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-wider text-lux-royal">3 Months</span>
+                                    <h3 class="text-lg font-bold text-lux-navy">HR and PRO Services</h3>
+                                    <p class="text-xs text-slate-600 leading-relaxed">Corporate HR workflows, visa and residency processing, labor compliance, and payroll administration.</p>
+                                </div>
+                            </div>
+                            <div class="px-5 py-4 bg-lux-ice/60 border-t border-blue-100 flex items-center justify-between">
+                                <span class="text-xs font-bold text-lux-blue">3 Months</span>
+                                <button type="button" onclick="openCourseInsidePage('hr')" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-4 py-2 rounded-full text-xs">
+                                    Course Details →
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: GCC Document Processing -->
+                        <div class="float-box-2 bg-white rounded-[2rem] overflow-hidden border border-blue-100 shadow-md flex flex-col justify-between">
+                            <div>
+                                <div class="h-44 overflow-hidden bg-lux-frost">
+                                    <img src="course-gcc.jpg" alt="" onclick="openZoomModal(this.src)" class="zoomable-photo w-full h-full object-cover">
+                                </div>
+                                <div class="p-5 space-y-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-wider text-lux-royal">3 Months</span>
+                                    <h3 class="text-lg font-bold text-lux-navy">GCC Document Processing</h3>
+                                    <p class="text-xs text-slate-600 leading-relaxed">Certificate attestation, embassy verification steps, commercial trade licensing, and file clearances.</p>
+                                </div>
+                            </div>
+                            <div class="px-5 py-4 bg-lux-ice/60 border-t border-blue-100 flex items-center justify-between">
+                                <span class="text-xs font-bold text-lux-blue">3 Months</span>
+                                <button type="button" onclick="openCourseInsidePage('gcc')" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-4 py-2 rounded-full text-xs">
+                                    Course Details →
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Typing and Translation -->
+                        <div class="float-box-3 bg-white rounded-[2rem] overflow-hidden border border-blue-100 shadow-md flex flex-col justify-between">
+                            <div>
+                                <div class="h-44 overflow-hidden bg-lux-frost">
+                                    <img src="course-translation.jpg" alt="" onclick="openZoomModal(this.src)" class="zoomable-photo w-full h-full object-cover">
+                                </div>
+                                <div class="p-5 space-y-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-wider text-lux-royal">3 Months</span>
+                                    <h3 class="text-lg font-bold text-lux-navy">Typing and Translation</h3>
+                                    <p class="text-xs text-slate-600 leading-relaxed">English and Arabic legal or commercial translation alongside high speed official document typing.</p>
+                                </div>
+                            </div>
+                            <div class="px-5 py-4 bg-lux-ice/60 border-t border-blue-100 flex items-center justify-between">
+                                <span class="text-xs font-bold text-lux-blue">3 Months</span>
+                                <button type="button" onclick="openCourseInsidePage('translation')" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-4 py-2 rounded-full text-xs">
+                                    Course Details →
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Civil Service Coaching -->
+                        <div class="float-box-2 bg-white rounded-[2rem] overflow-hidden border border-blue-100 shadow-md flex flex-col justify-between">
+                            <div>
+                                <div class="h-44 overflow-hidden bg-lux-frost">
+                                    <img src="course-upsc.jpg" alt="" onclick="openZoomModal(this.src)" class="zoomable-photo w-full h-full object-cover">
+                                </div>
+                                <div class="p-5 space-y-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-wider text-lux-royal">1 Year</span>
+                                    <h3 class="text-lg font-bold text-lux-navy">Civil Service Coaching</h3>
+                                    <p class="text-xs text-slate-600 leading-relaxed">Directed by Shabeeb with Prelims, Mains, Mocktest with Virtual Interview, UPSC Events, and Blogs.</p>
+                                </div>
+                            </div>
+                            <div class="px-5 py-4 bg-lux-ice/60 border-t border-blue-100 flex items-center justify-between">
+                                <span class="text-xs font-bold text-lux-blue">1 Year</span>
+                                <button type="button" onclick="openCourseInsidePage('civil')" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-4 py-2 rounded-full text-xs">
+                                    Course Details →
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: Thrissur Offline Batch -->
+                        <div class="float-box-3 bg-white rounded-[2rem] overflow-hidden border border-blue-100 shadow-md flex flex-col justify-between">
+                            <div>
+                                <div class="h-44 overflow-hidden bg-lux-frost">
+                                    <img src="gallery-1.jpg" alt="" onclick="openZoomModal(this.src)" class="zoomable-photo w-full h-full object-cover">
+                                </div>
+                                <div class="p-5 space-y-2">
+                                    <span class="text-[10px] font-bold uppercase tracking-wider text-lux-royal">Opening Soon</span>
+                                    <h3 class="text-lg font-bold text-lux-navy">Thrissur Offline Batch</h3>
+                                    <p class="text-xs text-slate-600 leading-relaxed">Classroom batches opening soon in Thrissur, Kerala with guided mentorship and practical sessions.</p>
+                                </div>
+                            </div>
+                            <div class="px-5 py-4 bg-lux-ice/60 border-t border-blue-100 flex items-center justify-between">
+                                <span class="text-xs font-bold text-lux-blue">Thrissur, Kerala</span>
+                                <a href="#contact-sec" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-4 py-2 rounded-full text-xs">
+                                    Enquire →
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Card 6: Dark Blue Ready to Start Card -->
+                        <div class="float-box-1 bg-lux-navy text-white rounded-[2rem] p-7 border border-blue-800 shadow-xl flex flex-col items-center justify-center text-center space-y-4">
+                            <div class="w-12 h-12 rounded-2xl bg-white/10 text-sky-300 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="text-xl font-extrabold">Ready to start?</h3>
+                            <p class="text-xs text-blue-100 leading-relaxed">
+                                Click Course Details on any programme to open its inside page.
+                            </p>
+                            <button type="button" onclick="openCourseInsidePage('civil')" class="bg-lux-royal hover:bg-lux-sky text-white font-bold px-6 py-2.5 rounded-full text-xs">
+                                Civil Service Details →
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- ==================== DEDICATED INSIDE COURSE PAGES ==================== -->
-                <div id="inside-course-container" class="hidden pt-2">
+                <!-- ==================== DEDICATED INSIDE COURSE PAGE VIEW (OPENS WHEN COURSE DETAILS IS CLICKED) ==================== -->
+                <div id="inside-course-page-view" class="hidden">
                     <div class="bg-white rounded-[2.25rem] p-6 sm:p-10 border-2 border-blue-200 shadow-2xl space-y-8">
-                        <div class="flex items-center justify-between border-b border-blue-100 pb-4">
-                            <h3 id="inside-course-heading" class="text-2xl sm:text-3xl font-extrabold text-lux-blue">Course Details</h3>
-                            <button type="button" onclick="closeInsideCoursePage()" class="bg-lux-ice hover:bg-lux-frost text-lux-navy border border-blue-200 font-bold px-4 py-1.5 rounded-full text-xs">
-                                Close ✕
+                        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-blue-100 pb-4">
+                            <div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-lux-royal block">Inside Course Page</span>
+                                <h3 id="inside-course-heading" class="text-2xl sm:text-3xl font-extrabold text-lux-blue mt-0.5">Course Details</h3>
+                            </div>
+                            <button type="button" onclick="closeInsideCoursePage()" class="bg-lux-ice hover:bg-lux-frost text-lux-navy border border-blue-200 font-bold px-4 py-2 rounded-full text-xs flex items-center gap-2">
+                                <i class="fa-solid fa-arrow-left text-[10px]"></i> Back to Courses
                             </button>
                         </div>
 
@@ -529,7 +535,7 @@
                             </div>
                         </div>
 
-                        <!-- INSIDE PAGE 4: CIVIL SERVICE COACHING (DETAILS, DURATION, EXAM TIME, PRELIMS, MAINS, MOCKTEST WITH VIRTUAL INTERVIEW, UPSC EVENTS & BLOGS) -->
+                        <!-- INSIDE PAGE 4: CIVIL SERVICE COACHING -->
                         <div id="inside-page-civil" class="course-inside-page space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
                                 <div class="bg-lux-ice p-5 rounded-3xl border border-blue-100 space-y-2">
@@ -606,7 +612,7 @@
                             </div>
                         </div>
 
-                        <!-- REGISTER FORM -->
+                        <!-- REGISTER FORM INSIDE COURSE PAGE -->
                         <div class="bg-lux-ice rounded-[2rem] p-6 sm:p-8 border border-blue-100 max-w-2xl mx-auto">
                             <h4 class="text-xl font-extrabold text-lux-blue mb-5">Register</h4>
                             <form onsubmit="submitCourseRegister(event)" class="space-y-4 text-xs">
@@ -863,7 +869,7 @@
                     Join our upcoming Thrissur, Kerala offline batch or live online sessions today.
                 </p>
                 <div class="flex flex-wrap justify-center gap-3 pt-2">
-                    <a href="#courses-sec" class="bg-lux-royal hover:bg-lux-sky text-white font-bold px-6 py-2.5 rounded-full text-xs transition-all">
+                    <a href="#courses-sec" onclick="closeInsideCoursePage()" class="bg-lux-royal hover:bg-lux-sky text-white font-bold px-6 py-2.5 rounded-full text-xs transition-all">
                         Register Now →
                     </a>
                     <a href="https://wa.me/97470120012" target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/25 text-white font-bold px-6 py-2.5 rounded-full text-xs transition-all flex items-center gap-2">
@@ -1107,12 +1113,15 @@
             modal.classList.remove('flex');
         }
 
+        // Enter Dedicated Inside Course Page View
         function openCourseInsidePage(courseKey) {
-            const container = document.getElementById('inside-course-container');
+            const listView = document.getElementById('courses-list-view');
+            const insideView = document.getElementById('inside-course-page-view');
             const heading = document.getElementById('inside-course-heading');
             const selectEl = document.getElementById('regCourseSelect');
 
-            if (container) container.classList.remove('hidden');
+            if (listView) listView.classList.add('hidden');
+            if (insideView) insideView.classList.remove('hidden');
 
             document.querySelectorAll('.course-inside-page').forEach((p) => {
                 p.classList.remove('active');
@@ -1137,14 +1146,17 @@
             if (heading) heading.textContent = titles[courseKey] || 'Course Details';
             if (selectEl && selectValues[courseKey]) selectEl.value = selectValues[courseKey];
 
-            if (container) {
-                container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
+            const sec = document.getElementById('courses-sec');
+            if (sec) sec.scrollIntoView({ behavior: 'smooth' });
         }
 
         function closeInsideCoursePage() {
-            const container = document.getElementById('inside-course-container');
-            if (container) container.classList.add('hidden');
+            const listView = document.getElementById('courses-list-view');
+            const insideView = document.getElementById('inside-course-page-view');
+
+            if (insideView) insideView.classList.add('hidden');
+            if (listView) listView.classList.remove('hidden');
+
             document.querySelectorAll('.course-inside-page').forEach((p) => {
                 p.classList.remove('active');
             });
