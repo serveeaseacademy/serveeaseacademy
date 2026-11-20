@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serve Ease Academy | Luxury Blue & White Corporate Edition</title>
+    <title>Serve Ease Academy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -34,836 +34,435 @@
     </script>
     <style>
         .transparent-logo { mix-blend-mode: multiply; }
+        .site-page { display: none; min-height: calc(100vh - 220px); }
+        .site-page.active { display: block; animation: pageFade 0.3s ease-in-out; }
+        .cs-stage-panel { display: none; }
+        .cs-stage-panel.active { display: block; animation: pageFade 0.25s ease-in-out; }
         .faq-answer { display: none; }
-        .faq-item.open .faq-answer { display: block; animation: fadeIn 0.3s ease-in-out; }
+        .faq-item.open .faq-answer { display: block; }
         .faq-item.open .faq-icon { transform: rotate(45deg); }
 
-        @keyframes fadeIn {
+        @keyframes pageFade {
             from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes boxFloatSlow {
+        @keyframes floatSlow {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-9px); }
+            50% { transform: translateY(-8px); }
         }
-        @keyframes boxFloatMedium {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
-        }
-        @keyframes boxFloatGentle {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-7px); }
-        }
-        .float-stat-1 { animation: boxFloatSlow 4.2s ease-in-out infinite; }
-        .float-stat-2 { animation: boxFloatMedium 4.8s ease-in-out infinite 0.7s; }
-        .float-stat-3 { animation: boxFloatGentle 4.5s ease-in-out infinite 1.4s; }
-
-        .course-full-page { display: none; }
-        .course-full-page.active { display: block; animation: fadeIn 0.35s ease-in-out; }
-
-        .cs-stage-panel { display: none; }
-        .cs-stage-panel.active { display: block; animation: fadeIn 0.3s ease-in-out; }
-
-        .zoomable-img { cursor: zoom-in; transition: transform 0.35s ease; }
-        .zoomable-img:hover { transform: scale(1.03); }
+        .float-box { animation: floatSlow 4.5s ease-in-out infinite; }
     </style>
 </head>
-<body class="bg-lux-white text-lux-ink font-sans antialiased selection:bg-lux-royal selection:text-white overflow-x-hidden">
+<body class="bg-lux-white text-lux-ink font-sans antialiased selection:bg-lux-royal selection:text-white flex flex-col min-h-screen justify-between">
 
-    <!-- Top Contact Bar (Luxury Blue & White) -->
-    <div class="bg-lux-navy text-white text-[11px] py-2 px-4 border-b border-blue-900/60">
-        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-            <div class="flex items-center gap-4 flex-wrap">
-                <a href="tel:+97470120012" class="hover:text-amber-300 transition-colors font-semibold">
-                    <i class="fa-solid fa-phone mr-1 text-lux-gold"></i> Qatar HQ: +974 70120012
-                </a>
-                <a href="tel:+919745568481" class="hover:text-amber-300 transition-colors">
-                    <i class="fa-solid fa-phone mr-1 text-lux-gold"></i> India: +91 9745568481
-                </a>
-                <a href="mailto:serveeaseacademy@gmail.com" class="hover:text-amber-300 transition-colors">
-                    <i class="fa-solid fa-envelope mr-1 text-lux-gold"></i> serveeaseacademy@gmail.com
-                </a>
-            </div>
-            <span class="text-sky-200 font-semibold">
-                <i class="fa-solid fa-bullhorn mr-1 text-lux-gold"></i> Thrissur, Kerala Offline Batch Opening Soon!
-            </span>
-        </div>
-    </div>
-
-    <!-- White Navigation Bar with Luxury Blue Text -->
+    <!-- Top White Navigation Bar with Luxury Blue Text -->
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-blue-100 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#about" class="flex items-center gap-3">
-                <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-lux-ice p-1 border border-blue-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <button type="button" onclick="navigateToPage('about')" class="flex items-center gap-3 text-left shrink-0">
+                <div class="w-11 h-11 flex items-center justify-center">
                     <img src="logo.png" alt="Serve Ease Academy" onerror="this.style.display='none'" class="w-full h-full object-contain transparent-logo">
                 </div>
                 <span class="text-xl font-extrabold tracking-tight text-lux-blue">Serve Ease Academy</span>
-            </a>
+            </button>
 
-            <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-lux-blue">
-                <a href="#about" class="hover:text-lux-royal transition-colors">About</a>
-                <a href="#why-us" class="hover:text-lux-royal transition-colors">Why Us</a>
-                <a href="#pathway" class="hover:text-lux-royal transition-colors">Pathway</a>
-                <a href="#courses" onclick="openCourseFullPage('page-civil', true)" class="hover:text-lux-royal transition-colors">Civil Service</a>
-                <a href="#courses" onclick="openCourseFullPage('page-overview', true)" class="hover:text-lux-royal transition-colors">Courses</a>
-                <a href="#gallery" class="hover:text-lux-royal transition-colors">Campus</a>
-                <a href="#faq" class="hover:text-lux-royal transition-colors">FAQ</a>
-                <a href="#contact" class="hover:text-lux-royal transition-colors">Contact</a>
+            <nav class="hidden xl:flex items-center gap-4 text-xs font-semibold text-lux-blue">
+                <button type="button" onclick="navigateToPage('about')" data-nav="about" class="nav-item px-2.5 py-2 rounded-lg hover:text-lux-royal transition-colors">About</button>
+                <button type="button" onclick="navigateToPage('hr-pro')" data-nav="hr-pro" class="nav-item px-2.5 py-2 rounded-lg hover:text-lux-royal transition-colors">HR & PRO</button>
+                <button type="button" onclick="navigateToPage('gcc')" data-nav="gcc" class="nav-item px-2.5 py-2 rounded-lg hover:text-lux-royal transition-colors">GCC Document</button>
+                <button type="button" onclick="navigateToPage('translation')" data-nav="translation" class="nav-item px-2.5 py-2 rounded-lg hover:text-lux-royal transition-colors">Translation</button>
+                <button type="button" onclick="navigateToPage('civil')" data-nav="civil" class="nav-item px-2.5 py-2 rounded-lg hover:text-lux-royal transition-colors">Civil Service</button>
+                <button type="button" onclick="navigateToPage('preregister')" data-nav="preregister" class="nav-item px-2.5 py-2 rounded-lg hover:text-lux-royal transition-colors">Pre-Registration</button>
+                <button type="button" onclick="navigateToPage('thrissur')" data-nav="thrissur" class="nav-item px-2.5 py-2 rounded-lg hover:text-lux-royal transition-colors">Thrissur Batch</button>
+                <button type="button" onclick="navigateToPage('pathway')" data-nav="pathway" class="nav-item px-2.5 py-2 rounded-lg hover:text-lux-royal transition-colors">Pathway</button>
+                <button type="button" onclick="navigateToPage('campus')" data-nav="campus" class="nav-item px-2.5 py-2 rounded-lg hover:text-lux-royal transition-colors">Campus</button>
+                <button type="button" onclick="navigateToPage('faq')" data-nav="faq" class="nav-item px-2.5 py-2 rounded-lg hover:text-lux-royal transition-colors">FAQ</button>
+                <button type="button" onclick="navigateToPage('careers')" data-nav="careers" class="nav-item px-2.5 py-2 rounded-lg hover:text-lux-royal transition-colors">Placement & HQ</button>
+                <button type="button" onclick="navigateToPage('contact')" data-nav="contact" class="nav-item px-2.5 py-2 rounded-lg hover:text-lux-royal transition-colors">Contact</button>
             </nav>
 
-            <div class="flex items-center gap-3">
-                <a href="#courses" onclick="openCourseFullPage('page-preregister', true)" class="bg-lux-blue hover:bg-lux-royal text-white font-semibold px-5 py-2.5 rounded-full shadow-md transition-all text-xs sm:text-sm flex items-center gap-2">
-                    Enrol Now <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
+            <!-- Compact Page Selector for Mobile / Tablet / Quick Jump -->
+            <div class="flex items-center gap-2 shrink-0">
+                <select id="mobilePageSelect" onchange="navigateToPage(this.value)" class="xl:hidden bg-lux-ice border border-blue-200 text-lux-blue text-xs font-semibold rounded-xl px-2.5 py-2">
+                    <option value="about">About</option>
+                    <option value="hr-pro">HR & PRO</option>
+                    <option value="gcc">GCC Document</option>
+                    <option value="translation">Typing & Translation</option>
+                    <option value="civil">Civil Service</option>
+                    <option value="preregister">Pre-Registration</option>
+                    <option value="thrissur">Thrissur Batch</option>
+                    <option value="pathway">Pathway</option>
+                    <option value="campus">Campus</option>
+                    <option value="faq">FAQ</option>
+                    <option value="careers">Placement & HQ</option>
+                    <option value="contact">Contact</option>
+                </select>
+                <button type="button" onclick="navigateToPage('preregister')" class="bg-lux-blue hover:bg-lux-royal text-white font-semibold px-4 py-2.5 rounded-full shadow-md transition-all text-xs flex items-center gap-2">
+                    Pre-Register <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- SECTION 1: ABOUT THE ACADEMY + THRISSUR BANNER + ANIMATED COUNTDOWN STAT BOXES -->
-    <section id="about" class="py-16 lg:py-24 bg-gradient-to-b from-lux-ice to-white">
+    <!-- Main Single-Active-Page Container (12 Separate Pages) -->
+    <main class="flex-grow py-12 lg:py-16 bg-gradient-to-b from-lux-ice to-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Thrissur Offline Batch Spotlight Banner -->
-            <div class="mb-10 bg-lux-navy text-white rounded-[2rem] p-5 sm:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-lg border border-blue-800">
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-2xl bg-lux-royal text-white flex items-center justify-center text-xl shrink-0 font-bold border border-blue-400/30">
-                        <i class="fa-solid fa-location-dot text-lux-gold"></i>
-                    </div>
+
+            <!-- PAGE 1: ABOUT -->
+            <section id="page-about" class="site-page active space-y-12">
+                <div class="bg-lux-navy text-white rounded-[2rem] p-6 sm:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-lg">
                     <div>
-                        <span class="text-[10px] uppercase tracking-widest text-sky-300 font-bold block">New Offline Campus Announcement</span>
-                        <h3 class="text-base sm:text-lg font-extrabold text-white">Offline Batch Classes Opening Soon in Thrissur, Kerala!</h3>
-                        <p class="text-xs text-blue-100">Head Office in Qatar • Pre-registrations open for HR & PRO, GCC Processing, Translation & 1-Year Civil Service Coaching.</p>
+                        <h2 class="text-lg sm:text-xl font-extrabold">Offline Batch Classes Opening Soon in Thrissur, Kerala</h2>
+                        <p class="text-xs text-blue-100 mt-1">Head Office in Qatar (+974 70120012) • India (+91 9745568481) • serveeaseacademy@gmail.com</p>
                     </div>
+                    <button type="button" onclick="navigateToPage('preregister')" class="bg-white hover:bg-blue-50 text-lux-navy font-bold px-5 py-2.5 rounded-full text-xs shrink-0 shadow">
+                        Pre-Register Now →
+                    </button>
                 </div>
-                <a href="#courses" onclick="openCourseFullPage('page-preregister', true)" class="bg-white hover:bg-blue-50 text-lux-navy font-bold px-5 py-2.5 rounded-full text-xs shrink-0 transition-all shadow">
-                    Pre-Register Now <i class="fa-solid fa-arrow-right ml-1"></i>
-                </a>
-            </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <!-- Left Zoomable Hero Image Card -->
-                <div class="lg:col-span-5 relative">
-                    <div class="rounded-[2rem] overflow-hidden shadow-xl border-4 border-white relative bg-lux-frost">
-                        <img src="hero-bg.jpg" alt="Serve Ease Academy" onclick="openImageZoom(this.src, 'Serve Ease Academy — Campus & Head Office Vision')" class="zoomable-img w-full h-[390px] object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-lux-navy/80 via-transparent to-transparent pointer-events-none"></div>
-                        <div class="absolute bottom-5 left-5 bg-lux-blue text-white px-5 py-3 rounded-2xl shadow-lg border border-white/20 pointer-events-none">
-                            <span class="block text-2xl font-extrabold leading-none">Qatar HQ</span>
-                            <span class="text-[11px] text-sky-200 uppercase tracking-wider font-semibold">& Thrissur Batch Soon</span>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    <div class="lg:col-span-5">
+                        <div class="rounded-[2rem] overflow-hidden shadow-xl border-4 border-white bg-lux-frost">
+                            <img src="hero-bg.jpg" alt="" class="w-full h-[380px] object-cover">
                         </div>
-                        <button type="button" onclick="openImageZoom('hero-bg.jpg', 'Serve Ease Academy — Campus & Head Office Vision')" class="absolute top-4 right-4 bg-white/90 hover:bg-white text-lux-blue w-9 h-9 rounded-full flex items-center justify-center shadow text-xs" title="Zoom Photo">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        </button>
                     </div>
-                </div>
-
-                <!-- Right Content -->
-                <div class="lg:col-span-7">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="w-6 h-0.5 bg-lux-royal"></span>
-                        <span class="text-xs font-bold uppercase tracking-widest text-lux-blue">About The Academy</span>
-                    </div>
-                    <h1 class="text-3xl sm:text-5xl font-extrabold text-lux-navy leading-tight mb-5">
-                        The first source for <span class="font-serif italic text-lux-royal font-bold">professional career mastery</span>
-                    </h1>
-                    <p class="text-slate-600 text-base leading-relaxed mb-6">
-                        With our Head Office in Qatar and upcoming offline batch classes in Thrissur, Kerala, Serve Ease Academy delivers practical, job-ready diplomas in HR & PRO operations, GCC document processing, bilingual translation, and 1-year Civil Service coaching directed and instructed by Shabeeb.
-                    </p>
-
-                    <ul class="space-y-3 mb-8 text-sm font-medium text-slate-700">
-                        <li class="flex items-center gap-3">
-                            <span class="w-5 h-5 rounded-full bg-lux-blue text-white flex items-center justify-center text-[10px]"><i class="fa-solid fa-check"></i></span>
-                            Head Office in Qatar (+974 70120012) & offline batch opening soon in Thrissur, Kerala
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-5 h-5 rounded-full bg-lux-blue text-white flex items-center justify-center text-[10px]"><i class="fa-solid fa-check"></i></span>
-                            1-Year Civil Service Coaching directed & instructed by Shabeeb
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-5 h-5 rounded-full bg-lux-blue text-white flex items-center justify-center text-[10px]"><i class="fa-solid fa-check"></i></span>
-                            Industry-aligned 3-month diplomas in HR & PRO, GCC Typing & Translation
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-5 h-5 rounded-full bg-lux-blue text-white flex items-center justify-center text-[10px]"><i class="fa-solid fa-check"></i></span>
-                            Dedicated support desk via serveeaseacademy@gmail.com & phone lines
-                        </li>
-                    </ul>
-
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#courses" onclick="openCourseFullPage('page-overview', true)" class="bg-lux-blue hover:bg-lux-royal text-white font-semibold px-7 py-3.5 rounded-xl shadow-md transition-all text-sm">
-                            Explore Course Pages
-                        </a>
-                        <a href="#courses" onclick="openCourseFullPage('page-preregister', true)" class="bg-white hover:bg-lux-ice text-lux-blue border border-blue-200 font-semibold px-7 py-3.5 rounded-xl transition-all text-sm flex items-center gap-2">
-                            <i class="fa-regular fa-building"></i> Pre-Register Page
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ==================== CURVED & FLOATING COUNTDOWN STAT BOXES (99%, 3, 3+) ==================== -->
-            <div id="stats-section" class="grid grid-cols-1 md:grid-cols-3 gap-7 mt-14">
-                <div class="float-stat-1 bg-white rounded-[2.25rem] p-8 border-2 border-blue-100 shadow-lg hover:shadow-2xl hover:border-lux-royal transition-all duration-300 relative overflow-hidden">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-bold uppercase tracking-widest text-lux-blue">Students Rate</span>
-                        <span class="w-10 h-10 rounded-2xl bg-lux-ice text-lux-royal flex items-center justify-center text-base border border-blue-100">
-                            <i class="fa-solid fa-user-graduate"></i>
-                        </span>
-                    </div>
-                    <div class="flex items-baseline gap-1 mb-2">
-                        <span class="stat-counter text-4xl sm:text-5xl font-extrabold text-lux-navy tabular-nums" data-target="99" data-suffix="%">0%</span>
-                    </div>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        Learner satisfaction & positive feedback across our training and coaching cohorts.
-                    </p>
-                </div>
-
-                <div class="float-stat-2 bg-lux-navy text-white rounded-[2.25rem] p-8 border-2 border-blue-800 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-bold uppercase tracking-widest text-sky-300">World Top Class</span>
-                        <span class="w-10 h-10 rounded-2xl bg-white/10 text-lux-gold flex items-center justify-center text-base">
-                            <i class="fa-solid fa-trophy"></i>
-                        </span>
-                    </div>
-                    <div class="flex items-baseline gap-2 mb-2">
-                        <span class="stat-counter text-4xl sm:text-5xl font-extrabold text-white tabular-nums" data-target="3" data-suffix="">0</span>
-                        <span class="text-xs uppercase tracking-wider text-sky-200 font-semibold">Core Pillars</span>
-                    </div>
-                    <p class="text-xs text-blue-100/90 leading-relaxed">
-                        Global curriculum standards, mentor-led coaching, and practical job-ready execution.
-                    </p>
-                </div>
-
-                <div class="float-stat-3 bg-white rounded-[2.25rem] p-8 border-2 border-blue-100 shadow-lg hover:shadow-2xl hover:border-lux-royal transition-all duration-300 relative overflow-hidden">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-bold uppercase tracking-widest text-lux-blue">Experience Field</span>
-                        <span class="w-10 h-10 rounded-2xl bg-lux-ice text-lux-royal flex items-center justify-center text-base border border-blue-100">
-                            <i class="fa-solid fa-briefcase"></i>
-                        </span>
-                    </div>
-                    <div class="flex items-baseline gap-2 mb-2">
-                        <span class="stat-counter text-4xl sm:text-5xl font-extrabold text-lux-navy tabular-nums" data-target="3" data-suffix="+">0+</span>
-                        <span class="text-sm font-bold text-lux-royal">Years</span>
-                    </div>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        Proven hands-on industry & academic field expertise guiding students to success.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Secondary Zoomable About Visual Row -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-                <div class="rounded-[2rem] overflow-hidden shadow-md border-2 border-blue-100 h-60 relative group bg-lux-frost">
-                    <img src="about-1.jpg" alt="Mentorship Session" onclick="openImageZoom(this.src, 'Interactive Mentorship & Corporate Training')" class="zoomable-img w-full h-full object-cover">
-                    <div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-xl text-xs font-bold text-lux-blue shadow">Interactive Mentorship (Click to Zoom)</div>
-                </div>
-                <div class="rounded-[2rem] overflow-hidden shadow-md border-2 border-blue-100 h-60 relative group bg-lux-frost">
-                    <img src="about-2.jpg" alt="Collaborative Learning" onclick="openImageZoom(this.src, 'Thrissur Offline & Online Batches')" class="zoomable-img w-full h-full object-cover">
-                    <div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-xl text-xs font-bold text-lux-blue shadow">Thrissur Offline & Online Batches (Click to Zoom)</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 2: WHY SERVE EASE ACADEMY (KEPT AS REQUESTED) -->
-    <section id="why-us" class="py-20 bg-lux-ice border-t border-blue-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-14">
-                <div class="inline-flex items-center gap-2 mb-2">
-                    <span class="w-5 h-0.5 bg-lux-royal"></span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-lux-blue">Why Serve Ease Academy</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-lux-navy mb-3">
-                    A prestigious name. <span class="font-serif italic text-lux-royal">A proven method.</span>
-                </h2>
-                <p class="text-slate-600 text-sm">
-                    Backed by our Qatar Head Office expertise and expanding with offline batch classes in Thrissur, Kerala.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white rounded-[1.75rem] p-7 shadow-sm border border-blue-100 hover:shadow-md hover:border-lux-royal/40 transition-all">
-                    <div class="w-11 h-11 rounded-2xl bg-lux-blue text-white flex items-center justify-center text-lg mb-5">
-                        <i class="fa-solid fa-building-columns"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-lux-navy mb-2">Qatar Head Office Standards</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">
-                        Curriculum shaped by real corporate & government administration standards from our Qatar Head Office.
-                    </p>
-                </div>
-
-                <div class="bg-white rounded-[1.75rem] p-7 shadow-sm border border-blue-100 hover:shadow-md hover:border-lux-royal/40 transition-all">
-                    <div class="w-11 h-11 rounded-2xl bg-lux-blue text-white flex items-center justify-center text-lg mb-5">
-                        <i class="fa-solid fa-chalkboard-user"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-lux-navy mb-2">Thrissur Offline Batch Soon</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">
-                        Classroom coaching opening soon in Thrissur, Kerala alongside live online training options.
-                    </p>
-                </div>
-
-                <div class="bg-white rounded-[1.75rem] p-7 shadow-sm border border-blue-100 hover:shadow-md hover:border-lux-royal/40 transition-all">
-                    <div class="w-11 h-11 rounded-2xl bg-lux-blue text-white flex items-center justify-center text-lg mb-5">
-                        <i class="fa-solid fa-layer-group"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-lux-navy mb-2">Structured Curriculum</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">
-                        Step-by-step practical modules covering visa processing, attestation, labor compliance, and official drafting.
-                    </p>
-                </div>
-
-                <div class="bg-white rounded-[1.75rem] p-7 shadow-sm border border-blue-100 hover:shadow-md hover:border-lux-royal/40 transition-all">
-                    <div class="w-11 h-11 rounded-2xl bg-lux-blue text-white flex items-center justify-center text-lg mb-5">
-                        <i class="fa-solid fa-landmark"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-lux-navy mb-2">Civil Service Mastery</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">
-                        Dedicated 1-year intensive coaching program directed and instructed by Shabeeb for competitive exam aspirants.
-                    </p>
-                </div>
-
-                <div class="bg-white rounded-[1.75rem] p-7 shadow-sm border border-blue-100 hover:shadow-md hover:border-lux-royal/40 transition-all">
-                    <div class="w-11 h-11 rounded-2xl bg-lux-blue text-white flex items-center justify-center text-lg mb-5">
-                        <i class="fa-solid fa-language"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-lux-navy mb-2">Bilingual Excellence</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">
-                        Specialized English-Arabic legal & commercial translation training alongside high-speed typing.
-                    </p>
-                </div>
-
-                <div class="bg-white rounded-[1.75rem] p-7 shadow-sm border border-blue-100 hover:shadow-md hover:border-lux-royal/40 transition-all">
-                    <div class="w-11 h-11 rounded-2xl bg-lux-blue text-white flex items-center justify-center text-lg mb-5">
-                        <i class="fa-solid fa-headset"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-lux-navy mb-2">Direct Support Desk</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">
-                        Instant assistance via +974 70120012, +91 9745568481, and serveeaseacademy@gmail.com for all queries.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 3: LEARNING PATHWAY -->
-    <section id="pathway" class="py-20 bg-lux-navy text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-2xl mb-12">
-                <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-0.5 bg-lux-gold"></span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-sky-300">Training Roadmap</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold mb-3">
-                    4 core tracks, <span class="font-serif italic text-sky-300">one clear journey</span>
-                </h2>
-                <p class="text-blue-100 text-sm">
-                    Every program combines foundational theory, live simulations, and practical mastery — preparing students for Thrissur offline batches, online classes, and GCC/Indian careers.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                <button onclick="openCourseFullPage('page-hr', true)" class="text-left bg-lux-blue/70 hover:bg-lux-royal border border-blue-400/20 rounded-2xl p-5 flex items-center gap-4 transition-all">
-                    <span class="w-8 h-8 rounded-xl bg-white text-lux-navy font-extrabold flex items-center justify-center text-sm shrink-0">1</span>
-                    <div>
-                        <span class="text-[10px] uppercase tracking-wider text-sky-200 font-bold block">Track 01 • 3 Months</span>
-                        <span class="font-bold text-sm">HR & PRO Operations</span>
-                    </div>
-                </button>
-                <button onclick="openCourseFullPage('page-gcc', true)" class="text-left bg-lux-blue/70 hover:bg-lux-royal border border-blue-400/20 rounded-2xl p-5 flex items-center gap-4 transition-all">
-                    <span class="w-8 h-8 rounded-xl bg-white text-lux-navy font-extrabold flex items-center justify-center text-sm shrink-0">2</span>
-                    <div>
-                        <span class="text-[10px] uppercase tracking-wider text-sky-200 font-bold block">Track 02 • 3 Months</span>
-                        <span class="font-bold text-sm">GCC Document Clearing</span>
-                    </div>
-                </button>
-                <button onclick="openCourseFullPage('page-translation', true)" class="text-left bg-lux-blue/70 hover:bg-lux-royal border border-blue-400/20 rounded-2xl p-5 flex items-center gap-4 transition-all">
-                    <span class="w-8 h-8 rounded-xl bg-white text-lux-navy font-extrabold flex items-center justify-center text-sm shrink-0">3</span>
-                    <div>
-                        <span class="text-[10px] uppercase tracking-wider text-sky-200 font-bold block">Track 03 • 3 Months</span>
-                        <span class="font-bold text-sm">Typing & Translation</span>
-                    </div>
-                </button>
-                <button onclick="openCourseFullPage('page-civil', true)" class="text-left bg-lux-blue/70 hover:bg-lux-royal border border-blue-400/20 rounded-2xl p-5 flex items-center gap-4 transition-all">
-                    <span class="w-8 h-8 rounded-xl bg-lux-gold text-lux-navy font-extrabold flex items-center justify-center text-sm shrink-0">4</span>
-                    <div>
-                        <span class="text-[10px] uppercase tracking-wider text-sky-200 font-bold block">Flagship • 1 Year</span>
-                        <span class="font-bold text-sm">Civil Service Coaching</span>
-                    </div>
-                </button>
-            </div>
-
-            <div class="bg-lux-blue/50 border border-blue-400/20 rounded-[2rem] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="flex items-center gap-4">
-                    <img src="mentor-1.jpg" alt="Shabeeb" onclick="openImageZoom(this.src, 'Directed & Instructed by Shabeeb — 1-Year Civil Service Batch')" class="zoomable-img w-16 h-16 rounded-full object-cover border-2 border-lux-gold shrink-0">
-                    <div>
-                        <h4 class="text-lg font-bold text-white mb-1">Directed & Instructed by Shabeeb — 1-Year Civil Service Batch</h4>
-                        <p class="text-blue-100 text-xs">Prelims, Mains, Interview guidance & mock tests with direct mentorship.</p>
-                    </div>
-                </div>
-                <a href="#courses" onclick="openCourseFullPage('page-civil', true)" class="bg-white hover:bg-blue-50 text-lux-navy font-bold px-6 py-3 rounded-full text-xs shrink-0 transition-all">
-                    Open Civil Service Page <i class="fa-solid fa-arrow-right ml-1"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== 8 DEDICATED FULL-LENGTH COURSE & PROGRAM PAGES ==================== -->
-    <section id="courses" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-8">
-                <div class="inline-flex items-center gap-2 mb-2">
-                    <span class="w-5 h-0.5 bg-lux-royal"></span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-lux-blue">Dedicated Program Pages (Full Open View)</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-lux-navy mb-3">
-                    Find your <span class="font-serif italic text-lux-royal">perfect course</span>
-                </h2>
-                <p class="text-slate-600 text-sm">
-                    Click any page button below to open its full detailed page. Click any photo to zoom.
-                </p>
-            </div>
-
-            <!-- 8 Full-Page Navigation Tabs -->
-            <div class="flex flex-wrap justify-center gap-2 mb-12">
-                <button onclick="openCourseFullPage('page-overview', false)" id="btn-page-overview" class="fullpage-tab px-4 py-2.5 rounded-full text-xs font-bold bg-lux-blue text-white shadow-md transition-all">
-                    1. All Courses
-                </button>
-                <button onclick="openCourseFullPage('page-hr', false)" id="btn-page-hr" class="fullpage-tab px-4 py-2.5 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100 hover:bg-lux-frost transition-all">
-                    2. HR & PRO Page
-                </button>
-                <button onclick="openCourseFullPage('page-gcc', false)" id="btn-page-gcc" class="fullpage-tab px-4 py-2.5 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100 hover:bg-lux-frost transition-all">
-                    3. GCC Document Page
-                </button>
-                <button onclick="openCourseFullPage('page-translation', false)" id="btn-page-translation" class="fullpage-tab px-4 py-2.5 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100 hover:bg-lux-frost transition-all">
-                    4. Typing & Translation Page
-                </button>
-                <button onclick="openCourseFullPage('page-civil', false)" id="btn-page-civil" class="fullpage-tab px-4 py-2.5 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100 hover:bg-lux-frost transition-all">
-                    5. Civil Service (Prelims/Mains/Interview)
-                </button>
-                <button onclick="openCourseFullPage('page-preregister', false)" id="btn-page-preregister" class="fullpage-tab px-4 py-2.5 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100 hover:bg-lux-frost transition-all">
-                    6. Pre-Registration Page
-                </button>
-                <button onclick="openCourseFullPage('page-thrissur', false)" id="btn-page-thrissur" class="fullpage-tab px-4 py-2.5 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100 hover:bg-lux-frost transition-all">
-                    7. Thrissur Offline Batch Page
-                </button>
-                <button onclick="openCourseFullPage('page-careers', false)" id="btn-page-careers" class="fullpage-tab px-4 py-2.5 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100 hover:bg-lux-frost transition-all">
-                    8. Placement & Qatar HQ Page
-                </button>
-            </div>
-
-            <!-- FULL PAGE 1: ALL COURSES OVERVIEW -->
-            <div id="fullpage-page-overview" class="course-full-page active">
-                <div class="bg-lux-ice rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg">
-                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-8 mb-10 border-b border-blue-200/70">
-                        <div>
-                            <span class="text-xs font-bold uppercase tracking-widest text-lux-royal">Page 1 of 8 • Complete Programme Directory</span>
-                            <h3 class="text-3xl sm:text-4xl font-extrabold text-lux-navy mt-1">All Courses & Coaching Tracks</h3>
-                        </div>
-                        <button onclick="openCourseFullPage('page-preregister', false)" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-5 py-3 rounded-full text-xs shrink-0 shadow">
-                            Go to Pre-Registration Page →
-                        </button>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-                        <div class="bg-white rounded-3xl overflow-hidden border border-blue-100 shadow-sm flex flex-col justify-between">
-                            <div>
-                                <img src="course-hr.jpg" alt="HR & PRO" onclick="openImageZoom(this.src, 'HR & PRO Services Diploma')" class="zoomable-img w-full h-48 object-cover">
-                                <div class="p-6">
-                                    <span class="text-[11px] font-bold text-lux-royal uppercase">3 Months Diploma</span>
-                                    <h4 class="text-xl font-bold text-lux-navy mt-1 mb-2">HR & PRO Services</h4>
-                                    <p class="text-xs text-slate-600 leading-relaxed">Visa workflows, residency/QID processes, labor compliance, payroll/WPS basics, and corporate liaison documentation.</p>
-                                </div>
-                            </div>
-                            <div class="px-6 pb-6">
-                                <button onclick="openCourseFullPage('page-hr', false)" class="w-full bg-lux-blue hover:bg-lux-royal text-white font-bold py-3 rounded-xl text-xs">Open Full HR & PRO Page</button>
-                            </div>
-                        </div>
-
-                        <div class="bg-white rounded-3xl overflow-hidden border border-blue-100 shadow-sm flex flex-col justify-between">
-                            <div>
-                                <img src="course-gcc.jpg" alt="GCC Document Processing" onclick="openImageZoom(this.src, 'GCC Document Processing Diploma')" class="zoomable-img w-full h-48 object-cover">
-                                <div class="p-6">
-                                    <span class="text-[11px] font-bold text-lux-royal uppercase">3 Months Diploma</span>
-                                    <h4 class="text-xl font-bold text-lux-navy mt-1 mb-2">GCC Document Processing</h4>
-                                    <p class="text-xs text-slate-600 leading-relaxed">Document attestation, embassy clearances, commercial trade licensing workflows, and official file verification.</p>
-                                </div>
-                            </div>
-                            <div class="px-6 pb-6">
-                                <button onclick="openCourseFullPage('page-gcc', false)" class="w-full bg-lux-blue hover:bg-lux-royal text-white font-bold py-3 rounded-xl text-xs">Open Full GCC Page</button>
-                            </div>
-                        </div>
-
-                        <div class="bg-white rounded-3xl overflow-hidden border border-blue-100 shadow-sm flex flex-col justify-between">
-                            <div>
-                                <img src="course-translation.jpg" alt="Typing & Translation" onclick="openImageZoom(this.src, 'Typing & Translation Diploma')" class="zoomable-img w-full h-48 object-cover">
-                                <div class="p-6">
-                                    <span class="text-[11px] font-bold text-lux-royal uppercase">3 Months Diploma</span>
-                                    <h4 class="text-xl font-bold text-lux-navy mt-1 mb-2">Typing & Translation</h4>
-                                    <p class="text-xs text-slate-600 leading-relaxed">English-Arabic & Arabic-English legal/commercial translation plus high-speed accuracy typing for offices.</p>
-                                </div>
-                            </div>
-                            <div class="px-6 pb-6">
-                                <button onclick="openCourseFullPage('page-translation', false)" class="w-full bg-lux-blue hover:bg-lux-royal text-white font-bold py-3 rounded-xl text-xs">Open Full Translation Page</button>
-                            </div>
-                        </div>
-
-                        <div class="bg-lux-navy text-white rounded-3xl overflow-hidden border border-blue-800 flex flex-col justify-between md:col-span-2">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 h-full">
-                                <img src="course-upsc.jpg" alt="Civil Service" onclick="openImageZoom(this.src, '1-Year Civil Service Coaching Program')" class="zoomable-img w-full h-56 sm:h-full object-cover">
-                                <div class="p-7 flex flex-col justify-between">
-                                    <div>
-                                        <span class="bg-white text-lux-navy text-[10px] font-extrabold uppercase px-3 py-1 rounded-full">1 Year Flagship</span>
-                                        <h4 class="text-2xl font-extrabold mt-3 mb-2">Civil Service Coaching</h4>
-                                        <p class="text-xs text-blue-100 leading-relaxed mb-4">
-                                            Directed & Instructed by Shabeeb. Includes Registration, Prelims, Mains, Interview Guidance & Mock Tests.
-                                        </p>
-                                    </div>
-                                    <button onclick="openCourseFullPage('page-civil', false)" class="w-full bg-lux-royal hover:bg-lux-sky text-white font-extrabold py-3 rounded-xl text-xs">
-                                        Open Civil Service, Mock Tests & Registration Page →
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white rounded-3xl p-7 border border-blue-100 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[11px] font-bold text-lux-royal uppercase">Opening Soon</span>
-                                <h4 class="text-xl font-bold text-lux-navy mt-1 mb-2">Thrissur Offline Batch</h4>
-                                <p class="text-xs text-slate-600 leading-relaxed">
-                                    Offline batch classes opening soon in Thrissur, Kerala with pre-registration open now.
-                                </p>
-                            </div>
-                            <button onclick="openCourseFullPage('page-thrissur', false)" class="mt-6 w-full bg-lux-ice hover:bg-lux-frost text-lux-blue border border-blue-200 font-bold py-3 rounded-xl text-xs">
-                                View Thrissur Batch Page →
-                            </button>
+                    <div class="lg:col-span-7 space-y-5">
+                        <h1 class="text-3xl sm:text-5xl font-extrabold text-lux-navy leading-tight">
+                            Serve Ease Academy — <span class="font-serif italic text-lux-royal">Professional Qualifications & Coaching</span>
+                        </h1>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            Head Office in Qatar with offline batch classes opening soon in Thrissur, Kerala. Practical training in HR & PRO services, GCC document processing, typing & translation, and 1-year Civil Service coaching directed and instructed by Shabeeb.
+                        </p>
+                        <div class="flex flex-wrap gap-3 pt-2">
+                            <button type="button" onclick="navigateToPage('hr-pro')" class="bg-lux-blue hover:bg-lux-royal text-white font-semibold px-6 py-3 rounded-xl text-xs shadow">HR & PRO Page</button>
+                            <button type="button" onclick="navigateToPage('gcc')" class="bg-white hover:bg-lux-ice text-lux-blue border border-blue-200 font-semibold px-6 py-3 rounded-xl text-xs">GCC Document Page</button>
+                            <button type="button" onclick="navigateToPage('translation')" class="bg-white hover:bg-lux-ice text-lux-blue border border-blue-200 font-semibold px-6 py-3 rounded-xl text-xs">Translation Page</button>
+                            <button type="button" onclick="navigateToPage('civil')" class="bg-lux-navy hover:bg-lux-blue text-white font-semibold px-6 py-3 rounded-xl text-xs">Civil Service Page</button>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- FULL PAGE 2: HR & PRO -->
-            <div id="fullpage-page-hr" class="course-full-page">
-                <div class="bg-lux-ice rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg space-y-8">
-                    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-blue-200/70 pb-6">
-                        <div>
-                            <span class="text-xs font-bold uppercase tracking-widest text-lux-royal">Page 2 of 8 • 3-Month Professional Diploma</span>
-                            <h3 class="text-3xl sm:text-4xl font-extrabold text-lux-navy mt-1">HR & PRO Services — Full Course Page</h3>
-                        </div>
-                        <button onclick="openCourseFullPage('page-preregister', false)" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-6 py-3 rounded-full text-xs">Enrol in HR & PRO →</button>
+                <!-- Curved Floating Stat Boxes (99%, 3, 3+) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+                    <div class="float-box bg-white rounded-[2.25rem] p-8 border-2 border-blue-100 shadow-lg">
+                        <span class="text-xs font-bold uppercase tracking-widest text-lux-blue block mb-3">Students Rate</span>
+                        <span class="text-4xl sm:text-5xl font-extrabold text-lux-navy block mb-2">99%</span>
+                        <p class="text-xs text-slate-600">Learner satisfaction across diplomas and coaching programs.</p>
+                    </div>
+                    <div class="float-box bg-lux-navy text-white rounded-[2.25rem] p-8 border-2 border-blue-800 shadow-xl">
+                        <span class="text-xs font-bold uppercase tracking-widest text-sky-300 block mb-3">World Top Class</span>
+                        <span class="text-4xl sm:text-5xl font-extrabold text-white block mb-2">3</span>
+                        <p class="text-xs text-blue-100">Structured curriculum, expert mentorship, and job readiness.</p>
+                    </div>
+                    <div class="float-box bg-white rounded-[2.25rem] p-8 border-2 border-blue-100 shadow-lg">
+                        <span class="text-xs font-bold uppercase tracking-widest text-lux-blue block mb-3">Experience Field</span>
+                        <span class="text-4xl sm:text-5xl font-extrabold text-lux-navy block mb-2">3+ <span class="text-sm font-bold text-lux-royal">Years</span></span>
+                        <p class="text-xs text-slate-600">Practical industry and coaching experience.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="rounded-[2rem] overflow-hidden shadow-md border-2 border-white h-60 bg-lux-frost">
+                        <img src="about-1.jpg" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <div class="rounded-[2rem] overflow-hidden shadow-md border-2 border-white h-60 bg-lux-frost">
+                        <img src="about-2.jpg" alt="" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 2: HR & PRO -->
+            <section id="page-hr-pro" class="site-page space-y-10">
+                <div class="bg-white rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg space-y-8">
+                    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-blue-100 pb-6">
+                        <h1 class="text-3xl sm:text-4xl font-extrabold text-lux-navy">HR & PRO Services</h1>
+                        <button type="button" onclick="navigateToPage('preregister')" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-6 py-3 rounded-full text-xs">Pre-Register →</button>
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                         <div class="lg:col-span-5">
-                            <img src="course-hr.jpg" alt="HR & PRO" onclick="openImageZoom(this.src, 'HR & PRO Services Training')" class="zoomable-img rounded-3xl w-full h-72 object-cover shadow-md border-4 border-white">
+                            <img src="course-hr.jpg" alt="" class="rounded-3xl w-full h-72 object-cover shadow-md">
                         </div>
                         <div class="lg:col-span-7 space-y-4">
-                            <h4 class="text-2xl font-bold text-lux-navy">Master Corporate HR & Government Liaison Operations</h4>
+                            <h2 class="text-2xl font-bold text-lux-blue">Corporate HR & Government Liaison Training</h2>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Practical 3-month training covering corporate HR files, PRO liaison processes, residency/visa formalities, payroll/WPS compliance, and official correspondence.
+                                Practical 3-month diploma training covering corporate HR files, PRO liaison operations, residency and visa workflows, payroll compliance, and employee record administration.
                             </p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
-                                    <h5 class="font-bold text-lux-blue text-sm mb-1">1. Visa & Residency Workflows</h5>
-                                    <p class="text-xs text-slate-600">Entry permits, renewals, medical/ID tracking, and family documentation.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs">
+                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-navy block mb-1">Visa & Residency Workflows</strong>
+                                    Entry permits, renewals, medical/ID tracking, and family documentation.
                                 </div>
-                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
-                                    <h5 class="font-bold text-lux-blue text-sm mb-1">2. Labor & WPS Compliance</h5>
-                                    <p class="text-xs text-slate-600">Employment contracts, payroll compliance, and onboarding/exit processes.</p>
+                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-navy block mb-1">Labor & Payroll Compliance</strong>
+                                    Contracts, salary/WPS compliance, onboarding, and exit formalities.
                                 </div>
-                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
-                                    <h5 class="font-bold text-lux-blue text-sm mb-1">3. Establishment & Ministry Files</h5>
-                                    <p class="text-xs text-slate-600">Commercial registration updates, authorized signatories, and filings.</p>
+                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-navy block mb-1">Establishment & Filings</strong>
+                                    Commercial registration updates, authorized signatories, and submissions.
                                 </div>
-                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
-                                    <h5 class="font-bold text-lux-blue text-sm mb-1">4. Employee Record Management</h5>
-                                    <p class="text-xs text-slate-600">Expiry alerts, audit checklists, and corporate HR documentation.</p>
+                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-navy block mb-1">Employee Record Systems</strong>
+                                    Document expiry monitoring, audit checklists, and HR reporting.
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- FULL PAGE 3: GCC DOCUMENT PROCESSING -->
-            <div id="fullpage-page-gcc" class="course-full-page">
-                <div class="bg-lux-ice rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg space-y-8">
-                    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-blue-200/70 pb-6">
-                        <div>
-                            <span class="text-xs font-bold uppercase tracking-widest text-lux-royal">Page 3 of 8 • 3-Month Professional Diploma</span>
-                            <h3 class="text-3xl sm:text-4xl font-extrabold text-lux-navy mt-1">GCC Document Processing — Full Course Page</h3>
-                        </div>
-                        <button onclick="openCourseFullPage('page-preregister', false)" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-6 py-3 rounded-full text-xs">Enrol in GCC Processing →</button>
+            <!-- PAGE 3: GCC DOCUMENT PROCESSING -->
+            <section id="page-gcc" class="site-page space-y-10">
+                <div class="bg-white rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg space-y-8">
+                    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-blue-100 pb-6">
+                        <h1 class="text-3xl sm:text-4xl font-extrabold text-lux-navy">GCC Document Processing</h1>
+                        <button type="button" onclick="navigateToPage('preregister')" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-6 py-3 rounded-full text-xs">Pre-Register →</button>
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                         <div class="lg:col-span-5">
-                            <img src="course-gcc.jpg" alt="GCC Document Processing" onclick="openImageZoom(this.src, 'GCC Document Processing & Attestation')" class="zoomable-img rounded-3xl w-full h-72 object-cover shadow-md border-4 border-white">
+                            <img src="course-gcc.jpg" alt="" class="rounded-3xl w-full h-72 object-cover shadow-md">
                         </div>
                         <div class="lg:col-span-7 space-y-4">
-                            <h4 class="text-2xl font-bold text-lux-navy">End-to-End Attestation, Licensing & Secretarial Documentation</h4>
+                            <h2 class="text-2xl font-bold text-lux-blue">Attestation, Licensing & Official Documentation</h2>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Master certificate attestation, embassy verification checklists, trade license amendments, and commercial agreement preparation.
+                                Master certificate attestation, embassy verification steps, trade license amendments, and commercial document preparation across GCC standards.
                             </p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
-                                    <h5 class="font-bold text-lux-blue text-sm mb-1">Certificate Attestation</h5>
-                                    <p class="text-xs text-slate-600">Educational, personal, and commercial document verification workflows.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs">
+                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-navy block mb-1">Certificate Attestation</strong>
+                                    Educational, personal, and commercial document verification steps.
                                 </div>
-                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
-                                    <h5 class="font-bold text-lux-blue text-sm mb-1">Embassy & Ministry Checklists</h5>
-                                    <p class="text-xs text-slate-600">Preventing errors, missing attachments, and processing delays.</p>
+                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-navy block mb-1">Embassy & Ministry Checklists</strong>
+                                    Accurate requirements and annexure preparation.
                                 </div>
-                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
-                                    <h5 class="font-bold text-lux-blue text-sm mb-1">Trade License & MOA Files</h5>
-                                    <p class="text-xs text-slate-600">Company renewals, activity updates, and corporate paperwork.</p>
+                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-navy block mb-1">Trade License & MOA Files</strong>
+                                    Renewals, amendments, and corporate documentation.
                                 </div>
-                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
-                                    <h5 class="font-bold text-lux-blue text-sm mb-1">Official Letters & Requests</h5>
-                                    <p class="text-xs text-slate-600">Formal business requests, NOCs, and authorization letters.</p>
+                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-navy block mb-1">Official Letters & NOCs</strong>
+                                    Formal requests, authorizations, and corporate letters.
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- FULL PAGE 4: TYPING & TRANSLATION -->
-            <div id="fullpage-page-translation" class="course-full-page">
-                <div class="bg-lux-ice rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg space-y-8">
-                    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-blue-200/70 pb-6">
-                        <div>
-                            <span class="text-xs font-bold uppercase tracking-widest text-lux-royal">Page 4 of 8 • 3-Month Professional Diploma</span>
-                            <h3 class="text-3xl sm:text-4xl font-extrabold text-lux-navy mt-1">Typing & Translation — Full Course Page</h3>
-                        </div>
-                        <button onclick="openCourseFullPage('page-preregister', false)" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-6 py-3 rounded-full text-xs">Enrol in Typing & Translation →</button>
+            <!-- PAGE 4: TYPING & TRANSLATION -->
+            <section id="page-translation" class="site-page space-y-10">
+                <div class="bg-white rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg space-y-8">
+                    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-blue-100 pb-6">
+                        <h1 class="text-3xl sm:text-4xl font-extrabold text-lux-navy">Typing & Translation</h1>
+                        <button type="button" onclick="navigateToPage('preregister')" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-6 py-3 rounded-full text-xs">Pre-Register →</button>
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                         <div class="lg:col-span-5">
-                            <img src="course-translation.jpg" alt="Translation & Typing" onclick="openImageZoom(this.src, 'Bilingual Typing & Translation Diploma')" class="zoomable-img rounded-3xl w-full h-72 object-cover shadow-md border-4 border-white">
+                            <img src="course-translation.jpg" alt="" class="rounded-3xl w-full h-72 object-cover shadow-md">
                         </div>
                         <div class="lg:col-span-7 space-y-4">
-                            <h4 class="text-2xl font-bold text-lux-navy">English ↔ Arabic Translation & High-Speed Official Typing</h4>
+                            <h2 class="text-2xl font-bold text-lux-blue">English & Arabic Translation & Official Typing</h2>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Develop accurate legal, commercial, and corporate translation skills alongside rapid typing speed for official documents.
+                                Build legal, commercial, and corporate translation precision alongside high-speed typing accuracy for official documents and correspondence.
                             </p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
-                                    <h5 class="font-bold text-lux-blue text-sm mb-1">Legal & Commercial Translation</h5>
-                                    <p class="text-xs text-slate-600">Contracts, certificates, memoranda, and official notices.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs">
+                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-navy block mb-1">English ↔ Arabic Translation</strong>
+                                    Contracts, certificates, memoranda, and official records.
                                 </div>
-                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
-                                    <h5 class="font-bold text-lux-blue text-sm mb-1">High-Speed Typing Drills</h5>
-                                    <p class="text-xs text-slate-600">Daily speed & precision practice for office correspondence.</p>
+                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-navy block mb-1">High-Speed Typing Drills</strong>
+                                    Speed, accuracy, and formatting for corporate typing.
                                 </div>
-                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
-                                    <h5 class="font-bold text-lux-blue text-sm mb-1">Context & Tone Accuracy</h5>
-                                    <p class="text-xs text-slate-600">Preserving exact legal meaning across languages.</p>
+                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-navy block mb-1">Legal & Business Terminology</strong>
+                                    Accurate phrasing for formal and administrative texts.
                                 </div>
-                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
-                                    <h5 class="font-bold text-lux-blue text-sm mb-1">Proofreading & Formatting</h5>
-                                    <p class="text-xs text-slate-600">Clean formatting standards for formal submissions.</p>
+                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-navy block mb-1">Proofreading & Layout</strong>
+                                    Error-free review and clean document presentation.
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- FULL PAGE 5: CIVIL SERVICE COACHING (REGISTRATION + PRELIMS + MAINS + INTERVIEW + MOCK TESTS) -->
-            <div id="fullpage-page-civil" class="course-full-page">
-                <div class="bg-lux-ice rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg space-y-10">
+            <!-- PAGE 5: CIVIL SERVICE (REGISTRATION + PRELIMS + MAINS + INTERVIEW + MOCK TESTS) -->
+            <section id="page-civil" class="site-page space-y-10">
+                <div class="bg-white rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg space-y-10">
                     <div class="bg-lux-navy text-white rounded-3xl p-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
                         <div class="flex items-center gap-5">
-                            <img src="mentor-1.jpg" alt="Shabeeb" onclick="openImageZoom(this.src, 'Civil Service Coaching — Directed & Instructed by Shabeeb')" class="zoomable-img w-20 h-20 rounded-2xl object-cover border-2 border-lux-gold shrink-0">
+                            <img src="mentor-1.jpg" alt="" class="w-20 h-20 rounded-2xl object-cover border-2 border-lux-gold shrink-0">
                             <div>
-                                <span class="bg-white text-lux-navy text-[10px] font-extrabold uppercase px-3 py-1 rounded-full">Page 5 of 8 • 1-Year Flagship Program</span>
-                                <h3 class="text-2xl sm:text-4xl font-extrabold mt-2">Civil Service Coaching Program</h3>
-                                <p class="text-sky-200 text-xs sm:text-sm mt-1">Directed and Instructed by <strong>Shabeeb</strong> • Prelims, Mains, Interview & Mock Tests</p>
+                                <h1 class="text-2xl sm:text-4xl font-extrabold">Civil Service Coaching Program</h1>
+                                <p class="text-sky-200 text-xs sm:text-sm mt-1">1-Year Program • Directed and Instructed by <strong>Shabeeb</strong></p>
                             </div>
                         </div>
-                        <a href="#cs-register-box" class="bg-lux-royal hover:bg-lux-sky text-white font-extrabold px-6 py-3.5 rounded-full text-xs shrink-0 shadow">
-                            Register for Batch ↓
+                        <a href="#civil-registration" class="bg-lux-royal hover:bg-lux-sky text-white font-extrabold px-6 py-3.5 rounded-full text-xs shrink-0 shadow">
+                            Register Now ↓
                         </a>
                     </div>
 
-                    <!-- Prelims | Mains | Interview | Mock Tests Tabs -->
+                    <!-- Stage Tabs: Prelims | Mains | Interview | Mock Tests -->
                     <div>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <button onclick="switchCSStage('prelims')" id="cs-btn-prelims" class="cs-tab px-5 py-2.5 rounded-full text-xs font-bold bg-lux-blue text-white">Prelims</button>
-                            <button onclick="switchCSStage('mains')" id="cs-btn-mains" class="cs-tab px-5 py-2.5 rounded-full text-xs font-bold bg-white text-lux-blue border border-blue-100">Mains</button>
-                            <button onclick="switchCSStage('interview')" id="cs-btn-interview" class="cs-tab px-5 py-2.5 rounded-full text-xs font-bold bg-white text-lux-blue border border-blue-100">Interview</button>
-                            <button onclick="switchCSStage('mocktests')" id="cs-btn-mocktests" class="cs-tab px-5 py-2.5 rounded-full text-xs font-bold bg-white text-lux-blue border border-blue-100">Mock Tests</button>
+                            <button type="button" onclick="switchCSStage('prelims')" id="cs-tab-prelims" class="cs-tab px-5 py-2.5 rounded-full text-xs font-bold bg-lux-blue text-white">Prelims</button>
+                            <button type="button" onclick="switchCSStage('mains')" id="cs-tab-mains" class="cs-tab px-5 py-2.5 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100">Mains</button>
+                            <button type="button" onclick="switchCSStage('interview')" id="cs-tab-interview" class="cs-tab px-5 py-2.5 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100">Interview</button>
+                            <button type="button" onclick="switchCSStage('mocktests')" id="cs-tab-mocktests" class="cs-tab px-5 py-2.5 rounded-full text-xs font-bold bg-lux-ice text-lux-blue border border-blue-100">Mock Tests</button>
                         </div>
 
-                        <!-- PRELIMS -->
-                        <div id="cs-panel-prelims" class="cs-stage-panel active bg-white rounded-3xl p-7 border border-blue-100 shadow-sm">
-                            <h4 class="text-xl font-bold text-lux-blue mb-2">Prelims Preparation — Conceptual Clarity & Accuracy</h4>
+                        <div id="cs-panel-prelims" class="cs-stage-panel active bg-lux-ice rounded-3xl p-7 border border-blue-100">
+                            <h2 class="text-xl font-bold text-lux-navy mb-2">Prelims Preparation</h2>
                             <p class="text-xs sm:text-sm text-slate-600 mb-5 leading-relaxed">
-                                Structured coverage of General Studies, Polity, History, Geography, Economy, Environment, Current Affairs, and analytical reasoning under Shabeeb's mentorship.
+                                Concept clarity, General Studies fundamentals, current affairs revision, and objective test accuracy under Shabeeb's mentorship.
                             </p>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
-                                    <strong class="text-lux-navy block mb-1">Core GS & Polity</strong>
-                                    Strong fundamentals, constitutional structure, governance, and revision cycles.
+                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-blue block mb-1">General Studies & Polity</strong>
+                                    Core concepts, constitutional provisions, and structured notes.
                                 </div>
-                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
-                                    <strong class="text-lux-navy block mb-1">Analytical & Aptitude</strong>
-                                    Logical reasoning, quantitative problem solving, and speed drills.
+                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-blue block mb-1">Analytical & Aptitude</strong>
+                                    Logical reasoning, data interpretation, and time management.
                                 </div>
-                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
-                                    <strong class="text-lux-navy block mb-1">Elimination Strategy</strong>
-                                    Smart option elimination to maximize net score in objective tests.
+                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-blue block mb-1">Accuracy & Elimination</strong>
+                                    Reducing errors and improving objective exam score.
                                 </div>
                             </div>
                         </div>
 
-                        <!-- MAINS -->
-                        <div id="cs-panel-mains" class="cs-stage-panel bg-white rounded-3xl p-7 border border-blue-100 shadow-sm">
-                            <h4 class="text-xl font-bold text-lux-blue mb-2">Mains Preparation — Structured Answer Writing</h4>
+                        <div id="cs-panel-mains" class="cs-stage-panel bg-lux-ice rounded-3xl p-7 border border-blue-100">
+                            <h2 class="text-xl font-bold text-lux-navy mb-2">Mains Answer Writing</h2>
                             <p class="text-xs sm:text-sm text-slate-600 mb-5 leading-relaxed">
-                                Clear introduction-body-conclusion structure, balanced viewpoints, administrative examples, and timed answer writing.
+                                Structured answers with clear introduction, analytical body, and balanced conclusion within strict time limits.
                             </p>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
-                                    <strong class="text-lux-navy block mb-1">Answer Architecture</strong>
-                                    Organized headings, crisp bullet points, and analytical flow.
+                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-blue block mb-1">Answer Structure</strong>
+                                    Headings, clarity, flow, and relevant examples.
                                 </div>
-                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
-                                    <strong class="text-lux-navy block mb-1">Multi-Perspective Depth</strong>
-                                    Social, legal, economic, and governance angles in every response.
+                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-blue block mb-1">Multi-Dimensional View</strong>
+                                    Administrative, social, economic, and policy dimensions.
                                 </div>
-                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
-                                    <strong class="text-lux-navy block mb-1">Guided Feedback</strong>
-                                    Regular writing practice with review and improvement points.
+                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-blue block mb-1">Regular Evaluation</strong>
+                                    Practice sheets with feedback and refinement.
                                 </div>
                             </div>
                         </div>
 
-                        <!-- INTERVIEW -->
-                        <div id="cs-panel-interview" class="cs-stage-panel bg-white rounded-3xl p-7 border border-blue-100 shadow-sm">
-                            <h4 class="text-xl font-bold text-lux-blue mb-2">Interview Guidance — Confidence, Clarity & Board Readiness</h4>
+                        <div id="cs-panel-interview" class="cs-stage-panel bg-lux-ice rounded-3xl p-7 border border-blue-100">
+                            <h2 class="text-xl font-bold text-lux-navy mb-2">Interview Guidance</h2>
                             <p class="text-xs sm:text-sm text-slate-600 mb-5 leading-relaxed">
-                                Prepare for personality tests and interview boards with profile alignment, structured expression, and mock board sessions.
+                                Confidence, profile depth, structured articulation, and composure for interview boards.
                             </p>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
-                                    <strong class="text-lux-navy block mb-1">Profile & Background</strong>
-                                    Articulating academic, work, and regional background clearly.
+                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-blue block mb-1">Profile Preparation</strong>
+                                    Academic, career, and background readiness.
                                 </div>
-                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
-                                    <strong class="text-lux-navy block mb-1">Mock Interview Sessions</strong>
-                                    Practice boards focusing on composure, honesty, and clarity.
+                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-blue block mb-1">Mock Interview Boards</strong>
+                                    Simulated board discussions and Q&A practice.
                                 </div>
-                                <div class="bg-lux-ice p-4 rounded-2xl border border-blue-100">
-                                    <strong class="text-lux-navy block mb-1">Mentor Direction</strong>
-                                    Direct guidance from Shabeeb on communication and stance.
+                                <div class="bg-white p-4 rounded-2xl border border-blue-100">
+                                    <strong class="text-lux-blue block mb-1">Mentor Guidance</strong>
+                                    Direct feedback from Shabeeb on clarity and poise.
                                 </div>
                             </div>
                         </div>
 
-                        <!-- MOCK TESTS -->
-                        <div id="cs-panel-mocktests" class="cs-stage-panel bg-white rounded-3xl p-7 border border-blue-100 shadow-sm">
-                            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                        <div id="cs-panel-mocktests" class="cs-stage-panel bg-lux-ice rounded-3xl p-7 border border-blue-100">
+                            <h2 class="text-xl font-bold text-lux-navy mb-2">Mock Tests — Prelims, Mains & Interview</h2>
+                            <p class="text-xs text-slate-600 mb-5">Practice Prelims MCQs and Mains/Interview prompts below.</p>
+                            <div class="bg-white rounded-2xl p-6 border border-blue-100 space-y-5 text-xs">
                                 <div>
-                                    <h4 class="text-xl font-bold text-lux-blue">Mock Tests — Prelims, Mains & Interview Practice</h4>
-                                    <p class="text-xs text-slate-600">Regular topic tests, full mock papers, and Mains/Interview practice prompts.</p>
-                                </div>
-                                <span class="bg-lux-blue text-white text-[11px] font-bold px-3 py-1 rounded-full">Interactive Mock Test</span>
-                            </div>
-
-                            <div class="bg-lux-ice rounded-2xl p-6 border border-blue-100 space-y-5 text-xs">
-                                <div>
-                                    <p class="font-bold text-lux-navy text-sm mb-2">Q1 (Prelims Mock): Which constitutional framework primarily governs center-state legislative relations in India?</p>
+                                    <p class="font-bold text-lux-navy text-sm mb-2">Q1 (Prelims Mock): Which part of the Indian Constitution deals with Union-State legislative relations?</p>
                                     <div class="space-y-2">
-                                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mockQ1" value="wrong"> Part IX of the Constitution</label>
-                                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mockQ1" value="right"> Part XI of the Constitution</label>
-                                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mockQ1" value="wrong"> Part XV of the Constitution</label>
+                                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mockQ1" value="wrong"> Part IX</label>
+                                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mockQ1" value="right"> Part XI</label>
+                                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mockQ1" value="wrong"> Part XVIII</label>
                                     </div>
                                 </div>
-
                                 <div>
-                                    <p class="font-bold text-lux-navy text-sm mb-2">Q2 (Prelims Mock): What is a core objective of effective public administration?</p>
+                                    <p class="font-bold text-lux-navy text-sm mb-2">Q2 (Prelims Mock): What strengthens public service accountability?</p>
                                     <div class="space-y-2">
-                                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mockQ2" value="right"> Transparent, accountable, and citizen-centric service delivery</label>
-                                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mockQ2" value="wrong"> Unnecessary procedural delays</label>
-                                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mockQ2" value="wrong"> Lack of record accountability</label>
+                                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mockQ2" value="right"> Clear procedures, transparency, and periodic review</label>
+                                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mockQ2" value="wrong"> Unrecorded verbal approvals</label>
+                                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mockQ2" value="wrong"> Avoiding public feedback</label>
                                     </div>
                                 </div>
-
-                                <div class="bg-white p-4 rounded-xl border border-blue-100">
-                                    <p class="font-bold text-lux-blue text-xs mb-1">Q3 (Mains & Interview Mock Prompt):</p>
-                                    <p class="text-slate-600">Write a structured 150-word Mains answer on "Administrative Ethics and Public Trust" and outline your key points for an Interview board.</p>
+                                <div class="bg-lux-ice p-4 rounded-xl border border-blue-100">
+                                    <p class="font-bold text-lux-blue mb-1">Q3 (Mains & Interview Prompt):</p>
+                                    <p class="text-slate-600">Draft a structured 150-word Mains answer on "Probity and Decision-Making in Governance" and note 3 key points for an Interview board.</p>
                                 </div>
-
                                 <div class="flex flex-wrap items-center gap-4">
-                                    <button type="button" onclick="checkSampleMock()" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-5 py-2.5 rounded-xl text-xs">
-                                        Check Mock Test Score
-                                    </button>
+                                    <button type="button" onclick="checkSampleMock()" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-5 py-2.5 rounded-xl text-xs">Check Score</button>
                                     <span id="mock-result-text" class="font-bold text-lux-royal"></span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Civil Service Registration Box -->
-                    <div id="cs-register-box" class="bg-white rounded-3xl p-7 border border-blue-100 shadow-sm">
-                        <h4 class="text-xl font-extrabold text-lux-navy mb-1">Civil Service Coaching — Registration</h4>
-                        <p class="text-xs text-slate-600 mb-5">1-Year Program Directed & Instructed by Shabeeb (Prelims, Mains, Interview & Mock Tests).</p>
+                    <div id="civil-registration" class="bg-lux-ice rounded-3xl p-7 border border-blue-100">
+                        <h2 class="text-xl font-extrabold text-lux-navy mb-1">Civil Service Coaching — Registration</h2>
+                        <p class="text-xs text-slate-600 mb-5">Directed & Instructed by Shabeeb (Prelims, Mains, Interview & Mock Tests).</p>
                         <form onsubmit="submitCivilRegistration(event)" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                            <input type="text" id="csName" required placeholder="Candidate Full Name" class="bg-lux-ice border border-blue-200 rounded-xl px-4 py-3 text-xs">
-                            <input type="tel" id="csPhone" required placeholder="Phone / WhatsApp Number" class="bg-lux-ice border border-blue-200 rounded-xl px-4 py-3 text-xs">
-                            <select id="csTrack" class="bg-lux-ice border border-blue-200 rounded-xl px-4 py-3 text-xs">
-                                <option>Full 1-Year (Prelims + Mains + Interview + Mock Tests)</option>
+                            <input type="text" id="csName" required placeholder="Full Name" class="bg-white border border-blue-200 rounded-xl px-4 py-3 text-xs">
+                            <input type="tel" id="csPhone" required placeholder="Phone / WhatsApp" class="bg-white border border-blue-200 rounded-xl px-4 py-3 text-xs">
+                            <select id="csTrack" class="bg-white border border-blue-200 rounded-xl px-4 py-3 text-xs">
+                                <option>Full 1-Year (Prelims, Mains, Interview & Mock Tests)</option>
                                 <option>Prelims & Mock Tests</option>
-                                <option>Mains Answer Writing & Mock Tests</option>
-                                <option>Interview Guidance & Mock Sessions</option>
+                                <option>Mains & Mock Tests</option>
+                                <option>Interview & Mock Sessions</option>
                             </select>
-                            <button type="submit" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-5 py-3 rounded-xl text-xs">
-                                Register Now →
-                            </button>
+                            <button type="submit" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-5 py-3 rounded-xl text-xs">Register →</button>
                         </form>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- FULL PAGE 6: PRE-REGISTRATION -->
-            <div id="fullpage-page-preregister" class="course-full-page">
-                <div class="bg-lux-ice rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg">
-                    <div class="border-b border-blue-200/70 pb-6 mb-8">
-                        <span class="text-xs font-bold uppercase tracking-widest text-lux-royal">Page 6 of 8 • Pre-Registration Page</span>
-                        <h3 class="text-3xl sm:text-4xl font-extrabold text-lux-navy mt-1">Pre-Registration — Thrissur Batch & Courses</h3>
-                        <p class="text-sm text-slate-600 mt-2">
-                            Pre-register for our upcoming <strong>Thrissur, Kerala offline batch classes</strong>, online batches, and 1-year Civil Service coaching.
-                        </p>
+            <!-- PAGE 6: PRE-REGISTRATION -->
+            <section id="page-preregister" class="site-page space-y-10">
+                <div class="bg-white rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg">
+                    <div class="border-b border-blue-100 pb-6 mb-8">
+                        <h1 class="text-3xl sm:text-4xl font-extrabold text-lux-navy">Pre-Registration</h1>
+                        <p class="text-sm text-slate-600 mt-2">Pre-register for our upcoming offline batch classes in Thrissur, Kerala, online classes, and 1-year Civil Service coaching.</p>
                     </div>
 
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                        <div class="lg:col-span-5 space-y-4">
-                            <div class="bg-lux-navy text-white rounded-3xl p-6 space-y-3 text-xs">
-                                <h4 class="text-lg font-bold text-sky-300">Pre-Registration Benefits</h4>
-                                <p>✓ Priority seat booking for Thrissur, Kerala offline batch opening soon.</p>
-                                <p>✓ Early syllabus, schedule & batch updates.</p>
-                                <p>✓ Support via Qatar HQ (+974 70120012), India (+91 9745568481) & serveeaseacademy@gmail.com.</p>
-                            </div>
+                        <div class="lg:col-span-5 bg-lux-navy text-white rounded-3xl p-7 space-y-3 text-xs">
+                            <h2 class="text-lg font-bold text-sky-300">Pre-Registration Details</h2>
+                            <p>✓ Offline batch classes opening soon in Thrissur, Kerala</p>
+                            <p>✓ Head Office in Qatar (+974 70120012)</p>
+                            <p>✓ India Desk (+91 9745568481)</p>
+                            <p>✓ Email: serveeaseacademy@gmail.com</p>
                         </div>
 
-                        <div class="lg:col-span-7 bg-white rounded-3xl p-7 border border-blue-100 shadow-sm">
-                            <h4 class="text-lg font-bold text-lux-blue mb-4">Pre-Registration Form</h4>
+                        <div class="lg:col-span-7 bg-lux-ice rounded-3xl p-7 border border-blue-100">
                             <form onsubmit="submitPreReg(event)" class="space-y-4">
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name</label>
-                                        <input type="text" id="preName" required placeholder="Your full name" class="w-full bg-lux-ice border border-blue-200 rounded-xl px-4 py-2.5 text-xs">
+                                        <input type="text" id="preName" required placeholder="Your full name" class="w-full bg-white border border-blue-200 rounded-xl px-4 py-2.5 text-xs">
                                     </div>
                                     <div>
                                         <label class="block text-xs font-semibold text-slate-700 mb-1">Mobile / WhatsApp</label>
-                                        <input type="tel" id="prePhone" required placeholder="+91 / +974 number" class="w-full bg-lux-ice border border-blue-200 rounded-xl px-4 py-2.5 text-xs">
+                                        <input type="tel" id="prePhone" required placeholder="+91 / +974 number" class="w-full bg-white border border-blue-200 rounded-xl px-4 py-2.5 text-xs">
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label class="block text-xs font-semibold text-slate-700 mb-1">Email Address</label>
-                                        <input type="email" id="preEmail" placeholder="you@example.com" class="w-full bg-lux-ice border border-blue-200 rounded-xl px-4 py-2.5 text-xs">
+                                        <input type="email" id="preEmail" placeholder="you@example.com" class="w-full bg-white border border-blue-200 rounded-xl px-4 py-2.5 text-xs">
                                     </div>
                                     <div>
-                                        <label class="block text-xs font-semibold text-slate-700 mb-1">Select Programme</label>
-                                        <select id="preCourse" class="w-full bg-lux-ice border border-blue-200 rounded-xl px-4 py-2.5 text-xs">
+                                        <label class="block text-xs font-semibold text-slate-700 mb-1">Programme</label>
+                                        <select id="preCourse" class="w-full bg-white border border-blue-200 rounded-xl px-4 py-2.5 text-xs">
                                             <option>HR & PRO Services (3 Months)</option>
                                             <option>GCC Document Processing (3 Months)</option>
                                             <option>Typing & Translation (3 Months)</option>
@@ -873,447 +472,236 @@
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-700 mb-1">Batch Mode</label>
-                                    <select id="preMode" class="w-full bg-lux-ice border border-blue-200 rounded-xl px-4 py-2.5 text-xs">
+                                    <select id="preMode" class="w-full bg-white border border-blue-200 rounded-xl px-4 py-2.5 text-xs">
                                         <option>Thrissur, Kerala Offline Batch (Opening Soon)</option>
                                         <option>Live Online Batch</option>
                                     </select>
                                 </div>
-                                <button type="submit" class="w-full bg-lux-blue hover:bg-lux-royal text-white font-bold py-3.5 rounded-xl text-xs flex items-center justify-center gap-2">
-                                    <i class="fa-brands fa-whatsapp text-base"></i> Complete Pre-Registration via WhatsApp
+                                <button type="submit" class="w-full bg-lux-blue hover:bg-lux-royal text-white font-bold py-3.5 rounded-xl text-xs">
+                                    Submit Pre-Registration via WhatsApp
                                 </button>
                             </form>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- FULL PAGE 7: THRISSUR OFFLINE BATCH -->
-            <div id="fullpage-page-thrissur" class="course-full-page">
-                <div class="bg-lux-ice rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg space-y-8">
-                    <div class="border-b border-blue-200/70 pb-6">
-                        <span class="text-xs font-bold uppercase tracking-widest text-lux-royal">Page 7 of 8 • Opening Soon in Kerala</span>
-                        <h3 class="text-3xl sm:text-4xl font-extrabold text-lux-navy mt-1">Thrissur, Kerala Offline Batch Classes</h3>
-                    </div>
+            <!-- PAGE 7: THRISSUR OFFLINE BATCH -->
+            <section id="page-thrissur" class="site-page space-y-10">
+                <div class="bg-white rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                         <div class="lg:col-span-5">
-                            <img src="gallery-1.jpg" alt="Thrissur Campus" onclick="openImageZoom(this.src, 'Thrissur, Kerala Offline Batch Campus')" class="zoomable-img rounded-3xl w-full h-72 object-cover shadow-md border-4 border-white">
+                            <img src="gallery-1.jpg" alt="" class="rounded-3xl w-full h-72 object-cover shadow-md">
                         </div>
-                        <div class="lg:col-span-7 space-y-4 text-sm text-slate-600">
-                            <h4 class="text-2xl font-bold text-lux-navy">In-Person Classroom Coaching Opening Soon in Thrissur</h4>
-                            <p class="leading-relaxed">
-                                Offline batch classes are opening soon in <strong>Thrissur, Kerala</strong>, supported by our <strong>Head Office in Qatar</strong>. Pre-register now for priority batch allocation.
+                        <div class="lg:col-span-7 space-y-4">
+                            <h1 class="text-3xl sm:text-4xl font-extrabold text-lux-navy">Thrissur, Kerala Offline Batch</h1>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Offline batch classes are opening soon in Thrissur, Kerala, supported by our Head Office in Qatar (+974 70120012), India contact (+91 9745568481), and serveeaseacademy@gmail.com.
                             </p>
-                            <div class="bg-white p-5 rounded-2xl border border-blue-100 space-y-2 text-xs">
-                                <p><strong>Offline Batch:</strong> Thrissur, Kerala (Opening Soon)</p>
-                                <p><strong>Head Office:</strong> Qatar (+974 70120012)</p>
-                                <p><strong>India Line:</strong> +91 9745568481</p>
-                                <p><strong>Email:</strong> serveeaseacademy@gmail.com</p>
-                            </div>
-                            <button onclick="openCourseFullPage('page-preregister', false)" class="bg-lux-blue text-white font-bold px-6 py-3 rounded-xl text-xs">Pre-Register for Thrissur Batch →</button>
+                            <button type="button" onclick="navigateToPage('preregister')" class="bg-lux-blue hover:bg-lux-royal text-white font-bold px-6 py-3 rounded-xl text-xs">
+                                Pre-Register for Thrissur Batch →
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- FULL PAGE 8: PLACEMENT & QATAR HQ -->
-            <div id="fullpage-page-careers" class="course-full-page">
-                <div class="bg-lux-ice rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg space-y-8">
-                    <div class="border-b border-blue-200/70 pb-6">
-                        <span class="text-xs font-bold uppercase tracking-widest text-lux-royal">Page 8 of 8 • Career Support & Head Office</span>
-                        <h3 class="text-3xl sm:text-4xl font-extrabold text-lux-navy mt-1">Career Readiness, Placement & Qatar Head Office</h3>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
-                        <div class="bg-white p-6 rounded-3xl border border-blue-100">
-                            <h4 class="font-bold text-lux-blue text-base mb-2">Role-Ready Skill Training</h4>
-                            <p class="text-slate-600 leading-relaxed">Practical training in HR & PRO coordination, GCC documentation, bilingual translation, and civil service preparation.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-3xl border border-blue-100">
-                            <h4 class="font-bold text-lux-blue text-base mb-2">Qatar Head Office Connection</h4>
-                            <p class="text-slate-600 leading-relaxed">Guided by our Qatar Head Office (+974 70120012) with Thrissur offline batch classes opening soon.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-3xl border border-blue-100">
-                            <h4 class="font-bold text-lux-blue text-base mb-2">Direct Admissions Support</h4>
-                            <p class="text-slate-600 leading-relaxed">Email serveeaseacademy@gmail.com or call +974 70120012 / +91 9745568481 for admissions and batch updates.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4 EASY STEPS & ZOOMABLE CAMPUS GALLERY -->
-    <section id="gallery" class="py-20 bg-lux-ice border-t border-blue-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-xl mx-auto mb-12">
-                <span class="text-xs font-bold uppercase tracking-widest text-lux-royal">Simple Process</span>
-                <h2 class="text-3xl font-extrabold text-lux-navy mt-1">
-                    Start in <span class="font-serif italic text-lux-royal">four easy steps</span>
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
-                <div class="bg-white rounded-3xl p-6 border border-blue-100 shadow-sm">
-                    <span class="text-2xl font-black text-blue-200 block mb-2">01</span>
-                    <h4 class="font-bold text-lux-blue text-sm mb-1">Choose a course</h4>
-                    <p class="text-slate-500 text-xs">Pick the 3-month diploma or 1-year civil service coaching.</p>
-                </div>
-                <div class="bg-white rounded-3xl p-6 border border-blue-100 shadow-sm">
-                    <span class="text-2xl font-black text-blue-200 block mb-2">02</span>
-                    <h4 class="font-bold text-lux-blue text-sm mb-1">Free career counselling</h4>
-                    <p class="text-slate-500 text-xs">Discuss Thrissur offline batch or online options with our team.</p>
-                </div>
-                <div class="bg-white rounded-3xl p-6 border border-blue-100 shadow-sm">
-                    <span class="text-2xl font-black text-blue-200 block mb-2">03</span>
-                    <h4 class="font-bold text-lux-blue text-sm mb-1">Pre-register easily</h4>
-                    <p class="text-slate-500 text-xs">Submit via Pre-Registration page, WhatsApp, or email.</p>
-                </div>
-                <div class="bg-white rounded-3xl p-6 border border-blue-100 shadow-sm">
-                    <span class="text-2xl font-black text-blue-200 block mb-2">04</span>
-                    <h4 class="font-bold text-lux-blue text-sm mb-1">Start learning</h4>
-                    <p class="text-slate-500 text-xs">Begin your structured classes and mentorship journey.</p>
-                </div>
-            </div>
-
-            <div class="text-center max-w-2xl mx-auto mb-10">
-                <span class="text-xs font-bold uppercase tracking-widest text-lux-royal">Life at the Academy</span>
-                <h2 class="text-3xl font-extrabold text-lux-navy mt-1 mb-2">
-                    Inside <span class="font-serif italic text-lux-royal">Serve Ease Academy</span>
-                </h2>
-                <p class="text-slate-600 text-xs">Click any photo to zoom in and view details.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div class="md:col-span-2 md:row-span-2 rounded-[1.75rem] overflow-hidden shadow-md h-80 md:h-auto bg-white border border-blue-100 relative">
-                    <img src="gallery-1.jpg" alt="Smart Classroom" onclick="openImageZoom(this.src, 'Smart Classroom & Interactive Training')" class="zoomable-img w-full h-full object-cover">
-                    <span class="absolute bottom-3 left-3 bg-white/95 text-lux-blue text-[11px] font-bold px-3 py-1 rounded-xl shadow">Smart Classroom (Click to Zoom)</span>
-                </div>
-                <div class="rounded-[1.75rem] overflow-hidden shadow-md h-48 bg-white border border-blue-100 relative">
-                    <img src="gallery-2.jpg" alt="Study Library" onclick="openImageZoom(this.src, 'Resource Library & Study Hall')" class="zoomable-img w-full h-full object-cover">
-                    <span class="absolute bottom-2 left-2 bg-white/95 text-lux-blue text-[10px] font-bold px-2.5 py-1 rounded-lg shadow">Library</span>
-                </div>
-                <div class="rounded-[1.75rem] overflow-hidden shadow-md h-48 bg-white border border-blue-100 relative">
-                    <img src="gallery-3.jpg" alt="Interactive Workshop" onclick="openImageZoom(this.src, 'Interactive Workshop & Seminars')" class="zoomable-img w-full h-full object-cover">
-                    <span class="absolute bottom-2 left-2 bg-white/95 text-lux-blue text-[10px] font-bold px-2.5 py-1 rounded-lg shadow">Workshops</span>
-                </div>
-                <div class="rounded-[1.75rem] overflow-hidden shadow-md h-48 bg-white border border-blue-100 relative">
-                    <img src="gallery-4.jpg" alt="Exam Preparation" onclick="openImageZoom(this.src, 'Civil Service & Exam Preparation')" class="zoomable-img w-full h-full object-cover">
-                    <span class="absolute bottom-2 left-2 bg-white/95 text-lux-blue text-[10px] font-bold px-2.5 py-1 rounded-lg shadow">Exam Prep</span>
-                </div>
-                <div class="rounded-[1.75rem] overflow-hidden shadow-md h-48 bg-white border border-blue-100 relative">
-                    <img src="gallery-5.jpg" alt="Graduation Success" onclick="openImageZoom(this.src, 'Student Success & Milestones')" class="zoomable-img w-full h-full object-cover">
-                    <span class="absolute bottom-2 left-2 bg-white/95 text-lux-blue text-[10px] font-bold px-2.5 py-1 rounded-lg shadow">Success</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ ACCORDION -->
-    <section id="faq" class="py-20 bg-white border-t border-blue-100">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-xs font-bold uppercase tracking-widest text-lux-royal">Good to Know</span>
-                <h2 class="text-3xl font-extrabold text-lux-navy mt-1 mb-2">
-                    Frequently asked <span class="font-serif italic text-lux-royal">questions</span>
-                </h2>
-                <p class="text-slate-600 text-xs">Everything you need before you enrol. Still have a question? Reach out anytime.</p>
-            </div>
-
-            <div class="space-y-3">
-                <div class="faq-item bg-lux-ice border border-blue-100 rounded-2xl overflow-hidden shadow-sm">
-                    <button onclick="this.parentElement.classList.toggle('open')" class="w-full px-6 py-4 text-left flex items-center justify-between font-bold text-sm text-lux-blue">
-                        <span>When is the Thrissur, Kerala offline batch opening?</span>
-                        <span class="faq-icon w-6 h-6 rounded-full bg-white text-lux-blue flex items-center justify-center text-xs transition-transform"><i class="fa-solid fa-plus"></i></span>
-                    </button>
-                    <div class="faq-answer px-6 pb-4 text-xs text-slate-600 leading-relaxed">
-                        Offline batch classes in Thrissur, Kerala are opening soon. You can pre-register via the Pre-Registration page, email serveeaseacademy@gmail.com, or call +974 70120012 / +91 9745568481.
-                    </div>
-                </div>
-
-                <div class="faq-item bg-lux-ice border border-blue-100 rounded-2xl overflow-hidden shadow-sm">
-                    <button onclick="this.parentElement.classList.toggle('open')" class="w-full px-6 py-4 text-left flex items-center justify-between font-bold text-sm text-lux-blue">
-                        <span>Where is the Head Office located?</span>
-                        <span class="faq-icon w-6 h-6 rounded-full bg-white text-lux-blue flex items-center justify-center text-xs transition-transform"><i class="fa-solid fa-plus"></i></span>
-                    </button>
-                    <div class="faq-answer px-6 pb-4 text-xs text-slate-600 leading-relaxed">
-                        Serve Ease Academy has its Head Office in Qatar (+974 70120012) along with India contact (+91 9745568481), email serveeaseacademy@gmail.com, and offline batch classes opening soon in Thrissur, Kerala.
-                    </div>
-                </div>
-
-                <div class="faq-item bg-lux-ice border border-blue-100 rounded-2xl overflow-hidden shadow-sm">
-                    <button onclick="this.parentElement.classList.toggle('open')" class="w-full px-6 py-4 text-left flex items-center justify-between font-bold text-sm text-lux-blue">
-                        <span>What does the Civil Service Coaching page cover?</span>
-                        <span class="faq-icon w-6 h-6 rounded-full bg-white text-lux-blue flex items-center justify-center text-xs transition-transform"><i class="fa-solid fa-plus"></i></span>
-                    </button>
-                    <div class="faq-answer px-6 pb-4 text-xs text-slate-600 leading-relaxed">
-                        Directed and instructed by Shabeeb, it covers registration, Prelims, Mains, Interview guidance, and Mock Tests.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT & CONSULTATION -->
-    <section id="contact" class="py-20 bg-lux-ice border-t border-blue-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-12">
-                <div class="flex items-center gap-2 mb-2">
-                    <span class="w-5 h-0.5 bg-lux-royal"></span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-lux-blue">Get In Touch</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-lux-navy">
-                    Visit us or <span class="font-serif italic text-lux-royal">connect online</span>
-                </h2>
-                <p class="text-slate-600 text-xs mt-1">Head Office in Qatar & Thrissur, Kerala Offline Batch Opening Soon.</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <div class="lg:col-span-5 bg-lux-navy text-white rounded-[2rem] p-8 shadow-xl">
-                    <h3 class="text-lg font-bold mb-6 border-b border-white/15 pb-4">Serve Ease Academy</h3>
-                    <div class="space-y-5 text-xs">
-                        <div class="flex items-start gap-3.5">
-                            <div class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-building text-lux-gold"></i></div>
-                            <div>
-                                <span class="text-sky-200 uppercase text-[10px] font-bold block">Head Office</span>
-                                <span>Qatar (+974 70120012)</span>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3.5">
-                            <div class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-location-dot text-lux-gold"></i></div>
-                            <div>
-                                <span class="text-sky-200 uppercase text-[10px] font-bold block">Offline Batch Opening Soon</span>
-                                <span>Thrissur, Kerala</span>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3.5">
-                            <div class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-phone text-lux-gold"></i></div>
-                            <div>
-                                <span class="text-sky-200 uppercase text-[10px] font-bold block">Phone & WhatsApp</span>
-                                <a href="tel:+97470120012" class="hover:underline block">Qatar: +974 70120012</a>
-                                <a href="tel:+919745568481" class="hover:underline block mt-0.5">India: +91 9745568481</a>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3.5">
-                            <div class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-envelope text-lux-gold"></i></div>
-                            <div>
-                                <span class="text-sky-200 uppercase text-[10px] font-bold block">Email</span>
-                                <a href="mailto:serveeaseacademy@gmail.com" class="hover:underline">serveeaseacademy@gmail.com</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-7 bg-white rounded-[2rem] p-8 border border-blue-100 shadow-lg">
-                    <h3 class="text-lg font-bold text-lux-blue mb-1">Book a free consultation</h3>
-                    <p class="text-slate-500 text-xs mb-6">Leave your details and connect directly via WhatsApp.</p>
-
-                    <form onsubmit="sendWhatsApp(event)" class="space-y-4">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-700 mb-1">Your Name</label>
-                                <input type="text" id="waName" required placeholder="Enter full name" class="w-full bg-lux-ice border border-blue-200 rounded-2xl px-4 py-2.5 text-sm focus:outline-none focus:border-lux-royal">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-700 mb-1">Programme</label>
-                                <select id="waCourse" class="w-full bg-lux-ice border border-blue-200 rounded-2xl px-4 py-2.5 text-sm focus:outline-none focus:border-lux-royal">
-                                    <option>HR & PRO Services (3 Months)</option>
-                                    <option>GCC Document Processing (3 Months)</option>
-                                    <option>Typing & Translation (3 Months)</option>
-                                    <option>Civil Service Coaching (1 Year - by Shabeeb)</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-700 mb-1">Batch Preference</label>
-                            <select id="waMode" class="w-full bg-lux-ice border border-blue-200 rounded-2xl px-4 py-2.5 text-sm focus:outline-none focus:border-lux-royal">
-                                <option>Thrissur, Kerala Offline Batch (Opening Soon)</option>
-                                <option>Live Online Batch</option>
-                                <option>Qatar Head Office Inquiry</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="w-full bg-lux-blue hover:bg-lux-royal text-white font-bold py-3.5 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 text-sm">
-                            <i class="fa-brands fa-whatsapp text-lg"></i> Send via WhatsApp (Qatar HQ)
+            <!-- PAGE 8: PATHWAY -->
+            <section id="page-pathway" class="site-page space-y-10">
+                <div class="bg-lux-navy text-white rounded-[2.25rem] p-8 sm:p-12 shadow-lg space-y-8">
+                    <h1 class="text-3xl sm:text-4xl font-extrabold">Learning Pathway</h1>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <button type="button" onclick="navigateToPage('hr-pro')" class="text-left bg-lux-blue hover:bg-lux-royal border border-white/15 rounded-2xl p-5">
+                            <span class="text-xs text-sky-200 block mb-1">01 • 3 Months</span>
+                            <strong class="text-sm block">HR & PRO Services</strong>
                         </button>
-                    </form>
+                        <button type="button" onclick="navigateToPage('gcc')" class="text-left bg-lux-blue hover:bg-lux-royal border border-white/15 rounded-2xl p-5">
+                            <span class="text-xs text-sky-200 block mb-1">02 • 3 Months</span>
+                            <strong class="text-sm block">GCC Document Processing</strong>
+                        </button>
+                        <button type="button" onclick="navigateToPage('translation')" class="text-left bg-lux-blue hover:bg-lux-royal border border-white/15 rounded-2xl p-5">
+                            <span class="text-xs text-sky-200 block mb-1">03 • 3 Months</span>
+                            <strong class="text-sm block">Typing & Translation</strong>
+                        </button>
+                        <button type="button" onclick="navigateToPage('civil')" class="text-left bg-lux-blue hover:bg-lux-royal border border-white/15 rounded-2xl p-5">
+                            <span class="text-xs text-sky-200 block mb-1">04 • 1 Year</span>
+                            <strong class="text-sm block">Civil Service Coaching</strong>
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- ==================== PHOTO ZOOM LIGHTBOX MODAL ==================== -->
-    <div id="photoZoomModal" class="fixed inset-0 z-[9999] bg-lux-navy/95 backdrop-blur-sm hidden flex-col items-center justify-center p-4" onclick="closeImageZoom(event)">
-        <div class="w-full max-w-4xl flex items-center justify-between text-white mb-3" onclick="event.stopPropagation()">
-            <span id="zoomCaption" class="text-xs sm:text-sm font-bold text-sky-200"></span>
-            <div class="flex items-center gap-2">
-                <button type="button" onclick="adjustZoom(-0.25)" class="bg-white/15 hover:bg-white/25 px-3 py-1.5 rounded-lg text-xs font-bold">-</button>
-                <span id="zoomLevelLabel" class="text-xs font-bold px-2">100%</span>
-                <button type="button" onclick="adjustZoom(0.25)" class="bg-white/15 hover:bg-white/25 px-3 py-1.5 rounded-lg text-xs font-bold">+</button>
-                <button type="button" onclick="resetZoom()" class="bg-white/15 hover:bg-white/25 px-3 py-1.5 rounded-lg text-xs font-bold">Reset</button>
-                <button type="button" onclick="closeImageZoom()" class="bg-lux-royal hover:bg-lux-sky px-3.5 py-1.5 rounded-lg text-xs font-bold">Close ✕</button>
-            </div>
-        </div>
-        <div class="overflow-auto max-h-[80vh] max-w-full rounded-2xl border-2 border-white/20 bg-black/40 p-2 flex items-center justify-center" onclick="event.stopPropagation()">
-            <img id="zoomedImage" src="" alt="Zoomed Preview" class="max-h-[75vh] w-auto object-contain transition-transform duration-200 rounded-xl">
-        </div>
-    </div>
+            <!-- PAGE 9: CAMPUS GALLERY -->
+            <section id="page-campus" class="site-page space-y-10">
+                <div class="bg-white rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg space-y-8">
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-lux-navy">Campus & Training Gallery</h1>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden h-80 md:h-auto bg-lux-frost">
+                            <img src="gallery-1.jpg" alt="" class="w-full h-full object-cover">
+                        </div>
+                        <div class="rounded-3xl overflow-hidden h-48 bg-lux-frost">
+                            <img src="gallery-2.jpg" alt="" class="w-full h-full object-cover">
+                        </div>
+                        <div class="rounded-3xl overflow-hidden h-48 bg-lux-frost">
+                            <img src="gallery-3.jpg" alt="" class="w-full h-full object-cover">
+                        </div>
+                        <div class="rounded-3xl overflow-hidden h-48 bg-lux-frost">
+                            <img src="gallery-4.jpg" alt="" class="w-full h-full object-cover">
+                        </div>
+                        <div class="rounded-3xl overflow-hidden h-48 bg-lux-frost">
+                            <img src="gallery-5.jpg" alt="" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <!-- Floating WhatsApp & Call Buttons -->
+            <!-- PAGE 10: FAQ -->
+            <section id="page-faq" class="site-page space-y-10">
+                <div class="bg-white rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg max-w-4xl mx-auto space-y-4">
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-lux-navy mb-6">Frequently Asked Questions</h1>
+                    <div class="faq-item bg-lux-ice border border-blue-100 rounded-2xl overflow-hidden">
+                        <button type="button" onclick="this.parentElement.classList.toggle('open')" class="w-full px-6 py-4 text-left flex items-center justify-between font-bold text-sm text-lux-blue">
+                            <span>When is the Thrissur, Kerala offline batch opening?</span>
+                            <span class="faq-icon w-6 h-6 rounded-full bg-white text-lux-blue flex items-center justify-center text-xs transition-transform"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-xs text-slate-600">
+                            Offline batch classes in Thrissur, Kerala are opening soon. Pre-registrations are open now.
+                        </div>
+                    </div>
+                    <div class="faq-item bg-lux-ice border border-blue-100 rounded-2xl overflow-hidden">
+                        <button type="button" onclick="this.parentElement.classList.toggle('open')" class="w-full px-6 py-4 text-left flex items-center justify-between font-bold text-sm text-lux-blue">
+                            <span>Where is the Head Office located?</span>
+                            <span class="faq-icon w-6 h-6 rounded-full bg-white text-lux-blue flex items-center justify-center text-xs transition-transform"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-xs text-slate-600">
+                            Head Office is in Qatar (+974 70120012), with India contact +91 9745568481 and email serveeaseacademy@gmail.com.
+                        </div>
+                    </div>
+                    <div class="faq-item bg-lux-ice border border-blue-100 rounded-2xl overflow-hidden">
+                        <button type="button" onclick="this.parentElement.classList.toggle('open')" class="w-full px-6 py-4 text-left flex items-center justify-between font-bold text-sm text-lux-blue">
+                            <span>Who directs the Civil Service Coaching program?</span>
+                            <span class="faq-icon w-6 h-6 rounded-full bg-white text-lux-blue flex items-center justify-center text-xs transition-transform"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-xs text-slate-600">
+                            The 1-year Civil Service Coaching program is directed and instructed by Shabeeb, covering Prelims, Mains, Interview, and Mock Tests.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 11: PLACEMENT & QATAR HQ -->
+            <section id="page-careers" class="site-page space-y-10">
+                <div class="bg-white rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg space-y-8">
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-lux-navy">Placement & Qatar Head Office</h1>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+                        <div class="bg-lux-ice p-6 rounded-3xl border border-blue-100">
+                            <h2 class="font-bold text-lux-blue text-base mb-2">Head Office — Qatar</h2>
+                            <p class="text-slate-600">Phone / WhatsApp: +974 70120012 • Email: serveeaseacademy@gmail.com</p>
+                        </div>
+                        <div class="bg-lux-ice p-6 rounded-3xl border border-blue-100">
+                            <h2 class="font-bold text-lux-blue text-base mb-2">Thrissur, Kerala Batch</h2>
+                            <p class="text-slate-600">Offline batch classes opening soon in Thrissur, Kerala • India: +91 9745568481</p>
+                        </div>
+                        <div class="bg-lux-ice p-6 rounded-3xl border border-blue-100">
+                            <h2 class="font-bold text-lux-blue text-base mb-2">Career & Exam Readiness</h2>
+                            <p class="text-slate-600">Practical HR/PRO, GCC documentation, bilingual translation, and 1-year Civil Service mentorship.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 12: CONTACT -->
+            <section id="page-contact" class="site-page space-y-10">
+                <div class="bg-white rounded-[2.25rem] p-8 sm:p-12 border border-blue-100 shadow-lg">
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-lux-navy mb-8">Contact Serve Ease Academy</h1>
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <div class="lg:col-span-5 bg-lux-navy text-white rounded-3xl p-8 space-y-4 text-xs">
+                            <p><strong>Head Office:</strong> Qatar (+974 70120012)</p>
+                            <p><strong>Offline Batch Soon:</strong> Thrissur, Kerala</p>
+                            <p><strong>India Line:</strong> +91 9745568481</p>
+                            <p><strong>Email:</strong> serveeaseacademy@gmail.com</p>
+                        </div>
+                        <div class="lg:col-span-7 bg-lux-ice rounded-3xl p-8 border border-blue-100">
+                            <form onsubmit="sendWhatsApp(event)" class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-700 mb-1">Your Name</label>
+                                        <input type="text" id="waName" required placeholder="Enter full name" class="w-full bg-white border border-blue-200 rounded-2xl px-4 py-2.5 text-xs">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-700 mb-1">Programme</label>
+                                        <select id="waCourse" class="w-full bg-white border border-blue-200 rounded-2xl px-4 py-2.5 text-xs">
+                                            <option>HR & PRO Services (3 Months)</option>
+                                            <option>GCC Document Processing (3 Months)</option>
+                                            <option>Typing & Translation (3 Months)</option>
+                                            <option>Civil Service Coaching (1 Year - by Shabeeb)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1">Batch Preference</label>
+                                    <select id="waMode" class="w-full bg-white border border-blue-200 rounded-2xl px-4 py-2.5 text-xs">
+                                        <option>Thrissur, Kerala Offline Batch (Opening Soon)</option>
+                                        <option>Live Online Batch</option>
+                                        <option>Qatar Head Office Inquiry</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="w-full bg-lux-blue hover:bg-lux-royal text-white font-bold py-3.5 rounded-2xl text-xs">
+                                    Send via WhatsApp (+974 70120012)
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Floating WhatsApp & Call Logos (Green WhatsApp + Blue Call Model) -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-        <a href="tel:+97470120012" class="w-12 h-12 bg-white hover:bg-lux-ice text-lux-blue rounded-full flex items-center justify-center shadow-xl border border-blue-200 transition-transform hover:scale-110" title="Call Qatar HQ (+974 70120012)">
-            <i class="fa-solid fa-phone text-lg"></i>
-        </a>
-        <a href="https://wa.me/97470120012" target="_blank" class="w-12 h-12 bg-lux-blue hover:bg-lux-royal text-white rounded-full flex items-center justify-center shadow-xl transition-transform hover:scale-110" title="Chat on WhatsApp (+974 70120012)">
+        <a href="https://wa.me/97470120012" target="_blank" class="w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-xl transition-transform hover:scale-110" title="WhatsApp (+974 70120012)">
             <i class="fa-brands fa-whatsapp text-2xl"></i>
+        </a>
+        <a href="tel:+97470120012" class="w-12 h-12 bg-sky-500 hover:bg-sky-600 text-white rounded-full flex items-center justify-center shadow-xl transition-transform hover:scale-110" title="Call (+974 70120012)">
+            <i class="fa-solid fa-phone text-lg"></i>
         </a>
     </div>
 
     <!-- Luxury Dark Blue Footer -->
-    <footer class="bg-lux-navy text-white pt-14 pb-8 text-xs border-t border-blue-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
-                <div class="md:col-span-2">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-white rounded-xl p-1 flex items-center justify-center">
-                            <img src="logo.png" alt="Logo" onerror="this.style.display='none'" class="w-full h-full object-contain transparent-logo">
-                        </div>
-                        <span class="text-base font-extrabold text-white">Serve Ease Academy</span>
-                    </div>
-                    <p class="text-blue-100/80 max-w-sm leading-relaxed">
-                        Head Office in Qatar with offline batch classes opening soon in Thrissur, Kerala — offering HR & PRO diplomas, GCC document processing, bilingual translation, and 1-year Civil Service coaching directed by Shabeeb.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="font-bold uppercase tracking-wider text-sky-300 mb-4">Programmes</h4>
-                    <ul class="space-y-2.5 text-blue-100">
-                        <li><a href="#courses" onclick="openCourseFullPage('page-hr', true)" class="hover:text-white">HR & PRO Services</a></li>
-                        <li><a href="#courses" onclick="openCourseFullPage('page-gcc', true)" class="hover:text-white">GCC Document Processing</a></li>
-                        <li><a href="#courses" onclick="openCourseFullPage('page-translation', true)" class="hover:text-white">Typing & Translation</a></li>
-                        <li><a href="#courses" onclick="openCourseFullPage('page-civil', true)" class="hover:text-white">Civil Service Coaching</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold uppercase tracking-wider text-sky-300 mb-4">Head Office & Contact</h4>
-                    <ul class="space-y-2.5 text-blue-100">
-                        <li>Head Office: Qatar</li>
-                        <li>Offline Batch Soon: Thrissur, Kerala</li>
-                        <li><a href="tel:+97470120012" class="hover:text-white">Qatar: +974 70120012</a></li>
-                        <li><a href="tel:+919745568481" class="hover:text-white">India: +91 9745568481</a></li>
-                        <li><a href="mailto:serveeaseacademy@gmail.com" class="hover:text-white">serveeaseacademy@gmail.com</a></li>
-                    </ul>
-                </div>
+    <footer class="bg-lux-navy text-white py-10 text-xs border-t border-blue-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div>
+                <span class="text-base font-extrabold text-white block">Serve Ease Academy</span>
+                <p class="text-blue-100/80 mt-1">Head Office: Qatar (+974 70120012) • Thrissur, Kerala Offline Batch Opening Soon • India: +91 9745568481 • serveeaseacademy@gmail.com</p>
             </div>
-            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-sky-200/70 gap-2">
-                <span>© 2026 Serve Ease Academy. All rights reserved.</span>
-                <span>Qatar HQ • Thrissur, Kerala Offline Batch Opening Soon</span>
-            </div>
+            <div class="text-sky-200/70">© 2026 Serve Ease Academy</div>
         </div>
     </footer>
 
     <script>
-        let currentZoom = 1;
-
-        function openImageZoom(src, caption = '') {
-            const modal = document.getElementById('photoZoomModal');
-            const img = document.getElementById('zoomedImage');
-            const cap = document.getElementById('zoomCaption');
-            if (!modal || !img) return;
-            currentZoom = 1;
-            img.src = src;
-            img.style.transform = 'scale(1)';
-            if (cap) cap.textContent = caption;
-            document.getElementById('zoomLevelLabel').textContent = '100%';
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        function adjustZoom(delta) {
-            const img = document.getElementById('zoomedImage');
-            if (!img) return;
-            currentZoom = Math.min(3, Math.max(0.5, Number((currentZoom + delta).toFixed(2))));
-            img.style.transform = `scale(${currentZoom})`;
-            document.getElementById('zoomLevelLabel').textContent = `${Math.round(currentZoom * 100)}%`;
-        }
-
-        function resetZoom() {
-            const img = document.getElementById('zoomedImage');
-            if (!img) return;
-            currentZoom = 1;
-            img.style.transform = 'scale(1)';
-            document.getElementById('zoomLevelLabel').textContent = '100%';
-        }
-
-        function closeImageZoom(event) {
-            if (event && event.target !== event.currentTarget) return;
-            const modal = document.getElementById('photoZoomModal');
-            if (!modal) return;
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const statCounters = document.querySelectorAll('.stat-counter');
-            let statsAnimated = false;
-
-            const animateStats = () => {
-                if (statsAnimated) return;
-                statsAnimated = true;
-
-                statCounters.forEach((counter) => {
-                    const target = parseInt(counter.getAttribute('data-target'), 10);
-                    const suffix = counter.getAttribute('data-suffix') || '';
-                    let count = 0;
-                    const duration = 1500;
-                    const steps = Math.max(target, 1);
-                    const stepTime = Math.max(25, Math.floor(duration / steps));
-
-                    const timer = setInterval(() => {
-                        count++;
-                        counter.textContent = `${count}${suffix}`;
-                        if (count >= target) {
-                            counter.textContent = `${target}${suffix}`;
-                            clearInterval(timer);
-                        }
-                    }, stepTime);
-                });
-            };
-
-            const statsSection = document.getElementById('stats-section');
-            if (statsSection && 'IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            animateStats();
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.15 });
-                observer.observe(statsSection);
-            } else {
-                animateStats();
-            }
-        });
-
-        function openCourseFullPage(pageId, shouldScroll = false) {
-            document.querySelectorAll('.course-full-page').forEach((page) => {
-                page.classList.remove('active');
+        function navigateToPage(pageKey) {
+            document.querySelectorAll('.site-page').forEach((sec) => {
+                sec.classList.remove('active');
             });
-            const target = document.getElementById(`fullpage-${pageId}`);
-            if (target) target.classList.add('active');
+            const target = document.getElementById(`page-${pageKey}`);
+            if (target) {
+                target.classList.add('active');
+            }
 
-            document.querySelectorAll('.fullpage-tab').forEach((btn) => {
-                btn.classList.remove('bg-lux-blue', 'text-white', 'shadow-md');
-                btn.classList.add('bg-lux-ice', 'text-lux-blue', 'border', 'border-blue-100');
+            document.querySelectorAll('.nav-item').forEach((btn) => {
+                btn.classList.remove('bg-lux-ice', 'text-lux-royal', 'font-bold');
+                if (btn.getAttribute('data-nav') === pageKey) {
+                    btn.classList.add('bg-lux-ice', 'text-lux-royal', 'font-bold');
+                }
             });
 
-            const activeBtn = document.getElementById(`btn-${pageId}`);
-            if (activeBtn) {
-                activeBtn.classList.remove('bg-lux-ice', 'text-lux-blue', 'border', 'border-blue-100');
-                activeBtn.classList.add('bg-lux-blue', 'text-white', 'shadow-md');
+            const mobileSelect = document.getElementById('mobilePageSelect');
+            if (mobileSelect) {
+                mobileSelect.value = pageKey;
             }
 
-            if (shouldScroll) {
-                const section = document.getElementById('courses');
-                if (section) section.scrollIntoView({ behavior: 'smooth' });
-            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function switchCSStage(stage) {
@@ -1325,12 +713,12 @@
 
             document.querySelectorAll('.cs-tab').forEach((btn) => {
                 btn.classList.remove('bg-lux-blue', 'text-white');
-                btn.classList.add('bg-white', 'text-lux-blue', 'border', 'border-blue-100');
+                btn.classList.add('bg-lux-ice', 'text-lux-blue', 'border', 'border-blue-100');
             });
 
-            const activeBtn = document.getElementById(`cs-btn-${stage}`);
+            const activeBtn = document.getElementById(`cs-tab-${stage}`);
             if (activeBtn) {
-                activeBtn.classList.remove('bg-white', 'text-lux-blue', 'border', 'border-blue-100');
+                activeBtn.classList.remove('bg-lux-ice', 'text-lux-blue', 'border', 'border-blue-100');
                 activeBtn.classList.add('bg-lux-blue', 'text-white');
             }
         }
