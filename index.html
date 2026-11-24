@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Serve Ease Academy — Qatar Head Office & Online Global Academy</title>
+  <title>Serve Ease Academy | International Online & Classroom Training</title>
+  <meta name="description" content="Serve Ease Academy offers international online learning and offline classroom batches in Qatar and India, including professional skills and Civil Services Coaching." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy-deep: #061630;
-      --royal-blue: #0c387a;
-      --azure-accent: #1a62d8;
-      --sky-tint: #eff5ff;
-      --ice-border: #dbe6f8;
+      --navy-deep: #2952BE;
+      --royal-blue: #2952BE;
+      --azure-accent: #2952BE;
+      --sky-tint: #F1F5FF;
+      --ice-border: #DCE5F8;
       --pure-white: #ffffff;
-      --off-white: #f8faff;
-      --text-dark: #09172d;
+      --off-white: #F4F7FF;
+      --text-dark: #14213D;
       --text-muted: #4b5d78;
       --radius-lg: 16px;
       --radius-md: 10px;
@@ -107,7 +108,7 @@
     /* ================= HERO ================= */
     .hero {
       background:
-        linear-gradient(115deg, rgba(6, 22, 48, 0.94) 0%, rgba(12, 56, 122, 0.86) 60%, rgba(6, 22, 48, 0.93) 100%),
+        linear-gradient(115deg, rgba(41, 82, 190, 0.96) 0%, rgba(23, 52, 119, 0.92) 100%),
         url('hero-bg.jpg') center/cover no-repeat;
       color: var(--pure-white);
       padding: 5.8rem 0 5rem;
@@ -372,7 +373,7 @@
     .about-images img:nth-child(2) { margin-top: 1.8rem; }
 
     .mentor-card {
-      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--royal-blue) 100%);
+      background: linear-gradient(135deg, var(--royal-blue) 0%, var(--navy-deep) 100%);
       color: var(--pure-white);
       border-radius: var(--radius-lg);
       padding: 2.4rem;
@@ -438,7 +439,7 @@
 
     /* ================= SUB-PAGE BANNER & 8 UPSC SUB-PAGES ================= */
     .subpage-header {
-      background: linear-gradient(115deg, var(--navy-deep) 0%, var(--royal-blue) 100%);
+      background: linear-gradient(115deg, var(--royal-blue) 0%, var(--navy-deep) 100%);
       color: var(--pure-white);
       padding: 3.5rem 0 3rem;
     }
@@ -588,7 +589,9 @@
     }
 
     @media (max-width: 640px) {
+      .nav-links { gap: .45rem; }
       .nav-links a:not(.nav-cta) { display: none; }
+      .nav-links .form-control { max-width: 112px; font-size: .8rem; }
       .about-images img { height: 210px; }
     }
   </style>
@@ -603,11 +606,14 @@
         <div>Serve Ease <span>Academy</span></div>
       </div>
       <nav class="nav-links">
-        <a href="javascript:void(0)" onclick="openMainHome()" id="navHomeLink" class="active-link">Home (15 Layers)</a>
-        <a href="javascript:void(0)" onclick="openUpscHub('upsc-prelims')" id="navUpscLink">Civil Services (8 Sub-Pages)</a>
-        <a href="javascript:void(0)" onclick="scrollToSection('global-tracks')">Qatar &amp; Online</a>
-        <a href="javascript:void(0)" onclick="scrollToSection('layer-13-onboarding')">Enquiry</a>
-        <a id="navWhatsappBtn" href="#" target="_blank" rel="noopener" class="nav-cta">WhatsApp Now</a>
+        <select id="languageSelect" class="form-control" aria-label="Choose language" style="width:auto;padding:.45rem .65rem;background:#fff;">
+          <option value="en">English</option><option value="ar">العربية</option><option value="ml">മലയാളം</option>
+        </select>
+        <a href="javascript:void(0)" onclick="openMainHome()" id="navHomeLink" class="active-link" data-i18n="navHome">Home</a>
+        <a href="javascript:void(0)" onclick="openUpscHub('upsc-prelims')" id="navUpscLink" data-i18n="navCivil">Civil Services</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('global-tracks')" data-i18n="navLearning">Learning</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('layer-13-onboarding')" data-i18n="navAdmission">Admissions</a>
+        <a id="navWhatsappBtn" href="#" target="_blank" rel="noopener" class="nav-cta" data-i18n="navWhatsApp">WhatsApp</a>
       </nav>
     </div>
   </header>
@@ -621,47 +627,35 @@
     <section class="hero" id="layer-1-hero">
       <div class="container hero-grid">
         <div>
-          <span class="hero-tag">Head Office: Qatar • Live Online &amp; Global</span>
-          <h1>Global Career Skills &amp; Civil Services Mentorship—Head Office in Qatar, Serving Worldwide.</h1>
+          <span class="hero-tag">International Academy • Qatar &amp; India Campuses • Online Worldwide</span>
+          <h1>Learn Today. Lead Tomorrow. Global Learning, Local Classrooms.</h1>
           <p>
-            Headquartered in <strong>Qatar</strong> with seamless <strong>Online</strong> access worldwide—covering <strong>Civil Services (UPSC CSE)</strong> with 8 dedicated sub-pages, <strong>Qatar &amp; GCC Government Services</strong>, <strong>Official Typing</strong>, and <strong>Arabic–English Translation</strong> across online and offline files.
+            Learn online from anywhere or join classroom batches in <strong>Qatar</strong> and <strong>India</strong>. Explore professional skills, Qatar PRO training, language and typing programmes, and <strong>Civil Services Coaching</strong>.
           </p>
           <div class="hero-actions">
-            <button class="btn btn-white" onclick="openUpscHub('upsc-prelims')">Open Civil Services (8 Sub-Pages)</button>
-            <a href="#layer-5-tracks" class="btn btn-glass">Explore All Tracks</a>
+            <button class="btn btn-white" onclick="openUpscHub('upsc-prelims')">Explore Civil Services</button>
+            <a href="#layer-5-tracks" class="btn btn-glass">Explore Courses</a>
           </div>
         </div>
 
         <aside class="hero-panel">
-          <h3>Qatar HQ + Online Academy</h3>
+          <h3 data-i18n="heroPanelTitle">One Academy. Multiple Ways to Learn.</h3>
           <ul>
-            <li><strong>Head Office in Qatar:</strong> Desk guidance, practical file standards &amp; GCC expertise.</li>
-            <li><strong>Online Worldwide:</strong> Live interactive classes &amp; digital file practice from anywhere.</li>
-            <li><strong>Simple Team Work:</strong> Clear roles, ready templates &amp; smooth coordination.</li>
+            <li><strong>Qatar:</strong> Offline classroom and practical training batches.</li>
+            <li><strong>India:</strong> Offline classroom batches and guided learning.</li>
+            <li><strong>Online Worldwide:</strong> Learn remotely with flexible access.</li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <!-- Layer 2: Count-to-Zero Metrics Strip -->
+    <!-- Layer 2: Academy learning options -->
     <section class="stats-strip" id="layer-2-stats">
       <div class="container stats-grid">
-        <div class="stat-card">
-          <div class="stat-number" data-start="1000" data-suffix="+">1000+</div>
-          <div class="stat-label">Global Milestones &amp; Learners</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number" data-start="500" data-suffix="+">500+</div>
-          <div class="stat-label">Happy Students &amp; Clients</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number" data-start="8" data-suffix=" Pages">8 Pages</div>
-          <div class="stat-label">Dedicated Civil Services Sub-Pages</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number" data-start="15" data-suffix=" Layers">15 Layers</div>
-          <div class="stat-label">Wide Global Homepage Architecture</div>
-        </div>
+        <div class="stat-card"><div class="stat-number">Worldwide</div><div class="stat-label">Online Learning Access</div></div>
+        <div class="stat-card"><div class="stat-number">Qatar + India</div><div class="stat-label">Offline Learning Locations</div></div>
+        <div class="stat-card"><div class="stat-number">3 Languages</div><div class="stat-label">English • Arabic • Malayalam</div></div>
+        <div class="stat-card"><div class="stat-number">8 Modules</div><div class="stat-label">Civil Services Learning Hub</div></div>
       </div>
     </section>
 
@@ -674,18 +668,18 @@
         </div>
         <div>
           <span class="eyebrow">Layer 03 • Qatar Head Office &amp; Online</span>
-          <h2>Headquartered in Qatar With Worldwide Online Reach</h2>
+          <h2>International Learning With Qatar &amp; India Classrooms</h2>
           <p style="color: var(--text-muted); margin-bottom: 1.2rem;">
-            With our head office in Qatar and live online delivery across regions, Serve Ease Academy unites real-world administrative accuracy, bilingual typing/translation, and structured UPSC preparation under one roof.
+            Serve Ease Academy brings together international online learning and offline classroom batches in Qatar and India, across professional skills, language training and Civil Services Coaching.
           </p>
           <div class="grid-2" style="gap: 1rem;">
             <div class="info-box">
-              <h4>Qatar Head Office</h4>
-              <p>Practical GCC documentation standards, file checklists &amp; operational guidance.</p>
+              <h4>Qatar Offline Batches</h4>
+              <p>Classroom learning with practical Qatar and GCC documentation training.</p>
             </div>
             <div class="info-box">
-              <h4>Online Worldwide</h4>
-              <p>Live sessions, digital templates, mock reviews &amp; remote mentorship globally.</p>
+              <h4>India Offline Batches</h4>
+              <p>Classroom programmes and guided training for learners in India.</p>
             </div>
           </div>
         </div>
@@ -748,7 +742,7 @@
                     <li>Sectional &amp; full-length mock test suite</li>
                   </ul>
                 </div>
-                <button class="card-btn" onclick="openUpscHub('upsc-prelims')">Open Civil Services (8 Sub-Pages) →</button>
+                <button class="card-btn" onclick="openUpscHub('upsc-prelims')">Explore Civil Services →</button>
               </div>
             </div>
           </article>
@@ -881,16 +875,16 @@
         <div class="section-header">
           <span class="eyebrow">Layer 09 • Online &amp; Offline Files</span>
           <h2>How We Handle Both Online &amp; Offline Files</h2>
-          <p>Every practical skill combines digital speed with offline file accuracy.</p>
+          <p>Choose worldwide online learning or classroom training in Qatar and India.</p>
         </div>
         <div class="grid-2">
           <div class="info-box">
-            <h4>Online File Workflow</h4>
-            <p>Digital document scans, online portal form preparation, remote translation drafts, cloud trackers, and live online reviews.</p>
+            <h4>Online Learning</h4>
+            <p>Join classes remotely from anywhere, access learning resources and take part in guided online sessions.</p>
           </div>
           <div class="info-box">
-            <h4>Offline File Workflow</h4>
-            <p>Physical document verification, printed form alignment, attestation/hard-copy readiness, and desk/center hands-on practice.</p>
+            <h4>Offline Classroom Learning</h4>
+            <p>Attend classroom batches in Qatar or India, subject to the published course schedule and availability.</p>
           </div>
         </div>
       </div>
@@ -967,13 +961,13 @@
       <div class="container">
         <div class="section-header">
           <span class="eyebrow">Layer 13 • Admissions &amp; Database Enquiry</span>
-          <h2>Register Your Interest (Online or Qatar HQ)</h2>
-          <p>Submissions save directly to browser storage and can sync with your database (Supabase / webhook).</p>
+          <h2 data-i18n="admissionTitle">Start Your Admission Enquiry</h2>
+          <p>Choose your course and preferred learning mode. Our admissions team can contact you with batch availability, fees and next steps.</p>
         </div>
         <form class="enquiry-box" id="academyEnquiryForm">
           <div class="form-grid">
-            <input type="text" id="enqName" class="form-control" placeholder="Full Name" required />
-            <input type="text" id="enqPhone" class="form-control" placeholder="Phone / WhatsApp Number" required />
+            <input type="text" id="enqName" class="form-control" placeholder="Full Name" autocomplete="name" required />
+            <input type="tel" id="enqPhone" class="form-control" placeholder="Phone / WhatsApp Number" autocomplete="tel" required />
           </div>
           <div class="form-grid">
             <select id="enqTrack" class="form-control">
@@ -982,12 +976,13 @@
               <option value="Official Typing & Arabic-English Translation">Official Typing &amp; Arabic–English Translation</option>
               <option value="HR Administration">HR Administration</option>
             </select>
-            <select id="enqMode" class="form-control">
+            <select id="enqMode" class="form-control" required>
               <option value="Online (Worldwide)">Online (Worldwide)</option>
-              <option value="Qatar Head Office / Offline">Qatar Head Office / Offline</option>
+              <option value="Qatar Offline Batch">Qatar Offline Batch</option>
+              <option value="India Offline Batch">India Offline Batch</option>
             </select>
           </div>
-          <button type="submit" class="card-btn">Submit Enquiry</button>
+          <button type="submit" class="card-btn" data-i18n="submitEnquiry">Submit Admission Enquiry</button>
           <div class="form-status" id="enqStatus"></div>
         </form>
       </div>
@@ -1270,44 +1265,6 @@
       }, 80);
     }
 
-    (function () {
-      const counters = document.querySelectorAll('.stat-number');
-      let animated = false;
-
-      function runZeroCount(el) {
-        const start = parseInt(el.getAttribute('data-start'), 10) || 0;
-        const suffix = el.getAttribute('data-suffix') || '';
-        const duration = 1700;
-        const startTime = performance.now();
-
-        function tick(now) {
-          const progress = Math.min((now - startTime) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          const val = Math.max(0, Math.round(start * (1 - eased)));
-          el.textContent = val + suffix;
-          if (progress < 1) {
-            requestAnimationFrame(tick);
-          } else {
-            el.textContent = '0' + suffix;
-          }
-        }
-        requestAnimationFrame(tick);
-      }
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !animated) {
-            animated = true;
-            counters.forEach(runZeroCount);
-            observer.disconnect();
-          }
-        });
-      }, { threshold: 0.2 });
-
-      const statsEl = document.getElementById('layer-2-stats');
-      if (statsEl) observer.observe(statsEl);
-    })();
-
     document.getElementById("academyEnquiryForm").addEventListener("submit", async function (e) {
       e.preventDefault();
       const record = {
@@ -1315,6 +1272,7 @@
         phone: document.getElementById("enqPhone").value.trim(),
         track: document.getElementById("enqTrack").value,
         mode: document.getElementById("enqMode").value,
+        preferred_language: document.getElementById("languageSelect")?.value || "en",
         head_office: "Qatar",
         created_at: new Date().toISOString()
       };
@@ -1348,6 +1306,34 @@
 
       this.reset();
     });
+
+    // Core interface translations. Course-specific study content remains available in its original English text.
+    const UI_TRANSLATIONS = {
+      en: { navHome:"Home", navCivil:"Civil Services", navLearning:"Learning", navAdmission:"Admissions", navWhatsApp:"WhatsApp", heroPanelTitle:"One Academy. Multiple Ways to Learn.", admissionTitle:"Start Your Admission Enquiry", submitEnquiry:"Submit Admission Enquiry" },
+      ar: { navHome:"الرئيسية", navCivil:"الخدمات المدنية", navLearning:"التعلّم", navAdmission:"القبول والتسجيل", navWhatsApp:"واتساب", heroPanelTitle:"أكاديمية واحدة. طرق متعددة للتعلّم.", admissionTitle:"ابدأ استفسار التسجيل", submitEnquiry:"إرسال استفسار التسجيل" },
+      ml: { navHome:"ഹോം", navCivil:"സിവിൽ സർവീസ്", navLearning:"പഠനം", navAdmission:"അഡ്മിഷൻ", navWhatsApp:"വാട്സ്ആപ്പ്", heroPanelTitle:"ഒരു അക്കാദമി. പഠിക്കാൻ നിരവധി മാർഗങ്ങൾ.", admissionTitle:"അഡ്മിഷൻ അന്വേഷണം ആരംഭിക്കുക", submitEnquiry:"അഡ്മിഷൻ അന്വേഷണം സമർപ്പിക്കുക" }
+    };
+    function applyLanguage(lang) {
+      const copy = UI_TRANSLATIONS[lang] || UI_TRANSLATIONS.en;
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (copy[key]) el.textContent = copy[key];
+      });
+      const nameInput = document.getElementById("enqName");
+      const phoneInput = document.getElementById("enqPhone");
+      if (nameInput) nameInput.placeholder = lang === "ar" ? "الاسم الكامل" : lang === "ml" ? "പൂർണ്ണനാമം" : "Full Name";
+      if (phoneInput) phoneInput.placeholder = lang === "ar" ? "رقم الهاتف / واتساب" : lang === "ml" ? "ഫോൺ / വാട്സ്ആപ്പ് നമ്പർ" : "Phone / WhatsApp Number";
+      localStorage.setItem("serveease_language", lang);
+    }
+    const languageSelect = document.getElementById("languageSelect");
+    if (languageSelect) {
+      const savedLanguage = localStorage.getItem("serveease_language") || "en";
+      languageSelect.value = savedLanguage;
+      applyLanguage(savedLanguage);
+      languageSelect.addEventListener("change", () => applyLanguage(languageSelect.value));
+    }
   </script>
 
 </body>
