@@ -1,25 +1,46 @@
-# Serve Ease Academy — International Website V3.4
+# Serve Ease Academy — International Website Package
 
-Static website package. Open `index.html` locally or deploy the extracted folder to the `serveease-redesign` preview branch on Vercel.
+A responsive, multi-page front-end website for Serve Ease Academy, run by Serve Ease Business Solutions.
 
-Contact: +974 7012 0012. The loading counter (0–1000) is a visual progress scale. The 500+ homepage metric is labelled as a student enrolment goal, not a current enrolment claim.
+## Design
+- Black, luxury blue and white visual identity
+- No gold
+- Responsive desktop and mobile layout
+- Professional international academy positioning
 
-See `IMPLEMENTATION-NOTES.md` for feature details and launch limitations.
+## Pages included
+1. Home
+2. About
+3. Training Programmes
+4. Qatar PRO & Government Services
+5. GCC Document Processing & PRO
+6. Professional Typing & Office Administration
+7. Practical PRO & Admin Training
+8. Admissions Enquiry
+9. Contact
+10. FAQs
+11. Learning Resources
 
+## Pricing
+Pricing is intentionally omitted and marked as information to be announced / confirmed later.
 
-## Serve Ease Academy — International Website Package
+## Before publishing
+1. Add the official Serve Ease Academy WhatsApp number in `site.js` (digits only, include country code).
+2. Add official academy email, phone, location, operating hours and social media.
+3. Confirm course duration, delivery mode, batch schedule, fees, certificates and trainer profiles.
+4. Upload all files and folders together to the website hosting public root.
 
-### Main pages
-- `index.html` — Main academy homepage and Civil Services learning hub
-- `gcc-pro.html` — GCC Document Processing & PRO training
-- `typing-course.html` — Professional Typing & Office Administration (2 months)
-- `hr-administration.html` — Practical HR Administration
+## Enquiry form
+The form currently opens WhatsApp with a pre-filled enquiry. It does not save data to a database. Configure `WHATSAPP_NUMBER` in `site.js` before launch.
 
-### Local deployment
-Upload all files and images in this folder to the same root directory of your hosting account. Keep the image filenames unchanged. Open `index.html` as the website homepage.
+## Important scope note
+This is the public front-end website. A secure student login, teacher portal, admin dashboard, payment processing, LMS, attendance tracking and automated scheduling require a separate backend and integrations. Training is educational and does not grant government-system access, official authorisation, licence or accreditation.
 
-### Contact details
-- WhatsApp / Phone: +974 7012 0012
-- Email: serveeaseacademy@gmail.com
-
-The 500+ enrolment figure is labelled as a goal, not a current student count. Kerala offline batches are described as starting soon; confirmed dates and location should be added when available.
+## Recommended next development phase
+- Secure student/teacher/admin accounts
+- Course and batch management
+- Registration and booking database
+- Attendance and progress records
+- Payment gateway, if required
+- Certificates with clearly stated issuing authority and criteria
+- Arabic/English language support after translation review
