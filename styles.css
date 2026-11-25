@@ -106,3 +106,21 @@
 .float .float-top{background:#fff;color:#10203b}
 @media(max-width:700px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:10px}.stat-card{min-height:88px}.stat-card strong{font-size:25px}.float{right:9px;bottom:10px;gap:6px}.float a{min-height:37px;padding:8px 11px;font-size:10px}.float a span{width:16px;height:16px}}
 @media(prefers-reduced-motion:reduce){.float a{transition:none}}
+
+
+/* Serve Ease Academy page loading system */
+.loader{position:fixed;inset:0;z-index:9999;background:#070B14;color:#fff;display:grid;place-items:center;opacity:1;visibility:visible;transition:opacity .38s ease,visibility .38s ease}
+.loader.hide{opacity:0;visibility:hidden;pointer-events:none}
+.loaderinner{width:min(330px,85vw);text-align:center;display:flex;flex-direction:column;align-items:center;gap:13px}
+.loader-brand{width:132px;height:100px;background:#fff;border-radius:16px;padding:7px;display:grid;place-items:center;box-shadow:0 12px 38px rgba(23,73,200,.2)}
+.loader-brand img{display:block;width:100%;height:100%;object-fit:contain}
+.home-loader .loaderinner>b{font-size:16px;letter-spacing:1.2px;font-weight:850}
+.home-loader .loadbar{width:190px;height:4px;background:#25324a;border-radius:20px;overflow:hidden;margin-top:3px}
+.home-loader .loadbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#1749C8,#76A0FF);border-radius:20px;animation:homeProgress 1.35s ease-out forwards}
+.loader-percent{font-size:12px;color:#91B1FF;font-weight:800;letter-spacing:1px;font-variant-numeric:tabular-nums}
+.home-loader small{font-size:9px;color:#93A4C1;letter-spacing:2px}
+@keyframes homeProgress{0%{width:0}100%{width:100%}}
+.page-loader{background:rgba(255,255,255,.97);backdrop-filter:blur(5px)}
+.round-loader{width:54px;height:54px;border-radius:50%;border:5px solid #dce7ff;border-top-color:#1749C8;border-right-color:#2E68F2;box-shadow:0 5px 22px rgba(23,73,200,.12);animation:roundSpin .72s linear infinite}
+@keyframes roundSpin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.round-loader{animation-duration:1.8s}.home-loader .loadbar i{animation-duration:1.8s}}
