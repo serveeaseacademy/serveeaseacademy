@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Serve Ease Academy | International Online Learning & Kerala Offline Batches</title>
-  <meta name="description" content="Serve Ease Academy offers international online learning in HR administration, GCC PRO documentation, professional typing and Civil Services Coaching. Kerala offline batches are starting soon." />
+  <meta name="description" content="Serve Ease Academy delivers career-focused online learning worldwide in Civil Services, GCC PRO documentation, HR administration and professional typing. Kerala offline batches starting soon." />
+  <meta name="theme-color" content="#102B50" />
+  <meta property="og:title" content="Serve Ease Academy | International Training & Education" />
+  <meta property="og:description" content="Learn today. Lead tomorrow. Explore career-focused programmes with Serve Ease Academy." />
+  <meta property="og:image" content="logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
@@ -588,7 +592,7 @@
     .float-top { background: #ffffff; color: #102B50; border: 1px solid #dbe6f5; padding: 0.6rem 0.9rem; }
     .float-btn { text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
     .float-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(6,22,48,.3); }
-    .float-btn:focus-visible { outline: 3px solid #f2c14e; outline-offset: 3px; }
+    .float-btn:focus-visible { outline: 3px solid #7FA5FF; outline-offset: 3px; }
     .float-icon { width: 1.25rem; height: 1.25rem; flex: 0 0 1.25rem; display: inline-flex; align-items: center; justify-content: center; }
     .float-icon svg { width: 1.2rem; height: 1.2rem; display: block; stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
     .float-whatsapp .float-icon svg { fill: currentColor; stroke: none; }
@@ -796,6 +800,139 @@
       .card-img{height:205px}.card-body{padding:1.25rem}.enquiry-box{padding:1.2rem}
     }
 
+
+    /* ================= INTERNATIONAL ACADEMY DESIGN SYSTEM ================= */
+    :root {
+      --navy-deep:#0b1e36;
+      --royal-blue:#1749b8;
+      --azure-accent:#2459cf;
+      --blue-accent:#2452C5;
+      --ice-border:#dce6f3;
+      --off-white:#f5f8fd;
+    }
+    body { letter-spacing:-.012em; }
+    .container { max-width:1320px; }
+    .navbar { box-shadow:0 8px 28px rgba(7,26,52,.10); }
+    .nav-inner { min-height:82px; }
+    .brand { letter-spacing:-.035em; }
+    .nav-links { gap:1.25rem; }
+    .nav-links a { transition:color .2s ease, opacity .2s ease; }
+    .nav-cta { border-radius:999px; padding:.72rem 1.35rem; }
+    .hero {
+      position:relative; isolation:isolate; overflow:hidden;
+      min-height:590px; display:flex; align-items:center;
+      background:
+        linear-gradient(100deg,rgba(7,24,47,.96) 0%,rgba(12,38,76,.88) 48%,rgba(20,66,150,.66) 100%),
+        url('hero-bg.jpg') center 48%/cover no-repeat;
+      padding:6.8rem 0 6rem;
+    }
+    .hero:before {
+      content:""; position:absolute; z-index:-1; width:520px; height:520px;
+      border:1px solid rgba(255,255,255,.13); border-radius:50%;
+      right:-170px; top:-220px; box-shadow:0 0 0 45px rgba(255,255,255,.025),0 0 0 90px rgba(255,255,255,.02);
+    }
+    .hero:after {
+      content:""; position:absolute; z-index:-1; left:0; right:0; bottom:0; height:5px;
+      background:linear-gradient(90deg,transparent,var(--blue-accent),#fff,transparent);
+      opacity:.8;
+    }
+    .hero-grid { grid-template-columns:minmax(0,1.18fr) minmax(330px,.72fr); gap:4.5rem; }
+    .hero h1 { font-size:clamp(2.8rem,5.1vw,4.7rem); max-width:850px; line-height:1.08; letter-spacing:-.055em; }
+    .hero p { font-size:1.08rem; line-height:1.85; max-width:690px; color:#e4ecfa; }
+    .hero-tag { border-color:rgba(127,165,255,.65); color:#FFFFFF; letter-spacing:.12em; font-size:.72rem; }
+    .hero-panel { border:1px solid rgba(255,255,255,.2); border-radius:22px; padding:2rem; backdrop-filter:blur(14px); }
+    .hero-panel h3 { font-family:'Playfair Display',Georgia,serif; font-size:1.55rem; margin-bottom:1rem; }
+    .hero-panel li { padding:.55rem 0; line-height:1.65; color:#e6edf8; }
+    .btn { border-radius:999px; padding:.95rem 1.55rem; }
+    .btn-white { color:var(--navy-deep); }
+    .btn-glass { border-radius:999px; }
+    .stats-strip { padding:1.6rem 0; background:#fff; border-bottom:1px solid var(--ice-border); }
+    .stats-grid { gap:1rem; }
+    .stat-card { background:linear-gradient(145deg,#fff,#f7faff); border-radius:16px; padding:1.25rem 1rem; box-shadow:0 8px 25px rgba(15,45,88,.045); }
+    .stat-number { font-family:'Playfair Display',Georgia,serif; font-size:2rem; }
+    .stat-label { color:#52647e; font-weight:600; }
+    .section { padding:5.7rem 0; }
+    .section-alt { background:linear-gradient(180deg,#f7faff,#f0f5fc); }
+    .section-header { max-width:790px; margin:0 auto 2.7rem; }
+    .section-header h2,.about-grid h2,.experience-heading h2 {
+      font-family:'Playfair Display',Georgia,serif; font-size:clamp(2rem,3.4vw,3rem); line-height:1.18;
+    }
+    .section-header p { font-size:1rem; line-height:1.8; }
+    .eyebrow { color:#2452C5; letter-spacing:.15em; font-size:.72rem; font-weight:800; text-transform:uppercase; }
+    .card { border-radius:20px; border-color:#dce6f3; box-shadow:0 14px 38px rgba(11,36,72,.075); }
+    .card-img { height:245px; position:relative; }
+    .card-img:after { content:""; position:absolute; inset:40% 0 0; background:linear-gradient(transparent,rgba(7,24,47,.28)); pointer-events:none; }
+    .card-body { padding:1.55rem; }
+    .card-body h3 { font-family:'Playfair Display',Georgia,serif; font-size:1.35rem; }
+    .card-list li { line-height:1.65; margin:.35rem 0; }
+    .course-duration { border:1px solid #d8e4f8; background:#eff5ff; color:#173f88; }
+    .info-box { border-radius:17px; padding:1.5rem; background:rgba(255,255,255,.92); }
+    .info-box h4 { font-size:1.02rem; }
+    .about-images { gap:1rem; }
+    .about-images img { border-radius:18px; box-shadow:0 16px 32px rgba(10,33,65,.12); }
+    .mentor-card { border:1px solid rgba(255,255,255,.15); box-shadow:0 22px 60px rgba(7,24,47,.18); }
+    .faq-list { gap:.7rem; }
+    details.faq-item { border-radius:13px; overflow:hidden; }
+    details.faq-item[open] { border-color:#b8cbea; box-shadow:0 12px 30px rgba(16,43,80,.08); }
+    .footer-minimal { padding:2rem 0; }
+    .floating-stack { right:22px; bottom:22px; }
+    .float-btn { padding:.82rem 1.2rem; font-size:.88rem; letter-spacing:-.01em; }
+    .float-call { background:#102b50; }
+    .float-chat { background:#48617f; }
+    .float-top { box-shadow:0 8px 24px rgba(7,24,47,.12); }
+    .academy-experience { background:#fff; }
+    .experience-heading { text-align:center; max-width:760px; margin:0 auto 2.6rem; }
+    .experience-heading h2 { color:var(--navy-deep); margin:.55rem 0 .8rem; }
+    .experience-heading p { color:var(--text-muted); line-height:1.8; }
+    .experience-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin-bottom:2.5rem; }
+    .experience-feature { position:relative; overflow:hidden; min-height:230px; padding:1.7rem; border:1px solid var(--ice-border); border-radius:18px; background:linear-gradient(145deg,#fff,#f5f8fd); box-shadow:0 12px 30px rgba(10,35,72,.055); }
+    .experience-index { position:absolute; right:1.2rem; top:.8rem; font-family:'Playfair Display',serif; font-size:2.7rem; color:#e7edf7; font-weight:700; }
+    .experience-icon { display:grid; place-items:center; width:48px; height:48px; border-radius:14px; margin-bottom:1.2rem; color:#fff; background:linear-gradient(135deg,#1749b8,#102b50); font-size:1.5rem; box-shadow:0 8px 18px rgba(23,73,184,.22); }
+    .experience-feature h3 { font-family:'Playfair Display',Georgia,serif; font-size:1.25rem; color:var(--navy-deep); margin-bottom:.55rem; }
+    .experience-feature p { color:var(--text-muted); line-height:1.75; font-size:.94rem; }
+    .experience-showcase { display:grid; grid-template-columns:.85fr 1.15fr; gap:2rem; align-items:center; overflow:hidden; padding:2rem; border-radius:24px; color:#fff; background:linear-gradient(115deg,#0b1e36,#1749a7); box-shadow:0 22px 50px rgba(9,34,72,.18); }
+    .showcase-copy { padding:1.4rem; }
+    .showcase-copy h2 { font-family:'Playfair Display',Georgia,serif; font-size:clamp(1.8rem,3vw,2.6rem); line-height:1.2; margin:.65rem 0 1rem; }
+    .showcase-copy p { color:#d9e5f8; line-height:1.8; margin-bottom:1.4rem; }
+    .showcase-copy .eyebrow { color:#B8CBEA; }
+    .showcase-cta { gap:.8rem; }
+    .showcase-photos { display:grid; grid-template-columns:1.2fr .8fr; grid-template-rows:150px 150px; gap:.8rem; }
+    .showcase-photos img { width:100%; height:100%; object-fit:cover; border-radius:14px; }
+    .showcase-photos img:first-child { grid-row:span 2; }
+    .splash-inner { max-width:420px; }
+    .splash-progress { font-family:'Playfair Display',Georgia,serif; }
+    .splash-line { border-radius:999px; overflow:hidden; }
+    .splash-line-fill { background:linear-gradient(90deg,#2452c5,#2452C5); }
+    @media (max-width:980px) {
+      .hero-grid { grid-template-columns:1fr; gap:2.2rem; }
+      .hero { min-height:auto; padding:5rem 0; }
+      .hero-panel { max-width:680px; }
+      .experience-showcase { grid-template-columns:1fr; }
+    }
+    @media (max-width:680px) {
+      .nav-inner { height:auto; min-height:70px; padding-top:.7rem; padding-bottom:.7rem; }
+      .brand { font-size:1rem; }
+      .brand img { height:40px; width:50px; }
+      .hero h1 { font-size:2.5rem; }
+      .hero { padding:4.2rem 0 3.8rem; }
+      .section { padding:3.8rem 0; }
+      .stats-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .stat-card { padding:.9rem .6rem; }
+      .stat-number { font-size:1.55rem; }
+      .stat-label { font-size:.76rem; }
+      .experience-grid { grid-template-columns:1fr; }
+      .experience-feature { min-height:0; }
+      .experience-showcase { padding:1.1rem; }
+      .showcase-copy { padding:.7rem; }
+      .showcase-photos { grid-template-rows:120px 120px; }
+      .floating-stack { right:10px; bottom:10px; }
+      .float-btn { padding:.68rem .82rem; font-size:.78rem; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .card,.info-box,.experience-feature { transition:transform .25s ease,box-shadow .25s ease; }
+      .info-box:hover,.experience-feature:hover { transform:translateY(-4px); box-shadow:0 18px 38px rgba(11,36,72,.11); }
+    }
+
   </style>
 </head>
 <body id="top">
@@ -904,25 +1041,25 @@
       <div class="container">
         <div class="section-header">
           <span class="eyebrow">How We Support Learners</span>
-          <h2>Easy, Transparent &amp; Stress-Free Team Work</h2>
-          <p>Our team workflow is intentionally simple—clear roles, ready templates, and direct updates so work moves smoothly every day.</p>
+          <h2>A More Thoughtful Way to Learn</h2>
+          <p>A learner-first environment built around structured programmes, practical application, clear guidance and supportive progress reviews.</p>
         </div>
         <div class="grid-4">
           <div class="info-box">
-            <h4>1. Clear Task Ownership</h4>
-            <p>Simple daily assignments with zero confusion or heavy bureaucracy.</p>
+            <h4>Structured Learning Paths</h4>
+            <p>Clear course pathways, learning milestones and practical outcomes.</p>
           </div>
           <div class="info-box">
-            <h4>2. Standard Templates</h4>
-            <p>Ready checklists for UPSC schedules, GCC files, typing, and translation.</p>
+            <h4>Practical Skill Development</h4>
+            <p>Guided exercises, real-world examples and useful professional resources.</p>
           </div>
           <div class="info-box">
-            <h4>3. Quick Review Loop</h4>
-            <p>Fast online/offline verification so every file or test is accurate.</p>
+            <h4>Guided Progress Reviews</h4>
+            <p>Regular feedback to help learners understand progress and next steps.</p>
           </div>
           <div class="info-box">
-            <h4>4. Student-First Support</h4>
-            <p>Direct mentor and coordinator follow-up for every enrolled learner.</p>
+            <h4>Flexible Learning Access</h4>
+            <p>Online learning worldwide, with Kerala classroom batches starting soon.</p>
           </div>
         </div>
       </div>
@@ -979,7 +1116,7 @@
                     <li>Real GCC case scenarios &amp; error prevention</li>
                   </ul>
                 </div>
-                <a href="#layer-13-onboarding" class="card-btn">Enquire GCC Services</a>
+                <a href="gcc-pro.html" class="card-btn">Explore GCC PRO Programme →</a>
               </div>
             </div>
           </article>
@@ -1003,7 +1140,7 @@
                     <li>Data entry, keyboard shortcuts and practical tests</li>
                   </ul>
                 </div>
-                <a href="#layer-13-onboarding" class="card-btn">Enquire Typing Course</a>
+                <a href="typing-course.html" class="card-btn">Explore Typing Programme →</a>
               </div>
             </div>
           </article>
@@ -1026,7 +1163,7 @@
                     <li>Online &amp; offline administrative file handling</li>
                   </ul>
                 </div>
-                <a href="#layer-13-onboarding" class="card-btn">Enquire HR Track</a>
+                <a href="hr-administration.html" class="card-btn">Explore HR Programme →</a>
               </div>
             </div>
           </article>
@@ -1166,10 +1303,10 @@
           <div class="gallery-item"><img src="photo%206.jpg" alt="Session 6" loading="lazy" /></div>
           <div class="gallery-item"><img src="photo%207.jpg" alt="Session 7" loading="lazy" /></div>
           <!-- Pinterest curated image slots (upload pinterest-1.jpg .. pinterest-4.jpg or replace URLs) -->
-          <div class="gallery-item"><img src="pinterest-1.jpg" alt="Pinterest Curated Visual 1" onerror="this.src='about-1.jpg'" loading="lazy" /></div>
-          <div class="gallery-item"><img src="pinterest-2.jpg" alt="Pinterest Curated Visual 2" onerror="this.src='about-2.jpg'" loading="lazy" /></div>
-          <div class="gallery-item"><img src="pinterest-3.jpg" alt="Pinterest Curated Visual 3" onerror="this.src='course-upsc.jpg'" loading="lazy" /></div>
-          <div class="gallery-item"><img src="pinterest-4.jpg" alt="Pinterest Curated Visual 4" onerror="this.src='course-gcc.jpg'" loading="lazy" /></div>
+          <div class="gallery-item"><img src="gallery-1.jpg" alt="Serve Ease Academy learning and training gallery 1" loading="lazy" /></div>
+          <div class="gallery-item"><img src="gallery-2.jpg" alt="Serve Ease Academy learning and training gallery 2" loading="lazy" /></div>
+          <div class="gallery-item"><img src="gallery-3.jpg" alt="Serve Ease Academy learning and training gallery 3" loading="lazy" /></div>
+          <div class="gallery-item"><img src="gallery-4.jpg" alt="Serve Ease Academy learning and training gallery 4" loading="lazy" /></div>
         </div>
       </div>
     </section>
@@ -1208,6 +1345,47 @@
           <button type="submit" class="card-btn" data-i18n="submitEnquiry">Submit Admission Enquiry</button>
           <div class="form-status" id="enqStatus"></div>
         </form>
+      </div>
+    </section>
+
+    <!-- Premium Academy Experience -->
+    <section class="section academy-experience" id="academy-experience">
+      <div class="container">
+        <div class="experience-heading">
+          <span class="eyebrow">The Serve Ease Difference</span>
+          <h2>Learning Designed for a Changing World</h2>
+          <p>Build confidence through relevant knowledge, practical training and a learning experience shaped around real goals.</p>
+        </div>
+        <div class="experience-grid">
+          <article class="experience-feature">
+            <span class="experience-index">01</span><div class="experience-icon">✦</div>
+            <h3>Career-Relevant Programmes</h3>
+            <p>Focused learning in Civil Services, GCC documentation, HR administration and professional office skills.</p>
+          </article>
+          <article class="experience-feature">
+            <span class="experience-index">02</span><div class="experience-icon">◎</div>
+            <h3>Practical, Applied Learning</h3>
+            <p>Learn through structured exercises, document practice, guided tasks and clear programme outcomes.</p>
+          </article>
+          <article class="experience-feature">
+            <span class="experience-index">03</span><div class="experience-icon">↗</div>
+            <h3>Accessible Worldwide</h3>
+            <p>Join online learning from anywhere. Kerala offline classroom batches are starting soon.</p>
+          </article>
+        </div>
+        <div class="experience-showcase">
+          <div class="showcase-copy">
+            <span class="eyebrow">A Place to Grow</span>
+            <h2>Knowledge. Confidence. Professional Progress.</h2>
+            <p>Whether you are preparing for an examination or building workplace skills, Serve Ease Academy helps you take the next step with a clear learning pathway.</p>
+            <a class="btn btn-white showcase-cta" href="#layer-13-onboarding">Speak to Admissions <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="showcase-photos">
+            <img src="gallery-3.jpg" alt="Learners taking part in a classroom session" loading="lazy">
+            <img src="about-1.jpg" alt="Collaborative learning and discussion" loading="lazy">
+            <img src="gallery-1.jpg" alt="Modern learning and training environment" loading="lazy">
+          </div>
+        </div>
       </div>
     </section>
 
