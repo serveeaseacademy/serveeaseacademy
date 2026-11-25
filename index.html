@@ -505,6 +505,7 @@
 
     .upsc-sub-panel { display: none; padding: 3.5rem 0; }
     .upsc-sub-panel.active { display: block; animation: fadeIn 0.25s ease; }
+    .upsc-sub-panel:focus { outline:none; }
 
     .qa-box {
       background: var(--pure-white);
@@ -738,9 +739,52 @@
     .footer-minimal { padding:3rem 0; }
     .floating-stack { right:22px; bottom:22px; }
     .float-btn { min-height:48px; border-radius:999px; }
-    #academySplash { background:radial-gradient(circle at 50% 42%,#fff 0,#fff 45%,#f2f6ff 100%); }
-    .splash-logo { width:min(370px,76vw); max-height:280px; }
-    .splash-line { width:170px; height:3px; }
+    #academySplash { background:radial-gradient(circle at 50% 38%,#183d70 0,#0b1f3a 58%,#07172c 100%); animation:splashFailsafe 5s ease forwards; }
+    #academySplash .splash-inner { color:#fff; gap:1.15rem; }
+    .splash-logo { width:min(300px,68vw); max-height:220px; padding:12px; border-radius:20px; background:#fff; box-shadow:0 20px 65px rgba(0,0,0,.22); }
+    .splash-line { width:min(260px,68vw); height:5px; background:rgba(255,255,255,.2); }
+    .splash-line-fill { background:linear-gradient(90deg,#7fa5ff,#fff); }
+    .splash-progress { color:#fff; }
+    .splash-progress span,.splash-caption { color:#cbdaf4; }
+    @keyframes splashFailsafe { 0%,88% { opacity:1; visibility:visible; } 100% { opacity:0; visibility:hidden; pointer-events:none; } }
+    #academySplash.is-hidden { animation:none; }
+    .splash-caption { font-size:.7rem; letter-spacing:.19em; }
+    .splash-inner > span:last-child { color:#cbdaf4!important; }
+
+    /* V3.4 — individual academic module layouts */
+    .subpage-header { background:linear-gradient(118deg,#0b1f3a 0%,#173e73 58%,#2452c5 100%); padding:3.1rem 0 2.8rem; }
+    .subpage-header .container { position:relative; }
+    .subpage-header h1 { max-width:900px; font-size:clamp(2rem,4vw,3.25rem); }
+    .subpage-header p { max-width:760px; line-height:1.8; }
+    .subpage-header:after { content:"ACADEMIC PROGRAMME"; position:absolute; right:max(3vw,calc((100vw - 1320px)/2)); bottom:22px; color:rgba(255,255,255,.12); font-size:clamp(1rem,2vw,1.8rem); font-weight:800; letter-spacing:.18em; pointer-events:none; }
+    .subpage-tabs { top:82px; box-shadow:0 8px 24px rgba(8,31,67,.06); }
+    .tabs-scroll { scrollbar-width:thin; }
+    .tab-pill { min-height:44px; border-radius:10px; font-weight:750; }
+    .tab-pill.active { box-shadow:0 7px 18px rgba(36,82,197,.2); }
+    .upsc-sub-panel { min-height:430px; padding:2.8rem 0 3.2rem; }
+    .upsc-sub-panel > .eyebrow, .upsc-sub-panel > h2 { display:none; }
+    .module-hero { display:grid; grid-template-columns:1fr auto; align-items:center; gap:2rem; padding:2rem 2.2rem; margin-bottom:2rem; border-radius:22px; color:#fff; background:linear-gradient(112deg,var(--module-deep,#0b1f3a),var(--module-accent,#2452c5)); box-shadow:0 20px 48px rgba(8,31,67,.14); overflow:hidden; position:relative; }
+    .module-hero:after { content:attr(data-number); font-size:clamp(5rem,11vw,9rem); line-height:1; font-weight:850; color:rgba(255,255,255,.10); letter-spacing:-.08em; }
+    .module-kicker { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:.75rem; color:#dbe7ff; font-size:.72rem; font-weight:850; letter-spacing:.15em; text-transform:uppercase; }
+    .module-hero h2 { color:#fff!important; font-family:'Playfair Display',Georgia,serif; font-size:clamp(1.55rem,3vw,2.45rem); line-height:1.2; margin:0 0 .7rem!important; }
+    .module-hero p { color:#e3ecff; max-width:760px; line-height:1.75; margin:0; }
+    .module-content-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.1rem; }
+    .upsc-sub-panel .info-box,.upsc-sub-panel .qa-box { border-radius:16px; padding:1.45rem; border:1px solid #e1e9f4; box-shadow:0 10px 28px rgba(8,31,67,.055); background:#fff; }
+    .upsc-sub-panel .info-box h4,.upsc-sub-panel .qa-box h4 { color:#102b50; font-size:1rem; margin-bottom:.55rem; }
+    .upsc-sub-panel .info-box p,.upsc-sub-panel .qa-box p { line-height:1.75; color:#5c6c84; }
+    .module-pager { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-top:2rem; padding-top:1.3rem; border-top:1px solid #e4ebf5; }
+    .module-pager button { border:1px solid #dbe5f3; border-radius:999px; padding:.75rem 1.15rem; color:#173b72; background:#fff; font-weight:800; }
+    .module-pager button.primary { color:#fff; background:#2452c5; border-color:#2452c5; }
+    .module-pager button:disabled { opacity:.35; cursor:not-allowed; }
+    #upscHubView[data-page="upsc-mains"] { --module-accent:#315c9e; --module-deep:#102b50; }
+    #upscHubView[data-page="upsc-interview"] { --module-accent:#536a9d; --module-deep:#182d4d; }
+    #upscHubView[data-page="upsc-questions"] { --module-accent:#245b87; --module-deep:#0c304c; }
+    #upscHubView[data-page="upsc-mocks"] { --module-accent:#285b76; --module-deep:#10334a; }
+    #upscHubView[data-page="upsc-csat"] { --module-accent:#405aa8; --module-deep:#182b60; }
+    #upscHubView[data-page="upsc-daf"] { --module-accent:#45658a; --module-deep:#1a3655; }
+    #upscHubView[data-page="upsc-roadmap"] { --module-accent:#315d9a; --module-deep:#102b50; }
+    @media(max-width:760px){ .module-hero{grid-template-columns:1fr;padding:1.5rem}.module-hero:after{position:absolute;right:12px;bottom:-10px}.module-content-grid{grid-template-columns:1fr}.module-pager{align-items:stretch}.module-pager button{font-size:.78rem;padding:.7rem .8rem}.subpage-header:after{display:none}.subpage-tabs{top:70px} }
+
     @media(max-width:980px){ .hero-grid{grid-template-columns:1fr;gap:2.2rem}.hero-panel{max-width:680px}.section{padding:4.5rem 0} }
     @media(max-width:640px){
       .container{padding-left:1.1rem;padding-right:1.1rem}
@@ -1221,8 +1265,8 @@
           <span>/</span>
           <span id="currentUpscBreadcrumb">1. Prelims Course</span>
         </div>
-        <h1>Civil Services (UPSC CSE) — 8 Sub-Pages Hub</h1>
-        <p>Switch seamlessly across all 8 Civil Services pages: Prelims, Mains, Interview, Expected Interview Questions, Mock Tests, CSAT &amp; Answer Writing, DAF &amp; Current Affairs, and Study Roadmap.</p>
+        <h1 id="upscHubTitle">Civil Services — Structured Learning Programme</h1>
+        <p id="upscHubDescription">Explore a guided academic pathway with dedicated modules, practical learning resources and a clear progression from foundation to final preparation.</p>
       </div>
     </div>
 
@@ -1371,7 +1415,7 @@
     <a id="floatWhatsappBtn" href="#" target="_blank" rel="noopener" class="float-btn float-whatsapp" aria-label="WhatsApp admission enquiry">
       <span class="float-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20l.9-4.7a8.5 8.5 0 1 1 16.6-3.6Z"/><path d="M8.8 8.2c.2-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4-.1.6l-.6.7c-.2.2-.2.4 0 .7.6 1 1.4 1.8 2.5 2.4.3.2.5.2.7-.1l.8-.9c.2-.2.4-.3.7-.2l1.7.8c.3.1.4.3.4.5 0 .4-.2 1.1-.7 1.5-.5.5-1.2.7-1.9.6-1.1-.2-2.4-.8-3.8-2-1.5-1.3-2.5-2.9-2.8-4-.3-.9 0-1.8.5-2.3Z"/></svg></span><span>WhatsApp Enquiry</span>
     </a>
-    <a id="floatCallBtn" href="tel:+97470442825" class="float-btn float-call" aria-label="Call Serve Ease Academy">
+    <a id="floatCallBtn" href="tel:+97470120012" class="float-btn float-call" aria-label="Call Serve Ease Academy">
       <span class="float-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 2.8a2 2 0 0 1-.6 1.7L7.7 9.5a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 1.7-.6l2.8.5a2 2 0 0 1 1.5 2.8Z"/></svg></span><span>Call Academy</span>
     </a>
     <a href="#layer-13-onboarding" class="float-btn float-admission" aria-label="Go to admission enquiry form">
@@ -1388,8 +1432,8 @@
   <!-- ===================================================================== -->
   <script>
     const ACADEMY_CONFIG = {
-      whatsappDigits: "97470442825",
-      displayPhone: "+974 7044 2825",
+      whatsappDigits: "97470120012",
+      displayPhone: "+974 7012 0012",
       email: "serveeaseqtr@gmail.com",
       supabaseUrl: "",
       supabaseAnonKey: ""
@@ -1440,14 +1484,55 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    const UPSC_MODULES = [
+      { id:'upsc-prelims', title:'UPSC Prelims Course', subtitle:'Build conceptual clarity, strengthen elimination skills and prepare with structured revision across General Studies.', kicker:'FOUNDATION • GENERAL STUDIES PAPER I', desc:'A focused preparation space for core subjects, accuracy and previous-year question practice.' },
+      { id:'upsc-mains', title:'UPSC Mains Programme', subtitle:'Develop analytical depth, structured arguments and clear administrative perspectives for descriptive papers.', kicker:'ADVANCED STUDY • GS I–IV & ESSAY', desc:'A dedicated academic module for answer structure, ethics, governance and essay development.' },
+      { id:'upsc-interview', title:'Personality Test Preparation', subtitle:'Prepare to communicate with clarity, balance and confidence through guided interview practice.', kicker:'PERSONALITY DEVELOPMENT • INTERVIEW', desc:'An individual preparation pathway focused on judgement, communication and reflective thinking.' },
+      { id:'upsc-questions', title:'Interview Question Bank', subtitle:'Explore key question areas covering personal background, home state, governance and current affairs.', kicker:'PRACTICE RESOURCE • QUESTION BANK', desc:'Organised question themes to help aspirants prepare thoughtful and well-reasoned responses.' },
+      { id:'upsc-mocks', title:'Mock Test & Evaluation Centre', subtitle:'Practise under timed conditions and use structured feedback to identify areas for improvement.', kicker:'ASSESSMENT • MOCK TESTS', desc:'A practice-led module for Prelims, Mains and interview simulations.' },
+      { id:'upsc-csat', title:'CSAT & Answer Writing Studio', subtitle:'Strengthen comprehension, reasoning, numeracy and disciplined written expression.', kicker:'SKILLS DEVELOPMENT • CSAT & WRITING', desc:'A focused workspace for timed problem solving and concise answer-writing practice.' },
+      { id:'upsc-daf', title:'DAF & Current Affairs', subtitle:'Connect personal profile details and current developments with wider governance and policy themes.', kicker:'PROFILE PREPARATION • CURRENT AFFAIRS', desc:'A guided approach to profile mapping, news analysis and interview readiness.' },
+      { id:'upsc-roadmap', title:'Integrated Study Roadmap', subtitle:'Follow a phased learning plan that connects foundation study, practice, revision and interview preparation.', kicker:'ACADEMIC PLANNING • STUDY ROADMAP', desc:'A clear progression framework for planning study cycles and monitoring preparation.' }
+    ];
+
+    function buildModulePageChrome() {
+      UPSC_MODULES.forEach((module, index) => {
+        const panel = document.getElementById(module.id);
+        if (!panel || panel.dataset.chromeReady) return;
+        const hero = document.createElement('div');
+        hero.className = 'module-hero';
+        hero.dataset.number = String(index + 1).padStart(2, '0');
+        hero.innerHTML = `<div><span class="module-kicker">${module.kicker}</span><h2>${module.title}</h2><p>${module.subtitle}</p></div>`;
+        panel.insertBefore(hero, panel.firstChild);
+        const pager = document.createElement('div');
+        pager.className = 'module-pager';
+        const previous = index === 0 ? null : UPSC_MODULES[index - 1];
+        const next = index === UPSC_MODULES.length - 1 ? null : UPSC_MODULES[index + 1];
+        pager.innerHTML = `<button type="button" ${previous ? '' : 'disabled'} data-module-nav="${previous ? previous.id : ''}">← ${previous ? 'Previous module' : 'First module'}</button><span style="color:#667894;font-size:.82rem;font-weight:800">MODULE ${index + 1} / 8</span><button type="button" class="primary" ${next ? '' : 'disabled'} data-module-nav="${next ? next.id : ''}">${next ? 'Next module →' : 'End of programme'}</button>`;
+        pager.querySelectorAll('[data-module-nav]').forEach(button => button.addEventListener('click', () => {
+          if (button.dataset.moduleNav) switchUpscSubPage(button.dataset.moduleNav);
+        }));
+        panel.appendChild(pager);
+        panel.dataset.chromeReady = 'true';
+      });
+    }
+
     function switchUpscSubPage(panelId, breadcrumbLabel, btnElement) {
+      const selected = UPSC_MODULES.find(item => item.id === panelId) || UPSC_MODULES[0];
+      panelId = selected.id;
+      buildModulePageChrome();
       document.querySelectorAll('.upsc-sub-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.tab-pill').forEach(b => b.classList.remove('active'));
-
       const activePanel = document.getElementById(panelId);
       if (activePanel) activePanel.classList.add('active');
-      if (btnElement) btnElement.classList.add('active');
-      document.getElementById('currentUpscBreadcrumb').textContent = breadcrumbLabel;
+      const activeButton = btnElement || document.querySelector('.tab-pill[data-target="' + panelId + '"]');
+      if (activeButton) activeButton.classList.add('active');
+      document.getElementById('currentUpscBreadcrumb').textContent = selected.title;
+      document.getElementById('upscHubTitle').textContent = selected.title;
+      document.getElementById('upscHubDescription').textContent = selected.desc;
+      document.getElementById('upscHubView').dataset.page = panelId;
+      if (history.replaceState) history.replaceState(null, '', '#' + panelId);
+      if (activeButton && activeButton.scrollIntoView) activeButton.scrollIntoView({ block:'nearest', inline:'nearest', behavior:'smooth' });
     }
 
     function scrollToSection(sectionId) {
@@ -1529,9 +1614,16 @@
         window.setTimeout(() => splash?.classList.add("is-hidden"), 180);
       }
     };
-    // Branded 0–1000 opening counter. It is a visual loading scale, not a student statistic.
+    // Reliable branded 0–1000 intro. The scale is a visual progress indicator, not a statistic.
     const loadingStart = performance.now();
-    const loadingDuration = 1700;
+    const loadingDuration = 1150;
+    let splashClosed = false;
+    function closeSplash() {
+      if (splashClosed) return;
+      splashClosed = true;
+      splash?.classList.add('is-hidden');
+      window.setTimeout(() => splash?.remove(), 650);
+    }
     function animateSplash(now) {
       const progress = Math.min(1, (now - loadingStart) / loadingDuration);
       const eased = 1 - Math.pow(1 - progress, 3);
@@ -1539,18 +1631,25 @@
       if (splashCount) splashCount.textContent = value.toLocaleString();
       if (splashFill) splashFill.style.width = `${value / 10}%`;
       if (progress < 1) requestAnimationFrame(animateSplash);
-      else { splashProgressDone = true; finishSplash(); }
+      else {
+        splashProgressDone = true;
+        splashReady = true; // DOM is parsed; large images/fonts must not hold the visitor at the loader.
+        window.setTimeout(closeSplash, 180);
+      }
     }
-    requestAnimationFrame(animateSplash);
-    window.addEventListener("load", () => { splashReady = true; finishSplash(); });
-    // Safety fallback for unusually slow network connections.
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (splashCount) splashCount.textContent = '1,000';
+      if (splashFill) splashFill.style.width = '100%';
+      window.setTimeout(closeSplash, 120);
+    } else {
+      requestAnimationFrame(animateSplash);
+    }
+    // Hard fail-safe: even if a browser animation callback fails, the page becomes visible.
     window.setTimeout(() => {
-      splashReady = true;
-      splashProgressDone = true;
-      if (splashCount) splashCount.textContent = "1,000";
-      if (splashFill) splashFill.style.width = "100%";
-      finishSplash();
-    }, 5200);
+      if (splashCount) splashCount.textContent = '1,000';
+      if (splashFill) splashFill.style.width = '100%';
+      closeSplash();
+    }, 2600);
 
     // Count-up metrics. The 500 figure is clearly presented as an enrolment goal, not a claimed current total.
     const metricObserver = new IntersectionObserver((entries, observer) => {
@@ -1571,6 +1670,9 @@
       });
     }, { threshold: 0.35 });
     document.querySelectorAll(".count-up").forEach(node => metricObserver.observe(node));
+
+    const initialModule = /^#upsc-(prelims|mains|interview|questions|mocks|csat|daf|roadmap)$/.test(location.hash) ? location.hash.slice(1) : null;
+    if (initialModule) openUpscHub(initialModule);
 
     const languageSelect = document.getElementById("languageSelect");
     if (languageSelect) {

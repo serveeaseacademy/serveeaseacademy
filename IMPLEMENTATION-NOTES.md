@@ -1,23 +1,21 @@
-# Serve Ease Academy – International Website V3.1
+# Serve Ease Academy — International Website V3.4
 
-## Visual updates
-- Premium international academy layout in deep navy, royal blue and white.
-- Branded opening screen with an animated 0–1000 loading counter and progress bar.
-- Animated homepage metric counters.
-- The 500 figure is explicitly labelled as a **Student Enrolment Goal**, not a claim about current enrolment.
-- Four course tracks, including Professional Typing & Office Administration (2 months).
-- Kerala offline batches are described as starting soon; Qatar offline availability is enquiry-based.
-- English, Arabic and Malayalam interface selector (some long-form course content remains English and needs professional translation before launch).
+## Updates in V3.4
+- Correct academy contact number: +974 7012 0012 (WhatsApp and call links use the same configured number).
+- Improved branded loading screen with a 0–1000 visual progress scale, reduced-motion handling and a hard fail-safe so it cannot hold the page indefinitely.
+- Civil Services modules now have individual page headers, module-specific visual treatments, progress labels, previous/next navigation and direct hash links.
+- Preserves the existing international academy visual system, course imagery and floating SVG quick actions.
+- ISS International School was used only as a reference for institutional navigation, programme hierarchy, admissions information architecture, student resources and FAQ structure. Serve Ease branding and content remain original.
 
-## Important implementation limits
-- The enquiry form currently prepares a WhatsApp enquiry and stores a local browser copy. It is not a production admission database.
-- Secure student accounts, payment processing, admin tools and cloud enquiry storage require backend services and configuration.
+## Academy information retained from the supplied source document
+- Practical HR Administration: 3 months; online and offline.
+- GCC Document Processing & PRO: 3 months; online and offline.
+- Civil Service Coaching: 1 year / 12 months; online and offline.
+- Professional Typing & Office Administration: 2 months (as set in the existing website brief).
+- Kerala offline batches: starting soon.
+
+## Important launch limitations
+- The admission form prepares an enquiry and WhatsApp message; it is not a complete admission database.
+- Secure student accounts, payment processing, admin tools and cloud enquiry storage still require backend services and configuration.
+- The English/Arabic/Malayalam selector translates selected interface labels; full professional translation of all course content is still required.
 - Do not publish claims about actual student totals, accreditation, faculty credentials or country reach unless verified by the academy.
-
-
-## Floating quick actions (V3.2)
-- WhatsApp Enquiry opens the academy WhatsApp number configured in ACADEMY_CONFIG.
-- Call Academy uses the configured academy phone number.
-- Apply / Admission scrolls to the admission enquiry section.
-- Live Assistance opens WhatsApp with a support message; this is not a staffed live-chat system.
-- Back to Top returns to the page top.
