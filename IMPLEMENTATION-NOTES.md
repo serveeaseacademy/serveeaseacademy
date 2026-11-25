@@ -1,26 +1,24 @@
 # Serve Ease Academy — redesign handoff
 
-## Included in this package
-- Existing static HTML project retained as the starting point.
-- Updated brand palette: Royal Blue `#2952BE` and White `#FFFFFF`.
-- Updated academy logo asset (`logo.png`) using the approved Royal Blue / White direction.
-- Homepage positioning updated for an international academy with online learning worldwide and offline batches in Qatar and India.
-- Civil Services Coaching section retained.
-- Unverified animated counters removed and replaced with capability labels.
-- Admission enquiry now offers Online Worldwide, Qatar Offline Batch, and India Offline Batch.
-- Language selector added for English, Arabic and Malayalam. Core interface labels and enquiry placeholders switch language; detailed course content is still primarily English and requires a complete professional translation pass.
+## Updated in this package
+- Added a short white-background logo opening screen before the homepage.
+- Updated the design to a premium navy / royal blue / white palette.
+- Kept the Civil Services Coaching hub and its existing learning sections.
+- Organized the four core programmes: Practical HR Administration (3 months), GCC Document Processing & PRO (3 months), Civil Services Coaching (12 months), and Professional Typing & Office Administration (2 months).
+- Added English and Arabic typing, Microsoft Word, official letters, reports, data entry, keyboard shortcuts and practical typing exercises to the typing course description.
+- Added a clear “Kerala Offline Batches Starting Soon” announcement.
+- Kept international online learning as the worldwide option; other offline availability is described as subject to confirmation.
+- Updated admission enquiry choices to include the four courses and Kerala upcoming offline batches.
+- Added a WhatsApp enquiry handoff using the Serve Ease contact number previously used in business materials.
 
-## Important production work still required
-This package is a front-end redesign, not a live payment/student portal yet. The original project is a static `index.html` site. The current enquiry form stores submissions in the visitor's browser unless a backend is configured. It is not a reliable central admissions database.
-
-Before accepting real admissions or payments, implement:
-1. Supabase project, database tables, row-level security policies and server-side validation.
-2. Supabase Auth for student registration, email verification, password reset and protected student dashboard.
-3. Server-side payment checkout integration with an approved merchant gateway for the academy's country/account. Never collect or store card details directly.
-4. Payment webhook verification and enrollment status updates.
-5. Admin dashboard with role-based access, course/batch management, enquiry review and payment reconciliation.
-6. Full English, Arabic and Malayalam translation of every page and course detail, including proper RTL layout testing for Arabic.
-7. Verify academy contact details, course fees, batch dates, campus addresses, legal terms and refund policy before publishing.
+## Not yet production-ready
+- This remains a static front-end website. Student accounts, secure login, student dashboards, admin tools, online payment checkout and verified payment status are NOT implemented.
+- Enquiry form is a WhatsApp handoff and local browser backup, not a central admissions database.
+- English is the complete content language; Arabic and Malayalam currently translate the core interface labels and form placeholders only. A full professional translation and RTL review are still required.
+- Confirm the final public phone/email, Kerala centre address, batch start date, fees, refund policy, terms and faculty details before production launch.
+- Before enabling real admissions/payments, add a secure backend, authentication, database, role-based admin access and a payment gateway with verified server-side webhooks.
 
 ## Deployment
-Keep the existing Vercel project connected to the same GitHub repository. Back up the current `main` branch, replace the project files with this package, review the preview deployment, and only then merge/deploy to production. Do not publish payment or authentication claims until those backend features have been implemented and tested.
+- Upload the contents of this package to the `serveease-redesign` branch only.
+- Review the Vercel Preview deployment on desktop and mobile.
+- Do not merge to `main` or promote to Production until content, links, translations and functionality are checked.
