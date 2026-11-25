@@ -1,5 +1,5 @@
-# Serve Ease Academy
+# Serve Ease Academy – International Website V3.1
 
-Premium navy, royal-blue and white academy website redesign.
+Static website package. Open `index.html` locally or deploy the folder to the `serveease-redesign` preview branch on Vercel.
 
-Open `index.html` in a browser for a local preview. See `IMPLEMENTATION-NOTES.md` for implemented features and production requirements.
+The 0–1000 value is an animated loading scale. The 500+ homepage figure is an enrolment goal, not a current student count.
