@@ -1,46 +1,41 @@
-# Serve Ease Academy — International Website Package
+# Serve Ease Academy Website
 
-A responsive, multi-page front-end website for Serve Ease Academy, run by Serve Ease Business Solutions.
+A responsive static website for Serve Ease Academy.
 
-## Design
-- Black, luxury blue and white visual identity
-- No gold
-- Responsive desktop and mobile layout
-- Professional international academy positioning
+## Pages
+- Home (`index.html`)
+- About (`about.html`)
+- Programmes (`programs.html`)
+- Qatar PRO (`qatar-pro.html`)
+- GCC Document Processing (`gcc-pro.html`)
+- Typing & Office Administration (`typing.html`)
+- Practical PRO & Admin (`practical-admin.html`)
+- Civil Services (`civil-services.html`)
+- Learning Resources (`learning.html`)
+- Admissions (`admissions.html`)
+- FAQs (`faq.html`)
+- Contact (`contact.html`)
 
-## Pages included
-1. Home
-2. About
-3. Training Programmes
-4. Qatar PRO & Government Services
-5. GCC Document Processing & PRO
-6. Professional Typing & Office Administration
-7. Practical PRO & Admin Training
-8. Admissions Enquiry
-9. Contact
-10. FAQs
-11. Learning Resources
+## Final interface updates
+- Reliable branded homepage loading animation with a 0–100% progress indicator.
+- Short circular blue loading transition on inner pages; the overlay dismisses on a fixed fallback timer so it cannot remain stuck if remote assets are slow.
+- Homepage statistics animate from 0 to their target values on page open.
+- Larger white statistic cards with rounded corners, subtle shadows and luxury blue typography.
+- Fixed floating quick-contact dock on every page: WhatsApp, Call, Apply / Admission, Live Assistance and Back to Top.
+- Clean SVG icons in the floating dock and responsive mobile layout.
+- Subtle blue cursor spotlight on desktop pointer devices.
 
-## Pricing
-Pricing is intentionally omitted and marked as information to be announced / confirmed later.
+## Contact
+WhatsApp / Call: +974 70120012
 
-## Before publishing
-1. Add the official Serve Ease Academy WhatsApp number in `site.js` (digits only, include country code).
-2. Add official academy email, phone, location, operating hours and social media.
-3. Confirm course duration, delivery mode, batch schedule, fees, certificates and trainer profiles.
-4. Upload all files and folders together to the website hosting public root.
+## Run locally
+Open `index.html` in a browser, or upload the complete folder to any static web host. Keep the `assets` folder beside the HTML files.
 
-## Enquiry form
-The form currently opens WhatsApp with a pre-filled enquiry. It does not save data to a database. Configure `WHATSAPP_NUMBER` in `site.js` before launch.
+The enquiry form opens a pre-filled WhatsApp message. It does not store submissions in a database.
 
-## Important scope note
-This is the public front-end website. A secure student login, teacher portal, admin dashboard, payment processing, LMS, attendance tracking and automated scheduling require a separate backend and integrations. Training is educational and does not grant government-system access, official authorisation, licence or accreditation.
 
-## Recommended next development phase
-- Secure student/teacher/admin accounts
-- Course and batch management
-- Registration and booking database
-- Attendance and progress records
-- Payment gateway, if required
-- Certificates with clearly stated issuing authority and criteria
-- Arabic/English language support after translation review
+Final website structure update:
+- Added `gallery.html` and Gallery navigation.
+- Retained five detailed programme pages and the eight Civil Services learning areas on one page.
+- Added the 2-month offline Kerala Typing & Office Administration batch notice (Starting Soon); exact schedule, venue and fee remain for academy confirmation.
+- Course fees are intentionally not displayed yet.
