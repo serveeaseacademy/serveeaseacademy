@@ -28,3 +28,31 @@
  .navin{min-height:76px}
  .brandlogo{width:118px;height:66px}
 }
+
+/* Photography layer: real academy learning imagery */
+.hero-photo:before{background:linear-gradient(90deg,rgba(5,10,22,.94) 0%,rgba(5,12,28,.78) 48%,rgba(8,27,72,.58) 100%),url('assets/photos/hero-bg.jpg') center/cover no-repeat}
+.visual-photo{padding:0;background:#0a1730}
+.visual-photo:before,.visual-photo:after{display:none}
+.visual-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.visual-photo .visualcaption{left:22px;right:22px;padding:12px 15px;border-radius:10px;background:rgba(5,12,28,.78);backdrop-filter:blur(8px);text-align:center}
+.programme-image{width:calc(100% + 50px);height:190px;object-fit:cover;display:block;margin:-25px -25px 20px;border-radius:16px 16px 0 0}
+.card:has(.programme-image){overflow:hidden;padding-top:25px}
+.card:has(.programme-image) .programme-image{margin-top:-25px}
+.photo-band{background:linear-gradient(180deg,#f5f8ff,#fff)}
+.photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.photo-grid img{width:100%;height:210px;object-fit:cover;border-radius:15px;box-shadow:0 12px 30px rgba(9,25,60,.10)}
+.feature-image-section{padding-top:0;padding-bottom:10px}
+.feature-image{display:block;width:100%;height:300px;object-fit:cover;border-radius:20px;box-shadow:0 16px 45px rgba(9,25,60,.13)}
+@media(max-width:760px){.photo-grid{grid-template-columns:repeat(2,1fr)}.photo-grid img{height:150px}.feature-image{height:190px}.programme-image{height:150px}}
+
+.home-course-image{display:block;width:100%;height:155px;object-fit:cover;border-radius:16px 16px 0 0}
+.coursecard .courseicon{height:52px!important;font-size:22px!important}
+
+/* Updated brand header: clean white surface to match the official logo */
+.nav{background:#ffffff!important;border-bottom:1px solid #e5eaf3!important;box-shadow:0 4px 18px rgba(8,24,55,.06);backdrop-filter:none!important}
+.nav .brand{color:#0b1730!important}
+.nav .navlinks{color:#172b4d!important}
+.nav .navlinks a{color:#172b4d!important}
+.nav .navlinks a:hover{color:#1749C8!important}
+.nav .brandlogo{background:#fff;object-fit:contain}
+.nav .menu{color:#10264b!important;border-color:#d8e1ef!important}
