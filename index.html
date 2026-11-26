@@ -544,18 +544,34 @@
       font-size: 0.86rem;
     }
 
+    /* Logo-only footer: keep the academy mark clear and uncluttered */
+    .footer-minimal { padding: 1.25rem 0; }
     .footer-min-inner {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+      justify-content: center;
+      gap: 0;
+      min-height: 88px;
     }
-
-    .footer-min-brand { display: flex; align-items: center; gap: 0.6rem; color: var(--pure-white); font-weight: 700; }
-    .footer-min-brand img { height: 38px; width: 76px; object-fit:contain; background: var(--pure-white); padding: 3px; border-radius: 6px; }
-    .footer-min-links { display: flex; flex-wrap: wrap; gap: 1.2rem; color: #94a3b8; }
-    .footer-min-links a:hover { color: var(--pure-white); }
+    .footer-min-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .footer-min-brand img {
+      display: block;
+      width: 150px;
+      height: 82px;
+      max-width: 70vw;
+      object-fit: contain;
+      background: #ffffff;
+      padding: 5px 9px;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+    .footer-min-links { display: none !important; }
 
     /* ================= FLOATING WIDGET ================= */
     .floating-stack {
