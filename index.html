@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Serve Ease Academy — Qatar Head Office & Online Global Academy</title>
+  <title>Serve Ease Academy | International Online Learning & Kerala Offline Batches</title>
+  <meta name="description" content="Serve Ease Academy offers international online learning in HR administration, GCC PRO documentation, professional typing and Civil Services Coaching. Kerala offline batches are starting soon." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy-deep: #061630;
-      --royal-blue: #0c387a;
-      --azure-accent: #1a62d8;
-      --sky-tint: #eff5ff;
-      --ice-border: #dbe6f8;
+      --navy-deep: #102B50;
+      --royal-blue: #2452C5;
+      --azure-accent: #2452C5;
+      --sky-tint: #EDF3FC;
+      --ice-border: #DCE5F2;
       --pure-white: #ffffff;
-      --off-white: #f8faff;
-      --text-dark: #09172d;
+      --off-white: #F5F8FC;
+      --text-dark: #14213D;
       --text-muted: #4b5d78;
       --radius-lg: 16px;
       --radius-md: 10px;
@@ -107,7 +108,7 @@
     /* ================= HERO ================= */
     .hero {
       background:
-        linear-gradient(115deg, rgba(6, 22, 48, 0.94) 0%, rgba(12, 56, 122, 0.86) 60%, rgba(6, 22, 48, 0.93) 100%),
+        linear-gradient(115deg, rgba(41, 82, 190, 0.96) 0%, rgba(23, 52, 119, 0.92) 100%),
         url('hero-bg.jpg') center/cover no-repeat;
       color: var(--pure-white);
       padding: 5.8rem 0 5rem;
@@ -372,7 +373,7 @@
     .about-images img:nth-child(2) { margin-top: 1.8rem; }
 
     .mentor-card {
-      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--royal-blue) 100%);
+      background: linear-gradient(135deg, var(--royal-blue) 0%, var(--navy-deep) 100%);
       color: var(--pure-white);
       border-radius: var(--radius-lg);
       padding: 2.4rem;
@@ -438,7 +439,7 @@
 
     /* ================= SUB-PAGE BANNER & 8 UPSC SUB-PAGES ================= */
     .subpage-header {
-      background: linear-gradient(115deg, var(--navy-deep) 0%, var(--royal-blue) 100%);
+      background: linear-gradient(115deg, var(--royal-blue) 0%, var(--navy-deep) 100%);
       color: var(--pure-white);
       padding: 3.5rem 0 3rem;
     }
@@ -504,6 +505,7 @@
 
     .upsc-sub-panel { display: none; padding: 3.5rem 0; }
     .upsc-sub-panel.active { display: block; animation: fadeIn 0.25s ease; }
+    .upsc-sub-panel:focus { outline:none; }
 
     .qa-box {
       background: var(--pure-white);
@@ -551,7 +553,7 @@
     }
 
     .footer-min-brand { display: flex; align-items: center; gap: 0.6rem; color: var(--pure-white); font-weight: 700; }
-    .footer-min-brand img { height: 26px; background: var(--pure-white); padding: 2px; border-radius: 4px; }
+    .footer-min-brand img { height: 38px; width: 76px; object-fit:contain; background: var(--pure-white); padding: 3px; border-radius: 6px; }
     .footer-min-links { display: flex; flex-wrap: wrap; gap: 1.2rem; color: #94a3b8; }
     .footer-min-links a:hover { color: var(--pure-white); }
 
@@ -580,7 +582,21 @@
     }
 
     .float-whatsapp { background: #128c7e; }
-    .float-top { background: var(--royal-blue); padding: 0.6rem 0.9rem; }
+    .float-call { background: #102B50; }
+    .float-admission { background: #2452C5; }
+    .float-chat { background: #344d70; }
+    .float-top { background: #ffffff; color: #102B50; border: 1px solid #dbe6f5; padding: 0.6rem 0.9rem; }
+    .float-btn { text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
+    .float-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(6,22,48,.3); }
+    .float-btn:focus-visible { outline: 3px solid #f2c14e; outline-offset: 3px; }
+    .float-icon { width: 1.25rem; height: 1.25rem; flex: 0 0 1.25rem; display: inline-flex; align-items: center; justify-content: center; }
+    .float-icon svg { width: 1.2rem; height: 1.2rem; display: block; stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+    .float-whatsapp .float-icon svg { fill: currentColor; stroke: none; }
+    .float-top .float-icon svg { width: 1.05rem; height: 1.05rem; }
+    @media (max-width: 640px) {
+      .floating-stack { right: 12px; bottom: 12px; gap: .45rem; }
+      .float-btn { padding: .62rem .85rem; font-size: .78rem; }
+    }
 
     @media (max-width: 980px) {
       .hero-grid, .about-grid, .grid-2, .grid-3, .mentor-card, .form-grid { grid-template-columns: 1fr; }
@@ -588,26 +604,255 @@
     }
 
     @media (max-width: 640px) {
+      .nav-links { gap: .45rem; }
       .nav-links a:not(.nav-cta) { display: none; }
+      .nav-links .form-control { max-width: 112px; font-size: .8rem; }
       .about-images img { height: 210px; }
     }
+
+    /* ================= PREMIUM SERVE EASE ACADEMY FINISH ================= */
+    .navbar { background: rgba(13, 34, 61, .97); border-bottom: 1px solid rgba(255,255,255,.12); }
+    .brand { color: #fff; }
+    .brand span { color: #c8d9ff; }
+    .brand img { height: 48px; width: 62px; border-radius: 9px; background: #fff; padding: 2px; }
+    .nav-links { color: #e6edf8; }
+    .nav-links a:hover, .nav-links a.active-link { color: #a9c4ff; }
+    .nav-links .form-control { border: 1px solid rgba(255,255,255,.28) !important; background: #17385f !important; color: #fff !important; }
+    .nav-links .form-control option { color: #10213a; background: #fff; }
+    .nav-cta { background: #fff; color: #102B50 !important; box-shadow: none; }
+    .hero { background: linear-gradient(110deg, rgba(10,31,57,.96) 0%, rgba(16,43,80,.92) 56%, rgba(36,82,197,.82) 100%), url('hero-bg.jpg') center/cover no-repeat; padding: 6.2rem 0 5.5rem; }
+    .hero-tag { color: #eaf1ff; border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.1); }
+    .hero h1 { max-width: 760px; letter-spacing: -.035em; }
+    .hero p { color: #e6edf8; }
+    .hero-panel { background: rgba(8,25,47,.68); border-color: rgba(255,255,255,.17); box-shadow: 0 24px 60px rgba(0,0,0,.18); }
+    .btn-white { color: #102B50; }
+    .btn-glass { border-color: rgba(255,255,255,.45); }
+    .section-header h2, .about-grid h2 { color: #102B50; letter-spacing: -.025em; }
+    .section-alt { background: #F5F8FC; }
+    .card, .info-box, .enquiry-box, .faq-item { border: 1px solid #e0e8f3; box-shadow: 0 12px 34px rgba(16,43,80,.07); }
+    .card { overflow: hidden; border-radius: 18px; transition: transform .22s ease, box-shadow .22s ease; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 20px 44px rgba(16,43,80,.13); }
+    .card-img { height: 220px; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .card-badge { background: #102B50; color: #fff; }
+    .card-btn { background: #2452C5; color: #fff; border-radius: 9px; }
+    .card-btn:hover { background: #102B50; }
+    .eyebrow { color: #2452C5; }
+    .stat-card { border: 1px solid #e1e9f4; border-radius: 14px; padding: 1rem; }
+    .stat-number { color: #102B50; }
+    .mentor-card { border-radius: 20px; overflow: hidden; }
+    .footer-minimal { background: #0b1d33; color: #e8eef8; }
+    .footer-min-links a { color: #dbe7ff; }
+    .float-whatsapp { background: #128c7e; }
+    .course-duration { display:inline-flex; align-items:center; gap:.35rem; margin:.15rem 0 .8rem; padding:.28rem .7rem; border-radius:999px; color:#173b72; background:#eaf1ff; font-size:.78rem; font-weight:800; }
+    .admission-alert { background: linear-gradient(105deg,#102B50,#2452C5); color:#fff; padding:1.1rem 1.3rem; border-radius:14px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:.75rem; margin:0 auto 2rem; }
+    .admission-alert strong { display:block; font-size:1.05rem; }
+    .admission-alert span { color:#e5edff; font-size:.9rem; }
+    .status-pill { display:inline-block; padding:.25rem .65rem; border-radius:999px; background:#fff; color:#173b72; font-size:.74rem; font-weight:800; }
+    #academySplash { position:fixed; inset:0; z-index:3000; display:flex; align-items:center; justify-content:center; background:#fff; transition:opacity .45s ease, visibility .45s ease; }
+    #academySplash.is-hidden { opacity:0; visibility:hidden; pointer-events:none; }
+    .splash-inner { display:flex; flex-direction:column; align-items:center; gap:1rem; padding:1.5rem; text-align:center; }
+    .splash-logo { width:min(330px,72vw); max-height:250px; object-fit:contain; animation:logoReveal .7s ease both; }
+    .splash-line { width:min(290px,72vw); height:7px; border-radius:99px; background:#e6edf8; overflow:hidden; box-shadow:inset 0 1px 3px rgba(11,31,58,.12); }
+    .splash-line-fill { display:block; width:0%; height:100%; background:linear-gradient(90deg,#2452c5,#6e8fe8); border-radius:99px; transition:width .08s linear; }
+    .splash-progress { display:flex; align-items:baseline; gap:.35rem; color:#102b50; font-weight:800; font-variant-numeric:tabular-nums; }
+    .splash-progress strong { font-size:1.45rem; letter-spacing:-.04em; min-width:4.2rem; text-align:right; }
+    .splash-progress span { color:#71819a; font-size:.78rem; font-weight:700; letter-spacing:.08em; }
+    .splash-caption { color:#536783; font-size:.76rem; letter-spacing:.15em; font-weight:800; }
+    @keyframes logoReveal { from { opacity:0; transform:translateY(10px) scale(.97); } to { opacity:1; transform:translateY(0) scale(1); } }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto !important; animation-duration:.01ms !important; transition-duration:.01ms !important; } }
+    @media (max-width: 640px) {
+      .nav-inner { height:auto; min-height:70px; padding-top:.55rem; padding-bottom:.55rem; flex-wrap:wrap; }
+      .brand { font-size:1rem; }
+      .brand img { height:42px; width:52px; }
+      .nav-links { width:100%; justify-content:space-between; flex-wrap:wrap; }
+      .nav-links a:not(.nav-cta) { display:inline-block; font-size:.78rem; }
+      .nav-links .form-control { max-width:115px; }
+      .hero { padding:4rem 0 3.5rem; }
+      .hero-grid { gap:1.5rem; }
+      .card-img { height:190px; }
+      .admission-alert { align-items:flex-start; }
+    }
+
+
+    /* ================= INTERNATIONAL ACADEMY DESIGN SYSTEM V3 ================= */
+    :root {
+      --navy-deep:#0b1f3a;
+      --royal-blue:#2452c5;
+      --azure-accent:#3b68d8;
+      --sky-tint:#eef4ff;
+      --ice-border:#dbe5f3;
+      --off-white:#f6f8fc;
+      --text-dark:#14233d;
+      --text-muted:#5c6c84;
+      --radius-lg:22px;
+      --radius-md:14px;
+      --shadow-luxury:0 24px 70px rgba(8,31,67,.14);
+      --shadow-card:0 14px 38px rgba(8,31,67,.08);
+    }
+    body { background:#fff; color:var(--text-dark); letter-spacing:-.012em; }
+    .container { max-width:1320px; }
+    .navbar { background:rgba(8,27,51,.97); box-shadow:0 8px 28px rgba(4,18,38,.12); }
+    .nav-inner { min-height:82px; }
+    .brand { gap:.85rem; letter-spacing:-.025em; }
+    .brand img { height:58px; width:88px; object-fit:contain; border-radius:10px; padding:3px; background:#fff; box-shadow:0 4px 16px rgba(255,255,255,.12); }
+    .brand span { color:#bcd0ff; }
+    .nav-links { gap:1.25rem; font-size:.88rem; }
+    .nav-cta { border-radius:999px; padding:.7rem 1.35rem; background:#fff; color:#102b50!important; font-weight:800; }
+    .nav-links .form-control { border-radius:999px!important; }
+    .hero { position:relative; isolation:isolate; overflow:hidden; padding:7.2rem 0 6.2rem; background:linear-gradient(112deg,rgba(7,24,47,.97),rgba(16,43,80,.91) 55%,rgba(36,82,197,.78)),url('hero-bg.jpg') center/cover no-repeat; }
+    .hero:after { content:""; position:absolute; z-index:-1; width:540px; height:540px; right:-150px; top:-210px; border:1px solid rgba(255,255,255,.14); border-radius:50%; box-shadow:0 0 0 48px rgba(255,255,255,.025),0 0 0 96px rgba(255,255,255,.02); }
+    .hero-grid { grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr); gap:4rem; }
+    .hero-tag { border-radius:999px; padding:.5rem 1rem; letter-spacing:.09em; font-size:.7rem; }
+    .hero h1 { font-size:clamp(2.65rem,5.2vw,4.65rem); line-height:1.08; max-width:850px; margin-bottom:1.45rem; }
+    .hero p { font-size:1.12rem; line-height:1.8; max-width:690px; color:#e7eefb; }
+    .hero-panel { border-radius:24px; padding:2.1rem; background:rgba(7,23,44,.76); box-shadow:0 28px 80px rgba(0,0,0,.22); }
+    .hero-panel h3 { font-size:1.22rem; }
+    .hero-panel ul { line-height:1.75; gap:1.05rem; }
+    .btn { border-radius:999px; padding:.95rem 1.7rem; font-weight:750; }
+    .btn-white { box-shadow:0 12px 30px rgba(0,0,0,.18); }
+    .btn-glass { backdrop-filter:blur(8px); }
+    .section { padding:5.8rem 0; }
+    .section-alt { background:linear-gradient(180deg,#f8faff,#f1f5fb); }
+    .section-header { max-width:820px; margin:0 auto 2.8rem; }
+    .section-header h2,.about-grid h2 { font-size:clamp(2rem,3.3vw,3rem); line-height:1.15; }
+    .section-header p { font-size:1.02rem; line-height:1.8; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:.72rem; font-weight:850; }
+    .stats-strip { padding:1.6rem 0; background:#fff; }
+    .stats-grid { gap:1rem; }
+    .stat-card { border:1px solid #e4ebf5; background:linear-gradient(145deg,#fff,#f7f9fd); border-radius:16px; box-shadow:0 8px 24px rgba(16,43,80,.035); }
+    .stat-number { font-size:1.35rem; letter-spacing:-.03em; }
+    .card { border:1px solid #e1e9f4; border-radius:22px; box-shadow:0 14px 38px rgba(8,31,67,.07); }
+    .card-img { height:245px; position:relative; }
+    .card-img:after { content:""; position:absolute; inset:35% 0 0; background:linear-gradient(transparent,rgba(7,23,44,.24)); pointer-events:none; }
+    .card-body { padding:1.7rem; }
+    .card-body h3 { font-size:1.3rem; line-height:1.3; letter-spacing:-.025em; }
+    .card-body p,.card-list { line-height:1.75; }
+    .card-btn { display:inline-flex; justify-content:center; align-items:center; min-height:46px; padding:.75rem 1.1rem; border-radius:999px; font-weight:800; }
+    .info-box { border:1px solid #e1e9f4; border-radius:18px; padding:1.5rem; background:#fff; box-shadow:0 12px 34px rgba(16,43,80,.045); }
+    .about-images img { border-radius:22px; box-shadow:var(--shadow-card); }
+    .mentor-card { border-radius:24px; box-shadow:var(--shadow-luxury); }
+    .enquiry-box { border-radius:24px; padding:2rem; box-shadow:var(--shadow-luxury); }
+    .form-control { border:1px solid #d8e2ef; border-radius:12px; min-height:48px; padding:.75rem .9rem; }
+    .form-control:focus { outline:3px solid rgba(36,82,197,.13); border-color:#2452c5; }
+    .admission-alert { border-radius:18px; padding:1.35rem 1.6rem; background:linear-gradient(110deg,#0b1f3a,#2452c5); box-shadow:0 14px 36px rgba(16,43,80,.16); }
+    .footer-minimal { padding:3rem 0; }
+    .floating-stack { right:22px; bottom:22px; }
+    .float-btn { min-height:48px; border-radius:999px; }
+    #academySplash { background:radial-gradient(circle at 50% 38%,#183d70 0,#0b1f3a 58%,#07172c 100%); animation:splashFailsafe 5s ease forwards; }
+    #academySplash .splash-inner { color:#fff; gap:1.15rem; }
+    .splash-logo { width:min(300px,68vw); max-height:220px; padding:12px; border-radius:20px; background:#fff; box-shadow:0 20px 65px rgba(0,0,0,.22); }
+    .splash-line { width:min(260px,68vw); height:5px; background:rgba(255,255,255,.2); }
+    .splash-line-fill { background:linear-gradient(90deg,#7fa5ff,#fff); }
+    .splash-progress { color:#fff; }
+    .splash-progress span,.splash-caption { color:#cbdaf4; }
+    @keyframes splashFailsafe { 0%,88% { opacity:1; visibility:visible; } 100% { opacity:0; visibility:hidden; pointer-events:none; } }
+    #academySplash.is-hidden { animation:none; }
+    .splash-caption { font-size:.7rem; letter-spacing:.19em; }
+    .splash-inner > span:last-child { color:#cbdaf4!important; }
+
+    /* V3.4 — individual academic module layouts */
+    .subpage-header { background:linear-gradient(118deg,#0b1f3a 0%,#173e73 58%,#2452c5 100%); padding:3.1rem 0 2.8rem; }
+    .subpage-header .container { position:relative; }
+    .subpage-header h1 { max-width:900px; font-size:clamp(2rem,4vw,3.25rem); }
+    .subpage-header p { max-width:760px; line-height:1.8; }
+    .subpage-header:after { content:"ACADEMIC PROGRAMME"; position:absolute; right:max(3vw,calc((100vw - 1320px)/2)); bottom:22px; color:rgba(255,255,255,.12); font-size:clamp(1rem,2vw,1.8rem); font-weight:800; letter-spacing:.18em; pointer-events:none; }
+    .subpage-tabs { top:82px; box-shadow:0 8px 24px rgba(8,31,67,.06); }
+    .tabs-scroll { scrollbar-width:thin; }
+    .tab-pill { min-height:44px; border-radius:10px; font-weight:750; }
+    .tab-pill.active { box-shadow:0 7px 18px rgba(36,82,197,.2); }
+    .upsc-sub-panel { min-height:430px; padding:2.8rem 0 3.2rem; }
+    .upsc-sub-panel > .eyebrow, .upsc-sub-panel > h2 { display:none; }
+    .module-hero { display:grid; grid-template-columns:1fr auto; align-items:center; gap:2rem; padding:2rem 2.2rem; margin-bottom:2rem; border-radius:22px; color:#fff; background:linear-gradient(112deg,var(--module-deep,#0b1f3a),var(--module-accent,#2452c5)); box-shadow:0 20px 48px rgba(8,31,67,.14); overflow:hidden; position:relative; }
+    .module-hero:after { content:attr(data-number); font-size:clamp(5rem,11vw,9rem); line-height:1; font-weight:850; color:rgba(255,255,255,.10); letter-spacing:-.08em; }
+    .module-kicker { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:.75rem; color:#dbe7ff; font-size:.72rem; font-weight:850; letter-spacing:.15em; text-transform:uppercase; }
+    .module-hero h2 { color:#fff!important; font-family:'Playfair Display',Georgia,serif; font-size:clamp(1.55rem,3vw,2.45rem); line-height:1.2; margin:0 0 .7rem!important; }
+    .module-hero p { color:#e3ecff; max-width:760px; line-height:1.75; margin:0; }
+    .module-content-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.1rem; }
+    .upsc-sub-panel .info-box,.upsc-sub-panel .qa-box { border-radius:16px; padding:1.45rem; border:1px solid #e1e9f4; box-shadow:0 10px 28px rgba(8,31,67,.055); background:#fff; }
+    .upsc-sub-panel .info-box h4,.upsc-sub-panel .qa-box h4 { color:#102b50; font-size:1rem; margin-bottom:.55rem; }
+    .upsc-sub-panel .info-box p,.upsc-sub-panel .qa-box p { line-height:1.75; color:#5c6c84; }
+    .module-pager { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-top:2rem; padding-top:1.3rem; border-top:1px solid #e4ebf5; }
+    .module-pager button { border:1px solid #dbe5f3; border-radius:999px; padding:.75rem 1.15rem; color:#173b72; background:#fff; font-weight:800; }
+    .module-pager button.primary { color:#fff; background:#2452c5; border-color:#2452c5; }
+    .module-pager button:disabled { opacity:.35; cursor:not-allowed; }
+    #upscHubView[data-page="upsc-mains"] { --module-accent:#315c9e; --module-deep:#102b50; }
+    #upscHubView[data-page="upsc-interview"] { --module-accent:#536a9d; --module-deep:#182d4d; }
+    #upscHubView[data-page="upsc-questions"] { --module-accent:#245b87; --module-deep:#0c304c; }
+    #upscHubView[data-page="upsc-mocks"] { --module-accent:#285b76; --module-deep:#10334a; }
+    #upscHubView[data-page="upsc-csat"] { --module-accent:#405aa8; --module-deep:#182b60; }
+    #upscHubView[data-page="upsc-daf"] { --module-accent:#45658a; --module-deep:#1a3655; }
+    #upscHubView[data-page="upsc-roadmap"] { --module-accent:#315d9a; --module-deep:#102b50; }
+    @media(max-width:760px){ .module-hero{grid-template-columns:1fr;padding:1.5rem}.module-hero:after{position:absolute;right:12px;bottom:-10px}.module-content-grid{grid-template-columns:1fr}.module-pager{align-items:stretch}.module-pager button{font-size:.78rem;padding:.7rem .8rem}.subpage-header:after{display:none}.subpage-tabs{top:70px} }
+
+    @media(max-width:980px){ .hero-grid{grid-template-columns:1fr;gap:2.2rem}.hero-panel{max-width:680px}.section{padding:4.5rem 0} }
+    @media(max-width:640px){
+      .container{padding-left:1.1rem;padding-right:1.1rem}
+      .nav-inner{gap:.5rem}.brand img{height:46px;width:68px}.brand{font-size:0}
+      .nav-links{gap:.4rem}.nav-links a{font-size:.75rem!important}.nav-cta{padding:.5rem .85rem}
+      .hero{padding:4.5rem 0 4rem}.hero h1{font-size:2.55rem}.hero p{font-size:1rem}
+      .hero-panel{padding:1.35rem}.section{padding:3.6rem 0}.section-header{margin-bottom:2rem}
+      .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem}.stat-card{padding:.9rem .6rem}
+      .card-img{height:205px}.card-body{padding:1.25rem}.enquiry-box{padding:1.2rem}
+    }
+
+
+    /* FINAL FIX — blue cursor glow remains visible on white backgrounds */
+    #academyCursorGlow {
+      position: fixed;
+      left: 0; top: 0;
+      width: 76px; height: 76px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1100;
+      opacity: 0;
+      transform: translate3d(-200px,-200px,0);
+      background: radial-gradient(circle, rgba(36,82,197,.25) 0%, rgba(36,82,197,.16) 22%, rgba(36,82,197,.08) 48%, rgba(36,82,197,0) 72%);
+      border: 1px solid rgba(36,82,197,.28);
+      box-shadow: 0 0 20px rgba(36,82,197,.18), inset 0 0 12px rgba(36,82,197,.08);
+      transition: opacity .18s ease;
+      will-change: transform;
+    }
+    #academyCursorGlow::after {
+      content: ""; position: absolute; left: 50%; top: 50%;
+      width: 7px; height: 7px; border-radius: 50%;
+      transform: translate(-50%,-50%);
+      background: #3478ff;
+      box-shadow: 0 0 10px 4px rgba(52,120,255,.42);
+    }
+    @media (hover:none), (pointer:coarse) { #academyCursorGlow { display:none !important; } }
+
   </style>
 </head>
-<body>
+<body id="top">
+  <div id="academyCursorGlow" aria-hidden="true"></div>
+
+  <!-- Short branded opening screen -->
+  <div id="academySplash" role="status" aria-label="Loading Serve Ease Academy">
+    <div class="splash-inner">
+      <img class="splash-logo" src="logo.png" alt="Serve Ease Academy" />
+      <div class="splash-progress"><strong id="splashCount">0</strong><span>/ 1000</span></div>
+      <div class="splash-line" aria-hidden="true"><span class="splash-line-fill" id="splashFill"></span></div>
+      <span class="splash-caption">INTERNATIONAL TRAINING &amp; EDUCATION</span>
+      <span style="font-size:.78rem;color:#71819a;">Preparing your learning experience</span>
+    </div>
+  </div>
 
   <!-- Navigation -->
   <header class="navbar">
     <div class="container nav-inner">
       <div class="brand" onclick="openMainHome()">
-        <img src="logo.png" alt="Serve Ease Academy Logo" />
-        <div>Serve Ease <span>Academy</span></div>
+        <img src="logo.png" alt="Serve Ease Academy" />
       </div>
       <nav class="nav-links">
-        <a href="javascript:void(0)" onclick="openMainHome()" id="navHomeLink" class="active-link">Home (15 Layers)</a>
-        <a href="javascript:void(0)" onclick="openUpscHub('upsc-prelims')" id="navUpscLink">Civil Services (8 Sub-Pages)</a>
-        <a href="javascript:void(0)" onclick="scrollToSection('global-tracks')">Qatar &amp; Online</a>
-        <a href="javascript:void(0)" onclick="scrollToSection('layer-13-onboarding')">Enquiry</a>
-        <a id="navWhatsappBtn" href="#" target="_blank" rel="noopener" class="nav-cta">WhatsApp Now</a>
+        <select id="languageSelect" class="form-control" aria-label="Choose language" style="width:auto;padding:.45rem .65rem;background:#fff;">
+          <option value="en">English</option><option value="ar">العربية</option><option value="ml">മലയാളം</option>
+        </select>
+        <a href="javascript:void(0)" onclick="openMainHome()" id="navHomeLink" class="active-link" data-i18n="navHome">Home</a>
+        <a href="javascript:void(0)" onclick="openUpscHub('upsc-prelims')" id="navUpscLink" data-i18n="navCivil">Civil Services</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('global-tracks')" data-i18n="navLearning">Learning</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('layer-13-onboarding')" data-i18n="navAdmission">Admissions</a>
+        <a id="navWhatsappBtn" href="#" target="_blank" rel="noopener" class="nav-cta" data-i18n="navWhatsApp">WhatsApp</a>
       </nav>
     </div>
   </header>
@@ -621,47 +866,35 @@
     <section class="hero" id="layer-1-hero">
       <div class="container hero-grid">
         <div>
-          <span class="hero-tag">Head Office: Qatar • Live Online &amp; Global</span>
-          <h1>Global Career Skills &amp; Civil Services Mentorship—Head Office in Qatar, Serving Worldwide.</h1>
+          <span class="hero-tag">International Academy • Online Worldwide • Kerala Offline Batches Soon</span>
+          <h1>Learn Today. Lead Tomorrow. Global Learning, Local Classrooms.</h1>
           <p>
-            Headquartered in <strong>Qatar</strong> with seamless <strong>Online</strong> access worldwide—covering <strong>Civil Services (UPSC CSE)</strong> with 8 dedicated sub-pages, <strong>Qatar &amp; GCC Government Services</strong>, <strong>Official Typing</strong>, and <strong>Arabic–English Translation</strong> across online and offline files.
+            Learn online from anywhere. Kerala classroom batches are starting soon, with Qatar and India learning options shared by the admissions team. Explore HR, GCC PRO, Professional Typing and <strong>Civil Services Coaching</strong>.
           </p>
           <div class="hero-actions">
-            <button class="btn btn-white" onclick="openUpscHub('upsc-prelims')">Open Civil Services (8 Sub-Pages)</button>
-            <a href="#layer-5-tracks" class="btn btn-glass">Explore All Tracks</a>
+            <button class="btn btn-white" onclick="openUpscHub('upsc-prelims')">Explore Civil Services</button>
+            <a href="#layer-5-tracks" class="btn btn-glass">Explore Courses</a>
           </div>
         </div>
 
         <aside class="hero-panel">
-          <h3>Qatar HQ + Online Academy</h3>
+          <h3 data-i18n="heroPanelTitle">One Academy. Multiple Ways to Learn.</h3>
           <ul>
-            <li><strong>Head Office in Qatar:</strong> Desk guidance, practical file standards &amp; GCC expertise.</li>
-            <li><strong>Online Worldwide:</strong> Live interactive classes &amp; digital file practice from anywhere.</li>
-            <li><strong>Simple Team Work:</strong> Clear roles, ready templates &amp; smooth coordination.</li>
+            <li><strong>Online Worldwide:</strong> Live learning for students across countries.</li>
+            <li><strong>Kerala:</strong> Offline classroom batches starting soon.</li>
+            <li><strong>Qatar &amp; India:</strong> Ask our team about offline batch availability.</li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <!-- Layer 2: Count-to-Zero Metrics Strip -->
+    <!-- Layer 2: Academy learning options -->
     <section class="stats-strip" id="layer-2-stats">
       <div class="container stats-grid">
-        <div class="stat-card">
-          <div class="stat-number" data-start="1000" data-suffix="+">1000+</div>
-          <div class="stat-label">Global Milestones &amp; Learners</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number" data-start="500" data-suffix="+">500+</div>
-          <div class="stat-label">Happy Students &amp; Clients</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number" data-start="8" data-suffix=" Pages">8 Pages</div>
-          <div class="stat-label">Dedicated Civil Services Sub-Pages</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number" data-start="15" data-suffix=" Layers">15 Layers</div>
-          <div class="stat-label">Wide Global Homepage Architecture</div>
-        </div>
+        <div class="stat-card"><div class="stat-number"><span class="count-up" data-count="500">0</span><span>+</span></div><div class="stat-label">Student Enrolment Goal</div></div>
+        <div class="stat-card"><div class="stat-number"><span class="count-up" data-count="4">0</span></div><div class="stat-label">Professional Course Tracks</div></div>
+        <div class="stat-card"><div class="stat-number"><span class="count-up" data-count="3">0</span></div><div class="stat-label">Languages · English, Arabic &amp; Malayalam</div></div>
+        <div class="stat-card"><div class="stat-number"><span class="count-up" data-count="2">0</span></div><div class="stat-label">Learning Formats · Online &amp; Classroom</div></div>
       </div>
     </section>
 
@@ -673,19 +906,19 @@
           <img src="about-2.jpg" alt="Serve Ease Academy Team Operations" />
         </div>
         <div>
-          <span class="eyebrow">Layer 03 • Qatar Head Office &amp; Online</span>
-          <h2>Headquartered in Qatar With Worldwide Online Reach</h2>
+          <span class="eyebrow">Our Global Learning Model</span>
+          <h2>International Learning With Qatar &amp; India Learning Enquiries</h2>
           <p style="color: var(--text-muted); margin-bottom: 1.2rem;">
-            With our head office in Qatar and live online delivery across regions, Serve Ease Academy unites real-world administrative accuracy, bilingual typing/translation, and structured UPSC preparation under one roof.
+            Serve Ease Academy brings together international online learning and offline classroom batches in Qatar and India, across professional skills, language training and Civil Services Coaching.
           </p>
           <div class="grid-2" style="gap: 1rem;">
             <div class="info-box">
-              <h4>Qatar Head Office</h4>
-              <p>Practical GCC documentation standards, file checklists &amp; operational guidance.</p>
+              <h4>Qatar Batch Enquiries</h4>
+              <p>Ask our admissions team about possible classroom training and upcoming schedules in Qatar.</p>
             </div>
             <div class="info-box">
-              <h4>Online Worldwide</h4>
-              <p>Live sessions, digital templates, mock reviews &amp; remote mentorship globally.</p>
+              <h4>India Offline Batches</h4>
+              <p>Classroom programmes and guided training for learners in India.</p>
             </div>
           </div>
         </div>
@@ -696,7 +929,7 @@
     <section class="section section-alt" id="layer-4-teamwork">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Layer 04 • Simple Team Work</span>
+          <span class="eyebrow">How We Support Learners</span>
           <h2>Easy, Transparent &amp; Stress-Free Team Work</h2>
           <p>Our team workflow is intentionally simple—clear roles, ready templates, and direct updates so work moves smoothly every day.</p>
         </div>
@@ -725,9 +958,9 @@
     <section class="section" id="layer-5-tracks">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Layer 05 • Core Academy Tracks</span>
-          <h2>Four Flagship Tracks Across Exams, GCC &amp; Bilingual Skills</h2>
-          <p>Click Civil Services to open its 8 full sub-pages, or explore GCC Government Services, Typing, Translation, and HR.</p>
+          <span class="eyebrow">Our Programmes</span>
+          <h2>Four Professional Learning Programmes</h2>
+          <p>Choose a programme to explore its curriculum, duration and admission options. Online learning is available internationally; Kerala offline batches are starting soon.</p>
         </div>
 
         <div class="grid-2">
@@ -740,7 +973,8 @@
               </div>
               <div class="card-body">
                 <div>
-                  <h3>Civil Services (UPSC CSE) — Full Hub</h3>
+                  <h3>Civil Services Coaching</h3>
+                  <span class="course-duration">12 Months • 1-Year Programme</span>
                   <p>Complete Prelims, Mains, Interview Questions, Mock Tests, CSAT, Answer Writing, DAF &amp; Current Affairs, and Study Roadmap.</p>
                   <ul class="card-list">
                     <li>Prelims &amp; Mains integrated preparation</li>
@@ -748,7 +982,7 @@
                     <li>Sectional &amp; full-length mock test suite</li>
                   </ul>
                 </div>
-                <button class="card-btn" onclick="openUpscHub('upsc-prelims')">Open Civil Services (8 Sub-Pages) →</button>
+                <button class="card-btn" onclick="openUpscHub('upsc-prelims')">Explore Civil Services →</button>
               </div>
             </div>
           </article>
@@ -762,7 +996,8 @@
               </div>
               <div class="card-body">
                 <div>
-                  <h3>Qatar &amp; GCC Government Services</h3>
+                  <h3>GCC Document Processing &amp; PRO</h3>
+                  <span class="course-duration">3 Months</span>
                   <p>Practical online portal workflows and offline file preparation covering CR, establishment cards, visas, labor, and attestations.</p>
                   <ul class="card-list">
                     <li>Online tracking, checklists &amp; portal steps</li>
@@ -780,19 +1015,21 @@
             <div>
               <div class="card-img">
                 <img src="course-translation.jpg" alt="Typing and Arabic-English Translation" />
-                <span class="card-badge">Bilingual Online &amp; Offline</span>
+                <span class="card-badge">New • 2-Month Programme</span>
               </div>
               <div class="card-body">
                 <div>
-                  <h3>Official Typing &amp; Arabic–English Translation</h3>
-                  <p>Bilingual typing speed, official formatting, and accurate Arabic–English translation for corporate, legal, and government files.</p>
+                  <h3>Professional Typing &amp; Office Administration</h3>
+                  <p>Build practical English and Arabic typing skills for professional office work, document preparation and administration.</p>
+                  <span class="course-duration">2 Months</span>
                   <ul class="card-list">
-                    <li>Arabic &amp; English typing &amp; layout precision</li>
-                    <li>Online digital drafts &amp; offline print-ready files</li>
-                    <li>Contracts, NOCs, letters &amp; official forms</li>
+                    <li>English and Arabic typing practice</li>
+                    <li>Microsoft Word and document formatting</li>
+                    <li>Official letters, applications and reports</li>
+                    <li>Data entry, keyboard shortcuts and practical tests</li>
                   </ul>
                 </div>
-                <a href="#layer-13-onboarding" class="card-btn">Enquire Typing &amp; Translation</a>
+                <a href="#layer-13-onboarding" class="card-btn">Enquire Typing Course</a>
               </div>
             </div>
           </article>
@@ -806,7 +1043,8 @@
               </div>
               <div class="card-body">
                 <div>
-                  <h3>HR Administration &amp; Office Operations</h3>
+                  <h3>Practical HR Administration</h3>
+                  <span class="course-duration">3 Months</span>
                   <p>Practical training in employee onboarding, leave/payroll trackers, office documentation, and smooth HR-PRO coordination.</p>
                   <ul class="card-list">
                     <li>Staff records, trackers &amp; clean spreadsheets</li>
@@ -826,7 +1064,7 @@
     <section class="section section-alt" id="layer-6-upsc-preview">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Layer 06 • Civil Services (8 Sub-Pages)</span>
+          <span class="eyebrow">Civil Services Learning Hub</span>
           <h2>Inside Civil Services: 8 Specialized Sub-Pages</h2>
           <p>Click any of the 8 Civil Services sub-pages below to open its complete page view immediately.</p>
         </div>
@@ -847,7 +1085,7 @@
     <section class="section" id="layer-7-gcc-deep">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Layer 07 • Qatar &amp; GCC Government Services</span>
+          <span class="eyebrow">Professional GCC Training</span>
           <h2>End-to-End GCC Government Documentation</h2>
           <p>Designed around real corporate and individual procedures in Qatar and the wider GCC.</p>
         </div>
@@ -863,14 +1101,14 @@
     <section class="section section-alt" id="layer-8-typing-translation">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Layer 08 • Typing &amp; Arabic–English Translation</span>
-          <h2>Precision Bilingual Typing &amp; Document Translation</h2>
-          <p>Practical accuracy for official correspondence, contracts, government forms, and business files.</p>
+          <span class="eyebrow">Professional Typing Programme</span>
+          <h2>Professional Typing &amp; Office Administration</h2>
+          <p>A practical 2-month course for learners who want confidence in bilingual typing and everyday office documentation.</p>
         </div>
         <div class="grid-3">
-          <div class="info-box"><h4>Bilingual Typing Mastery</h4><p>Clean Arabic and English keyboard speed, alignment, and official letter formatting.</p></div>
-          <div class="info-box"><h4>Arabic–English Translation</h4><p>Accurate translation of legal, commercial, HR, and government terminology.</p></div>
-          <div class="info-box"><h4>Dual File Delivery</h4><p>Editable digital files online plus print/stamp-ready offline layouts.</p></div>
+          <div class="info-box"><h4>English &amp; Arabic Typing</h4><p>Keyboard familiarity, speed-building exercises, accuracy and clean page layout.</p></div>
+          <div class="info-box"><h4>Microsoft Word &amp; Formatting</h4><p>Professional letters, applications, reports, tables and document presentation.</p></div>
+          <div class="info-box"><h4>Office Practice</h4><p>Data entry, keyboard shortcuts, typing without relying on a mouse and practical assessments.</p></div>
         </div>
       </div>
     </section>
@@ -879,18 +1117,18 @@
     <section class="section" id="layer-9-online-offline">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Layer 09 • Online &amp; Offline Files</span>
-          <h2>How We Handle Both Online &amp; Offline Files</h2>
-          <p>Every practical skill combines digital speed with offline file accuracy.</p>
+          <span class="eyebrow">Flexible Learning Options</span>
+          <h2>Learn Online Worldwide. Join Us in Kerala Soon.</h2>
+          <p>International online learning is the current core offering. Kerala offline classroom batches are planned to start soon.</p>
         </div>
         <div class="grid-2">
           <div class="info-box">
-            <h4>Online File Workflow</h4>
-            <p>Digital document scans, online portal form preparation, remote translation drafts, cloud trackers, and live online reviews.</p>
+            <h4>Online Learning</h4>
+            <p>Join classes remotely from anywhere, access learning resources and take part in guided online sessions.</p>
           </div>
           <div class="info-box">
-            <h4>Offline File Workflow</h4>
-            <p>Physical document verification, printed form alignment, attestation/hard-copy readiness, and desk/center hands-on practice.</p>
+            <h4>Kerala Offline Batches</h4>
+            <p><strong>Starting soon.</strong> Register your interest to receive the confirmed location, timetable and admission details. Qatar and other India batch availability can be requested from the academy team.</p>
           </div>
         </div>
       </div>
@@ -902,7 +1140,7 @@
         <div class="mentor-card">
           <img src="mentor-1.jpg" alt="Serve Ease Academy Mentorship" />
           <div>
-            <span class="hero-tag" style="margin-bottom:0.75rem;">Layer 10 • Mentorship</span>
+            <span class="hero-tag" style="margin-bottom:0.75rem;">Mentorship &amp; Guidance</span>
             <h3>Structured Guidance From Qatar HQ to Global Learners</h3>
             <p>Combining UPSC analytical clarity with practical GCC government documentation, HR files, typing, and Arabic–English translation workflows.</p>
             <div class="mentor-tags">
@@ -920,7 +1158,7 @@
     <section class="section" id="layer-11-global-experience">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Layer 11 • Worldwide Experience</span>
+          <span class="eyebrow">Learning Across Borders</span>
           <h2>Designed for Students, Job Seekers &amp; Working Teams</h2>
           <p>Flexible online and Qatar-anchored schedules across time zones.</p>
         </div>
@@ -936,7 +1174,7 @@
     <section class="section section-alt" id="layer-12-gallery">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Layer 12 • Academy &amp; Pinterest Gallery</span>
+          <span class="eyebrow">Academy Gallery</span>
           <h2>Sessions, Workshops &amp; Curated Visuals</h2>
           <p>Uploaded session photos and curated Pinterest aesthetic visuals for our academy.</p>
         </div>
@@ -966,28 +1204,34 @@
     <section class="section" id="layer-13-onboarding">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Layer 13 • Admissions &amp; Database Enquiry</span>
-          <h2>Register Your Interest (Online or Qatar HQ)</h2>
-          <p>Submissions save directly to browser storage and can sync with your database (Supabase / webhook).</p>
+          <span class="eyebrow">Admissions Enquiry</span>
+          <h2 data-i18n="admissionTitle">Start Your Admission Enquiry</h2>
+          <p>Choose your course and preferred learning mode. Our admissions team can contact you with batch availability, fees and next steps.</p>
+        </div>
+        <div class="admission-alert">
+          <div><strong>Kerala Offline Batches Starting Soon</strong><span>Register your interest for upcoming classroom programmes. Online learning is available worldwide.</span></div>
+          <span class="status-pill">Admissions Interest Registration</span>
         </div>
         <form class="enquiry-box" id="academyEnquiryForm">
           <div class="form-grid">
-            <input type="text" id="enqName" class="form-control" placeholder="Full Name" required />
-            <input type="text" id="enqPhone" class="form-control" placeholder="Phone / WhatsApp Number" required />
+            <input type="text" id="enqName" class="form-control" placeholder="Full Name" autocomplete="name" required />
+            <input type="tel" id="enqPhone" class="form-control" placeholder="Phone / WhatsApp Number" autocomplete="tel" required />
           </div>
           <div class="form-grid">
             <select id="enqTrack" class="form-control">
               <option value="Civil Services (UPSC CSE)">Civil Services (UPSC CSE)</option>
-              <option value="Qatar & GCC Government Services">Qatar &amp; GCC Government Services</option>
-              <option value="Official Typing & Arabic-English Translation">Official Typing &amp; Arabic–English Translation</option>
-              <option value="HR Administration">HR Administration</option>
+              <option value="GCC Document Processing & PRO">GCC Document Processing &amp; PRO</option>
+              <option value="Professional Typing & Office Administration">Professional Typing &amp; Office Administration (2 Months)</option>
+              <option value="Practical HR Administration">Practical HR Administration</option>
             </select>
-            <select id="enqMode" class="form-control">
+            <select id="enqMode" class="form-control" required>
               <option value="Online (Worldwide)">Online (Worldwide)</option>
-              <option value="Qatar Head Office / Offline">Qatar Head Office / Offline</option>
+              <option value="Kerala Offline Batch — Starting Soon">Kerala Offline Batch — Starting Soon</option>
+              <option value="Qatar Offline — Ask for Availability">Qatar Offline — Ask for Availability</option>
+              <option value="Other India Offline — Ask for Availability">Other India Offline — Ask for Availability</option>
             </select>
           </div>
-          <button type="submit" class="card-btn">Submit Enquiry</button>
+          <button type="submit" class="card-btn" data-i18n="submitEnquiry">Submit Admission Enquiry</button>
           <div class="form-status" id="enqStatus"></div>
         </form>
       </div>
@@ -997,7 +1241,7 @@
     <section class="section section-alt" id="faq">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Layer 14 • FAQ</span>
+          <span class="eyebrow">Frequently Asked Questions</span>
           <h2>Frequently Asked Questions</h2>
         </div>
         <div class="faq-list">
@@ -1010,8 +1254,8 @@
             <div class="faq-answer">Click <strong>Civil Services (8 Sub-Pages)</strong> in the top menu or hero button to switch directly across all 8 UPSC pages.</div>
           </details>
           <details class="faq-item">
-            <summary>Do you cover both online and offline files for GCC services, typing, and translation?</summary>
-            <div class="faq-answer">Yes. Learners practice both online digital workflows and offline document/print/verification procedures.</div>
+            <summary>When will Kerala offline batches begin?</summary>
+            <div class="faq-answer">Kerala offline batches are planned to start soon. Register your interest to receive confirmed dates, location and batch details.</div>
           </details>
         </div>
       </div>
@@ -1022,7 +1266,6 @@
       <div class="container footer-min-inner">
         <div class="footer-min-brand">
           <img src="logo.png" alt="Serve Ease Academy" />
-          <span>Serve Ease Academy • Qatar HQ &amp; Online</span>
         </div>
         <div class="footer-min-links">
           <a id="footerPhoneLink" href="tel:+97470120012">70120012</a>
@@ -1047,8 +1290,8 @@
           <span>/</span>
           <span id="currentUpscBreadcrumb">1. Prelims Course</span>
         </div>
-        <h1>Civil Services (UPSC CSE) — 8 Sub-Pages Hub</h1>
-        <p>Switch seamlessly across all 8 Civil Services pages: Prelims, Mains, Interview, Expected Interview Questions, Mock Tests, CSAT &amp; Answer Writing, DAF &amp; Current Affairs, and Study Roadmap.</p>
+        <h1 id="upscHubTitle">Civil Services — Structured Learning Programme</h1>
+        <p id="upscHubDescription">Explore a guided academic pathway with dedicated modules, practical learning resources and a clear progression from foundation to final preparation.</p>
       </div>
     </div>
 
@@ -1181,7 +1424,6 @@
       <div class="container footer-min-inner">
         <div class="footer-min-brand">
           <img src="logo.png" alt="Serve Ease Academy" />
-          <span>Serve Ease Academy • Civil Services Hub (8 Sub-Pages)</span>
         </div>
         <div class="footer-min-links">
           <a href="javascript:void(0)" onclick="openMainHome()">Main Homepage</a>
@@ -1192,12 +1434,21 @@
     </footer>
   </section>
 
-  <!-- Floating Buttons -->
-  <div class="floating-stack">
-    <a id="floatWhatsappBtn" href="#" target="_blank" rel="noopener" class="float-btn float-whatsapp">
-      <span>WhatsApp Enquiry</span>
+  <!-- Floating quick-contact and navigation buttons -->
+  <div class="floating-stack" aria-label="Quick contact and navigation">
+    <a id="floatWhatsappBtn" href="#" target="_blank" rel="noopener" class="float-btn float-whatsapp" aria-label="WhatsApp admission enquiry">
+      <span class="float-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20l.9-4.7a8.5 8.5 0 1 1 16.6-3.6Z"/><path d="M8.8 8.2c.2-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4-.1.6l-.6.7c-.2.2-.2.4 0 .7.6 1 1.4 1.8 2.5 2.4.3.2.5.2.7-.1l.8-.9c.2-.2.4-.3.7-.2l1.7.8c.3.1.4.3.4.5 0 .4-.2 1.1-.7 1.5-.5.5-1.2.7-1.9.6-1.1-.2-2.4-.8-3.8-2-1.5-1.3-2.5-2.9-2.8-4-.3-.9 0-1.8.5-2.3Z"/></svg></span><span>WhatsApp Enquiry</span>
     </a>
-    <a href="#" class="float-btn float-top" aria-label="Back to Top">↑ Top</a>
+    <a id="floatCallBtn" href="tel:+97470120012" class="float-btn float-call" aria-label="Call Serve Ease Academy">
+      <span class="float-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 2.8a2 2 0 0 1-.6 1.7L7.7 9.5a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 1.7-.6l2.8.5a2 2 0 0 1 1.5 2.8Z"/></svg></span><span>Call Academy</span>
+    </a>
+    <a href="#layer-13-onboarding" class="float-btn float-admission" aria-label="Go to admission enquiry form">
+      <span class="float-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/><path d="m14.5 5.5 3 3"/></svg></span><span>Apply / Admission</span>
+    </a>
+    <a id="floatChatBtn" href="#" target="_blank" rel="noopener" class="float-btn float-chat" aria-label="Chat with Serve Ease Academy">
+      <span class="float-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13v-2a8 8 0 0 1 16 0v2"/><path d="M4 13h3v6H6a2 2 0 0 1-2-2Z"/><path d="M20 13h-3v6h1a2 2 0 0 0 2-2Z"/><path d="M17 19a5 5 0 0 1-5 3h-1"/></svg></span><span>Live Assistance</span>
+    </a>
+    <a href="#top" class="float-btn float-top" aria-label="Back to Top"><span class="float-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></span><span>Back to Top</span></a>
   </div>
 
   <!-- ===================================================================== -->
@@ -1206,14 +1457,19 @@
   <script>
     const ACADEMY_CONFIG = {
       whatsappDigits: "97470120012",
-      displayPhone: "70120012",
-      email: "serveeaseacademy@gmail.com",
+      displayPhone: "+974 7012 0012",
+      email: "serveeaseqtr@gmail.com",
       supabaseUrl: "",
       supabaseAnonKey: ""
     };
 
     (function applyConfig() {
       const waUrl = `https://wa.me/${ACADEMY_CONFIG.whatsappDigits}?text=Hello%20Serve%20Ease%20Academy%2C%20I%20would%20like%20to%20enquire.`;
+      const chatUrl = `https://wa.me/${ACADEMY_CONFIG.whatsappDigits}?text=${encodeURIComponent("Hello Serve Ease Academy, I would like assistance. Please help me with courses and admissions.")}`;
+      const chatButton = document.getElementById("floatChatBtn");
+      if (chatButton) chatButton.href = chatUrl;
+      const callButton = document.getElementById("floatCallBtn");
+      if (callButton) callButton.href = `tel:+${ACADEMY_CONFIG.whatsappDigits}`;
       ["navWhatsappBtn", "floatWhatsappBtn"].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.href = waUrl;
@@ -1252,14 +1508,55 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    const UPSC_MODULES = [
+      { id:'upsc-prelims', title:'UPSC Prelims Course', subtitle:'Build conceptual clarity, strengthen elimination skills and prepare with structured revision across General Studies.', kicker:'FOUNDATION • GENERAL STUDIES PAPER I', desc:'A focused preparation space for core subjects, accuracy and previous-year question practice.' },
+      { id:'upsc-mains', title:'UPSC Mains Programme', subtitle:'Develop analytical depth, structured arguments and clear administrative perspectives for descriptive papers.', kicker:'ADVANCED STUDY • GS I–IV & ESSAY', desc:'A dedicated academic module for answer structure, ethics, governance and essay development.' },
+      { id:'upsc-interview', title:'Personality Test Preparation', subtitle:'Prepare to communicate with clarity, balance and confidence through guided interview practice.', kicker:'PERSONALITY DEVELOPMENT • INTERVIEW', desc:'An individual preparation pathway focused on judgement, communication and reflective thinking.' },
+      { id:'upsc-questions', title:'Interview Question Bank', subtitle:'Explore key question areas covering personal background, home state, governance and current affairs.', kicker:'PRACTICE RESOURCE • QUESTION BANK', desc:'Organised question themes to help aspirants prepare thoughtful and well-reasoned responses.' },
+      { id:'upsc-mocks', title:'Mock Test & Evaluation Centre', subtitle:'Practise under timed conditions and use structured feedback to identify areas for improvement.', kicker:'ASSESSMENT • MOCK TESTS', desc:'A practice-led module for Prelims, Mains and interview simulations.' },
+      { id:'upsc-csat', title:'CSAT & Answer Writing Studio', subtitle:'Strengthen comprehension, reasoning, numeracy and disciplined written expression.', kicker:'SKILLS DEVELOPMENT • CSAT & WRITING', desc:'A focused workspace for timed problem solving and concise answer-writing practice.' },
+      { id:'upsc-daf', title:'DAF & Current Affairs', subtitle:'Connect personal profile details and current developments with wider governance and policy themes.', kicker:'PROFILE PREPARATION • CURRENT AFFAIRS', desc:'A guided approach to profile mapping, news analysis and interview readiness.' },
+      { id:'upsc-roadmap', title:'Integrated Study Roadmap', subtitle:'Follow a phased learning plan that connects foundation study, practice, revision and interview preparation.', kicker:'ACADEMIC PLANNING • STUDY ROADMAP', desc:'A clear progression framework for planning study cycles and monitoring preparation.' }
+    ];
+
+    function buildModulePageChrome() {
+      UPSC_MODULES.forEach((module, index) => {
+        const panel = document.getElementById(module.id);
+        if (!panel || panel.dataset.chromeReady) return;
+        const hero = document.createElement('div');
+        hero.className = 'module-hero';
+        hero.dataset.number = String(index + 1).padStart(2, '0');
+        hero.innerHTML = `<div><span class="module-kicker">${module.kicker}</span><h2>${module.title}</h2><p>${module.subtitle}</p></div>`;
+        panel.insertBefore(hero, panel.firstChild);
+        const pager = document.createElement('div');
+        pager.className = 'module-pager';
+        const previous = index === 0 ? null : UPSC_MODULES[index - 1];
+        const next = index === UPSC_MODULES.length - 1 ? null : UPSC_MODULES[index + 1];
+        pager.innerHTML = `<button type="button" ${previous ? '' : 'disabled'} data-module-nav="${previous ? previous.id : ''}">← ${previous ? 'Previous module' : 'First module'}</button><span style="color:#667894;font-size:.82rem;font-weight:800">MODULE ${index + 1} / 8</span><button type="button" class="primary" ${next ? '' : 'disabled'} data-module-nav="${next ? next.id : ''}">${next ? 'Next module →' : 'End of programme'}</button>`;
+        pager.querySelectorAll('[data-module-nav]').forEach(button => button.addEventListener('click', () => {
+          if (button.dataset.moduleNav) switchUpscSubPage(button.dataset.moduleNav);
+        }));
+        panel.appendChild(pager);
+        panel.dataset.chromeReady = 'true';
+      });
+    }
+
     function switchUpscSubPage(panelId, breadcrumbLabel, btnElement) {
+      const selected = UPSC_MODULES.find(item => item.id === panelId) || UPSC_MODULES[0];
+      panelId = selected.id;
+      buildModulePageChrome();
       document.querySelectorAll('.upsc-sub-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.tab-pill').forEach(b => b.classList.remove('active'));
-
       const activePanel = document.getElementById(panelId);
       if (activePanel) activePanel.classList.add('active');
-      if (btnElement) btnElement.classList.add('active');
-      document.getElementById('currentUpscBreadcrumb').textContent = breadcrumbLabel;
+      const activeButton = btnElement || document.querySelector('.tab-pill[data-target="' + panelId + '"]');
+      if (activeButton) activeButton.classList.add('active');
+      document.getElementById('currentUpscBreadcrumb').textContent = selected.title;
+      document.getElementById('upscHubTitle').textContent = selected.title;
+      document.getElementById('upscHubDescription').textContent = selected.desc;
+      document.getElementById('upscHubView').dataset.page = panelId;
+      if (history.replaceState) history.replaceState(null, '', '#' + panelId);
+      if (activeButton && activeButton.scrollIntoView) activeButton.scrollIntoView({ block:'nearest', inline:'nearest', behavior:'smooth' });
     }
 
     function scrollToSection(sectionId) {
@@ -1270,44 +1567,6 @@
       }, 80);
     }
 
-    (function () {
-      const counters = document.querySelectorAll('.stat-number');
-      let animated = false;
-
-      function runZeroCount(el) {
-        const start = parseInt(el.getAttribute('data-start'), 10) || 0;
-        const suffix = el.getAttribute('data-suffix') || '';
-        const duration = 1700;
-        const startTime = performance.now();
-
-        function tick(now) {
-          const progress = Math.min((now - startTime) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          const val = Math.max(0, Math.round(start * (1 - eased)));
-          el.textContent = val + suffix;
-          if (progress < 1) {
-            requestAnimationFrame(tick);
-          } else {
-            el.textContent = '0' + suffix;
-          }
-        }
-        requestAnimationFrame(tick);
-      }
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !animated) {
-            animated = true;
-            counters.forEach(runZeroCount);
-            observer.disconnect();
-          }
-        });
-      }, { threshold: 0.2 });
-
-      const statsEl = document.getElementById('layer-2-stats');
-      if (statsEl) observer.observe(statsEl);
-    })();
-
     document.getElementById("academyEnquiryForm").addEventListener("submit", async function (e) {
       e.preventDefault();
       const record = {
@@ -1315,6 +1574,7 @@
         phone: document.getElementById("enqPhone").value.trim(),
         track: document.getElementById("enqTrack").value,
         mode: document.getElementById("enqMode").value,
+        preferred_language: document.getElementById("languageSelect")?.value || "en",
         head_office: "Qatar",
         created_at: new Date().toISOString()
       };
@@ -1324,6 +1584,9 @@
       localStorage.setItem("serveease_enquiries", JSON.stringify(existing));
 
       const statusEl = document.getElementById("enqStatus");
+      const message = `Hello Serve Ease Academy, I would like to enquire about ${record.track}. Name: ${record.full_name}. Phone: ${record.phone}. Preferred mode: ${record.mode}.`;
+      const waLink = `https://wa.me/${ACADEMY_CONFIG.whatsappDigits}?text=${encodeURIComponent(message)}`;
+      statusEl.innerHTML = `Your enquiry details are ready. <a href="${waLink}" target="_blank" rel="noopener" style="font-weight:700;text-decoration:underline;color:#2452C5">Continue on WhatsApp</a>. This is not a completed admission or payment.`;
 
       if (ACADEMY_CONFIG.supabaseUrl && ACADEMY_CONFIG.supabaseAnonKey) {
         try {
@@ -1336,18 +1599,129 @@
             },
             body: JSON.stringify(record)
           });
-          statusEl.textContent = res.ok
-            ? "Saved to database successfully!"
-            : "Saved locally (check Supabase keys/table).";
+          if (!res.ok) statusEl.textContent += " (Cloud enquiry storage is not configured yet.)";
         } catch (err) {
-          statusEl.textContent = "Saved locally on this device.";
+          statusEl.textContent += " Cloud enquiry storage is not configured yet.";
         }
-      } else {
-        statusEl.textContent = "Saved locally! Connect Supabase URL & Key in config to store in cloud DB.";
       }
 
       this.reset();
     });
+
+    // Core interface translations. Course-specific study content remains available in its original English text.
+    const UI_TRANSLATIONS = {
+      en: { navHome:"Home", navCivil:"Civil Services", navLearning:"Learning", navAdmission:"Admissions", navWhatsApp:"WhatsApp", heroPanelTitle:"One Academy. Multiple Ways to Learn.", admissionTitle:"Start Your Admission Enquiry", submitEnquiry:"Submit Admission Enquiry" },
+      ar: { navHome:"الرئيسية", navCivil:"الخدمات المدنية", navLearning:"التعلّم", navAdmission:"القبول والتسجيل", navWhatsApp:"واتساب", heroPanelTitle:"أكاديمية واحدة. طرق متعددة للتعلّم.", admissionTitle:"ابدأ استفسار التسجيل", submitEnquiry:"إرسال استفسار التسجيل" },
+      ml: { navHome:"ഹോം", navCivil:"സിവിൽ സർവീസ്", navLearning:"പഠനം", navAdmission:"അഡ്മിഷൻ", navWhatsApp:"വാട്സ്ആപ്പ്", heroPanelTitle:"ഒരു അക്കാദമി. പഠിക്കാൻ നിരവധി മാർഗങ്ങൾ.", admissionTitle:"അഡ്മിഷൻ അന്വേഷണം ആരംഭിക്കുക", submitEnquiry:"അഡ്മിഷൻ അന്വേഷണം സമർപ്പിക്കുക" }
+    };
+    function applyLanguage(lang) {
+      const copy = UI_TRANSLATIONS[lang] || UI_TRANSLATIONS.en;
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (copy[key]) el.textContent = copy[key];
+      });
+      const nameInput = document.getElementById("enqName");
+      const phoneInput = document.getElementById("enqPhone");
+      if (nameInput) nameInput.placeholder = lang === "ar" ? "الاسم الكامل" : lang === "ml" ? "പൂർണ്ണനാമം" : "Full Name";
+      if (phoneInput) phoneInput.placeholder = lang === "ar" ? "رقم الهاتف / واتساب" : lang === "ml" ? "ഫോൺ / വാട്സ്ആപ്പ് നമ്പർ" : "Phone / WhatsApp Number";
+      localStorage.setItem("serveease_language", lang);
+    }
+    const splash = document.getElementById("academySplash");
+    const splashCount = document.getElementById("splashCount");
+    const splashFill = document.getElementById("splashFill");
+    let splashReady = false;
+    let splashProgressDone = false;
+    const finishSplash = () => {
+      if (splashReady && splashProgressDone) {
+        window.setTimeout(() => splash?.classList.add("is-hidden"), 180);
+      }
+    };
+    // Reliable branded 0–1000 intro. The scale is a visual progress indicator, not a statistic.
+    const loadingStart = performance.now();
+    const loadingDuration = 1150;
+    let splashClosed = false;
+    function closeSplash() {
+      if (splashClosed) return;
+      splashClosed = true;
+      splash?.classList.add('is-hidden');
+      window.setTimeout(() => splash?.remove(), 650);
+    }
+    function animateSplash(now) {
+      const progress = Math.min(1, (now - loadingStart) / loadingDuration);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.round(eased * 1000);
+      if (splashCount) splashCount.textContent = value.toLocaleString();
+      if (splashFill) splashFill.style.width = `${value / 10}%`;
+      if (progress < 1) requestAnimationFrame(animateSplash);
+      else {
+        splashProgressDone = true;
+        splashReady = true; // DOM is parsed; large images/fonts must not hold the visitor at the loader.
+        window.setTimeout(closeSplash, 180);
+      }
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (splashCount) splashCount.textContent = '1,000';
+      if (splashFill) splashFill.style.width = '100%';
+      window.setTimeout(closeSplash, 120);
+    } else {
+      requestAnimationFrame(animateSplash);
+    }
+    // Hard fail-safe: even if a browser animation callback fails, the page becomes visible.
+    window.setTimeout(() => {
+      if (splashCount) splashCount.textContent = '1,000';
+      if (splashFill) splashFill.style.width = '100%';
+      closeSplash();
+    }, 2600);
+
+    // Count-up metrics. The 500 figure is clearly presented as an enrolment goal, not a claimed current total.
+    const metricObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const node = entry.target;
+        const target = Number(node.dataset.count || 0);
+        const start = performance.now();
+        const duration = 1300;
+        function countFrame(now) {
+          const progress = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          node.textContent = Math.round(target * eased).toLocaleString();
+          if (progress < 1) requestAnimationFrame(countFrame);
+        }
+        requestAnimationFrame(countFrame);
+        observer.unobserve(node);
+      });
+    }, { threshold: 0.35 });
+    document.querySelectorAll(".count-up").forEach(node => metricObserver.observe(node));
+
+    const initialModule = /^#upsc-(prelims|mains|interview|questions|mocks|csat|daf|roadmap)$/.test(location.hash) ? location.hash.slice(1) : null;
+    if (initialModule) openUpscHub(initialModule);
+
+    const languageSelect = document.getElementById("languageSelect");
+    if (languageSelect) {
+      const savedLanguage = localStorage.getItem("serveease_language") || "en";
+      languageSelect.value = savedLanguage;
+      applyLanguage(savedLanguage);
+      languageSelect.addEventListener("change", () => applyLanguage(languageSelect.value));
+    }
+
+    // Blue pointer glow: high-contrast enough to remain visible over white sections.
+    (() => {
+      const glow = document.getElementById('academyCursorGlow');
+      if (!glow || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+      let raf = 0, x = -200, y = -200;
+      window.addEventListener('pointermove', (event) => {
+        x = event.clientX; y = event.clientY;
+        if (!raf) raf = requestAnimationFrame(() => {
+          glow.style.transform = `translate3d(${x - 38}px, ${y - 38}px, 0)`;
+          glow.style.opacity = '1';
+          raf = 0;
+        });
+      }, { passive: true });
+      document.documentElement.addEventListener('pointerleave', () => { glow.style.opacity = '0'; });
+      document.addEventListener('pointerenter', () => { glow.style.opacity = '1'; });
+    })();
   </script>
 
 </body>
