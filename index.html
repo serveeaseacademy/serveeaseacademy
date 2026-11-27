@@ -1247,6 +1247,49 @@
     }
     .academy-assistant { display: none !important; }
 
+
+    /* Civil Services programme explorer: compact image cards */
+    .civil-launcher{background:linear-gradient(135deg,#f3f7ff 0%,#eaf1fc 52%,#f8fbff 100%);color:#102c52}
+    .civil-launcher .section-header h2{color:#102c52}
+    .civil-launcher .section-header p{color:#526985}
+    .civil-explore-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:30px}
+    .civil-explore-card{overflow:hidden;background:#fff;border:1px solid #d8e4f3;border-radius:16px;box-shadow:0 9px 25px rgba(13,45,91,.08);transition:transform .3s,box-shadow .3s}
+    .civil-explore-card:hover{transform:translateY(-7px);box-shadow:0 18px 36px rgba(13,45,91,.16)}
+    .civil-explore-card>img{display:block;width:100%;height:145px;object-fit:cover;transition:transform .55s}
+    .civil-explore-card:hover>img{transform:scale(1.07)}
+    .civil-explore-copy{padding:17px}
+    .civil-explore-copy>span{font-size:.66rem;font-weight:900;letter-spacing:.12em;color:#3972c8}
+    .civil-explore-copy h3{font-size:1.08rem;color:#102c52;margin:7px 0}
+    .civil-explore-copy p{min-height:42px;font-size:.83rem;line-height:1.55;color:#60738d;margin-bottom:15px}
+    .civil-explore-copy button{display:flex;align-items:center;justify-content:space-between;width:100%;padding:11px 13px;border:0;border-radius:9px;background:#174da9;color:#fff;font-weight:800;font-size:.8rem;cursor:pointer;transition:background .2s}
+    .civil-explore-copy button:hover{background:#2d72d5}
+    /* Full-width visual hero for each Civil Services sub-page */
+    #upscHubView{background:#f4f7fc;color:#132f55}
+    #upscHubView .subpage-header{background:linear-gradient(115deg,#071d3c,#174da9);padding:38px 0 45px}
+    #upscHubView .subpage-header h1,#upscHubView .subpage-header p{color:#fff}
+    #upscHubView .subpage-header .breadcrumb{color:#d9e7fb}
+    #upscHubView .subpage-header .breadcrumb button{color:#fff}
+    #upscHubView .subpage-tabs{background:#fff;border-bottom:1px solid #dbe5f2}
+    #upscHubView .upsc-sub-panel{background:#f4f7fc;border-radius:0;padding:32px 0 55px}
+    #upscHubView .upsc-sub-panel h2{color:#102c52!important}
+    #upscHubView .upsc-sub-panel>p{color:#536b88!important}
+    .upsc-feature-banner{position:relative;overflow:hidden;width:100%;height:clamp(220px,29vw,390px);border-radius:18px;margin:0 0 34px;background:#0b2a53;box-shadow:0 16px 38px rgba(10,37,77,.16)}
+    .upsc-feature-banner img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}
+    .upsc-feature-banner:hover img{transform:scale(1.045)}
+    .upsc-feature-banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,20,43,.88),rgba(4,20,43,.42) 58%,rgba(4,20,43,.05))}
+    .upsc-feature-banner>div{position:absolute;z-index:1;left:clamp(22px,5vw,72px);bottom:clamp(22px,4vw,52px);max-width:720px;color:#fff}
+    .upsc-feature-banner span{font-size:.7rem;font-weight:900;letter-spacing:.16em;color:#c9e0ff}
+    .upsc-feature-banner h2{font:700 clamp(1.7rem,4vw,3rem)/1.15 'Playfair Display',serif;color:#fff!important;margin:9px 0}
+    .upsc-feature-banner p{color:#edf4ff;line-height:1.6;margin:0}
+    #upscHubView .upsc-sub-panel .info-box,#upscHubView .qa-box{background:#fff;border:1px solid #d9e5f3;box-shadow:0 8px 22px rgba(15,45,85,.06)}
+    #upscHubView .upsc-sub-panel .info-box h4,#upscHubView .qa-box h4{color:#123765}
+    #upscHubView .upsc-sub-panel .info-box p,#upscHubView .qa-box p{color:#5d708a}
+    .programme-wide-image{width:100%;height:clamp(210px,26vw,350px);overflow:hidden;border-radius:18px;margin:0 0 34px;box-shadow:0 15px 36px rgba(10,37,77,.14)}
+    .programme-wide-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}
+    .programme-wide-image:hover img{transform:scale(1.04)}
+    @media(max-width:1000px){.civil-explore-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:560px){.civil-explore-grid{grid-template-columns:1fr}.civil-explore-card>img{height:180px}.upsc-feature-banner{height:230px}.upsc-feature-banner p{font-size:.84rem}}
+
 </style>
 </head>
 <body id="top">
@@ -1491,23 +1534,23 @@
       </div>
     </section>
 
-    <!-- Layer 6: Civil Services 8 Sub-Pages Quick Launcher -->
-    <section class="section section-alt" id="layer-6-upsc-preview">
+    <!-- Layer 6: Civil Services visual learning hub -->
+    <section class="section section-alt civil-launcher" id="layer-6-upsc-preview">
       <div class="container">
         <div class="section-header">
           <span class="eyebrow">Civil Services Learning Hub</span>
-          <h2>Inside Civil Services: 8 Specialized Sub-Pages</h2>
-          <p>Click any of the 8 Civil Services sub-pages below to open its complete page view immediately.</p>
+          <h2>Explore the Civil Services Programme</h2>
+          <p>Choose a learning area to explore its dedicated full-width learning page, resources and preparation pathway.</p>
         </div>
-        <div class="grid-4">
-          <div class="info-box"><h4>1. Prelims Course</h4><p>GS Paper I &amp; strategy.</p><button class="card-btn" style="margin-top:0.8rem;" onclick="openUpscHub('upsc-prelims')">Open Page 1</button></div>
-          <div class="info-box"><h4>2. Mains Course</h4><p>GS I–IV, Essay &amp; Optional.</p><button class="card-btn" style="margin-top:0.8rem;" onclick="openUpscHub('upsc-mains')">Open Page 2</button></div>
-          <div class="info-box"><h4>3. Interview Prep</h4><p>275-mark personality test.</p><button class="card-btn" style="margin-top:0.8rem;" onclick="openUpscHub('upsc-interview')">Open Page 3</button></div>
-          <div class="info-box"><h4>4. Interview Questions</h4><p>Expected board questions.</p><button class="card-btn" style="margin-top:0.8rem;" onclick="openUpscHub('upsc-questions')">Open Page 4</button></div>
-          <div class="info-box"><h4>5. Mock Tests</h4><p>Prelims, Mains &amp; panel mocks.</p><button class="card-btn" style="margin-top:0.8rem;" onclick="openUpscHub('upsc-mocks')">Open Page 5</button></div>
-          <div class="info-box"><h4>6. CSAT &amp; Writing</h4><p>33% CSAT &amp; answer drills.</p><button class="card-btn" style="margin-top:0.8rem;" onclick="openUpscHub('upsc-csat')">Open Page 6</button></div>
-          <div class="info-box"><h4>7. DAF &amp; Current Affairs</h4><p>Profile &amp; daily linkage.</p><button class="card-btn" style="margin-top:0.8rem;" onclick="openUpscHub('upsc-daf')">Open Page 7</button></div>
-          <div class="info-box"><h4>8. Study Roadmap</h4><p>Timetable &amp; revision cycle.</p><button class="card-btn" style="margin-top:0.8rem;" onclick="openUpscHub('upsc-roadmap')">Open Page 8</button></div>
+        <div class="civil-explore-grid">
+          <article class="civil-explore-card"><img src="course-upsc.jpg" alt="Civil Services Prelims preparation"><div class="civil-explore-copy"><span>01 • FOUNDATION</span><h3>Prelims Course</h3><p>General Studies Paper I, concepts and exam strategy.</p><button onclick="openUpscHub('upsc-prelims')">Explore Programme <b>→</b></button></div></article>
+          <article class="civil-explore-card"><img src="gallery-1.jpg" alt="Mains answer writing and study"><div class="civil-explore-copy"><span>02 • ADVANCED STUDY</span><h3>Mains Course</h3><p>GS I–IV, essay structure and optional guidance.</p><button onclick="openUpscHub('upsc-mains')">Explore Programme <b>→</b></button></div></article>
+          <article class="civil-explore-card"><img src="mentor-1.jpg" alt="Interview mentoring"><div class="civil-explore-copy"><span>03 • PERSONALITY TEST</span><h3>Interview Preparation</h3><p>Communication, balanced judgment and board readiness.</p><button onclick="openUpscHub('upsc-interview')">Explore Programme <b>→</b></button></div></article>
+          <article class="civil-explore-card"><img src="gallery-2.jpg" alt="Interview question preparation"><div class="civil-explore-copy"><span>04 • QUESTION BANK</span><h3>Interview Questions</h3><p>Background, governance and current-affairs questions.</p><button onclick="openUpscHub('upsc-questions')">Explore Programme <b>→</b></button></div></article>
+          <article class="civil-explore-card"><img src="gallery-3.jpg" alt="Mock test practice"><div class="civil-explore-copy"><span>05 • PRACTICE</span><h3>Mock Tests</h3><p>Prelims, Mains and interview practice sessions.</p><button onclick="openUpscHub('upsc-mocks')">Explore Programme <b>→</b></button></div></article>
+          <article class="civil-explore-card"><img src="gallery-4.jpg" alt="Study and answer writing"><div class="civil-explore-copy"><span>06 • SKILL BUILDING</span><h3>CSAT &amp; Answer Writing</h3><p>Reasoning, comprehension and structured answers.</p><button onclick="openUpscHub('upsc-csat')">Explore Programme <b>→</b></button></div></article>
+          <article class="civil-explore-card"><img src="gallery-5.jpg" alt="Current affairs learning"><div class="civil-explore-copy"><span>07 • DAILY PREPARATION</span><h3>DAF &amp; Current Affairs</h3><p>Profile mapping and daily news-to-syllabus linkage.</p><button onclick="openUpscHub('upsc-daf')">Explore Programme <b>→</b></button></div></article>
+          <article class="civil-explore-card"><img src="photo 6.jpg" alt="Study roadmap planning"><div class="civil-explore-copy"><span>08 • PLANNING</span><h3>Study Roadmap</h3><p>Foundation, revision cycles and preparation planning.</p><button onclick="openUpscHub('upsc-roadmap')">Explore Programme <b>→</b></button></div></article>
         </div>
       </div>
     </section>
@@ -1743,6 +1786,11 @@
     <div class="container">
       <!-- Sub-Page 1: Prelims Course -->
       <div id="upsc-prelims" class="upsc-sub-panel active">
+        <div class="upsc-feature-banner">
+          <img src="course-upsc.jpg" alt="Prelims • General Studies" loading="lazy">
+          <div><span>SERVE EASE ACADEMY • CIVIL SERVICES</span><h2>Prelims • General Studies</h2><p>Explore the learning pathway, key topics and preparation support for this stage.</p></div>
+        </div>
+
         <span class="eyebrow">Sub-Page 1 of 8 • Prelims</span>
         <h2 style="font-family:'Playfair Display',serif;color:var(--navy-deep);margin-bottom:0.8rem;">UPSC Prelims Course (GS Paper I)</h2>
         <p style="color:var(--text-muted);margin-bottom:1.5rem;">Concept clarity, elimination logic, and high-frequency revision for Polity, Economy, History, Geography, Environment, and Science &amp; Tech.</p>
@@ -1755,6 +1803,11 @@
 
       <!-- Sub-Page 2: Mains Course -->
       <div id="upsc-mains" class="upsc-sub-panel">
+        <div class="upsc-feature-banner">
+          <img src="gallery-1.jpg" alt="Mains • Analytical Writing" loading="lazy">
+          <div><span>SERVE EASE ACADEMY • CIVIL SERVICES</span><h2>Mains • Analytical Writing</h2><p>Explore the learning pathway, key topics and preparation support for this stage.</p></div>
+        </div>
+
         <span class="eyebrow">Sub-Page 2 of 8 • Mains</span>
         <h2 style="font-family:'Playfair Display',serif;color:var(--navy-deep);margin-bottom:0.8rem;">UPSC Mains Course (GS I–IV, Essay &amp; Optional)</h2>
         <p style="color:var(--text-muted);margin-bottom:1.5rem;">Analytical depth, multi-dimensional structuring, governance linkage, and balanced administrative conclusions.</p>
@@ -1767,6 +1820,11 @@
 
       <!-- Sub-Page 3: Interview Preparation -->
       <div id="upsc-interview" class="upsc-sub-panel">
+        <div class="upsc-feature-banner">
+          <img src="mentor-1.jpg" alt="Interview • Personality Development" loading="lazy">
+          <div><span>SERVE EASE ACADEMY • CIVIL SERVICES</span><h2>Interview • Personality Development</h2><p>Explore the learning pathway, key topics and preparation support for this stage.</p></div>
+        </div>
+
         <span class="eyebrow">Sub-Page 3 of 8 • Personality Test (275 Marks)</span>
         <h2 style="font-family:'Playfair Display',serif;color:var(--navy-deep);margin-bottom:0.8rem;">UPSC Personality Test (Interview) Preparation</h2>
         <p style="color:var(--text-muted);margin-bottom:1.5rem;">Focused on mental alertness, balanced judgment, honesty, clarity of thought, and administrative suitability.</p>
@@ -1779,6 +1837,11 @@
 
       <!-- Sub-Page 4: Expected Interview Questions -->
       <div id="upsc-questions" class="upsc-sub-panel">
+        <div class="upsc-feature-banner">
+          <img src="gallery-2.jpg" alt="Interview • Question Practice" loading="lazy">
+          <div><span>SERVE EASE ACADEMY • CIVIL SERVICES</span><h2>Interview • Question Practice</h2><p>Explore the learning pathway, key topics and preparation support for this stage.</p></div>
+        </div>
+
         <span class="eyebrow">Sub-Page 4 of 8 • Interview Question Bank</span>
         <h2 style="font-family:'Playfair Display',serif;color:var(--navy-deep);margin-bottom:0.8rem;">What Questions Come in the UPSC Interview?</h2>
         <div class="qa-box">
@@ -1801,6 +1864,11 @@
 
       <!-- Sub-Page 5: Mock Tests Suite -->
       <div id="upsc-mocks" class="upsc-sub-panel">
+        <div class="upsc-feature-banner">
+          <img src="gallery-3.jpg" alt="Mock Tests • Exam Practice" loading="lazy">
+          <div><span>SERVE EASE ACADEMY • CIVIL SERVICES</span><h2>Mock Tests • Exam Practice</h2><p>Explore the learning pathway, key topics and preparation support for this stage.</p></div>
+        </div>
+
         <span class="eyebrow">Sub-Page 5 of 8 • Mock Tests</span>
         <h2 style="font-family:'Playfair Display',serif;color:var(--navy-deep);margin-bottom:0.8rem;">UPSC Prelims, Mains &amp; Interview Mock Tests We Conduct</h2>
         <div class="grid-3">
@@ -1821,6 +1889,11 @@
 
       <!-- Sub-Page 6: CSAT & Answer Writing -->
       <div id="upsc-csat" class="upsc-sub-panel">
+        <div class="upsc-feature-banner">
+          <img src="gallery-4.jpg" alt="CSAT • Answer Writing" loading="lazy">
+          <div><span>SERVE EASE ACADEMY • CIVIL SERVICES</span><h2>CSAT • Answer Writing</h2><p>Explore the learning pathway, key topics and preparation support for this stage.</p></div>
+        </div>
+
         <span class="eyebrow">Sub-Page 6 of 8 • CSAT &amp; Answer Writing</span>
         <h2 style="font-family:'Playfair Display',serif;color:var(--navy-deep);margin-bottom:0.8rem;">CSAT (33% Qualifying) &amp; Mains Answer Writing Drills</h2>
         <div class="grid-2">
@@ -1831,6 +1904,11 @@
 
       <!-- Sub-Page 7: DAF & Current Affairs -->
       <div id="upsc-daf" class="upsc-sub-panel">
+        <div class="upsc-feature-banner">
+          <img src="gallery-5.jpg" alt="DAF • Current Affairs" loading="lazy">
+          <div><span>SERVE EASE ACADEMY • CIVIL SERVICES</span><h2>DAF • Current Affairs</h2><p>Explore the learning pathway, key topics and preparation support for this stage.</p></div>
+        </div>
+
         <span class="eyebrow">Sub-Page 7 of 8 • DAF &amp; Current Affairs</span>
         <h2 style="font-family:'Playfair Display',serif;color:var(--navy-deep);margin-bottom:0.8rem;">DAF Mapping &amp; Current Affairs Linkage</h2>
         <div class="grid-2">
@@ -1841,6 +1919,11 @@
 
       <!-- Sub-Page 8: Study Roadmap -->
       <div id="upsc-roadmap" class="upsc-sub-panel">
+        <div class="upsc-feature-banner">
+          <img src="photo 6.jpg" alt="Study Roadmap • Preparation Plan" loading="lazy">
+          <div><span>SERVE EASE ACADEMY • CIVIL SERVICES</span><h2>Study Roadmap • Preparation Plan</h2><p>Explore the learning pathway, key topics and preparation support for this stage.</p></div>
+        </div>
+
         <span class="eyebrow">Sub-Page 8 of 8 • Study Roadmap</span>
         <h2 style="font-family:'Playfair Display',serif;color:var(--navy-deep);margin-bottom:0.8rem;">Integrated UPSC Preparation &amp; Revision Roadmap</h2>
         <div class="grid-3">
@@ -1876,6 +1959,7 @@
       </div>
     </div>
     <div class="programme-detail-inner programme-detail-content">
+      <div class="programme-wide-image"><img id="programmeDetailWideImage" src="course-gcc.jpg" alt="Programme learning environment"></div>
       <div class="programme-detail-columns">
         <div><h2>Programme Overview</h2><p id="programmeDetailOverview"></p>
           <h2>What You Will Learn</h2><div class="programme-topic-grid" id="programmeDetailTopics"></div>
@@ -2030,6 +2114,8 @@
       document.getElementById("programmeDetailMeta").innerHTML=[item.duration,item.mode].map(x=>`<span>${x}</span>`).join("");
       document.getElementById("programmeDetailOverview").textContent=item.overview;
       document.getElementById("programmeDetailImage").src=item.image;
+      const wideImage=document.getElementById("programmeDetailWideImage");
+      if(wideImage){wideImage.src=item.image;wideImage.alt=item.title;}
       document.getElementById("programmeDetailImage").alt=item.title;
       document.getElementById("programmeDetailFee").textContent=item.fee;
       document.getElementById("programmeDetailTopics").innerHTML=item.topics.map(t=>`<div class="programme-topic">${t}</div>`).join("");
