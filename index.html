@@ -1214,7 +1214,40 @@
     @media(max-width:560px){.trial-hero{padding:45px 0 55px}.trial-hero h1{font-size:2.2rem}.trial-main{width:94%}.trial-form-grid{grid-template-columns:1fr}.trial-full{grid-column:auto}.trial-photos img{height:130px}.trial-bottom{align-items:flex-start;flex-direction:column}}
     @media(prefers-reduced-motion:reduce){.trial-orbit,.trial-form-card{animation:none!important}.trial-steps>div,.trial-photos img,.trial-submit{transition:none!important}}
 
-  </style>
+  
+    /* Final navigation treatment: white bar, blue typography */
+    .navbar, header.navbar, nav.navbar {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+      color: #123b70 !important;
+      border-bottom: 1px solid #d7e3f2 !important;
+      box-shadow: 0 5px 20px rgba(8, 35, 78, .08) !important;
+      backdrop-filter: blur(12px);
+    }
+    .navbar .brand, .navbar .brand span, .navbar .nav-links,
+    .navbar .nav-links a, .navbar .nav-links a:visited {
+      color: #123b70 !important;
+    }
+    .navbar .nav-links a:hover, .navbar .nav-links a.active-link {
+      color: #2452c5 !important;
+    }
+    .navbar .nav-links select, .navbar .nav-links .form-control {
+      color: #123b70 !important;
+      background: #ffffff !important;
+      border: 1px solid #cbd9eb !important;
+    }
+    .navbar .nav-links .nav-whatsapp-cta, .navbar .nav-whatsapp-cta {
+      background: #128c7e !important;
+      color: #ffffff !important;
+      border-color: #128c7e !important;
+    }
+    .navbar .nav-links .nav-whatsapp-cta:hover, .navbar .nav-whatsapp-cta:hover {
+      background: #075e54 !important;
+      color: #ffffff !important;
+    }
+    .academy-assistant { display: none !important; }
+
+</style>
 </head>
 <body id="top">
   <div id="academyCursorGlow" aria-hidden="true"></div>
@@ -1922,36 +1955,7 @@
   <!-- ===================================================================== -->
 
 
-  <!-- Floating Academy Assistant -->
-  <div id="academyAssistant" class="academy-assistant" aria-live="polite">
-    <section id="academyAssistantPanel" class="assistant-panel" hidden>
-      <div class="assistant-head">
-        <div class="assistant-avatar" aria-hidden="true"><img src="academy-robot.png" alt="" /></div>
-        <div class="assistant-heading">
-          <strong id="assistantTitle">Academy Assistant</strong>
-          <small id="assistantSubtitle">Quick course and admission guidance</small>
-        </div>
-        <button type="button" class="assistant-close" id="assistantClose" aria-label="Close assistant">×</button>
-      </div>
-      <div class="assistant-body">
-        <p id="assistantWelcome">Hello! I can help you explore programmes and admission enquiries.</p>
-        <div class="assistant-choices">
-          <button type="button" data-assist="courses">Explore courses</button>
-          <button type="button" data-assist="fees">Course fees</button>
-          <button type="button" data-assist="duration">Course duration</button>
-          <button type="button" data-assist="admission">Admission help</button>
-        </div>
-        <div id="assistantReply" class="assistant-reply" hidden></div>
-      </div>
-      <a id="assistantWhatsApp" class="assistant-whatsapp" href="#" target="_blank" rel="noopener">Continue on WhatsApp</a>
-      <small class="assistant-note">Guided information assistant · Contact the academy team for confirmed details.</small>
-    </section>
-    <button type="button" id="assistantToggle" class="assistant-toggle" aria-label="Open Academy Assistant" title="Academy Assistant">
-      <img class="assistant-toggle-robot" src="academy-robot.png" alt="" /><span id="assistantButtonText">Ask Academy</span>
-    </button>
-  </div>
-
-    <!-- CONFIG + MULTI-PAGE + DATABASE LOGIC                                  -->
+<!-- CONFIG + MULTI-PAGE + DATABASE LOGIC                                  -->
   <!-- ===================================================================== -->
   <script>
     const ACADEMY_CONFIG = {
@@ -2290,61 +2294,7 @@
       document.addEventListener('pointerenter', () => { glow.style.opacity = '1'; });
     })();
   
-    // Guided Academy Assistant: predefined answers, with WhatsApp hand-off for live support.
-    (() => {
-      const panel=document.getElementById("academyAssistantPanel");
-      const toggle=document.getElementById("assistantToggle");
-      const close=document.getElementById("assistantClose");
-      const reply=document.getElementById("assistantReply");
-      const wa=document.getElementById("assistantWhatsApp");
-      const langSelect=document.getElementById("languageSelect");
-      const phone="97470442825";
-      const answers={
-        en:{
-          courses:"Programmes include Qatar PRO & Government Services, GCC PRO & Document Processing, Professional Typing & Office Administration, Practical PRO & Admin Training, HR & Corporate Administration, and Civil Services Examination Preparation.",
-          fees:"QAR 1,500 applies only to the specific MOI & MOL package. Fees for all other programmes are quoted separately.",
-          duration:"The MOI & MOL package is 2 months of course learning plus 1 month of practical training. Other programme durations are confirmed separately.",
-          admission:"Use Apply / Admission or continue on WhatsApp. The admissions team can confirm availability, fees and next steps."
-        },
-        ml:{
-          courses:"പ്രോഗ്രാമുകൾ: Qatar PRO & Government Services, GCC PRO & Document Processing, Professional Typing & Office Administration, Practical PRO & Admin Training, HR & Corporate Administration, Civil Services Examination Preparation.",
-          fees:"QAR 1,500 എന്നത് MOI & MOL പ്രത്യേക പാക്കേജിന് മാത്രമാണ്. മറ്റ് കോഴ്സുകളുടെ ഫീസ് പ്രത്യേകം അറിയിക്കും.",
-          duration:"MOI & MOL പാക്കേജ് 2 മാസം കോഴ്സും 1 മാസം പ്രായോഗിക പരിശീലനവുമാണ്. മറ്റ് കോഴ്സുകളുടെ ദൈർഘ്യം പ്രത്യേകം സ്ഥിരീകരിക്കും.",
-          admission:"Apply / Admission ബട്ടൺ ഉപയോഗിക്കാം അല്ലെങ്കിൽ WhatsApp വഴി ബന്ധപ്പെടാം. ബാച്ച് ലഭ്യതയും ഫീസും അഡ്മിഷൻ ടീം സ്ഥിരീകരിക്കും."
-        },
-        ar:{
-          courses:"تشمل البرامج: خدمات PRO الحكومية في قطر، ومعالجة مستندات وخدمات PRO في دول الخليج، والطباعة الاحترافية وإدارة المكاتب، والتدريب العملي، وإدارة الموارد البشرية، والتحضير لاختبارات الخدمة المدنية.",
-          fees:"رسوم 1,500 ريال قطري تخص حزمة MOI وMOL المحددة فقط. يتم تحديد رسوم البرامج الأخرى بشكل منفصل.",
-          duration:"تتكون حزمة MOI وMOL من شهرين من الدراسة وشهر واحد من التدريب العملي. ويتم تأكيد مدة البرامج الأخرى بشكل منفصل.",
-          admission:"استخدم زر التقديم والتسجيل أو تواصل عبر واتساب. يمكن لفريق القبول تأكيد التوفر والرسوم والخطوات التالية."
-        }
-      };
-      const labels={
-        en:["Academy Assistant","Quick course and admission guidance","Hello! Choose what you would like to know.","Explore courses","Course fees","Course duration","Admission help","Continue on WhatsApp","Ask Academy"],
-        ml:["അക്കാദമി അസിസ്റ്റന്റ്","കോഴ്സുകളും അഡ്മിഷനും സംബന്ധിച്ച സഹായം","നമസ്കാരം! എന്താണ് അറിയേണ്ടത് തിരഞ്ഞെടുക്കൂ.","കോഴ്സുകൾ കാണുക","കോഴ്സ് ഫീസ്","കോഴ്സ് ദൈർഘ്യം","അഡ്മിഷൻ സഹായം","WhatsApp വഴി ബന്ധപ്പെടുക","അക്കാദമിയോട് ചോദിക്കൂ"],
-        ar:["مساعد الأكاديمية","إرشادات سريعة حول الدورات والتسجيل","مرحبًا! اختر ما تريد معرفته.","استكشف الدورات","رسوم الدورات","مدة الدورة","مساعدة القبول","تابع عبر واتساب","اسأل الأكاديمية"]
-      };
-      function lang(){return langSelect?.value||"en"}
-      function refresh(){
-        const L=labels[lang()]||labels.en;
-        document.getElementById("assistantTitle").textContent=L[0];
-        document.getElementById("assistantSubtitle").textContent=L[1];
-        document.getElementById("assistantWelcome").textContent=L[2];
-        document.querySelectorAll("[data-assist]").forEach((b,i)=>b.textContent=L[3+i]);
-        wa.textContent=L[7];
-        document.getElementById("assistantButtonText").textContent=L[8];
-        wa.href="https://wa.me/"+phone+"?text="+encodeURIComponent("Hello Serve Ease Academy, I need course and admission information.");
-        reply.hidden=true;
-      }
-      toggle.addEventListener("click",()=>{panel.hidden=!panel.hidden;});
-      close.addEventListener("click",()=>{panel.hidden=true;});
-      document.querySelectorAll("[data-assist]").forEach(b=>b.addEventListener("click",()=>{
-        reply.textContent=(answers[lang()]||answers.en)[b.dataset.assist];
-        reply.hidden=false;
-      }));
-      langSelect?.addEventListener("change",refresh);
-      refresh();
-    })();
+    
 
 
     function openTrialPage(){
