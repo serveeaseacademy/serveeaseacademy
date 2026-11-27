@@ -1290,6 +1290,65 @@
     @media(max-width:1000px){.civil-explore-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:560px){.civil-explore-grid{grid-template-columns:1fr}.civil-explore-card>img{height:180px}.upsc-feature-banner{height:230px}.upsc-feature-banner p{font-size:.84rem}}
 
+
+    /* Civil Services now has its own landing page, then individual standalone module pages. */
+    .civil-entry-section{background:#f3f7fd}
+    .civil-entry-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,58px);align-items:center}
+    .civil-entry-photo{height:310px;overflow:hidden;border-radius:18px;box-shadow:0 16px 38px rgba(10,37,77,.14)}
+    .civil-entry-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+    .civil-entry-photo:hover img{transform:scale(1.05)}
+    .civil-entry-copy h2{font:700 clamp(1.8rem,3vw,2.7rem)/1.15 'Playfair Display',serif;color:#102c52;margin:12px 0}
+    .civil-entry-copy p{color:#5b6f89;line-height:1.75;max-width:650px}
+    .civil-entry-button,.civil-home-card button{border:0;border-radius:999px;background:#174da9;color:#fff;padding:13px 20px;font-weight:800;cursor:pointer;transition:background .2s,transform .2s}
+    .civil-entry-button:hover,.civil-home-card button:hover{background:#2d72d5;transform:translateY(-2px)}
+    .civil-services-home-view{min-height:80vh;background:#f4f7fc}
+    .civil-home-hero{background:linear-gradient(115deg,#071d3c,#174da9);padding:56px 0 62px;color:#fff}
+    .civil-home-hero-inner{width:min(1400px,92%);margin:auto}
+    .civil-home-back{display:inline-block;margin-bottom:28px;border:1px solid rgba(255,255,255,.45);border-radius:999px;background:rgba(255,255,255,.12);color:#fff;padding:10px 16px;cursor:pointer}
+    .civil-home-kicker{display:block;color:#c9e0ff;font-size:.72rem;font-weight:900;letter-spacing:.16em;margin-bottom:12px}
+    .civil-home-hero h1{font:700 clamp(2rem,4vw,3.6rem)/1.1 'Playfair Display',serif;color:#fff;margin:0 0 14px}
+    .civil-home-hero p{max-width:850px;color:#e5efff;line-height:1.7;margin:0}
+    .civil-home-content{width:min(1400px,92%);margin:0 auto;padding:48px 0 70px}
+    .civil-home-heading{text-align:center;margin-bottom:28px}
+    .civil-home-heading h2{font:700 clamp(1.7rem,3vw,2.4rem)/1.15 'Playfair Display',serif;color:#102c52;margin:8px 0}
+    .civil-home-heading p{color:#61748d}
+    .civil-home-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+    .civil-home-card{overflow:hidden;border-radius:16px;background:#fff;border:1px solid #dbe5f2;box-shadow:0 10px 26px rgba(13,45,91,.08);transition:transform .28s,box-shadow .28s}
+    .civil-home-card:hover{transform:translateY(-6px);box-shadow:0 18px 38px rgba(13,45,91,.15)}
+    .civil-home-card>img{width:100%;height:158px;display:block;object-fit:cover;transition:transform .6s}
+    .civil-home-card:hover>img{transform:scale(1.06)}
+    .civil-home-card>div{padding:17px}
+    .civil-home-card span{font-size:.65rem;letter-spacing:.12em;font-weight:900;color:#3972c8}
+    .civil-home-card h3{font-size:1.08rem;color:#102c52;margin:7px 0}
+    .civil-home-card p{font-size:.83rem;line-height:1.55;color:#60738d;min-height:42px;margin:0 0 14px}
+    .civil-home-card button{width:100%;border-radius:9px;padding:11px;font-size:.8rem}
+    #upscHubView .subpage-tabs{display:none!important}
+    #upscHubView .module-pager{display:none!important}
+    #upscHubView .breadcrumb{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    @media(max-width:1000px){.civil-home-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:640px){.civil-entry-wrap{grid-template-columns:1fr}.civil-entry-photo{height:220px}.civil-home-grid{grid-template-columns:1fr}.civil-home-card>img{height:190px}.civil-home-hero{padding:38px 0 44px}}
+
+
+    .homepage-trial-section{display:block!important;margin:0;padding:0 0 42px;background:#071d3c;color:#fff}
+    .homepage-trial-section .trial-hero{padding:56px 0 60px}
+    .homepage-trial-section .trial-main{margin-top:-18px}
+    .homepage-trial-section .trial-form-card{background:#fff!important;color:#12315d!important}
+    .homepage-trial-section .trial-form-grid label{color:#173963!important}
+    .page-view{will-change:transform,opacity}
+    .page-view.active{animation:pageEnterRight .62s cubic-bezier(.2,.72,.25,1) both}
+    .page-view.active.motion-left{animation:pageEnterLeft .62s cubic-bezier(.2,.72,.25,1) both}
+    @keyframes pageEnterRight{from{opacity:0;transform:translateX(52px)}to{opacity:1;transform:translateX(0)}}
+    @keyframes pageEnterLeft{from{opacity:0;transform:translateX(-52px)}to{opacity:1;transform:translateX(0)}}
+    .scroll-reveal{opacity:0;transform:translateY(26px);transition:opacity .72s ease,transform .72s cubic-bezier(.2,.7,.2,1)}
+    .scroll-reveal.is-visible{opacity:1;transform:translateY(0)}
+    .scroll-reveal[data-reveal-side="left"]{transform:translateX(-34px)}
+    .scroll-reveal[data-reveal-side="right"]{transform:translateX(34px)}
+    .scroll-reveal[data-reveal-side="left"].is-visible,.scroll-reveal[data-reveal-side="right"].is-visible{transform:translateX(0)}
+    .scroll-reveal[data-reveal-delay="1"]{transition-delay:.10s}
+    .scroll-reveal[data-reveal-delay="2"]{transition-delay:.20s}
+    .scroll-reveal[data-reveal-delay="3"]{transition-delay:.30s}
+    @media(prefers-reduced-motion:reduce){.page-view.active,.page-view.active.motion-left{animation:none!important}.scroll-reveal{opacity:1;transform:none;transition:none}}
+
 </style>
 </head>
 <body id="top">
@@ -1314,10 +1373,9 @@
           <option value="en">English</option><option value="ar">العربية</option><option value="ml">മലയാളം</option>
         </select>
         <a href="javascript:void(0)" onclick="openMainHome()" id="navHomeLink" class="active-link" data-i18n="navHome">Home</a>
-        <a href="javascript:void(0)" onclick="openUpscHub('upsc-prelims')" id="navUpscLink" data-i18n="navCivil">Civil Services</a>
+        <a href="javascript:void(0)" onclick="openCivilServicesHome()" id="navUpscLink" data-i18n="navCivil">Civil Services</a>
         <a href="javascript:void(0)" onclick="scrollToSection('global-tracks')" data-i18n="navLearning">Learning</a>
         <a href="javascript:void(0)" onclick="scrollToSection('layer-13-onboarding')" data-i18n="navAdmission">Admissions</a>
-        <a href="javascript:void(0)" onclick="openTrialPage()" id="navTrialLink">Free Trial</a>
         <a id="navWhatsappBtn" href="#" target="_blank" rel="noopener" class="nav-cta nav-whatsapp-cta" aria-label="WhatsApp Enquiry"><svg class="nav-whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.87 9.87 0 0 0-8.48 14.92L2.2 22l5.22-1.33A9.98 9.98 0 0 0 12.04 22h.01A10 10 0 0 0 12.04 2Zm0 18.18h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.1.79.83-3.02-.2-.31a8.18 8.18 0 1 1 6.96 3.87Zm4.49-6.13c-.25-.13-1.48-.73-1.71-.81-.23-.08-.4-.13-.57.13-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.13-1.05-.39-2-.1-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.39.11-.52.11-.11.25-.3.38-.44.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.37-.78-1.88-.2-.49-.41-.42-.57-.43h-.49c-.17 0-.45.06-.68.32-.23.25-.88.86-.88 2.1s.9 2.43 1.03 2.6c.13.17 1.77 2.7 4.29 3.79.6.26 1.07.42 1.44.54.61.19 1.16.16 1.6.1.49-.07 1.48-.61 1.69-1.2.21-.59.21-1.1.15-1.2-.06-.11-.23-.17-.48-.3Z"/></svg><span data-i18n="navWhatsApp">WhatsApp</span></a>
       </nav>
     </div>
@@ -1534,23 +1592,14 @@
       </div>
     </section>
 
-    <!-- Layer 6: Civil Services visual learning hub -->
-    <section class="section section-alt civil-launcher" id="layer-6-upsc-preview">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Civil Services Learning Hub</span>
-          <h2>Explore the Civil Services Programme</h2>
-          <p>Choose a learning area to explore its dedicated full-width learning page, resources and preparation pathway.</p>
-        </div>
-        <div class="civil-explore-grid">
-          <article class="civil-explore-card"><img src="course-upsc.jpg" alt="Civil Services Prelims preparation"><div class="civil-explore-copy"><span>01 • FOUNDATION</span><h3>Prelims Course</h3><p>General Studies Paper I, concepts and exam strategy.</p><button onclick="openUpscHub('upsc-prelims')">Explore Programme <b>→</b></button></div></article>
-          <article class="civil-explore-card"><img src="gallery-1.jpg" alt="Mains answer writing and study"><div class="civil-explore-copy"><span>02 • ADVANCED STUDY</span><h3>Mains Course</h3><p>GS I–IV, essay structure and optional guidance.</p><button onclick="openUpscHub('upsc-mains')">Explore Programme <b>→</b></button></div></article>
-          <article class="civil-explore-card"><img src="mentor-1.jpg" alt="Interview mentoring"><div class="civil-explore-copy"><span>03 • PERSONALITY TEST</span><h3>Interview Preparation</h3><p>Communication, balanced judgment and board readiness.</p><button onclick="openUpscHub('upsc-interview')">Explore Programme <b>→</b></button></div></article>
-          <article class="civil-explore-card"><img src="gallery-2.jpg" alt="Interview question preparation"><div class="civil-explore-copy"><span>04 • QUESTION BANK</span><h3>Interview Questions</h3><p>Background, governance and current-affairs questions.</p><button onclick="openUpscHub('upsc-questions')">Explore Programme <b>→</b></button></div></article>
-          <article class="civil-explore-card"><img src="gallery-3.jpg" alt="Mock test practice"><div class="civil-explore-copy"><span>05 • PRACTICE</span><h3>Mock Tests</h3><p>Prelims, Mains and interview practice sessions.</p><button onclick="openUpscHub('upsc-mocks')">Explore Programme <b>→</b></button></div></article>
-          <article class="civil-explore-card"><img src="gallery-4.jpg" alt="Study and answer writing"><div class="civil-explore-copy"><span>06 • SKILL BUILDING</span><h3>CSAT &amp; Answer Writing</h3><p>Reasoning, comprehension and structured answers.</p><button onclick="openUpscHub('upsc-csat')">Explore Programme <b>→</b></button></div></article>
-          <article class="civil-explore-card"><img src="gallery-5.jpg" alt="Current affairs learning"><div class="civil-explore-copy"><span>07 • DAILY PREPARATION</span><h3>DAF &amp; Current Affairs</h3><p>Profile mapping and daily news-to-syllabus linkage.</p><button onclick="openUpscHub('upsc-daf')">Explore Programme <b>→</b></button></div></article>
-          <article class="civil-explore-card"><img src="photo 6.jpg" alt="Study roadmap planning"><div class="civil-explore-copy"><span>08 • PLANNING</span><h3>Study Roadmap</h3><p>Foundation, revision cycles and preparation planning.</p><button onclick="openUpscHub('upsc-roadmap')">Explore Programme <b>→</b></button></div></article>
+    <!-- Layer 6: Civil Services course entry point -->
+    <section class="section section-alt civil-entry-section" id="layer-6-upsc-preview">
+      <div class="container civil-entry-wrap">
+        <div class="civil-entry-photo"><img src="course-upsc.jpg" alt="Civil Services preparation and learning" loading="lazy"></div>
+        <div class="civil-entry-copy"><span class="eyebrow">SERVE EASE ACADEMY • CIVIL SERVICES</span>
+          <h2>Civil Services Examination Preparation</h2>
+          <p>Explore the dedicated Civil Services learning hub, with separate learning areas for Prelims, Mains, Interview Preparation, Mock Tests and more.</p>
+          <button class="civil-entry-button" type="button" onclick="openCivilServicesHome()">Explore Civil Services <b>→</b></button>
         </div>
       </div>
     </section>
@@ -1736,7 +1785,50 @@
     </section>
 
     <!-- Layer 15: Minimal Global Footer -->
-    <footer class="footer-minimal" id="layer-15-footer">
+    <section id="trialBookingView" class="trial-page homepage-trial-section" aria-label="Free trial and assessment booking">
+  <div class="trial-hero">
+    <div class="trial-hero-inner">
+      <span class="trial-eyebrow">SERVE EASE ACADEMY • START YOUR LEARNING JOURNEY</span>
+      <h1>Admission &amp; Free Assessment Enquiry</h1>
+      <p>Share your details and preferred programme. Our admissions team will contact you to discuss availability and the next steps.</p>
+      <div class="trial-pills"><span>International Online Learning</span><span>Qatar &amp; India Enquiries</span><span>Personal Guidance</span></div>
+    </div><div class="trial-orbit orbit-one"></div><div class="trial-orbit orbit-two"></div>
+  </div>
+  <div class="trial-main">
+    <div class="trial-info">
+      <div class="trial-photos"><img src="photo 1.jpg" alt="Academy learning session" loading="lazy"><img src="photo 6.jpg" alt="Students learning together" loading="lazy"></div>
+      <span class="trial-tag">YOUR ADMISSION JOURNEY</span>
+      <h2>Take the next step with Serve Ease Academy.</h2>
+      <p>Submit your enquiry with your course preference and contact details. The Serve Ease Academy team will follow up to discuss the available learning format, batch schedule and admission information.</p>
+      <div class="trial-steps">
+        <div><b>01</b><span><strong>Send your request</strong><small>Complete the short enquiry form.</small></span></div>
+        <div><b>02</b><span><strong>Speak with our team</strong><small>We will contact you to understand your learning goals.</small></span></div>
+        <div><b>03</b><span><strong>Confirm your next step</strong><small>Receive details about availability, schedule and fees.</small></span></div>
+      </div>
+      <div class="trial-note"><strong>Please note:</strong> Trial and assessment slots are subject to confirmation by the academy. Submitting this form sends an enquiry through WhatsApp; it does not automatically reserve a class.</div>
+    </div>
+    <form class="trial-form-card" id="trialBookingForm">
+      <div class="trial-form-heading"><span>ADMISSION ENQUIRY</span><h2>Student Details</h2><p>Fields marked * are required.</p></div>
+      <div class="trial-form-grid">
+        <label>Student Full Name *<input name="studentName" required autocomplete="name" placeholder="Enter full name"></label>
+        <label>Student Age *<input name="studentAge" type="number" min="5" max="100" required placeholder="Age"></label>
+        <label>Parent / Guardian Name<input name="guardianName" placeholder="Parent or guardian name"></label>
+        <label>Email Address<input name="email" type="email" autocomplete="email" placeholder="name@example.com"></label>
+        <label>WhatsApp Number with Country Code *<input name="phone" required type="tel" placeholder="+974 XXXXXXXX"></label>
+        <label>Country *<input name="country" required autocomplete="country-name" placeholder="Your country"></label>
+        <label>Preferred Course *<select name="course" required><option value="">Select a programme</option><option>Qatar PRO & Government Services</option><option>Qatar MOI & MOL PRO Training</option><option>GCC PRO & Document Processing</option><option>Professional Typing & Office Administration</option><option>HR & Corporate Administration</option><option>Practical PRO & Admin Training</option><option>Civil Services Examination Preparation</option></select></label>
+        <label>Current Experience Level<select name="level"><option>Beginner</option><option>Some experience</option><option>Working professional</option><option>Student</option></select></label>
+        <label>Preferred Learning Mode<select name="mode"><option>Online – Worldwide</option><option>Offline – Qatar (enquiry)</option><option>Offline – Kerala (upcoming batches)</option><option>Offline – Other India location (enquiry)</option></select></label>
+        <label>Preferred Time / Time Zone<input name="time" placeholder="e.g. 6 PM Qatar time"></label>
+        <label class="trial-full">Additional Requirements<textarea name="requirements" rows="4" placeholder="Tell us what you would like to learn or ask..."></textarea></label>
+      </div>
+      <button class="trial-submit" type="submit">Send Admission Enquiry via WhatsApp <b>→</b></button>
+      <p class="trial-privacy">Your details will be included in the WhatsApp enquiry so our team can respond.</p>
+    </form>
+  </div>
+  <div class="trial-bottom"><strong>Ready to begin?</strong><span>Explore our programmes and take the next step with Serve Ease Academy.</span><button type="button" onclick="openMainHome();setTimeout(()=>document.getElementById('layer-5-tracks')?.scrollIntoView({behavior:'smooth'}),100)">Explore Programmes</button></div>
+</section>
+<footer class="footer-minimal" id="layer-15-footer">
       <div class="container footer-min-inner">
         <div class="footer-min-brand">
           <img src="logo.png" alt="Serve Ease Academy" />
@@ -1751,6 +1843,31 @@
 
   </main>
 
+  <!-- Dedicated Civil Services landing page -->
+  <section id="civilServicesHomeView" class="page-view civil-services-home-view">
+    <div class="civil-home-hero">
+      <div class="civil-home-hero-inner">
+        <button class="civil-home-back" type="button" onclick="openMainHome()">← Back to Global Homepage</button>
+        <span class="civil-home-kicker">SERVE EASE ACADEMY • DEDICATED LEARNING HUB</span>
+        <h1>Civil Services Examination Preparation</h1>
+        <p>A structured learning space. Choose a section below to explore its dedicated page. More course content and resources can be added to each section later.</p>
+      </div>
+    </div>
+    <div class="civil-home-content">
+      <div class="civil-home-heading"><span class="eyebrow">EXPLORE THE PROGRAMME</span><h2>Eight Learning Sections</h2><p>Select any section to open its separate full-width page.</p></div>
+      <div class="civil-home-grid">
+        <article class="civil-home-card"><img src="course-upsc.jpg" alt="Prelims preparation"><div><span>01 • FOUNDATION</span><h3>Prelims Course</h3><p>General Studies Paper I and exam strategy.</p><button onclick="openUpscHub('upsc-prelims')">Explore Section →</button></div></article>
+        <article class="civil-home-card"><img src="gallery-1.jpg" alt="Mains study"><div><span>02 • ADVANCED STUDY</span><h3>Mains Course</h3><p>GS I–IV, essay and optional guidance.</p><button onclick="openUpscHub('upsc-mains')">Explore Section →</button></div></article>
+        <article class="civil-home-card"><img src="mentor-1.jpg" alt="Interview preparation"><div><span>03 • PERSONALITY TEST</span><h3>Interview Preparation</h3><p>Communication, confidence and board readiness.</p><button onclick="openUpscHub('upsc-interview')">Explore Section →</button></div></article>
+        <article class="civil-home-card"><img src="gallery-2.jpg" alt="Interview questions"><div><span>04 • QUESTION BANK</span><h3>Interview Questions</h3><p>Background, governance and current-affairs questions.</p><button onclick="openUpscHub('upsc-questions')">Explore Section →</button></div></article>
+        <article class="civil-home-card"><img src="gallery-3.jpg" alt="Mock test practice"><div><span>05 • PRACTICE</span><h3>Mock Tests</h3><p>Prelims, Mains and interview practice.</p><button onclick="openUpscHub('upsc-mocks')">Explore Section →</button></div></article>
+        <article class="civil-home-card"><img src="gallery-4.jpg" alt="CSAT and answer writing"><div><span>06 • SKILL BUILDING</span><h3>CSAT &amp; Answer Writing</h3><p>Reasoning, comprehension and structured answers.</p><button onclick="openUpscHub('upsc-csat')">Explore Section →</button></div></article>
+        <article class="civil-home-card"><img src="gallery-5.jpg" alt="Current affairs"><div><span>07 • DAILY PREPARATION</span><h3>DAF &amp; Current Affairs</h3><p>Profile mapping and news-to-syllabus linkage.</p><button onclick="openUpscHub('upsc-daf')">Explore Section →</button></div></article>
+        <article class="civil-home-card"><img src="photo 6.jpg" alt="Study roadmap"><div><span>08 • PLANNING</span><h3>Study Roadmap</h3><p>Foundation, revision and preparation planning.</p><button onclick="openUpscHub('upsc-roadmap')">Explore Section →</button></div></article>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================================================================== -->
   <!-- VIEW 2: CIVIL SERVICES HUB WITH 8 COMPLETE SUB-PAGES                  -->
   <!-- ===================================================================== -->
@@ -1758,7 +1875,7 @@
     <div class="subpage-header">
       <div class="container">
         <div class="breadcrumb">
-          <button onclick="openMainHome()">← Back to Global Homepage</button>
+          <button onclick="openCivilServicesHome()">← Back to Civil Services Home</button>
           <span>/</span>
           <span>Civil Services (UPSC CSE)</span>
           <span>/</span>
@@ -1975,49 +2092,7 @@
   </section>
 
 
-<section id="trialBookingView" class="page-view trial-page" aria-label="Free trial and assessment booking">
-  <div class="trial-hero">
-    <div class="trial-hero-inner">
-      <span class="trial-eyebrow">SERVE EASE ACADEMY • START YOUR LEARNING JOURNEY</span>
-      <h1>Book a Free Trial &amp; Assessment Class</h1>
-      <p>Share your details and preferred programme. Our admissions team will contact you to discuss availability and the next steps.</p>
-      <div class="trial-pills"><span>International Online Learning</span><span>Qatar &amp; India Enquiries</span><span>Personal Guidance</span></div>
-    </div><div class="trial-orbit orbit-one"></div><div class="trial-orbit orbit-two"></div>
-  </div>
-  <div class="trial-main">
-    <div class="trial-info">
-      <div class="trial-photos"><img src="photo 1.jpg" alt="Academy learning session" loading="lazy"><img src="photo 6.jpg" alt="Students learning together" loading="lazy"></div>
-      <span class="trial-tag">WHAT HAPPENS NEXT?</span>
-      <h2>Your first step towards a new skill starts here.</h2>
-      <p>Submit your enquiry with your course preference and contact details. The Serve Ease Academy team will follow up to discuss the available learning format, batch schedule and admission information.</p>
-      <div class="trial-steps">
-        <div><b>01</b><span><strong>Send your request</strong><small>Complete the short enquiry form.</small></span></div>
-        <div><b>02</b><span><strong>Speak with our team</strong><small>We will contact you to understand your learning goals.</small></span></div>
-        <div><b>03</b><span><strong>Confirm your next step</strong><small>Receive details about availability, schedule and fees.</small></span></div>
-      </div>
-      <div class="trial-note"><strong>Please note:</strong> Trial and assessment slots are subject to confirmation by the academy. Submitting this form sends an enquiry through WhatsApp; it does not automatically reserve a class.</div>
-    </div>
-    <form class="trial-form-card" id="trialBookingForm">
-      <div class="trial-form-heading"><span>FREE TRIAL REQUEST</span><h2>Student Details</h2><p>Fields marked * are required.</p></div>
-      <div class="trial-form-grid">
-        <label>Student Full Name *<input name="studentName" required autocomplete="name" placeholder="Enter full name"></label>
-        <label>Student Age *<input name="studentAge" type="number" min="5" max="100" required placeholder="Age"></label>
-        <label>Parent / Guardian Name<input name="guardianName" placeholder="Parent or guardian name"></label>
-        <label>Email Address<input name="email" type="email" autocomplete="email" placeholder="name@example.com"></label>
-        <label>WhatsApp Number with Country Code *<input name="phone" required type="tel" placeholder="+974 XXXXXXXX"></label>
-        <label>Country *<input name="country" required autocomplete="country-name" placeholder="Your country"></label>
-        <label>Preferred Course *<select name="course" required><option value="">Select a programme</option><option>Qatar PRO & Government Services</option><option>Qatar MOI & MOL PRO Training</option><option>GCC PRO & Document Processing</option><option>Professional Typing & Office Administration</option><option>HR & Corporate Administration</option><option>Practical PRO & Admin Training</option><option>Civil Services Examination Preparation</option></select></label>
-        <label>Current Experience Level<select name="level"><option>Beginner</option><option>Some experience</option><option>Working professional</option><option>Student</option></select></label>
-        <label>Preferred Learning Mode<select name="mode"><option>Online – Worldwide</option><option>Offline – Qatar (enquiry)</option><option>Offline – Kerala (upcoming batches)</option><option>Offline – Other India location (enquiry)</option></select></label>
-        <label>Preferred Time / Time Zone<input name="time" placeholder="e.g. 6 PM Qatar time"></label>
-        <label class="trial-full">Additional Requirements<textarea name="requirements" rows="4" placeholder="Tell us what you would like to learn or ask..."></textarea></label>
-      </div>
-      <button class="trial-submit" type="submit">Send Free Trial Enquiry via WhatsApp <b>→</b></button>
-      <p class="trial-privacy">Your details will be included in the WhatsApp enquiry so our team can respond.</p>
-    </form>
-  </div>
-  <div class="trial-bottom"><strong>Ready to begin?</strong><span>Explore our programmes and take the next step with Serve Ease Academy.</span><button type="button" onclick="openMainHome();setTimeout(()=>document.getElementById('layer-5-tracks')?.scrollIntoView({behavior:'smooth'}),100)">Explore Programmes</button></div>
-</section>
+
 
   <!-- Floating quick-contact and navigation buttons -->
   <div class="floating-stack" aria-label="Quick contact and navigation">
@@ -2077,6 +2152,7 @@
 
     function openMainHome() {
       document.getElementById('upscHubView').classList.remove('active');
+      document.getElementById('civilServicesHomeView')?.classList.remove('active');
       document.getElementById('programmeDetailView')?.classList.remove('active');
       document.getElementById('mainHomeView').classList.add('active');
       document.getElementById('navHomeLink').classList.add('active-link');
@@ -2084,13 +2160,24 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    function openCivilServicesHome() {
+      document.getElementById('mainHomeView').classList.remove('active');
+      document.getElementById('upscHubView').classList.remove('active');
+      document.getElementById('programmeDetailView')?.classList.remove('active');
+      document.getElementById('civilServicesHomeView').classList.add('active');
+      document.getElementById('navHomeLink').classList.remove('active-link');
+      document.getElementById('navUpscLink').classList.add('active-link');
+      history.replaceState(null, '', '#civil-services');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     function openUpscHub(subPageId) {
       document.getElementById('mainHomeView').classList.remove('active');
+      document.getElementById('civilServicesHomeView')?.classList.remove('active');
       document.getElementById('programmeDetailView')?.classList.remove('active');
       document.getElementById('upscHubView').classList.add('active');
       document.getElementById('navHomeLink').classList.remove('active-link');
       document.getElementById('navUpscLink').classList.add('active-link');
-
       const targetBtn = document.querySelector('.tab-pill[data-target="' + subPageId + '"]');
       const labelText = targetBtn ? targetBtn.textContent : '1. Prelims Course';
       switchUpscSubPage(subPageId || 'upsc-prelims', labelText, targetBtn);
@@ -2383,16 +2470,6 @@
     
 
 
-    function openTrialPage(){
-      document.getElementById("mainHomeView").classList.remove("active");
-      document.getElementById("upscHubView").classList.remove("active");
-      document.getElementById("programmeDetailView").classList.remove("active");
-      document.getElementById("trialBookingView").classList.add("active");
-      document.getElementById("navHomeLink").classList.remove("active-link");
-      document.getElementById("navUpscLink").classList.remove("active-link");
-      history.replaceState(null,"","#free-trial");
-      window.scrollTo({top:0,behavior:"smooth"});
-    }
     document.getElementById("trialBookingForm")?.addEventListener("submit",function(event){
       event.preventDefault();
       if(!this.reportValidity()) return;
@@ -2409,6 +2486,39 @@
       ];
       window.open("https://wa.me/97470120012?text="+encodeURIComponent(lines.join("\n")),"_blank");
     });
+
+
+    (function(){
+      let lastActiveView=null;
+      const viewObserver=new MutationObserver(()=>{
+        const active=document.querySelector('.page-view.active');
+        if(active && active!==lastActiveView){
+          const backView=active.id==="mainHomeView" || active.id==="civilServicesHomeView";
+          active.classList.toggle("motion-left",backView);
+          lastActiveView=active;
+        }
+      });
+      document.querySelectorAll('.page-view').forEach(v=>viewObserver.observe(v,{attributes:true,attributeFilter:['class']}));
+      const targets=document.querySelectorAll(
+        '.page-view section h1,.page-view section h2,.page-view section h3,.page-view section p,.page-view section .info-box,.page-view section .card,.page-view section img,.civil-explore-card,.upsc-feature-banner,.programme-wide-image,.trial-form-card,.trial-steps>div'
+      );
+      targets.forEach((el,i)=>{
+        el.classList.add('scroll-reveal');
+        if(i%4===1)el.dataset.revealSide='left';
+        else if(i%4===3)el.dataset.revealSide='right';
+        if(i%4===1)el.dataset.revealDelay='1';
+        if(i%4===2)el.dataset.revealDelay='2';
+        if(i%4===3)el.dataset.revealDelay='3';
+      });
+      if('IntersectionObserver' in window){
+        const io=new IntersectionObserver(entries=>{
+          entries.forEach(entry=>{
+            if(entry.isIntersecting){entry.target.classList.add('is-visible');io.unobserve(entry.target);}
+          });
+        },{threshold:.12,rootMargin:'0px 0px -35px 0px'});
+        targets.forEach(el=>io.observe(el));
+      }else targets.forEach(el=>el.classList.add('is-visible'));
+    })();
 
 </script>
 
