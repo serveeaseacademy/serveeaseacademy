@@ -1171,6 +1171,49 @@
       .stat-card { padding:.9rem .5rem; }
     }
 
+
+    /* Free trial page: full-width hero with white form panel and blue typography */
+    .trial-page{background:#071d3c;color:#fff;min-height:100vh;overflow:hidden}
+    .trial-hero{position:relative;isolation:isolate;overflow:hidden;padding:clamp(52px,7vw,100px) 0 78px;background:linear-gradient(115deg,rgba(5,24,54,.97),rgba(22,72,155,.9)),url('hero-bg.jpg') center/cover}
+    .trial-hero-inner{position:relative;z-index:2;width:min(1240px,92%);margin:auto}
+    .trial-eyebrow,.trial-tag{display:inline-flex;padding:7px 13px;border:1px solid rgba(255,255,255,.28);border-radius:999px;color:#d9e8ff;font-size:.72rem;font-weight:800;letter-spacing:.13em}
+    .trial-hero h1{max-width:900px;margin:18px 0 13px;color:#fff;font:700 clamp(2.2rem,5vw,4.4rem)/1.1 'Playfair Display',serif}
+    .trial-hero p{max-width:760px;color:#dce9fb;font-size:1.04rem;line-height:1.8}
+    .trial-pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.trial-pills span{padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);font-size:.78rem;color:#fff}
+    .trial-orbit{position:absolute;z-index:1;border:1px solid rgba(255,255,255,.13);border-radius:50%;pointer-events:none}
+    .orbit-one{width:420px;height:420px;right:-110px;top:-220px;box-shadow:0 0 0 32px rgba(255,255,255,.025),0 0 0 70px rgba(255,255,255,.02);animation:trialOrbit 18s linear infinite}
+    .orbit-two{width:240px;height:240px;right:16%;bottom:-190px;box-shadow:0 0 0 26px rgba(255,255,255,.025);animation:trialOrbit 22s linear infinite reverse}
+    @keyframes trialOrbit{to{transform:rotate(360deg)}}
+    .trial-main{width:min(1240px,92%);margin:-28px auto 0;position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,.95fr);gap:clamp(28px,5vw,76px);align-items:center;padding-bottom:65px}
+    .trial-info{padding:32px 0;color:#fff}.trial-photos{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;margin-bottom:30px}
+    .trial-photos img{width:100%;height:190px;object-fit:cover;border-radius:18px;box-shadow:0 16px 36px rgba(0,0,0,.22);transition:transform .55s,filter .55s}
+    .trial-photos img:first-child{transform:translateY(-10px)}.trial-photos img:hover{transform:scale(1.045) translateY(-4px);filter:saturate(1.12)}
+    .trial-tag{margin:4px 0 15px;background:rgba(255,255,255,.1)}.trial-info h2{font:700 clamp(1.6rem,3vw,2.3rem)/1.2 'Playfair Display',serif;color:#fff;margin:0 0 15px}
+    .trial-info>p{color:#d1e0f5;line-height:1.8;margin-bottom:24px}.trial-steps{display:grid;gap:13px;margin:24px 0}
+    .trial-steps>div{display:flex;align-items:center;gap:14px;padding:13px 15px;border:1px solid rgba(255,255,255,.14);border-radius:13px;background:rgba(255,255,255,.065);transition:transform .25s,background .25s}
+    .trial-steps>div:hover{transform:translateX(6px);background:rgba(255,255,255,.12)}.trial-steps b{display:grid;place-items:center;width:40px;height:40px;flex:0 0 40px;border-radius:12px;background:#2d66d4;color:#fff}
+    .trial-steps span{display:grid;gap:2px}.trial-steps strong{color:#fff}.trial-steps small{color:#c6d7ee}
+    .trial-note{padding:16px 18px;border-left:4px solid #4b86ee;border-radius:10px;background:rgba(255,255,255,.09);color:#dce8f8;font-size:.84rem;line-height:1.65}
+    .trial-form-card{background:#fff!important;color:#12315d!important;border:1px solid #d9e5f5;border-radius:22px;padding:clamp(20px,3vw,34px);box-shadow:0 28px 70px rgba(0,0,0,.28);animation:trialCardIn .7s ease both}
+    @keyframes trialCardIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .trial-form-heading{margin-bottom:21px}.trial-form-heading span{color:#2452c5;font-size:.7rem;letter-spacing:.15em;font-weight:900}
+    .trial-form-heading h2{font:700 1.75rem 'Playfair Display',serif;color:#102b50;margin:5px 0}.trial-form-heading p{font-size:.8rem;color:#62748e}
+    .trial-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 13px}
+    .trial-form-grid label{display:flex;flex-direction:column;gap:7px;color:#173963!important;font-size:.79rem;font-weight:800}
+    .trial-form-grid input,.trial-form-grid select,.trial-form-grid textarea{width:100%;min-width:0;border:1px solid #cbd9eb;border-radius:9px;background:#f8fbff!important;color:#12315d!important;padding:12px 13px;font:500 .88rem 'Inter',sans-serif;outline:none;transition:border-color .2s,box-shadow .2s}
+    .trial-form-grid input,.trial-form-grid select{height:46px}.trial-form-grid textarea{resize:vertical;min-height:105px}
+    .trial-form-grid input::placeholder,.trial-form-grid textarea::placeholder{color:#8a9ab0}
+    .trial-form-grid input:focus,.trial-form-grid select:focus,.trial-form-grid textarea:focus{border-color:#3675df;background:#fff!important;box-shadow:0 0 0 3px rgba(54,117,223,.13)}
+    .trial-full{grid-column:1/-1}.trial-submit{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:17px;border:0;border-radius:11px;padding:15px 18px;background:linear-gradient(100deg,#1747a6,#3478e5);color:#fff;font-size:.9rem;font-weight:800;box-shadow:0 10px 22px rgba(36,82,197,.22);transition:transform .2s,box-shadow .2s}
+    .trial-submit:hover{transform:translateY(-3px);box-shadow:0 15px 28px rgba(36,82,197,.3)}.trial-submit b{font-size:1.3rem}
+    .trial-privacy{margin-top:12px;color:#71829a;font-size:.72rem;text-align:center}
+    .trial-bottom{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;padding:27px 5%;background:#fff;color:#173963;border-top:1px solid #dce6f3}
+    .trial-bottom strong{font:700 1.35rem 'Playfair Display',serif;color:#102b50}.trial-bottom span{color:#62748e;font-size:.9rem}
+    .trial-bottom button{border:0;border-radius:999px;background:#1747a6;color:#fff;padding:11px 19px;font-weight:800}
+    @media(max-width:900px){.trial-main{grid-template-columns:1fr;gap:10px;margin-top:-18px}.trial-info{padding:28px 0 5px}.trial-form-card{order:-1}.trial-photos img{height:160px}}
+    @media(max-width:560px){.trial-hero{padding:45px 0 55px}.trial-hero h1{font-size:2.2rem}.trial-main{width:94%}.trial-form-grid{grid-template-columns:1fr}.trial-full{grid-column:auto}.trial-photos img{height:130px}.trial-bottom{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){.trial-orbit,.trial-form-card{animation:none!important}.trial-steps>div,.trial-photos img,.trial-submit{transition:none!important}}
+
   </style>
 </head>
 <body id="top">
@@ -1198,6 +1241,7 @@
         <a href="javascript:void(0)" onclick="openUpscHub('upsc-prelims')" id="navUpscLink" data-i18n="navCivil">Civil Services</a>
         <a href="javascript:void(0)" onclick="scrollToSection('global-tracks')" data-i18n="navLearning">Learning</a>
         <a href="javascript:void(0)" onclick="scrollToSection('layer-13-onboarding')" data-i18n="navAdmission">Admissions</a>
+        <a href="javascript:void(0)" onclick="openTrialPage()" id="navTrialLink">Free Trial</a>
         <a id="navWhatsappBtn" href="#" target="_blank" rel="noopener" class="nav-cta nav-whatsapp-cta" aria-label="WhatsApp Enquiry"><svg class="nav-whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.87 9.87 0 0 0-8.48 14.92L2.2 22l5.22-1.33A9.98 9.98 0 0 0 12.04 22h.01A10 10 0 0 0 12.04 2Zm0 18.18h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.1.79.83-3.02-.2-.31a8.18 8.18 0 1 1 6.96 3.87Zm4.49-6.13c-.25-.13-1.48-.73-1.71-.81-.23-.08-.4-.13-.57.13-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.13-1.05-.39-2-.1-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.39.11-.52.11-.11.25-.3.38-.44.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.37-.78-1.88-.2-.49-.41-.42-.57-.43h-.49c-.17 0-.45.06-.68.32-.23.25-.88.86-.88 2.1s.9 2.43 1.03 2.6c.13.17 1.77 2.7 4.29 3.79.6.26 1.07.42 1.44.54.61.19 1.16.16 1.6.1.49-.07 1.48-.61 1.69-1.2.21-.59.21-1.1.15-1.2-.06-.11-.23-.17-.48-.3Z"/></svg><span data-i18n="navWhatsApp">WhatsApp</span></a>
       </nav>
     </div>
@@ -1813,6 +1857,51 @@
     </div>
   </section>
 
+
+<section id="trialBookingView" class="page-view trial-page" aria-label="Free trial and assessment booking">
+  <div class="trial-hero">
+    <div class="trial-hero-inner">
+      <span class="trial-eyebrow">SERVE EASE ACADEMY • START YOUR LEARNING JOURNEY</span>
+      <h1>Book a Free Trial &amp; Assessment Class</h1>
+      <p>Share your details and preferred programme. Our admissions team will contact you to discuss availability and the next steps.</p>
+      <div class="trial-pills"><span>International Online Learning</span><span>Qatar &amp; India Enquiries</span><span>Personal Guidance</span></div>
+    </div><div class="trial-orbit orbit-one"></div><div class="trial-orbit orbit-two"></div>
+  </div>
+  <div class="trial-main">
+    <div class="trial-info">
+      <div class="trial-photos"><img src="photo 1.jpg" alt="Academy learning session" loading="lazy"><img src="photo 6.jpg" alt="Students learning together" loading="lazy"></div>
+      <span class="trial-tag">WHAT HAPPENS NEXT?</span>
+      <h2>Your first step towards a new skill starts here.</h2>
+      <p>Submit your enquiry with your course preference and contact details. The Serve Ease Academy team will follow up to discuss the available learning format, batch schedule and admission information.</p>
+      <div class="trial-steps">
+        <div><b>01</b><span><strong>Send your request</strong><small>Complete the short enquiry form.</small></span></div>
+        <div><b>02</b><span><strong>Speak with our team</strong><small>We will contact you to understand your learning goals.</small></span></div>
+        <div><b>03</b><span><strong>Confirm your next step</strong><small>Receive details about availability, schedule and fees.</small></span></div>
+      </div>
+      <div class="trial-note"><strong>Please note:</strong> Trial and assessment slots are subject to confirmation by the academy. Submitting this form sends an enquiry through WhatsApp; it does not automatically reserve a class.</div>
+    </div>
+    <form class="trial-form-card" id="trialBookingForm">
+      <div class="trial-form-heading"><span>FREE TRIAL REQUEST</span><h2>Student Details</h2><p>Fields marked * are required.</p></div>
+      <div class="trial-form-grid">
+        <label>Student Full Name *<input name="studentName" required autocomplete="name" placeholder="Enter full name"></label>
+        <label>Student Age *<input name="studentAge" type="number" min="5" max="100" required placeholder="Age"></label>
+        <label>Parent / Guardian Name<input name="guardianName" placeholder="Parent or guardian name"></label>
+        <label>Email Address<input name="email" type="email" autocomplete="email" placeholder="name@example.com"></label>
+        <label>WhatsApp Number with Country Code *<input name="phone" required type="tel" placeholder="+974 XXXXXXXX"></label>
+        <label>Country *<input name="country" required autocomplete="country-name" placeholder="Your country"></label>
+        <label>Preferred Course *<select name="course" required><option value="">Select a programme</option><option>Qatar PRO & Government Services</option><option>Qatar MOI & MOL PRO Training</option><option>GCC PRO & Document Processing</option><option>Professional Typing & Office Administration</option><option>HR & Corporate Administration</option><option>Practical PRO & Admin Training</option><option>Civil Services Examination Preparation</option></select></label>
+        <label>Current Experience Level<select name="level"><option>Beginner</option><option>Some experience</option><option>Working professional</option><option>Student</option></select></label>
+        <label>Preferred Learning Mode<select name="mode"><option>Online – Worldwide</option><option>Offline – Qatar (enquiry)</option><option>Offline – Kerala (upcoming batches)</option><option>Offline – Other India location (enquiry)</option></select></label>
+        <label>Preferred Time / Time Zone<input name="time" placeholder="e.g. 6 PM Qatar time"></label>
+        <label class="trial-full">Additional Requirements<textarea name="requirements" rows="4" placeholder="Tell us what you would like to learn or ask..."></textarea></label>
+      </div>
+      <button class="trial-submit" type="submit">Send Free Trial Enquiry via WhatsApp <b>→</b></button>
+      <p class="trial-privacy">Your details will be included in the WhatsApp enquiry so our team can respond.</p>
+    </form>
+  </div>
+  <div class="trial-bottom"><strong>Ready to begin?</strong><span>Explore our programmes and take the next step with Serve Ease Academy.</span><button type="button" onclick="openMainHome();setTimeout(()=>document.getElementById('layer-5-tracks')?.scrollIntoView({behavior:'smooth'}),100)">Explore Programmes</button></div>
+</section>
+
   <!-- Floating quick-contact and navigation buttons -->
   <div class="floating-stack" aria-label="Quick contact and navigation">
     <a id="floatWhatsappBtn" href="#" target="_blank" rel="noopener" class="float-btn float-whatsapp" aria-label="WhatsApp admission enquiry">
@@ -2256,6 +2345,34 @@
       langSelect?.addEventListener("change",refresh);
       refresh();
     })();
+
+
+    function openTrialPage(){
+      document.getElementById("mainHomeView").classList.remove("active");
+      document.getElementById("upscHubView").classList.remove("active");
+      document.getElementById("programmeDetailView").classList.remove("active");
+      document.getElementById("trialBookingView").classList.add("active");
+      document.getElementById("navHomeLink").classList.remove("active-link");
+      document.getElementById("navUpscLink").classList.remove("active-link");
+      history.replaceState(null,"","#free-trial");
+      window.scrollTo({top:0,behavior:"smooth"});
+    }
+    document.getElementById("trialBookingForm")?.addEventListener("submit",function(event){
+      event.preventDefault();
+      if(!this.reportValidity()) return;
+      const d=new FormData(this);
+      const lines=[
+        "FREE TRIAL & ASSESSMENT ENQUIRY – SERVE EASE ACADEMY",
+        "Student: "+d.get("studentName"),"Age: "+d.get("studentAge"),
+        "Parent / Guardian: "+(d.get("guardianName")||"Not provided"),
+        "Email: "+(d.get("email")||"Not provided"),"WhatsApp: "+d.get("phone"),
+        "Country: "+d.get("country"),"Course: "+d.get("course"),
+        "Experience: "+d.get("level"),"Learning mode: "+d.get("mode"),
+        "Preferred time: "+(d.get("time")||"Not specified"),
+        "Additional requirements: "+(d.get("requirements")||"None")
+      ];
+      window.open("https://wa.me/97470120012?text="+encodeURIComponent(lines.join("\n")),"_blank");
+    });
 
 </script>
 
