@@ -1392,13 +1392,9 @@
     .kerala-launch-button:hover{transform:translateY(-3px);box-shadow:0 17px 36px rgba(0,0,0,.3)}
     .kerala-launch-button span{font-size:1.2rem}
     .kerala-launch-note{color:#e2edff;font-size:.78rem}
-    .kerala-launch-stamp{position:absolute;right:4%;bottom:13%;width:165px;height:165px;border:1px solid rgba(255,255,255,.45);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:rgba(5,29,64,.45);backdrop-filter:blur(9px);box-shadow:0 0 0 12px rgba(255,255,255,.06),0 15px 45px rgba(0,0,0,.16);transform:rotate(8deg);color:#fff}
-    .kerala-launch-stamp span{font-size:1.35rem;font-weight:900;letter-spacing:.18em}
-    .kerala-launch-stamp strong{font-size:.72rem;color:#e4efff}
-    .kerala-launch-stamp small{font-size:.55rem;letter-spacing:.15em;color:#c7dcff}
     @keyframes keralaPulse{50%{box-shadow:0 0 0 9px rgba(97,230,176,.04);opacity:.7}}
     @keyframes keralaBackdropDrift{from{transform:scale(1.015) translateX(0)}to{transform:scale(1.07) translateX(-1.2%)}}
-    @media(max-width:760px){.kerala-launch-section,.kerala-launch-inner{min-height:650px}.kerala-launch-inner{padding:66px 0}.kerala-launch-copy{width:100%}.kerala-launch-copy h2{font-size:2.7rem}.kerala-launch-lead{font-size:.96rem}.kerala-launch-stamp{width:110px;height:110px;right:2%;bottom:4%;opacity:.72}.kerala-launch-stamp span{font-size:.95rem}.kerala-launch-stamp strong{font-size:.58rem}.kerala-launch-stamp small{font-size:.44rem}.kerala-launch-backdrop{background-position:58% center}}
+    @media(max-width:760px){.kerala-launch-section,.kerala-launch-inner{min-height:650px}.kerala-launch-inner{padding:66px 0}.kerala-launch-copy{width:100%}.kerala-launch-copy h2{font-size:2.7rem}.kerala-launch-lead{font-size:.96rem}.kerala-launch-backdrop{background-position:58% center}}
     @media(prefers-reduced-motion:reduce){.kerala-launch-backdrop,.kerala-launch-status i{animation:none!important}.kerala-launch-highlights>div,.kerala-launch-button{transition:none!important}}
 
 
@@ -1447,6 +1443,25 @@
     #layer-6-upsc-preview .civil-entry-button * {
       color: #ffffff !important;
     }
+
+
+    /* Final brand treatment: white navigation bar, larger academy logo */
+    .navbar{background:#fff!important;border-bottom:1px solid #dce6f3!important;box-shadow:0 5px 20px rgba(6,26,57,.07)!important}
+    .navbar .nav-inner{min-height:88px!important;height:auto!important}
+    .navbar .brand img{height:70px!important;width:112px!important;object-fit:contain!important;background:#fff!important;padding:3px!important;border-radius:10px!important;box-shadow:0 3px 14px rgba(12,49,105,.10)!important}
+    .navbar .nav-links a{color:#173b70!important}
+    .navbar .nav-links a:hover,.navbar .nav-links a.active-link{color:#245bd0!important}
+    .academy-footer{background:#061a35!important;color:#eaf2ff!important;padding:58px 0 22px!important;border-top:3px solid #1c4da8}
+    .academy-footer-grid{display:grid;grid-template-columns:1.35fr 1fr 1.2fr 1.2fr;gap:42px;padding-bottom:38px}
+    .academy-footer-brand img{display:block;width:205px;height:135px;object-fit:contain;margin:0 0 18px;background:transparent!important;padding:0!important;border-radius:0!important}
+    .academy-footer-brand p{max-width:330px;color:#d6e3f7!important;line-height:1.75;font-size:.92rem}
+    .academy-footer-col{display:flex;flex-direction:column;align-items:flex-start;gap:13px}
+    .academy-footer-col h3{color:#fff!important;font-size:1rem;margin:5px 0 7px;font-weight:800}
+    .academy-footer-col a,.academy-footer-col span{color:#d9e5f7!important;text-decoration:none;font-size:.9rem;line-height:1.55}
+    .academy-footer-col a:hover{color:#fff!important;text-decoration:underline}
+    .academy-footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:19px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#b9cbe5;font-size:.82rem}
+    @media(max-width:850px){.academy-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}.navbar .brand img{height:62px!important;width:98px!important}}
+    @media(max-width:560px){.academy-footer-grid{grid-template-columns:1fr;gap:24px}.academy-footer-brand img{width:180px;height:115px}.academy-footer-bottom{flex-direction:column}.navbar .nav-inner{min-height:76px!important}}
 
 </style>
 </head>
@@ -1841,8 +1856,7 @@
             <span class="kerala-launch-note">Location and batch dates will be announced soon.</span>
           </div>
         </div>
-        <div class="kerala-launch-stamp" aria-hidden="true"><span>KERALA</span><strong>കേരം തിങ്ങും നാട്</strong><small>LEARN • GROW • LEAD</small></div>
-      </div>
+</div>
     </section>
 
     <!-- Layer 14: FAQ -->
@@ -1913,18 +1927,38 @@
   </div>
   <div class="trial-bottom"><strong>Ready to begin?</strong><span>Explore our programmes and take the next step with Serve Ease Academy.</span><button type="button" onclick="openMainHome();setTimeout(()=>document.getElementById('layer-5-tracks')?.scrollIntoView({behavior:'smooth'}),100)">Explore Programmes</button></div>
 </section>
-<footer class="footer-minimal" id="layer-15-footer">
-      <div class="container footer-min-inner">
-        <div class="footer-min-brand">
-          <img src="logo.png" alt="Serve Ease Academy" />
-        </div>
-        <div class="footer-min-links">
-          <a id="footerPhoneLink" href="tel:+97470120012">70120012</a>
-          <a id="footerEmailLink" href="mailto:serveeaseacademy@gmail.com">serveeaseacademy@gmail.com</a>
-          <span>© 2026 Serve Ease Academy</span>
-        </div>
-      </div>
-    </footer>
+<footer class="footer-minimal academy-footer" id="layer-15-footer">
+  <div class="container academy-footer-grid">
+    <div class="academy-footer-brand">
+      <img src="logo-white.png" alt="Serve Ease Academy" />
+      <p>International online learning with classroom and practical training opportunities in Kerala, Qatar and India.</p>
+    </div>
+    <div class="academy-footer-col">
+      <h3>Explore Academy</h3>
+      <a href="javascript:void(0)" onclick="openMainHome()">Home</a>
+      <a href="javascript:void(0)" onclick="openCivilServicesHome()">Civil Services</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('global-tracks')">Learning Programmes</a>
+      <a href="javascript:void(0)" onclick="scrollToSection('layer-13-onboarding')">Kerala Branch</a>
+    </div>
+    <div class="academy-footer-col">
+      <h3>Learning Options</h3>
+      <span>Online Learning – Worldwide</span>
+      <span>Kerala Offline Batches – Coming Soon</span>
+      <span>Qatar &amp; India Learning Enquiries</span>
+      <span>Practical Training</span>
+    </div>
+    <div class="academy-footer-col">
+      <h3>Contact &amp; Enquiries</h3>
+      <a href="tel:+97470120012">Phone / WhatsApp: +974 70120012</a>
+      <a href="mailto:serveeaseacademy@gmail.com">serveeaseacademy@gmail.com</a>
+      <span>Contact the academy for programme and batch details.</span>
+    </div>
+  </div>
+  <div class="container academy-footer-bottom">
+    <span>© 2026 Serve Ease Academy. All rights reserved.</span>
+    <span>International Learning • Local Classrooms</span>
+  </div>
+</footer>
 
   </main>
 
